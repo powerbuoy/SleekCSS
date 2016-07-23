@@ -22,21 +22,21 @@
 ***/
 @media #{$bp-medium} {
 	.primary-content {
-		width: 60%;
+		width: $primary-content-width;
 		float: left;
 	}
 
 	.secondary-content {
-		width: 35%;
+		width: $secondary-content-width;
 		float: left;
 	}
 
 	.primary-content + .secondary-content {
-		margin-left: 5%;
+		margin-left: $primary-secondary-gutter;
 	}
 
 	.secondary-content + .primary-content {
-		margin-left: 5%;
+		margin-left: $primary-secondary-gutter;
 	}
 
 	.primary-content + .secondary-content + * {

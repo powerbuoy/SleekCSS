@@ -1,0 +1,3 @@
+$primary-secondary-gutter: 5% !default;
+$primary-content-width: 60% !default;
+$secondary-content-width: 100% - $primary-content-width - $primary-secondary-gutter !default;

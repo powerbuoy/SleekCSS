@@ -1,4 +1,4 @@
-// TODO
+// TODO Add styleguide
 .popup {
 	background: $color-overlay;
 
@@ -47,11 +47,11 @@
 	&__box {
 		background: $color-white;
 
-		width: 80%;
-		max-width: 35rem;
-		max-height: 75%;
+		width: $popup-width;
+		max-width: $popup-max-width;
+		max-height: $popup-max-height;
 
-		border-radius: .5rem;
+		border-radius: $popup-border-radius;
 
 		display: flex;
 		flex-direction: column;

@@ -2,6 +2,11 @@
 	position: absolute;
 	left: -100000px;
 	top: -100000px;
+
+	@include rtl {
+		left: auto;
+		right: -100000px;
+	}
 }
 
 @mixin a11y-show {

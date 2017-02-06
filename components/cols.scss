@@ -80,6 +80,22 @@
 	&:nth-child(#{$num}n) {
 		margin-right: 0;
 	}
+
+	@include rtl {
+		float: right;
+
+		margin-right: 0;
+		margin-left: $gutter;
+
+		&:not(:nth-child(#{$num}n)) {
+			margin-left: $gutter;
+		}
+
+		// No margin right for last element in row
+		&:nth-child(#{$num}n) {
+			margin-left: 0;
+		}
+	}
 }
 
 // Base class in case there should be 0 columns in low res
@@ -99,6 +115,11 @@ ul[class*="cols--"] {
 	margin-left: 0;
 	padding-left: 0;
 	list-style: none;
+
+	@include rtl {
+		margin-right: 0;
+		padding-right: 0;
+	}
 }
 
 // Create cols--X classes for all specified column counts

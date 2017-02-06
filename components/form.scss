@@ -156,7 +156,7 @@ input[type=radio],
 input[type=checkbox] {
 	margin: 0 $icon-margin 0 0;
 
-	[dir=rtl] & {
+	@include rtl {
 		margin-right: 0;
 		margin-left: $icon-margin;
 	}

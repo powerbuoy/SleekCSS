@@ -38,8 +38,12 @@ p {
 
 ul,
 ol {
-	margin: 0 0 $margin-default ($margin-default * 2);
+	margin: 0 0 $margin-default $margin-large;
 	padding: 0;
+
+	@include rtl {
+		margin: 0 $margin-large $margin-default 0;
+	}
 }
 
 dl {

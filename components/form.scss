@@ -223,11 +223,11 @@ button {
 	width: $form-range-thumb-radius * 2;
 	height: $form-range-thumb-radius * 2;
 
-	@if ($form-range-border == true) {
+	@if ($form-range-thumb-border == true) {
 		border: 1px solid $color-border;
 	}
-	@elseif ($form-range-border) {
-		border: $form-range-border;
+	@elseif ($form-range-thumb-border) {
+		border: $form-range-thumb-border;
 	}
 	@else {
 		border: 0;

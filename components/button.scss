@@ -168,7 +168,7 @@
 		}
 		@else {
 			background-color: rgba($color, $opacity);
-			color: $color;
+			color: $button-text-color;
 		}
 	}
 }

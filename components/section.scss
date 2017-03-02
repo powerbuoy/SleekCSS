@@ -2,8 +2,6 @@
  * @section
  *
  * Creates a full width section with centered content based on preferred site width
- *
- * @param	color	$bg: section background color
  */
 @mixin section ($width: $site-width) {
 	@include clearfix;
@@ -21,16 +19,6 @@
 	} */
 
 	@include section-centering($width);
-}
-
-/**
- * @unsection
- *
- * Utility mixin for removing section styling
- */
-@mixin unsection {
-	background: transparent;
-	padding: 0;
 }
 
 /**
@@ -211,6 +199,10 @@
             <p>With some content</p>
         </div>
 ***/
+$top-slant: polygon(0 #{$section-slant}, 100% 0, 100% 100%, 0 100%) !default;
+$bottom-slant: polygon(0 0, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%) !default;
+$top-bottom-slant: polygon(0 #{$section-slant}, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%) !default;
+
 .section {
 	@include section;
 

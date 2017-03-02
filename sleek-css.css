@@ -1423,13 +1423,6 @@ a,
  * @section
  *
  * Creates a full width section with centered content based on preferred site width
- *
- * @param	color	$bg: section background color
- */
-/**
- * @unsection
- *
- * Utility mixin for removing section styling
  */
 /**
  * @section-centering
@@ -1653,7 +1646,8 @@ a,
   font-family: Helvetica, sans-serif;
   color: #333;
   word-wrap: break-word;
-  font-weight: normal; }
+  font-weight: normal;
+  letter-spacing: 0; }
 
 .text--upper {
   text-transform: uppercase; }
@@ -1949,12 +1943,11 @@ body {
   line-height: 1.6;
   font-family: Helvetica, sans-serif;
   font-weight: normal;
+  letter-spacing: 0;
   color: #333;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  -webkit-font-smoothing: antialiased; }
+  /*	word-wrap: break-word;
+	hyphens: auto;
+	-webkit-font-smoothing: antialiased; */ }
 
 /**
  * Paragraphs, lists, quotes etc
@@ -1976,12 +1969,11 @@ q {
   margin: 0; }
 
 pre {
-  background: #fafafa;
+  background: gray;
   margin: 0 0 1rem;
   padding: 1rem;
-  max-height: 300px;
-  overflow: auto;
-  color: #111; }
+  max-height: 20rem;
+  overflow: auto; }
 
 /**
  * Inline elements

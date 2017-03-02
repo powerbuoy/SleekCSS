@@ -25,11 +25,6 @@ $section-padding-horizontal: 1rem !default; // Distance from edge of screen to i
 $section-padding: 3rem !default;
 $section-slant: 3rem !default;
 
-// Slants (used by section--slanted)
-$top-slant: polygon(0 #{$section-slant}, 100% 0, 100% 100%, 0 100%) !default;
-$bottom-slant: polygon(0 0, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%) !default;
-$top-bottom-slant: polygon(0 #{$section-slant}, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%) !default;
-
 // Transition speeds
 $transition-easing: ease-out !default;
 $transition-default: .2s !default;

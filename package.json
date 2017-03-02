@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/powerbuoy/SleekCSS.git"
+    "url": "git+https://github.com/powerbuoy/sleek-css.git"
   },
   "author": "Andreas Lagerkvist",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/powerbuoy/SleekCSS/issues"
+    "url": "https://github.com/powerbuoy/sleek-css/issues"
   },
-  "homepage": "https://github.com/powerbuoy/SleekCSS#readme",
+  "homepage": "https://github.com/powerbuoy/sleek-css#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",

@@ -16,7 +16,7 @@ html {
 }
 
 body {
-	// font: #{$font-size-default}/#{$line-height-default} $font-family-default; // Doesn't work in IE :/
+	// font: #{$font-size-default}/#{$line-height-default} $font-family-default; // Doesn't work with rem in IE :/
 	font-size: $font-size-default;
 	line-height: $line-height-default;
 	font-family: $font-family-default;
@@ -24,9 +24,9 @@ body {
 
 	color: $color-text;
 
-	word-wrap: break-word;
+/*	word-wrap: break-word;
 	hyphens: auto;
-	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased; */
 }
 
 /**
@@ -38,7 +38,7 @@ p {
 
 ul,
 ol {
-	margin: 0 0 $margin-default ($margin-default * 2);
+	margin: 0 0 $margin-default $margin-large;
 	padding: 0;
 }
 
@@ -53,12 +53,11 @@ q {
 }
 
 pre {
-	background: #fafafa;
+	background: $color-gray;
 	margin: 0 0 $margin-default;
 	padding: $padding-default;
-	max-height: 300px;
+	max-height: 20rem;
 	overflow: auto;
-	color: #111;
 }
 
 /**
@@ -93,6 +92,6 @@ hr {
 	border-top: 1px solid $color-border;
 
 	@media #{$bp-medium} {
-		margin: ($margin-large) 0;
+		margin: $margin-large 0;
 	}
 }

@@ -1,3 +1,1 @@
-# SleekCSS
-
-A lightweight SASS library
+A lightweight SASS library.

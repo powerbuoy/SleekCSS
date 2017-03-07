@@ -103,7 +103,7 @@
 		&:before {
 			display: block;
 			margin: 0 auto $margin-small;
-			font-size: $icon-large-size;
+		//	font-size: $icon-large-size;
 		}
 	}
 }
@@ -116,7 +116,7 @@
 		&:after {
 			display: block;
 			margin: 0 auto;
-			font-size: $icon-large-size;
+		//	font-size: $icon-large-size;
 		}
 	}
 }

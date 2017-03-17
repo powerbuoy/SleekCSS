@@ -18,7 +18,8 @@ $form-select-arrow: "assets/svg/select-arrow.svg" !default; // Set to false to h
 $form-select-arrow-size: .5rem !default;
 
 // Range inputs
-$form-range-bg: #bbb !default;
+$form-range-color-lower: #369 !default;
+$form-range-color-upper: #bbb !default;
 $form-range-height: .25rem !default;
 $form-range-border: false !default;
 $form-range-border-radius: .2rem !default;

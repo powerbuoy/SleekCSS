@@ -274,29 +274,33 @@ button {
 	}
 }
 
-@mixin range-color ($track-color, $thumb-color) {
+@mixin range-color ($track-color-lower, $track-color-upper, $thumb-color) {
 	// The track
 	&::-webkit-slider-runnable-track {
-		background: $track-color;
+		background: $track-color-lower;
 	}
 
 	&::-ms-track {
-		background: $track-color;
-		color: $track-color;
+		background: $track-color-lower;
+		color: $track-color-lower;
 	}
 
 	&::-ms-fill-lower {
-		background: $track-color;
-		color: $track-color;
+		background: $track-color-lower;
+		color: $track-color-lower;
 	}
 
 	&::-ms-fill-upper {
-		background: $track-color;
-		color: $track-color;
+		background: $track-color-upper;
+		color: $track-color-upper;
+	}
+
+	&::-moz-range-progress {
+		background: $track-color-lower;
 	}
 
 	&::-moz-range-track {
-		background: $track-color;
+		background: $track-color-upper;
 	}
 
 	// The thumbs
@@ -316,7 +320,7 @@ button {
 input[type=range] {
 	appearance: none;
 
-	@include range-color($form-range-bg, $form-range-thumb-bg);
+	@include range-color($form-range-color-lower, $form-range-color-upper, $form-range-thumb-bg);
 
 	background: transparent;
 	width: 100%;

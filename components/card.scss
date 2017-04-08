@@ -1,21 +1,25 @@
 /***
     title: Card
     section: Layout
-    description: A simple box/card. Should be used with the bg-classes (transparent by default).
+    description: A simple box/card. Should be used with the bg-classes.
     example:
-        <div class="card bg--white">I'm a shadowed card</div>
+        <div class="card bg--lightgray">I'm a shadowed card</div>
 ***/
 @mixin card ($bg: false) {
+	@include clearfix;
+
 	@if ($bg) {
 		background-color: $bg;
 	}
 
 	display: block;
+
 	margin-bottom: $card-margin;
 	padding: $card-padding;
+
 	box-shadow: $card-shadow;
 }
 
 .card {
-	@include card;
+	@include card($color-white);
 }

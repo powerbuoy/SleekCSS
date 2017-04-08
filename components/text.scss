@@ -4,6 +4,8 @@
     description: Various helper classes for working with text.
     example:
         <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+        <p class="text--right text--large">This large text is right aligned.</p>
+        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
 ***/
 @mixin text {
 	margin: 0;

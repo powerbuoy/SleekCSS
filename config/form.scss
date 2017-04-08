@@ -1,8 +1,8 @@
 // Background and text colors
 $color-form-field-bg: #fff !default;
 $color-form-success: #060 !default;
-$color-form-error: #600 !default;
-$color-form-placeholder: #999 !default;
+$color-form-error: #900 !default;
+$color-form-placeholder: #bbb !default;
 $color-form-text: #333 !default;
 
 // Padding
@@ -18,13 +18,14 @@ $form-select-arrow: "assets/svg/select-arrow.svg" !default; // Set to false to h
 $form-select-arrow-size: .5rem !default;
 
 // Range inputs
-$form-range-color-lower: #369 !default;
-$form-range-color-upper: #bbb !default;
+$form-range-color-lower: #bbb !default;
+$form-range-color-upper: #ddd !default;
 $form-range-height: .25rem !default;
 $form-range-border: false !default;
-$form-range-border-radius: .2rem !default;
-$form-range-thumb-bg: #333 !default;
-$form-range-thumb-radius: .75rem !default;
+$form-range-border-radius: .25rem !default;
+
+$form-range-thumb-bg: #1FBB82 !default;
+$form-range-thumb-radius: 1rem !default;
 $form-range-thumb-border: false !default;
 $form-range-thumb-border-radius: 50% !default;
-$form-range-thumb-shadow: false !default;
+$form-range-thumb-shadow: true !default;

@@ -169,7 +169,7 @@
 		justify-content: center;
 
 		border-radius: 50%;
-		transition: all .2s $transition-easing; // TODO: When used with hover effect?
+		transition: all $transition-default $transition-easing; // TODO: When used with hover effect?
 	}
 
 	&.icon--above,

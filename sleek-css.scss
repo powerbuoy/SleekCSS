@@ -10,6 +10,7 @@
 @import "config/form";
 @import "config/icons";
 @import "config/layout";
+@import "config/popup";
 @import "config/shadows";
 @import "config/typography";
 
@@ -32,12 +33,13 @@
 @import "mixins/transparent-inner-arrow";
 
 // Components
+@import "components/card"; // Needs to include before bg-colors
 @import "components/bg-colors";
 @import "components/bg-overlay";
 @import "components/button";
-@import "components/card";
 @import "components/cols";
 @import "components/container";
+@import "components/divider";
 @import "components/form";
 @import "components/group";
 @import "components/heading";
@@ -46,11 +48,9 @@
 @import "components/inline-grid";
 @import "components/link";
 @import "components/list";
-@import "components/pane";
 @import "components/popup";
 @import "components/primary-secondary";
 @import "components/section";
-@import "components/separated";
 @import "components/strike-through";
 @import "components/svg";
 @import "components/text";

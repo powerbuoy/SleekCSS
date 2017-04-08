@@ -12,34 +12,37 @@
  */
 html {
 	background: $color-body-bg;
-	font-size: 100%;
+	font-size: 100%; // 1rem = 16 "px"
 }
 
 body {
-	// font: #{$font-size-default}/#{$line-height-default} $font-family-default; // Doesn't work with rem in IE :/
 	font-size: $font-size-default;
-	line-height: $line-height-default;
 	font-family: $font-family-default;
 	font-weight: $font-weight-default;
+
 	letter-spacing: $letter-spacing-default;
+	line-height: $line-height-default;
 
 	color: $color-text;
 
-/*	word-wrap: break-word;
-	hyphens: auto;
-	-webkit-font-smoothing: antialiased; */
+	// Break up words?
+	@if ($word-wrap-break-word) {
+		word-wrap: break-word;
+		hyphens: auto;
+		-webkit-font-smoothing: antialiased; // TODO: Should this be under the same config var? :P
+	}
 }
 
 /**
  * Paragraphs, lists, quotes etc
  */
 p {
-	margin: 0 0 $margin-default;
+	margin: 0 0 $margin-default; // Some default margin below
 }
 
 ul,
 ol {
-	margin: 0 0 $margin-default $margin-large;
+	margin: 0 0 $margin-default $margin-large; // Some left indentation and bottom margin
 	padding: 0;
 }
 
@@ -53,8 +56,9 @@ q {
 	margin: 0;
 }
 
+// TODO: I only use this element for debug data (var_dump)
 pre {
-	background: $color-gray;
+	background: $color-lightgray;
 	margin: 0 0 $margin-default;
 	padding: $padding-default;
 	max-height: 20rem;
@@ -78,21 +82,5 @@ svg {
 }
 
 iframe {
-
-}
-
-hr {
-	clear: both;
-
-	margin: $margin-default 0;
-	padding: 0;
-
-	height: 0;
-
-	border: 0;
-	border-top: 1px solid $color-border;
-
-	@media #{$bp-medium} {
-		margin: $margin-large 0;
-	}
+	// TODO: I used have an old iOS bug fix in here...
 }

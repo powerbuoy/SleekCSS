@@ -1,0 +1,43 @@
+/***
+    title: Divider
+    section: Layout
+    description: Use to separate elements with a border. Can be used on a single element (or hr), or using --above or --below modifiers.
+    example:
+        <p class="divider--below">I have a separator below me.</p>
+        <p>I'm just a normal paragraph</p>
+        <p class="divider--above">I have a separator above me.</p>
+        <p>Below me is a lone divider</p>
+        <hr>
+***/
+@mixin divider () {
+	clear: both;
+
+	margin: $margin-default 0;
+	padding: 0;
+
+	height: 0;
+
+	border: 0;
+	border-top: 1px solid $color-border;
+
+	@media #{$bp-medium} {
+		margin: $margin-large 0;
+	}
+}
+
+hr,
+.divider {
+	@include divider;
+}
+
+.divider--below {
+	padding-bottom: $padding-default;
+	margin-bottom: $margin-large;
+	border-bottom: 1px solid $color-border;
+}
+
+.divider--above {
+	padding-top: $padding-default;
+	margin-top: $margin-large;
+	border-top: 1px solid $color-border;
+}

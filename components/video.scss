@@ -1,4 +1,10 @@
-// https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+/***
+    title: Video
+    section: Video
+    description: Wrapping class for responsive, embedded videos (from https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php)
+    example:
+        <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/JSuYuPz0dlU" frameborder="0" allowfullscreen></iframe></div>
+***/
 div.video,
 .entry-content-asset {
 	position: relative;

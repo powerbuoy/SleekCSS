@@ -3,7 +3,9 @@
     section: Images
     description: Various helper classes for styling images.
     example:
-        <img src="http://placehold.it/100x100" class="img--round"> <img src="http://placehold.it/100x100" class="img--rounded">
+        <img src="http://placehold.it/100x100" class="img--round">
+        <img src="http://placehold.it/100x100" class="img--rounded">
+        <img src="http://lorempixel.com/800/600/nature" class="img--grayscale img--wide">
 ***/
 .img--round {
 	border-radius: 50%;

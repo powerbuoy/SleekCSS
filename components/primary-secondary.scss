@@ -3,7 +3,7 @@
     section: Grid
     description: Super basic primary/secondary content columns when you really don't need an entire grid system.
     example:
-        <div>
+        <div class="card">
             <div class="primary-content">
                 <p>Primary content here</p>
             </div>
@@ -11,7 +11,7 @@
                 <p>Secondary content here</p>
             </div>
         </div>
-        <div>
+        <div class="card">
             <div class="secondary-content">
                 <p>Reversed order here</p>
             </div>

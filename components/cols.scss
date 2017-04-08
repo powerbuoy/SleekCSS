@@ -1,4 +1,5 @@
-/***
+// Note that this documentation is commented (by using /** instead of /***) because the flex class should be used instead
+/**
     title: Cols
     section: Grid
     description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
@@ -11,7 +12,7 @@
             <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
         </ul>
-***/
+**/
 
 /**
  * @col

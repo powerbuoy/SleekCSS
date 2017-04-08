@@ -12,8 +12,8 @@
             </p>
             <p>
                 <label>
-                    Email<br>
-                    <input type="email" name="email" placeholder="eg. john.doe@example.com">
+                    Email <abbr title="Required">*</abbr><br>
+                    <input type="email" name="email" placeholder="eg. john.doe@example.com" required>
                 </label>
             </p>
             <p>
@@ -26,10 +26,17 @@
                 </label>
             </p>
             <p>
+                Smoker?<br>
+                <label><input type="radio" name="smoker" value="1"> Yes</label>
+                <label><input type="radio" name="smoker" value="0"> No</label>
+            </p>
+            <p>
                 <label>
+                    <span class="value">${age}</span>
                     Age<br>
                     <input type="range" name="age" min="1" max="150">
                 </label>
+                <strong class="error">You have to be at least 18 to conitnue</strong>
             </p>
             <p>
                 <label>
@@ -37,7 +44,8 @@
                     <textarea name="message" rows="3" cols="60" placeholder="Write your message here"></textarea>
                 </label>
             </p>
-            <p><input type="submit" value="Go"></p>
+            <p><label><input type="checkbox" name="agree"> I agree</label></p>
+            <p><input type="submit" value="Go" class="button button--wide"></p>
         </form>
 ***/
 // To avoid having to write them all below
@@ -56,11 +64,12 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 	margin: 0;
 	padding: $form-padding-vertical $form-padding-horizontal;
 
-	font-size: $button-font-size;
+	font-size: $button-font-size; // Same as buttons so they align?
 	color: $color-form-text;
-	line-height: normal;
+	line-height: normal; // TODO: Reference?
 
 	appearance: none;
+	outline: 0;
 
 	@if ($form-border == true) {
 		border: 1px solid $color-border;
@@ -72,7 +81,6 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 		border: 0;
 	}
 
-	// outline: 0;
 	border-radius: $form-border-radius;
 
 	&:hover,
@@ -80,17 +88,6 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 		@if ($form-border == true) {
 			border-color: darken($color-border, 10%);
 		}
-	}
-}
-
-// A global form message (before the form)
-p.message {
-	&.success {
-		color: $color-form-success;
-	}
-
-	&.error {
-		color: $color-form-error;
 	}
 }
 
@@ -112,18 +109,19 @@ form {
 	}
 }
 
-.form__field,
-.captcha-wrap {
-	margin-bottom: $margin-default;
-}
-
 // Labels
 label {
-	display: block;
+//	display: block;
 
+	// JS-inserted value (of an input[type=range] for instance)
 	span.value {
 		float: right;
 	}
+}
+
+// Two labels inside the same container should be separated
+label + label {
+	margin-left: $margin-default;
 }
 
 // Fields
@@ -155,11 +153,6 @@ input[type=search] {
 input[type=radio],
 input[type=checkbox] {
 	margin: 0 $icon-margin 0 0;
-
-	[dir=rtl] & {
-		margin-right: 0;
-		margin-left: $icon-margin;
-	}
 }
 
 textarea {
@@ -173,7 +166,7 @@ textarea {
 }
 
 // Buttons
-input[type=submit],
+// input[type=submit],
 button {
 	@include button;
 	outline: 0;
@@ -215,6 +208,44 @@ button {
 		}
 	}
 }
+
+// TODO: Refactor
+/* input[type=range] {
+	background: blue;
+	height: 10rem;
+	border: 1rem solid green;
+
+	// Remove outline
+	outline: 0;
+
+	&:focus {
+		outline: 0;
+	}
+
+	// Even in ff: http://stackoverflow.com/questions/18794026/remove-dotted-outline-from-range-input-element-in-firefox
+	&::-moz-focus-outer {
+		border: 0;
+	}
+
+	// Style the track
+	&::-moz-range-progress {
+		background: $form-range-color-lower;
+		height: 2rem;
+	}
+
+	&::-moz-range-track {
+		background: $form-range-color-upper;
+		height: 2rem;
+	}
+
+	&::-moz-range-thumb {
+		background: blue;
+		width: 1rem;
+		height: 1rem;
+		border: 1rem solid red;
+		border-radius: 50%;
+	}
+} */
 
 // Range input (http://www.hongkiat.com/blog/html5-range-slider-style/)
 @mixin range-thumb {
@@ -297,6 +328,7 @@ button {
 
 	&::-moz-range-progress {
 		background: $track-color-lower;
+		height: $form-range-height;
 	}
 
 	&::-moz-range-track {

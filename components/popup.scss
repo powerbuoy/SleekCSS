@@ -1,4 +1,17 @@
-// TODO: Documentation
+/***
+    title: Popup
+    section: Popup
+    description: Use to create a popup. Works well with popup.js but isn't necessarily required.
+    example:
+        <a href="#my-popup">Open popup</a>
+        <div class="popup" id="my-popup">
+            <div class="popup__content">
+                <a href="#" class="popup__close">&times;</a>
+                <h2>I'm a popup</h2>
+                <p>Built with CSS.</p>
+            </div>
+        </div>
+***/
 .popup {
 	background: $color-overlay;
 
@@ -7,7 +20,7 @@
 	top: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 99;
+	z-index: 100; // Make sure it's on top of 99s
 
 	display: flex;
 	align-items: center;
@@ -38,6 +51,7 @@
 		text-decoration: none;
 
 		transform: scale(1);
+		transition: all $transition-default $transition-easing;
 
 		&:hover {
 			transform: scale(1.1);
@@ -47,19 +61,26 @@
 	}
 
 	// The actual box
-	&__box {
+	&__box, // TODO: Depracate .popup__box
+	&__content {
 		background: $color-white;
 
-		width: 80%;
-		max-width: 45rem;
-		max-height: 90%;
+		width: 95%;
+		max-width: $popup-width;
+		max-height: 95%;
 
 		position: relative;
 		overflow: auto;
-		padding: $padding-large;
+		padding: $popup-padding;
 
-		border-radius: .5rem;
+		@if ($popup-border-radius) {
+			border-radius: $popup-border-radius;
+		}
+		@else {
+			border-radius: 0;
+		}
 
+		// If close button is inside the box
 		.popup__close {
 			color: inherit;
 

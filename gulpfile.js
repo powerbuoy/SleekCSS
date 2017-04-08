@@ -2,18 +2,28 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var styleguidejs = require('gulp-styleguidejs');
+var clean = require('gulp-clean');
 
+// TODO: Generate styleguidejs documentation from all config-files ()
 var generateConfigDocs = function (stream) {
 	return stream;
 };
 
-gulp.task('sass', function () {
+// Cleanup
+gulp.task('cleanup', function () {
+	return gulp.src(['sleek-css.css', 'styleguide.html'])
+		.pipe(clean());
+});
+
+// SASS
+gulp.task('sass', ['cleanup'], function () {
 	return gulp.src('sleek-css.scss')
 		.pipe(sass())
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('.'));
 });
 
+// Styleguide
 gulp.task('styleguide', ['sass'], function () {
 	return gulp.src('sleek-css.css')
 		.pipe(styleguidejs({
@@ -24,8 +34,9 @@ gulp.task('styleguide', ['sass'], function () {
 		}))
 });
 
+// Deault/watch
 gulp.task('default', ['styleguide']);
 
-gulp.task('watch', function () {
+gulp.task('watch', ['default'], function () {
 	gulp.watch('**/*.scss', ['styleguide']);
 });

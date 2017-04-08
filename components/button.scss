@@ -4,9 +4,9 @@
     description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;
     example:
         <p><a href="#" class="button">I'm a normal button</a></p>
-        <p><button class="button--ghost">Button elements automatically look like buttons</button></p>
-        <p><input type="submit" value="Submit inputs too!"></p>
-        <p><button class="button--wide">Full width!</button></p>
+        <p><button class="button--ghost">Button elements don't need the button class</button></p>
+        <p><input type="submit" value="Submit inputs do though" class="button button--disabled" disabled></p>
+        <p><button class="button--wide button--white">Full width!</button></p>
         <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
         <p><a href="#" class="button button--small">Small button</a></p>
         <p><a href="#" class="button button--large">Large button</a></p>
@@ -16,9 +16,9 @@
 	@if ($button-gradient) {
 		background-image: linear-gradient($color, darken($color, $button-gradient));
 
-		// TODO: Something here? Eh? WTF is this comment supposed to mean? :P
+		// TODO: Some default hover?
 		&:hover {
-			background-image: linear-gradient($color, darken($color, $button-gradient));
+
 		}
 
 		// Invert gradient on active
@@ -30,7 +30,7 @@
 	@else {
 		background-color: $color;
 
-		// Darken on hover
+		// Darken on hover (TODO: Should be configurable)
 		&:hover {
 			background-color: darken($color, 5%);
 		}
@@ -42,7 +42,7 @@
 	}
 
 	// Invert text color if button too light
-	@if (lightness($color) > 70) {
+	@if (lightness($color) > 90) {
 		color: invert($button-text-color);
 
 		&:hover {
@@ -92,32 +92,41 @@
 	}
 
 	font-size: $button-font-size;
-	line-height: $button-line-height;
-	color: $button-text-color;
 	font-weight: $button-font-weight;
 	font-style: $button-font-style;
+
+	line-height: $button-line-height;
+	color: $button-text-color;
+	// cursor: default;
+
 	text-transform: $button-text-transform;
 	text-decoration: none;
 	text-align: center;
-	// cursor: default;
 
 	@if ($button-letter-spacing) {
 		letter-spacing: $button-letter-spacing;
 	}
 
+	// A link inside a button
 	a,
 	a:hover {
 		color: $button-text-color;
 		text-decoration: none;
 	}
 
+	// Make sure text color doesn't change on hover
 	&:hover {
 		color: $button-text-color;
 		text-decoration: none;
 	}
 
 	// Radius
-	border-radius: $button-border-radius;
+	@if ($button-border-radius) {
+		border-radius: $button-border-radius;
+	}
+	@else {
+		border-radius: 0;
+	}
 
 	// Transition?
 	@if ($button-transition == true) {
@@ -140,7 +149,7 @@
 
 	// Box shadow?
 	@if ($button-shadow == true) {
-		box-shadow: 1px 1px 1px $color-shadow;
+		box-shadow: 0 .2rem .8rem $color-shadow;
 	}
 	@elseif ($button-shadow) {
 		box-shadow: $button-shadow;
@@ -152,8 +161,13 @@
 
 @mixin button-ghost ($color: $button-color, $opacity: $button-ghost-opacity) {
 	background-color: transparent;
+	background-image: none;
+
 	color: $color;
+	text-shadow: none;
+
 	border: $button-border-width $button-border-style $color;
+	box-shadow: none;
 
 	&:hover {
 		@if ($opacity == 1) {
@@ -168,7 +182,18 @@
 		}
 		@else {
 			background-color: rgba($color, $opacity);
-			color: $button-text-color;
+
+			@if ($opacity > .25) {
+				@if (lightness($color) > 70) {
+					color: invert($button-text-color);
+				}
+				@else {
+					color: $button-text-color;
+				}
+			}
+			@else {
+				color: $color;
+			}
 		}
 	}
 }
@@ -176,6 +201,11 @@
 // Button classes
 .button {
 	@include button;
+
+	&[disabled],
+	&.button--disabled {
+		pointer-events: none;
+	}
 }
 
 .button--ghost {
@@ -202,6 +232,7 @@
 // Large
 .button--large {
 	font-size: $font-size-large;
+	padding: #{$button-padding-vertical * $button-large-percentage} #{$button-padding-horizontal * $button-large-percentage};
 }
 
 // Wide

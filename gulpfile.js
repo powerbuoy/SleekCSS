@@ -23,8 +23,13 @@ gulp.task('sass', ['cleanup'], function () {
 		.pipe(gulp.dest('.'));
 });
 
+// TODO: Generate config documentation
+gulp.task('config-docs', function () {
+	return gulp.src('config/*.scss');
+});
+
 // Styleguide
-gulp.task('styleguide', ['sass'], function () {
+gulp.task('styleguide', ['sass', 'config-docs'], function () {
 	return gulp.src('sleek-css.css')
 		.pipe(styleguidejs({
 			templateCss: __dirname + '/styleguide/style.css',

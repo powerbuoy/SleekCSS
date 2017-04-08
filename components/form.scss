@@ -6,6 +6,12 @@
         <form method="post" action="">
             <p>
                 <label>
+                    Search<br>
+                    <input type="search" name="q" placeholder="Search the site">
+                </label>
+            </p>
+            <p>
+                <label>
                     Name<br>
                     <input type="text" name="name" placeholder="eg. John Doe">
                 </label>
@@ -64,6 +70,7 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 	margin: 0;
 	padding: $form-padding-vertical $form-padding-horizontal;
 
+	font-family: $font-family-default;
 	font-size: $button-font-size; // Same as buttons so they align?
 	color: $color-form-text;
 	line-height: normal; // TODO: Reference?
@@ -105,7 +112,8 @@ form {
 	abbr,
 	abbr[title] {
 		color: $color-form-error;
-		border-bottom: 0;
+		border: 0;
+		text-decoration: none; // Firefox
 	}
 }
 

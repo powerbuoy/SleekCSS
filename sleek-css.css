@@ -645,6 +645,12 @@ hr,
         <form method="post" action="">
             <p>
                 <label>
+                    Search<br>
+                    <input type="search" name="q" placeholder="Search the site">
+                </label>
+            </p>
+            <p>
+                <label>
                     Name<br>
                     <input type="text" name="name" placeholder="eg. John Doe">
                 </label>
@@ -696,7 +702,8 @@ form {
   form abbr,
   form abbr[title] {
     color: #900;
-    border-bottom: 0; }
+    border: 0;
+    text-decoration: none; }
 
 label span.value {
   float: right; }
@@ -712,6 +719,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   width: 100%;
   margin: 0;
   padding: 1rem 1rem;
+  font-family: Helvetica, sans-serif;
   font-size: 1rem;
   color: #333;
   line-height: normal;

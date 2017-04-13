@@ -1,0 +1,64 @@
+// Inline list
+@mixin inline-list ($width: false) {
+	margin-left: 0;
+	list-style: none;
+
+	> * {
+		display: inline-block;
+		margin-right: $margin-small;
+		margin-bottom: $margin-small;
+
+		@if ($width) {
+			width: $width;
+		}
+	}
+
+	.text--center &,
+	&.text--center {
+		> * {
+			margin: 0 ($margin-small / 2) $margin-small;
+		}
+	}
+}
+
+// Border separated list
+@mixin bordered-list {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+
+	> :not(:last-child) {
+		margin-bottom: $margin-small;
+		padding-bottom: $margin-small;
+		border-bottom: 1px solid $color-border;
+	}
+}
+
+// CSS counter
+@mixin list-counter {
+	counter-reset: list-counter;
+
+	> * {
+		counter-increment: list-counter;
+
+		&:before {
+			content: counter(list-counter) '. ';
+		}
+	}
+}
+
+// Separated
+@mixin separated-list ($separator: ' | ') {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+
+	> * {
+		display: inline-block;
+
+		&:not(:last-child):after {
+			content: $separator;
+			margin: 0 $margin-small;
+		}
+	}
+}

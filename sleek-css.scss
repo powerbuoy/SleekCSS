@@ -1,4 +1,4 @@
-// -s @import "(.*?)/(.*?)"; -r @import "$1/$2";
+// Functions
 @import "functions";
 
 // Config
@@ -17,20 +17,27 @@
 // Mixins
 @import "mixins/a11y-hide";
 @import "mixins/arrow";
+@import "mixins/bg-overlay";
 @import "mixins/burger-menu-icon";
+@import "mixins/button";
+@import "mixins/card";
 @import "mixins/card-flip";
 @import "mixins/clearfix";
+@import "mixins/cols";
+@import "mixins/container";
 @import "mixins/data-definition";
 @import "mixins/device";
 @import "mixins/fixed-after-far-scroll";
 @import "mixins/increment-transition";
+@import "mixins/inline-grid";
 @import "mixins/link-border";
+@import "mixins/list";
 @import "mixins/osx-dock";
 @import "mixins/rotate-elements";
+@import "mixins/section";
 @import "mixins/semi-underline";
-@import "mixins/separated-list";
 @import "mixins/slanted";
-@import "mixins/transparent-inner-arrow";
+@import "mixins/text";
 
 // Components
 @import "components/card"; // Needs to include before bg-colors

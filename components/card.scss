@@ -5,21 +5,6 @@
     example:
         <div class="card bg--lightgray">I'm a shadowed card</div>
 ***/
-@mixin card ($bg: false) {
-	@include clearfix;
-
-	@if ($bg) {
-		background-color: $bg;
-	}
-
-	display: block;
-
-	margin-bottom: $card-margin;
-	padding: $card-padding;
-
-	box-shadow: $card-shadow;
-}
-
 .card {
 	@include card($color-white);
 }

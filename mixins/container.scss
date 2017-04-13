@@ -1,0 +1,10 @@
+@mixin container ($width: $site-width) {
+	margin-left: $section-padding-horizontal;
+	margin-right: $section-padding-horizontal;
+
+	@media (min-width: $width + 100) {
+		max-width: $width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

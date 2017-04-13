@@ -18,21 +18,23 @@
  * @param	bool	$hover: whether to rotate the "card" on hover (you may wanna do this manually)
  * @param:	string	$rotate: X or Y - in which direction to rotate
  */
-dl.key-val dt {
-  display: inline;
-  font-weight: bold; }
-
-dl.key-val dt:after {
-  content: ": "; }
-
-dl.key-val dd {
-  display: inline;
-  margin: 0; }
-
-dl.key-val dd:after {
-  content: "\a";
-  white-space: pre; }
-
+/**
+ * @col
+ *
+ * FLoats elements into columns
+ *
+ * @param	int		$num: how many columns
+ * @param	unit	$gutter: space between columns
+ * @param	string	$selector: child-selector
+ */
+/**
+ * @col
+ *
+ * A single column
+ *
+ * @param	int		$num: how many items per row
+ * @param	unit	$gutter: space between cols
+ */
 /**
  * @device
  *
@@ -42,25 +44,43 @@ dl.key-val dd:after {
  * @param	color	$color: color of the device
  * @param	bool	$h: whether to set height (if used on an img height should be auto)
  */
-.osx-dock > * {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out; }
-
-.osx-dock:hover > *,
-.osx-dock.active > * {
-  opacity: .6;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9); }
-
-.osx-dock:hover > :hover,
-.osx-dock.active > .active {
-  opacity: 1;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1); }
-
+/**
+ * @section
+ *
+ * Creates a full width section with centered content based on preferred site width
+ */
+/**
+ * @section-centering
+ *
+ * Takes care of centering the section content using padding and calc
+ */
+/**
+ * @section-right
+ *
+ * Positions an element at the right edge of the inner content of the section
+ */
+/**
+ * @section-left
+ *
+ * Positions an element at the left edge of the inner content of the section
+ */
+/**
+ * @section-bottom
+ *
+ * Positions an element at the bottom edge of the inner content of the section
+ */
+/**
+ * @section-top
+ *
+ * Positions an element at the top edge of the inner content of the section
+ */
+/**
+ * @section-inner
+ *
+ * Creates a section within a section, so you can have an article as section, and article header as an inner section for example
+ *
+ * @param	string	$align: top/bottom; if you want to pull it up towards the top or down towards the bottom
+ */
 /***
     title: Card
     section: Layout
@@ -372,23 +392,6 @@ dl.key-val dd:after {
             <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
         </ul>
 **/
-/**
- * @col
- *
- * FLoats elements into columns
- *
- * @param	int		$num: how many columns
- * @param	unit	$gutter: space between columns
- * @param	string	$selector: child-selector
- */
-/**
- * @col
- *
- * A single column
- *
- * @param	int		$num: how many items per row
- * @param	unit	$gutter: space between cols
- */
 .cols {
   clear: both; }
   .cols:after {
@@ -1070,7 +1073,7 @@ h6,
             <a href="#" class="icon-right icon--after">Icon after text</a>
         </p>
 
-        <ul class="cols cols--2">
+        <ul class="flex--2">
             <li class="icon-facebook icon--above">Facebook</li>
             <li class="icon-twitter icon--above">Twitter</li>
         </ul>
@@ -1552,43 +1555,6 @@ a,
   .primary-secondary > * {
     margin-bottom: 1rem; } }
 
-/**
- * @section
- *
- * Creates a full width section with centered content based on preferred site width
- */
-/**
- * @section-centering
- *
- * Takes care of centering the section content using padding and calc
- */
-/**
- * @section-right
- *
- * Positions an element at the right edge of the inner content of the section
- */
-/**
- * @section-left
- *
- * Positions an element at the left edge of the inner content of the section
- */
-/**
- * @section-bottom
- *
- * Positions an element at the bottom edge of the inner content of the section
- */
-/**
- * @section-top
- *
- * Positions an element at the top edge of the inner content of the section
- */
-/**
- * @section-inner
- *
- * Creates a section within a section, so you can have an article as section, and article header as an inner section for example
- *
- * @param	string	$align: top/bottom; if you want to pull it up towards the top or down towards the bottom
- */
 /***
     title: Section
     section: Layout

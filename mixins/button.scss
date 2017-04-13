@@ -1,0 +1,186 @@
+@mixin button-background ($color) {
+	// If a gradient is specified
+	@if ($button-gradient) {
+		background-image: linear-gradient($color, darken($color, $button-gradient));
+
+		// TODO: Some default hover?
+		&:hover {
+
+		}
+
+		// Invert gradient on active
+		&:active {
+			background-image: linear-gradient(darken($color, $button-gradient), $color);
+		}
+	}
+	// Solid background
+	@else {
+		background-color: $color;
+
+		// Darken on hover (TODO: Should be configurable)
+		&:hover {
+			background-color: darken($color, 5%);
+		}
+
+		// Darken even more on active
+		&:active {
+			background-color: darken($color, 10%);
+		}
+	}
+
+	// Invert text color if button too light
+	@if (lightness($color) > 90) {
+		color: invert($button-text-color);
+
+		&:hover {
+			color: invert($button-text-color);
+		}
+	}
+
+	// Border?
+	@if ($button-border-width) {
+		$border-color: transparent;
+
+		@if ($button-border-color == true) {
+			$border-color: darken($color, 10%);
+		}
+		@elseif ($button-border-color) {
+			$border-color: $button-border-color;
+		}
+
+		border: $button-border-width $button-border-style $border-color;
+	}
+	@else {
+		border: 0;
+	}
+}
+
+@mixin button ($color: $button-color) {
+	// Gradient or solid background with hover/active states
+	@include button-background($color);
+
+	// Hello
+	display: inline-block;
+	vertical-align: middle;
+
+	// Size
+	box-sizing: border-box;
+	padding: $button-padding-vertical $button-padding-horizontal;
+
+	// A button with only an icon
+	&[class*="icon-"]:empty:not([value]) {
+		padding-left: $button-empty-padding-horizontal;
+		padding-right: $button-empty-padding-horizontal;
+	}
+
+	// Font styling
+	@if ($button-font-family) {
+		font-family: $button-font-family;
+	}
+
+	font-size: $button-font-size;
+	font-weight: $button-font-weight;
+	font-style: $button-font-style;
+
+	line-height: $button-line-height;
+	color: $button-text-color;
+	// cursor: default;
+
+	text-transform: $button-text-transform;
+	text-decoration: none;
+	text-align: center;
+
+	@if ($button-letter-spacing) {
+		letter-spacing: $button-letter-spacing;
+	}
+
+	// A link inside a button
+	a,
+	a:hover {
+		color: $button-text-color;
+		text-decoration: none;
+	}
+
+	// Make sure text color doesn't change on hover
+	&:hover {
+		color: $button-text-color;
+		text-decoration: none;
+	}
+
+	// Radius
+	@if ($button-border-radius) {
+		border-radius: $button-border-radius;
+	}
+	@else {
+		border-radius: 0;
+	}
+
+	// Transition?
+	@if ($button-transition == true) {
+		transition: all $transition-default $transition-easing;
+	}
+	@elseif ($button-transition) {
+		transition: $button-transition;
+	}
+
+	// Text shadow?
+	@if ($button-text-shadow == true) {
+		text-shadow: -1px -1px 0 $color-shadow;
+	}
+	@elseif ($button-text-shadow) {
+		text-shadow: $button-text-shadow;
+	}
+	@else {
+		text-shadow: none;
+	}
+
+	// Box shadow?
+	@if ($button-shadow == true) {
+		box-shadow: 0 .2rem .8rem $color-shadow;
+	}
+	@elseif ($button-shadow) {
+		box-shadow: $button-shadow;
+	}
+	@else {
+		box-shadow: none;
+	}
+}
+
+@mixin button-ghost ($color: $button-color, $opacity: $button-ghost-opacity) {
+	background-color: transparent;
+	background-image: none;
+
+	color: $color;
+	text-shadow: none;
+
+	border: $button-border-width $button-border-style $color;
+	box-shadow: none;
+
+	&:hover {
+		@if ($opacity == 1) {
+			background-color: $color;
+
+			@if (lightness($color) > 70) {
+				color: invert($button-text-color);
+			}
+			@else {
+				color: $button-text-color;
+			}
+		}
+		@else {
+			background-color: rgba($color, $opacity);
+
+			@if ($opacity > .25) {
+				@if (lightness($color) > 70) {
+					color: invert($button-text-color);
+				}
+				@else {
+					color: $button-text-color;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+@mixin card ($bg: false) {
+	@include clearfix;
+
+	@if ($bg) {
+		background-color: $bg;
+	}
+
+	display: block;
+
+	margin-bottom: $card-margin;
+	padding: $card-padding;
+
+	box-shadow: $card-shadow;
+}

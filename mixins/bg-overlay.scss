@@ -1,0 +1,49 @@
+@mixin bg-overlay ($color: $color-overlay, $hover: false) {
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: block;
+	position: relative;
+	overflow: hidden;
+
+	// Overlay
+	&:before {
+		background: $color;
+		display: block;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+
+		// IE fix for when used inside table-cell elements
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			min-height: 500%;
+		}
+	}
+
+	// Render content on top of overlay
+	> * {
+		position: relative;
+	}
+
+	// Hover effect
+	@if ($hover) {
+		// background-size: 100% auto;
+		// transition: background-size $transition-default $transition-easing;
+
+		&:before {
+			transition: all $transition-default $transition-easing;
+		}
+
+		&:hover {
+			// background-size: 110% auto;
+
+			&:before {
+				background: rgba($color, .7); // TODO: Opacity should be configurable
+			}
+		}
+	}
+}

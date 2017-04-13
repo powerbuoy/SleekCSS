@@ -1,0 +1,21 @@
+@mixin flex-grid ($num: 3, $gutter: $gutter-default) {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	> * {
+		@include flex-grid-item($num, $gutter);
+	}
+}
+
+@mixin flex-grid-item ($num: 3, $gutter: $gutter-default) {
+	$total-gutter: $gutter * ($num - 1);
+	$width-subtract: $total-gutter / $num;
+
+	min-width: calc(#{(100% / $num)} - #{$width-subtract}); // IE needs this (and maybe FF?)
+	max-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)?? (and Chrome, try a word that's longer than the width of the element)
+	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
+
+	margin-bottom: $gutter; // Same space between and below
+}

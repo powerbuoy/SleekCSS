@@ -9,22 +9,6 @@
         <p>Below me is a lone divider</p>
         <hr>
 ***/
-@mixin divider () {
-	clear: both;
-
-	margin: $margin-default 0;
-	padding: 0;
-
-	height: 0;
-
-	border: 0;
-	border-top: 1px solid $color-border;
-
-	@media #{$bp-medium} {
-		margin: $margin-large 0;
-	}
-}
-
 hr,
 .divider {
 	@include divider;

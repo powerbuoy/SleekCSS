@@ -1,0 +1,23 @@
+$headings: "h1, h2, h3, h4, h5, h6, .heading--1, .heading--2, .heading--3, .heading--4, .heading--5, .heading--6";
+
+@mixin heading ($size: $font-size-h1) {
+	display: block;
+	margin: 0 0 $margin-default;
+
+	font-weight: $font-weight-heading;
+	font-size: $size;
+	font-family: $font-family-heading;
+
+	color: $color-heading;
+
+	line-height: $line-height-heading;
+	letter-spacing: $letter-spacing-heading;
+
+	a {
+		color: $color-heading;
+
+		&:hover {
+			color: $color-link-hover;
+		}
+	}
+}

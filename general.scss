@@ -56,11 +56,15 @@ q {
 	margin: 0;
 }
 
-// TODO: I only use this element for debug data (var_dump)
+// NOTE: I only use this element for debug data (var_dump)
 pre {
 	background: $color-lightgray;
+
 	margin: 0 0 $margin-default;
 	padding: $padding-default;
+
+	color: $color-text;
+
 	max-height: 20rem;
 	overflow: auto;
 }

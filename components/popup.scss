@@ -73,6 +73,8 @@
 		overflow: auto;
 		padding: $popup-padding;
 
+		-webkit-overflow-scrolling: touch; // This seems good for iOS http://stackoverflow.com/questions/9280258/prevent-body-scrolling-but-allow-overlay-scrolling#comment-37687418
+
 		@if ($popup-border-radius) {
 			border-radius: $popup-border-radius;
 		}

@@ -50,7 +50,6 @@
 @import "components/container";
 @import "components/divider";
 @import "components/form";
-@import "components/group";
 @import "components/heading";
 @import "components/icon";
 @import "components/img";
@@ -67,6 +66,7 @@
 @import "components/video";
 @import "components/wp-classes";
 @import "components/flex"; // Needs to include after other components that set display: so that you can use .section.flex together for example
+@import "components/group"; // Should probably be included last
 
 // General
 @import "general";

@@ -1,5 +1,5 @@
-// Max site width (@container and @section use this)
-$site-width: 960px !default;
+// Max site width (@container and @section use this) (TODO: Make sure rem works as well (all units? including %))
+$site-width: 960px !default; // 60rem / 80%
 
 // .primary-content's width
 $primary-content-width: 70% !default;
@@ -29,3 +29,23 @@ $section-slant: 3rem !default;
 $transition-easing: ease-out !default;
 $transition-default: .2s !default;
 $transition-slow: .4s !default;
+
+// Breakpoints
+$bp-small: '(min-width: 400px)' !default;
+$bp-small-max: '(max-width: 399px)' !default;
+
+$bp-medium: '(min-width: 760px)' !default;
+$bp-medium-max: '(max-width: 759px)' !default;
+
+$bp-large: '(min-width: 1020px)' !default;
+$bp-large-max: '(max-width: 1019px)' !default;
+
+$bp-x-large: '(min-width: 1600px)' !default;
+$bp-x-large-max: '(max-width: 1599px)' !default;
+
+$bp-site-width: '(min-width: #{$site-width * 1.1})'; // Don't change this
+
+// Slant polygons (you probably don't want to change these)
+$top-slant: polygon(0 #{$section-slant}, 100% 0, 100% 100%, 0 100%);
+$bottom-slant: polygon(0 0, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%);
+$top-bottom-slant: polygon(0 #{$section-slant}, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%);

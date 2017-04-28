@@ -12,16 +12,13 @@
 	margin-bottom: $margin-default;
 
 	&--large {
-		margin-bottom: $margin-default;
-
-	//	@media #{$bp-medium} {
-			margin-bottom: $margin-large;
-	//	}
+		margin-bottom: $margin-large;
 	}
 
 	&--x-large {
 		margin-bottom: $margin-large;
 
+		// TODO: Is this wanted? Or should it be x-large in any res?
 		@media #{$bp-medium} {
 			margin-bottom: $margin-x-large;
 		}

@@ -1,7 +1,7 @@
 // TODO: Documentation
 @mixin increment-transition-delay ($time, $num, $offset: 0, $property: transition) {
 	@for $i from 1 through $num {
-		&:nth-child(#{$i}) {
+		&:nth-of-type(#{$i}) {
 			#{$property}-delay: #{$i * $time + $offset};
 		}
 	}

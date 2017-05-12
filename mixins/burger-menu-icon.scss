@@ -35,7 +35,7 @@
 	}
 }
 
-@mixin burger-menu-icon-open () {
+@mixin burger-menu-icon-open ($size: 1.25rem) {
 	height: 0;
 	min-height: $size;
 	border-width: 0;

@@ -1,12 +1,12 @@
 // Inline list
 @mixin inline-list ($width: false) {
 	margin-left: 0;
+	padding-left: 0;
 	list-style: none;
 
 	> * {
 		display: inline-block;
-		margin-right: $margin-small;
-		margin-bottom: $margin-small;
+		margin: 0 $margin-default $margin-default 0;
 
 		@if ($width) {
 			width: $width;
@@ -16,7 +16,7 @@
 	.text--center &,
 	&.text--center {
 		> * {
-			margin: 0 ($margin-small / 2) $margin-small;
+			margin: 0 ($margin-default / 2) $margin-default;
 		}
 	}
 }
@@ -28,8 +28,8 @@
 	list-style: none;
 
 	> :not(:last-child) {
-		margin-bottom: $margin-small;
-		padding-bottom: $margin-small;
+		margin-bottom: $margin-default / 2;
+		padding-bottom: $margin-default / 2;
 		border-bottom: 1px solid $color-border;
 	}
 }
@@ -58,7 +58,7 @@
 
 		&:not(:last-child):after {
 			content: $separator;
-			margin: 0 $margin-small;
+			margin: 0 $margin-default / 2;
 		}
 	}
 }

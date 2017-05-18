@@ -178,7 +178,7 @@ textarea {
 button {
 	@include button;
 	outline: 0;
-	line-height: normal; // TODO: This most likely fixed some bug in the past but should've been documented...
+//	line-height: normal; // TODO: This most likely fixed some bug in the past but should've been documented... (NOTE: It's commented now because @button has its own line-height)
 }
 
 // Select

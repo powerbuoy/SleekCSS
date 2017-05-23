@@ -1079,6 +1079,89 @@ h6,
 	}
 } */
 /***
+    title: Hero
+    section: Layout
+    description: A full width section with loads of padding and white text. This is a typical UI component in modern websites and is often displayed at the top of the page.
+    example:
+        <header class="hero">
+            <h2>I'm a hero</h2>
+            <p>With some content</p>
+            <figure><img src="http://placehold.it/1920x1080"></figure>
+        </header>
+***/
+.hero {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  /*	@media (min-width: 760px) {
+		padding-top: $section-padding--bp-medium;
+		padding-bottom: $section-padding--bp-medium;
+	} */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow: hidden;
+  color: #fff;
+  overflow: hidden; }
+  .hero:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media (min-width: 1056px) {
+    .hero {
+      padding-left: calc(50% - 480px + 0rem); } }
+  @media (min-width: 1056px) {
+    .hero {
+      padding-right: calc(50% - 480px + 0rem); } }
+  .hero a {
+    color: #fff; }
+  @media (min-width: 760px) {
+    .hero {
+      padding-top: 9rem;
+      padding-bottom: 9rem; } }
+  .hero figure, .hero:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none; }
+  .hero:before {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+    display: none;
+    content: "";
+    display: block; }
+  .hero figure {
+    margin: 0;
+    z-index: -2; }
+    .hero figure img {
+      width: 100%;
+      height: auto; }
+      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+        .hero figure img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          -o-object-position: center top;
+             object-position: center top;
+          height: 100%; } }
+  .hero h1,
+  .hero h2 {
+    margin: 0;
+    color: #fff; }
+  .hero p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem; }
+  .hero nav {
+    margin: 2rem 0 0; }
+  .hero h1,
+  .hero h2,
+  .hero p {
+    max-width: 42rem; }
+
+/***
     title: Icon
     section: Icons
     description: Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.
@@ -3236,6 +3319,89 @@ h6,
 	}
 } */
 /***
+    title: Hero
+    section: Layout
+    description: A full width section with loads of padding and white text. This is a typical UI component in modern websites and is often displayed at the top of the page.
+    example:
+        <header class="hero">
+            <h2>I'm a hero</h2>
+            <p>With some content</p>
+            <figure><img src="http://placehold.it/1920x1080"></figure>
+        </header>
+***/
+.hero {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  /*	@media (min-width: 760px) {
+		padding-top: $section-padding--bp-medium;
+		padding-bottom: $section-padding--bp-medium;
+	} */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow: hidden;
+  color: #fff;
+  overflow: hidden; }
+  .hero:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media (min-width: 1056px) {
+    .hero {
+      padding-left: calc(50% - 480px + 0rem); } }
+  @media (min-width: 1056px) {
+    .hero {
+      padding-right: calc(50% - 480px + 0rem); } }
+  .hero a {
+    color: #fff; }
+  @media (min-width: 760px) {
+    .hero {
+      padding-top: 9rem;
+      padding-bottom: 9rem; } }
+  .hero figure, .hero:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none; }
+  .hero:before {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+    display: none;
+    content: "";
+    display: block; }
+  .hero figure {
+    margin: 0;
+    z-index: -2; }
+    .hero figure img {
+      width: 100%;
+      height: auto; }
+      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+        .hero figure img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          -o-object-position: center top;
+             object-position: center top;
+          height: 100%; } }
+  .hero h1,
+  .hero h2 {
+    margin: 0;
+    color: #fff; }
+  .hero p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem; }
+  .hero nav {
+    margin: 2rem 0 0; }
+  .hero h1,
+  .hero h2,
+  .hero p {
+    max-width: 42rem; }
+
+/***
     title: Icon
     section: Icons
     description: Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.
@@ -4616,7 +4782,14 @@ pre {
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white group--x-large"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I have margin<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>More than usual<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don&#39;t work properly nested like in the styleguide (that&#39;s why it looks broken here).</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Hero</h3><p><p>A full width section with loads of padding and white text. This is a typical UI component in modern websites and is often displayed at the top of the page.</p>
+</p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hero"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a hero<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">figure</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/1920x1080"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don&#39;t work properly nested like in the styleguide (that&#39;s why it looks broken here).</p>
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"section bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a section<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>

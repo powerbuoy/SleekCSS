@@ -1,0 +1,40 @@
+@mixin figure-background ($withOverlay: true) {
+	overflow: hidden;
+
+	figure,
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	&:before {
+		background: linear-gradient(rgba($color-overlay, .2), rgba($color-overlay, .6));
+		display: none;
+		content: "";
+
+		@if ($withOverlay) {
+			display: block;
+		}
+	}
+
+	figure {
+		margin: 0;
+		z-index: -2;
+
+		img {
+			width: 100%;
+			height: auto;
+
+			@supports (object-fit: contain) {
+				object-fit: cover;
+				object-position: center top;
+				height: 100%;
+			}
+		}
+	}
+}

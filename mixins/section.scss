@@ -13,11 +13,6 @@
 	padding-top: $section-padding;
 	padding-bottom: $section-padding;
 
-/*	@media #{$bp-medium} {
-		padding-top: $section-padding--bp-medium;
-		padding-bottom: $section-padding--bp-medium;
-	} */
-
 	@include section-centering($width);
 }
 
@@ -26,23 +21,31 @@
  *
  * Takes care of centering the section content using padding and calc
  */
-@mixin section-padding-left ($width: $site-width, $offset: 0rem) {
-	padding-left: $section-padding-horizontal + $offset;
+@mixin section-padding-left ($width: $site-width) {
+	padding-left: $section-padding-horizontal;
 
 	@media (min-width: $width * 1.1) {
-		padding-left: calc(50% - #{$width / 2} + #{$offset});
+		padding-left: calc(50% - #{$width / 2});
 	}
 }
 
-@mixin section-padding-right ($width: $site-width, $offset: 0rem) {
-	padding-right: $section-padding-horizontal + $offset;
+@mixin section-padding-right ($width: $site-width) {
+	padding-right: $section-padding-horizontal;
 
 	@media (min-width: $width * 1.1) {
-		padding-right: calc(50% - #{$width / 2} + #{$offset});
+		padding-right: calc(50% - #{$width / 2});
 	}
 }
 
-@mixin section-padding-left-vw ($width: $site-width, $offset: 0rem) {
+@mixin section-centering ($width: $site-width) {
+	@include section-padding-left($width);
+	@include section-padding-right($width);
+}
+
+/**
+ * NOTE: Everything below here is deprecated
+ */
+@mixin deprecated-section-padding-left-vw ($width: $site-width, $offset: 0rem) {
 	padding-left: $section-padding-horizontal + $offset;
 
 	@media (min-width: $width * 1.1) {
@@ -50,25 +53,19 @@
 	}
 }
 
-@mixin section-padding-right-vw ($width: $site-width, $offset: 0rem) {
+@mixin deprecated-section-padding-right-vw ($width: $site-width, $offset: 0rem) {
 	padding-right: $section-padding-horizontal + $offset;
 
 	@media (min-width: $width * 1.1) {
 		padding-right: calc(50vw - #{$width / 2} + #{$offset});
 	}
 }
-
-@mixin section-centering ($width: $site-width, $offset: 0rem) {
-	@include section-padding-left($width, $offset);
-	@include section-padding-right($width, $offset);
-}
-
-@mixin section-centering-vw ($width: $site-width, $offset: 0rem) {
+@mixin deprecated-section-centering-vw ($width: $site-width, $offset: 0rem) {
 	@include section-padding-left-vw($width, $offset);
 	@include section-padding-right-vw($width, $offset);
 }
 
-@mixin section-centering-border ($width: $site-width) {
+@mixin deprecated-section-centering-border ($width: $site-width) {
 	padding-left: 0;
 	padding-right: 0;
 	border-left: $section-padding-horizontal solid transparent;
@@ -87,7 +84,7 @@
  *
  * Positions an element at the right edge of the inner content of the section
  */
-@mixin section-right ($width: $site-width, $offset: 0rem) {
+@mixin deprecated-section-right ($width: $site-width, $offset: 0rem) {
 	right: $section-padding-horizontal + $offset;
 
 	@media (min-width: $width * 1.1) {
@@ -100,7 +97,7 @@
  *
  * Positions an element at the left edge of the inner content of the section
  */
-@mixin section-left ($width: $site-width, $offset: 0rem) {
+@mixin deprecated-section-left ($width: $site-width, $offset: 0rem) {
 	left: $section-padding-horizontal + $offset;
 
 	@media (min-width: $width * 1.1) {
@@ -113,12 +110,8 @@
  *
  * Positions an element at the bottom edge of the inner content of the section
  */
-@mixin section-bottom {
+@mixin deprecated-section-bottom {
 	bottom: $section-padding;
-
-	/* @media #{$bp-medium} {
-		bottom: $section-padding--bp-medium;
-	} */
 }
 
 /**
@@ -126,12 +119,8 @@
  *
  * Positions an element at the top edge of the inner content of the section
  */
-@mixin section-top {
+@mixin deprecated-section-top {
 	top: $section-padding;
-
-	/* @media #{$bp-medium} {
-		top: $section-padding--bp-medium;
-	} */
 }
 
 /**
@@ -141,7 +130,7 @@
  *
  * @param	string	$align: top/bottom; if you want to pull it up towards the top or down towards the bottom
  */
-@mixin section-inner ($align: false, $width: $site-width) {
+@mixin deprecated-section-inner ($align: false, $width: $site-width) {
 	margin-left: -$section-padding-horizontal;
 	margin-right: -$section-padding-horizontal;
 	padding-left: $section-padding-horizontal;
@@ -173,18 +162,4 @@
 	@if ($align == bottom) {
 		margin-bottom: -$section-padding;
 	}
-
-	/* @media #{$bp-medium} {
-		padding-top: $section-padding--bp-medium;
-		padding-bottom: $section-padding--bp-medium;
-		margin-top: $section-padding--bp-medium;
-		margin-bottom: $section-padding--bp-medium;
-
-		@if ($align == top) {
-			margin-top: -$section-padding--bp-medium;
-		}
-		@if ($align == bottom) {
-			margin-bottom: -$section-padding--bp-medium;
-		}
-	} */
 }

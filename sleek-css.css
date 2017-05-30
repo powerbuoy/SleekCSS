@@ -55,6 +55,9 @@
  * Takes care of centering the section content using padding and calc
  */
 /**
+ * NOTE: Everything below here is deprecated
+ */
+/**
  * @section-right
  *
  * Positions an element at the right edge of the inner content of the section
@@ -1095,10 +1098,6 @@ h6,
   margin: 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  /*	@media (min-width: 760px) {
-		padding-top: $section-padding--bp-medium;
-		padding-bottom: $section-padding--bp-medium;
-	} */
   padding-left: 1rem;
   padding-right: 1rem;
   overflow: hidden;
@@ -1110,10 +1109,10 @@ h6,
     clear: both; }
   @media (min-width: 1056px) {
     .hero {
-      padding-left: calc(50% - 480px + 0rem); } }
+      padding-left: calc(50% - 480px); } }
   @media (min-width: 1056px) {
     .hero {
-      padding-right: calc(50% - 480px + 0rem); } }
+      padding-right: calc(50% - 480px); } }
   .hero a {
     color: #fff; }
   @media (min-width: 760px) {
@@ -1674,126 +1673,29 @@ a,
   margin: 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  /*	@media (min-width: 760px) {
-		padding-top: $section-padding--bp-medium;
-		padding-bottom: $section-padding--bp-medium;
-	} */
   padding-left: 1rem;
-  padding-right: 1rem; }
+  padding-right: 1rem;
+  /*	&__inner {
+		@include section-inner;
+
+		&--top {
+			@include section-inner(top);
+		}
+
+		&--bottom {
+			@include section-inner(bottom);
+		}
+	} */ }
   .section:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 1056px) {
     .section {
-      padding-left: calc(50% - 480px + 0rem); } }
+      padding-left: calc(50% - 480px); } }
   @media (min-width: 1056px) {
     .section {
-      padding-right: calc(50% - 480px + 0rem); } }
-  .section__inner {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    /* @media (min-width: 760px) {
-		padding-top: $section-padding--bp-medium;
-		padding-bottom: $section-padding--bp-medium;
-		margin-top: $section-padding--bp-medium;
-		margin-bottom: $section-padding--bp-medium;
-
-		@if ($align == top) {
-			margin-top: -$section-padding--bp-medium;
-		}
-		@if ($align == bottom) {
-			margin-bottom: -$section-padding--bp-medium;
-		}
-	} */ }
-    @media (min-width: 1056px) {
-      .section__inner {
-        box-sizing: border-box;
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-                transform: translateX(-50%);
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: calc(50vw - 480px);
-        padding-right: calc(50vw - 480px); } }
-    .section__inner--top {
-      margin-left: -1rem;
-      margin-right: -1rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      margin-top: -3rem;
-      /* @media (min-width: 760px) {
-		padding-top: $section-padding--bp-medium;
-		padding-bottom: $section-padding--bp-medium;
-		margin-top: $section-padding--bp-medium;
-		margin-bottom: $section-padding--bp-medium;
-
-		@if ($align == top) {
-			margin-top: -$section-padding--bp-medium;
-		}
-		@if ($align == bottom) {
-			margin-bottom: -$section-padding--bp-medium;
-		}
-	} */ }
-      @media (min-width: 1056px) {
-        .section__inner--top {
-          box-sizing: border-box;
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          -webkit-transform: translateX(-50%);
-                  transform: translateX(-50%);
-          margin-left: 0;
-          margin-right: 0;
-          padding-left: calc(50vw - 480px);
-          padding-right: calc(50vw - 480px); } }
-    .section__inner--bottom {
-      margin-left: -1rem;
-      margin-right: -1rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      margin-bottom: -3rem;
-      /* @media (min-width: 760px) {
-		padding-top: $section-padding--bp-medium;
-		padding-bottom: $section-padding--bp-medium;
-		margin-top: $section-padding--bp-medium;
-		margin-bottom: $section-padding--bp-medium;
-
-		@if ($align == top) {
-			margin-top: -$section-padding--bp-medium;
-		}
-		@if ($align == bottom) {
-			margin-bottom: -$section-padding--bp-medium;
-		}
-	} */ }
-      @media (min-width: 1056px) {
-        .section__inner--bottom {
-          box-sizing: border-box;
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          -webkit-transform: translateX(-50%);
-                  transform: translateX(-50%);
-          margin-left: 0;
-          margin-right: 0;
-          padding-left: calc(50vw - 480px);
-          padding-right: calc(50vw - 480px); } }
+      padding-right: calc(50% - 480px); } }
   .section--slanted {
     -webkit-clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);
             clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);

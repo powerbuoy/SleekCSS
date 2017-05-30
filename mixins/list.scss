@@ -48,7 +48,7 @@
 }
 
 // Separated
-@mixin separated-list ($separator: ' | ') {
+@mixin separated-list ($separator: ' | ', $margin: $margin-default / 2) {
 	margin-left: 0;
 	padding-left: 0;
 	list-style: none;

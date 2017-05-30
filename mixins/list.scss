@@ -58,7 +58,7 @@
 
 		&:not(:last-child):after {
 			content: $separator;
-			margin: 0 $margin-default / 2;
+			margin: 0 $margin;
 		}
 	}
 }

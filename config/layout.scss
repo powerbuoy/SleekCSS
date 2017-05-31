@@ -1,9 +1,7 @@
-// Max site width (@container and @section use this) (TODO: Make sure rem works as well (all units? including %))
-$site-width: 960px !default; // 60rem / 80%
-$bp-site-width: '(min-width: #{$site-width * 1.1})'; // Don't change this
-
-// .primary-content's width
-$primary-content-width: 70% !default;
+// Max site width (@container and @section use this)
+$site-width-max: 960px !default;
+$site-width: 90% !default;
+$site-padding: (100% - $site-width) / 2; // NOTE: Don't change this
 
 // Margins (margins beneath elements)
 $margin-small: .5rem !default;
@@ -18,20 +16,23 @@ $padding-large: 2rem !default;
 $padding-x-large: 4rem !default;
 
 // Gutters (margin between columns)
-$gutter-default: 1rem !default;
-$gutter-large: 2rem !default;
+$gutter-default: 1.5rem !default;
+$gutter-large: 3rem !default;
+
+// .primary-content's width
+$primary-content-width: 70% !default;
 
 // Section paddings
-$section-padding-horizontal: 1rem !default; // Distance from edge of screen to inner width in low res
 $section-padding: 3rem !default;
 $section-slant: 3rem !default;
 
 // Transition speeds
 $transition-easing: ease-out !default;
+$transition-fast: .1s !default;
 $transition-default: .2s !default;
 $transition-slow: .4s !default;
 
-// Slant polygons (you probably don't want to change these)
+// Slant polygons (NOTE: you probably don't want to change these)
 $top-slant: polygon(0 #{$section-slant}, 100% 0, 100% 100%, 0 100%);
 $bottom-slant: polygon(0 0, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%);
 $top-bottom-slant: polygon(0 #{$section-slant}, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%);

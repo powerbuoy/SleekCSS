@@ -11,19 +11,6 @@
 .section {
 	@include section;
 
-	// Inner section
-/*	&__inner {
-		@include section-inner;
-
-		&--top {
-			@include section-inner(top);
-		}
-
-		&--bottom {
-			@include section-inner(bottom);
-		}
-	} */
-
 	// Slanted sections
 	&--slanted {
 		clip-path: $top-bottom-slant;

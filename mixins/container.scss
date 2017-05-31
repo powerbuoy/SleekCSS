@@ -1,17 +1,9 @@
-@mixin container ($width: $site-width) {
-	@if (unit($section-padding-horizontal) == '%') {
-		margin-left: auto;
-		margin-right: auto;
-		width: 100% - #{$section-padding-horizontal * 2};
-	}
-	@else {
-		margin-left: $section-padding-horizontal;
-		margin-right: $section-padding-horizontal;
-	}
+@mixin container ($width: $site-width-max) {
+	width: $site-width;
+	margin-left: auto;
+	margin-right: auto;
 
 	@media (min-width: $width * 1.1) {
 		max-width: $width;
-		margin-left: auto;
-		margin-right: auto;
 	}
 }

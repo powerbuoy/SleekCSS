@@ -14,6 +14,9 @@
 @import "config/shadows";
 @import "config/typography";
 
+// Constants (calculated configuration)
+@import "constants";
+
 // Mixins
 @import "mixins/a11y-hide";
 @import "mixins/arrow";

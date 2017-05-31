@@ -51,7 +51,7 @@
 @import "components/bg-colors";
 @import "components/bg-overlay";
 @import "components/button";
-@import "components/cols";
+@import "components/cols"; // TODO: deprecate in favor of flex
 @import "components/container";
 @import "components/divider";
 @import "components/figure-background";
@@ -73,7 +73,7 @@
 @import "components/video";
 @import "components/wp-classes";
 @import "components/flex"; // Needs to include after other components that set display: so that you can use .section.flex together for example
-@import "components/group"; // Should probably be included last
+@import "components/group"; // Should probably be included last as it's only used to set margin
 
-// General
+// General (TODO: Move everything in general to individual components)
 @import "general";

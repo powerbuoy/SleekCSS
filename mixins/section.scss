@@ -23,7 +23,7 @@
 @mixin section-padding-left ($width: $site-width-max) {
 	padding-left: $site-padding;
 
-	@media (min-width: $width * 1.1) {
+	@media (min-width: $bp-site-width) {
 		padding-left: calc(50% - #{$width / 2});
 	}
 }
@@ -31,7 +31,7 @@
 @mixin section-padding-right ($width: $site-width-max) {
 	padding-right: $site-padding;
 
-	@media (min-width: $width * 1.1) {
+	@media (min-width: $bp-site-width) {
 		padding-right: calc(50% - #{$width / 2});
 	}
 }

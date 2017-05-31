@@ -1,7 +1,10 @@
-// Max site width (@container and @section use this)
-$site-width-max: 960px !default;
-$site-width: 90% !default;
+// Site widths
+$site-width-max: 960px !default; // Max width
+$site-width: 90% !default; // Width before reaching max
 $site-padding: (100% - $site-width) / 2; // NOTE: Don't change this
+
+$bp-site-width: round(($site-width-max * 100) / ($site-width / 100%)); // Breakpoint when max is reached
+$bp-site-width-max: $bp-site-width - 1;
 
 // Margins (margins beneath elements)
 $margin-small: .5rem !default;

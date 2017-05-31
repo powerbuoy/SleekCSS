@@ -3,7 +3,7 @@
 	margin-left: auto;
 	margin-right: auto;
 
-	@media (min-width: $width * 1.1) {
+	@media (min-width: $bp-site-width) {
 		max-width: $width;
 	}
 }

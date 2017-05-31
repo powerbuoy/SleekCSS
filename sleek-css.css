@@ -44,16 +44,6 @@
  * @param	color	$color: color of the device
  * @param	bool	$h: whether to set height (if used on an img height should be auto)
  */
-/**
- * @section
- *
- * Creates a full width section with centered content based on preferred site width
- */
-/**
- * @section-centering
- *
- * Takes care of centering the section content using padding and calc
- */
 /***
     title: Card
     section: Layout
@@ -1078,9 +1068,7 @@ h6,
     clear: both; }
   @media (min-width: 1067px) {
     .hero {
-      padding-left: calc(50% - 480px); } }
-  @media (min-width: 1067px) {
-    .hero {
+      padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
   .hero figure, .hero:before {
     position: absolute;
@@ -1650,9 +1638,7 @@ a,
     clear: both; }
   @media (min-width: 1067px) {
     .section {
-      padding-left: calc(50% - 480px); } }
-  @media (min-width: 1067px) {
-    .section {
+      padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
   .section--slanted {
     -webkit-clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);

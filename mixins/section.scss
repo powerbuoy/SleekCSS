@@ -1,8 +1,3 @@
-/**
- * @section
- *
- * Creates a full width section with centered content based on preferred site width
- */
 @mixin section ($width: $site-width-max) {
 	@include clearfix;
 	@include section-centering($width);
@@ -15,28 +10,14 @@
 	padding-bottom: $section-padding;
 }
 
-/**
- * @section-centering
- *
- * Takes care of centering the section content using padding and calc
- */
-@mixin section-padding-left ($width: $site-width-max) {
+@mixin section-centering ($width: $site-width-max) {
+	$width-reached: round(($width * 100) / (strip-unit($site-width)));
+
 	padding-left: $site-padding;
-
-	@media (min-width: $site-width-reached) {
-		padding-left: calc(50% - #{$width / 2});
-	}
-}
-
-@mixin section-padding-right ($width: $site-width-max) {
 	padding-right: $site-padding;
 
-	@media (min-width: $site-width-reached) {
+	@media (min-width: $width-reached) {
+		padding-left: calc(50% - #{$width / 2});
 		padding-right: calc(50% - #{$width / 2});
 	}
-}
-
-@mixin section-centering ($width: $site-width-max) {
-	@include section-padding-left($width);
-	@include section-padding-right($width);
 }

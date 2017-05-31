@@ -1,9 +1,11 @@
 @mixin container ($width: $site-width-max) {
+	$width-reached: round(($width * 100) / (strip-unit($site-width)));
+
 	width: $site-width;
 	margin-left: auto;
 	margin-right: auto;
 
-	@media (min-width: $site-width-reached) {
+	@media (min-width: $width-reached) {
 		max-width: $width;
 	}
 }

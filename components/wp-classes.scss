@@ -45,48 +45,64 @@
 
 // Image with caption
 .wp-caption {
-	background: $color-lightgray;
-	display: block;
-	width: 100%;
-	max-width: 100%;
-	margin: 0 0 $margin-default;
-
-	img {
-		display: block;
-		width: 100%;
-	}
-
 	figcaption {
-		padding: .5rem;
+		margin-top: $margin-default;
+		text-align: center;
+		font-style: italic;
 	}
 }
 
 // Gallery
 div.gallery {
-	margin-left: -$margin-default / 2 !important;
-	margin-right: -$margin-default / 2 !important;
+	dl,
+	dt,
+	dd {
+		margin: 0;
+	}
 
-	dl.gallery-item {
-		margin-top: 0 !important;
-		margin-bottom: $margin-default;
-		padding-left: $margin-default / 2;
-		padding-right: $margin-default / 2;
+	dl {
 		position: relative;
-		overflow: hidden;
 
 		dt {
-			a {
+			img {
 				display: block;
-				margin-bottom: $margin-small;
-
-				img {
-					display: block;
-					border: 0 !important;
-				}
+				width: 100%;
 			}
 		}
 
 		dd {
+			background: $color-overlay;
+
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+
+			padding: $padding-default;
+
+			color: $color-white;
+		}
+	}
+
+	// The columns (but only if it hasn't been converted to slideshow)
+	&:not(.is-slideshow) {
+		display: flex;
+		align-items: stretch;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+
+		> * {
+			flex: 0 0 50%;
+		}
+
+		@media #{$bp-medium} {
+			@for $i from 1 through 9 {
+				&.gallery-columns-#{$i} {
+					> * {
+						flex: 0 0 #{100% / $i};
+					}
+				}
+			}
 		}
 	}
 }

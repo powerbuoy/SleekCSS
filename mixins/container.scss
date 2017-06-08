@@ -1,8 +1,8 @@
-@mixin container ($width: $site-width-max) {
-	$width-reached: round(($width * 100) / (strip-unit($site-width)));
+@mixin container ($width: $site-width) {
+	$width-reached: round(($width * 100) / (strip-unit($site-width-min)));
 
 	display: block;
-	width: $site-width;
+	width: $site-width-min;
 	margin-left: auto;
 	margin-right: auto;
 

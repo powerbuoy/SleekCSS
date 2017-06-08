@@ -1,4 +1,4 @@
-@mixin section ($width: $site-width-max) {
+@mixin section ($width: $site-width) {
 	@include clearfix;
 	@include section-centering($width);
 
@@ -10,8 +10,8 @@
 	padding-bottom: $section-padding;
 }
 
-@mixin section-centering ($width: $site-width-max) {
-	$width-reached: round(($width * 100) / (strip-unit($site-width)));
+@mixin section-centering ($width: $site-width) {
+	$width-reached: round(($width * 100) / (strip-unit($site-width-min)));
 
 	padding-left: $site-padding;
 	padding-right: $site-padding;

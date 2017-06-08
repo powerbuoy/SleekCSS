@@ -1,4 +1,4 @@
-@mixin hero ($width: $site-width-max, $center: false) {
+@mixin hero ($width: $site-width, $center: false) {
 	@include section($width);
 
 	// Image (figure element) as background image

@@ -54,9 +54,6 @@
             <p><input type="submit" value="Go" class="button button--wide"></p>
         </form>
 ***/
-// To avoid having to write them all below
-$form-fields: "input[type=text], input[type=password], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea";
-
 // Form field mixin
 @mixin form-field () {
 	background: $color-form-field-bg;

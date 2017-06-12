@@ -7,6 +7,23 @@
 	// Make sure image doesn't stick out
 	overflow: hidden;
 
+	// Or - if the element has a style attribute, a background image is assumed
+	background-size: cover;
+	background-position: 50% top;
+	background-repeat: no-repeat;
+
+	&[style] {
+		// In which case the overlay needs to render on top of bg
+		&:before {
+			z-index: 0;
+		}
+
+		// And everything else on top of overlay
+		> * {
+			position: relative;
+		}
+	}
+
 	// White text
 	color: $color-white;
 
@@ -19,7 +36,7 @@
 		text-align: center;
 	}
 
-	// Loads of padding in high res
+	// Loads of padding in high res (TODO: Make configurable?)
 	@media #{$bp-medium} {
 		padding-top: $section-padding * 3;
 		padding-bottom: $section-padding * 3;

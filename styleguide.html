@@ -1050,6 +1050,9 @@ h6,
   padding-bottom: 3rem;
   overflow: hidden;
   overflow: hidden;
+  background-size: cover;
+  background-position: 50% top;
+  background-repeat: no-repeat;
   color: #fff; }
   .hero:after {
     content: "";
@@ -1086,6 +1089,10 @@ h6,
           -o-object-position: center top;
              object-position: center top;
           height: 100%; } }
+  .hero[style]:before {
+    z-index: 0; }
+  .hero[style] > * {
+    position: relative; }
   .hero a {
     color: #fff; }
   @media (min-width: 760px) {
@@ -1116,6 +1123,9 @@ h6,
     padding-bottom: 3rem;
     overflow: hidden;
     overflow: hidden;
+    background-size: cover;
+    background-position: 50% top;
+    background-repeat: no-repeat;
     color: #fff;
     text-align: center; }
     .hero.text--center:after,
@@ -1161,6 +1171,12 @@ h6,
             -o-object-position: center top;
                object-position: center top;
             height: 100%; } }
+    .hero.text--center[style]:before,
+    .text--center .hero[style]:before {
+      z-index: 0; }
+    .hero.text--center[style] > *,
+    .text--center .hero[style] > * {
+      position: relative; }
     .hero.text--center a,
     .text--center .hero a {
       color: #fff; }
@@ -3260,6 +3276,9 @@ h6,
   padding-bottom: 3rem;
   overflow: hidden;
   overflow: hidden;
+  background-size: cover;
+  background-position: 50% top;
+  background-repeat: no-repeat;
   color: #fff; }
   .hero:after {
     content: "";
@@ -3296,6 +3315,10 @@ h6,
           -o-object-position: center top;
              object-position: center top;
           height: 100%; } }
+  .hero[style]:before {
+    z-index: 0; }
+  .hero[style] > * {
+    position: relative; }
   .hero a {
     color: #fff; }
   @media (min-width: 760px) {
@@ -3326,6 +3349,9 @@ h6,
     padding-bottom: 3rem;
     overflow: hidden;
     overflow: hidden;
+    background-size: cover;
+    background-position: 50% top;
+    background-repeat: no-repeat;
     color: #fff;
     text-align: center; }
     .hero.text--center:after,
@@ -3371,6 +3397,12 @@ h6,
             -o-object-position: center top;
                object-position: center top;
             height: 100%; } }
+    .hero.text--center[style]:before,
+    .text--center .hero[style]:before {
+      z-index: 0; }
+    .hero.text--center[style] > *,
+    .text--center .hero[style] > * {
+      position: relative; }
     .hero.text--center a,
     .text--center .hero a {
       color: #fff; }

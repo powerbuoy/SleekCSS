@@ -1,5 +1,7 @@
-@mixin semi-underline ($color: $color-text, $size: 2px, $margin: .5rem) {
-	display: inline-block; // Shrinkwrap
+@mixin semi-underline ($color: $color-text, $size: 2px, $margin: .5rem, $center: true, $width: 5rem) {
+	@if ($center) {
+		text-align: center;
+	}
 
 	&:after {
 		background-color: $color;
@@ -7,12 +9,16 @@
 		display: block;
 		content: "";
 
-		width: 50%;
+		width: $width;
 		height: $size;
 		margin-top: $margin;
 
 		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
+		left: 0;
+
+		@if ($center) {
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
 	}
 }

@@ -1105,6 +1105,92 @@ h6,
   .hero h2,
   .hero p {
     max-width: 42rem; }
+  .hero.text--center,
+  .text--center .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    overflow: hidden;
+    color: #fff;
+    text-align: center; }
+    .hero.text--center:after,
+    .text--center .hero:after {
+      content: "";
+      display: table;
+      clear: both; }
+    @media (min-width: 1067px) {
+      .hero.text--center,
+      .text--center .hero {
+        padding-left: calc(50% - 480px);
+        padding-right: calc(50% - 480px); } }
+    .hero.text--center figure, .hero.text--center:before,
+    .text--center .hero figure,
+    .text--center .hero:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      pointer-events: none; }
+    .hero.text--center:before,
+    .text--center .hero:before {
+      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+      display: none;
+      content: "";
+      display: block; }
+    .hero.text--center figure,
+    .text--center .hero figure {
+      margin: 0;
+      z-index: -2; }
+      .hero.text--center figure img,
+      .text--center .hero figure img {
+        width: 100%;
+        height: auto; }
+        @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+          .hero.text--center figure img,
+          .text--center .hero figure img {
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: center top;
+               object-position: center top;
+            height: 100%; } }
+    .hero.text--center a,
+    .text--center .hero a {
+      color: #fff; }
+    @media (min-width: 760px) {
+      .hero.text--center,
+      .text--center .hero {
+        padding-top: 9rem;
+        padding-bottom: 9rem; } }
+    .hero.text--center h1,
+    .hero.text--center h2,
+    .text--center .hero h1,
+    .text--center .hero h2 {
+      margin: 0;
+      color: #fff; }
+    .hero.text--center p,
+    .text--center .hero p {
+      margin: 1rem 0 0;
+      font-size: 1.2rem; }
+    .hero.text--center nav,
+    .text--center .hero nav {
+      margin: 2rem 0 0; }
+    .hero.text--center h1,
+    .hero.text--center h2,
+    .hero.text--center p,
+    .text--center .hero h1,
+    .text--center .hero h2,
+    .text--center .hero p {
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto; }
 
 /***
     title: Icon
@@ -3229,6 +3315,92 @@ h6,
   .hero h2,
   .hero p {
     max-width: 42rem; }
+  .hero.text--center,
+  .text--center .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    overflow: hidden;
+    color: #fff;
+    text-align: center; }
+    .hero.text--center:after,
+    .text--center .hero:after {
+      content: "";
+      display: table;
+      clear: both; }
+    @media (min-width: 1067px) {
+      .hero.text--center,
+      .text--center .hero {
+        padding-left: calc(50% - 480px);
+        padding-right: calc(50% - 480px); } }
+    .hero.text--center figure, .hero.text--center:before,
+    .text--center .hero figure,
+    .text--center .hero:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      pointer-events: none; }
+    .hero.text--center:before,
+    .text--center .hero:before {
+      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+      display: none;
+      content: "";
+      display: block; }
+    .hero.text--center figure,
+    .text--center .hero figure {
+      margin: 0;
+      z-index: -2; }
+      .hero.text--center figure img,
+      .text--center .hero figure img {
+        width: 100%;
+        height: auto; }
+        @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+          .hero.text--center figure img,
+          .text--center .hero figure img {
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: center top;
+               object-position: center top;
+            height: 100%; } }
+    .hero.text--center a,
+    .text--center .hero a {
+      color: #fff; }
+    @media (min-width: 760px) {
+      .hero.text--center,
+      .text--center .hero {
+        padding-top: 9rem;
+        padding-bottom: 9rem; } }
+    .hero.text--center h1,
+    .hero.text--center h2,
+    .text--center .hero h1,
+    .text--center .hero h2 {
+      margin: 0;
+      color: #fff; }
+    .hero.text--center p,
+    .text--center .hero p {
+      margin: 1rem 0 0;
+      font-size: 1.2rem; }
+    .hero.text--center nav,
+    .text--center .hero nav {
+      margin: 2rem 0 0; }
+    .hero.text--center h1,
+    .hero.text--center h2,
+    .hero.text--center p,
+    .text--center .hero h1,
+    .text--center .hero h2,
+    .text--center .hero p {
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto; }
 
 /***
     title: Icon

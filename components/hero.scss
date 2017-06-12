@@ -11,4 +11,9 @@
 ***/
 .hero {
 	@include hero;
+
+	&.text--center,
+	.text--center & {
+		@include hero($site-width, true);
+	}
 }

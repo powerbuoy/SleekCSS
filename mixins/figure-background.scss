@@ -1,5 +1,7 @@
-@mixin figure-background ($withOverlay: true) {
+@mixin figure-background ($withOverlay: true, $hover: false) {
+	position: relative;
 	overflow: hidden;
+	z-index: 0;
 
 	figure,
 	&:before {
@@ -25,6 +27,8 @@
 	figure {
 		margin: 0;
 		z-index: -2;
+		transform: scale(1);
+		transition: transform $transition-default $transition-easing;
 
 		img {
 			width: 100%;
@@ -34,6 +38,18 @@
 				object-fit: cover;
 				object-position: center top;
 				height: 100%;
+			}
+		}
+	}
+
+	@if ($hover) {
+		figure {
+			pointer-events: all;
+		}
+
+		&:hover {
+			figure {
+				transform: scale(1.1);
 			}
 		}
 	}

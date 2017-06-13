@@ -615,7 +615,9 @@ hr,
         </header>
 ***/
 .figure-background {
-  overflow: hidden; }
+  position: relative;
+  overflow: hidden;
+  z-index: 0; }
   .figure-background figure, .figure-background:before {
     position: absolute;
     left: 0;
@@ -632,7 +634,13 @@ hr,
     display: block; }
   .figure-background figure {
     margin: 0;
-    z-index: -2; }
+    z-index: -2;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
     .figure-background figure img {
       width: 100%;
       height: auto; }
@@ -1048,7 +1056,9 @@ h6,
   margin: 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  position: relative;
   overflow: hidden;
+  z-index: 0;
   overflow: hidden;
   background-size: cover;
   background-position: 50% top;
@@ -1078,7 +1088,13 @@ h6,
     display: block; }
   .hero figure {
     margin: 0;
-    z-index: -2; }
+    z-index: -2;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
     .hero figure img {
       width: 100%;
       height: auto; }
@@ -1121,7 +1137,9 @@ h6,
     margin: 0;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    position: relative;
     overflow: hidden;
+    z-index: 0;
     overflow: hidden;
     background-size: cover;
     background-position: 50% top;
@@ -1158,7 +1176,13 @@ h6,
     .hero.text--center figure,
     .text--center .hero figure {
       margin: 0;
-      z-index: -2; }
+      z-index: -2;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transition: -webkit-transform 0.2s ease-out;
+      transition: -webkit-transform 0.2s ease-out;
+      transition: transform 0.2s ease-out;
+      transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
       .hero.text--center figure img,
       .text--center .hero figure img {
         width: 100%;

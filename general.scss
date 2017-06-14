@@ -85,6 +85,16 @@ svg {
 	height: auto;
 }
 
+figure {
+	display: block;
+	margin: 0 0 $margin-default;
+
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
 iframe {
 	// TODO: I used have an old iOS bug fix in here...
 }

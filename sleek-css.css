@@ -2261,3 +2261,10 @@ img,
 svg {
   max-width: 100%;
   height: auto; }
+
+figure {
+  display: block;
+  margin: 0 0 1rem; }
+  figure img {
+    display: block;
+    width: 100%; }

@@ -1941,22 +1941,13 @@ a.color--gray,
     width: auto;
     margin: 0 0 1rem 1rem; } }
 
-.wp-caption figcaption {
-  margin-top: 1rem;
-  text-align: center;
-  font-style: italic; }
-
-div.gallery dl,
-div.gallery dt,
-div.gallery dd {
-  margin: 0; }
-
-div.gallery dl {
-  position: relative; }
-  div.gallery dl dt img {
+div.gallery figure {
+  position: relative;
+  margin: 0 0 1rem; }
+  div.gallery figure img {
     display: block;
     width: 100%; }
-  div.gallery dl dd {
+  div.gallery figure figcaption {
     background: rgba(0, 0, 0, 0.4);
     position: absolute;
     left: 0;
@@ -1966,6 +1957,7 @@ div.gallery dl {
     color: #fff; }
 
 div.gallery:not(.is-slideshow) {
+  margin: 0 0 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1977,47 +1969,68 @@ div.gallery:not(.is-slideshow) {
           justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  div.gallery:not(.is-slideshow) > * {
+  div.gallery:not(.is-slideshow) figure {
+    margin: 0;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 50%;
-            flex: 0 0 50%; }
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%; }
   @media (min-width: 760px) {
     div.gallery:not(.is-slideshow).gallery-columns-1 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 100%;
-              flex: 0 0 100%; }
+              flex: 0 0 100%;
+      max-width: 100%;
+      min-width: 100%; }
     div.gallery:not(.is-slideshow).gallery-columns-2 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 50%;
-              flex: 0 0 50%; }
+              flex: 0 0 50%;
+      max-width: 50%;
+      min-width: 50%; }
     div.gallery:not(.is-slideshow).gallery-columns-3 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 33.33333%;
-              flex: 0 0 33.33333%; }
+              flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+      min-width: 33.33333%; }
     div.gallery:not(.is-slideshow).gallery-columns-4 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 25%;
-              flex: 0 0 25%; }
+              flex: 0 0 25%;
+      max-width: 25%;
+      min-width: 25%; }
     div.gallery:not(.is-slideshow).gallery-columns-5 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 20%;
-              flex: 0 0 20%; }
+              flex: 0 0 20%;
+      max-width: 20%;
+      min-width: 20%; }
     div.gallery:not(.is-slideshow).gallery-columns-6 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 16.66667%;
-              flex: 0 0 16.66667%; }
+              flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+      min-width: 16.66667%; }
     div.gallery:not(.is-slideshow).gallery-columns-7 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 14.28571%;
-              flex: 0 0 14.28571%; }
+              flex: 0 0 14.28571%;
+      max-width: 14.28571%;
+      min-width: 14.28571%; }
     div.gallery:not(.is-slideshow).gallery-columns-8 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 12.5%;
-              flex: 0 0 12.5%; }
+              flex: 0 0 12.5%;
+      max-width: 12.5%;
+      min-width: 12.5%; }
     div.gallery:not(.is-slideshow).gallery-columns-9 > * {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 11.11111%;
-              flex: 0 0 11.11111%; } }
+              flex: 0 0 11.11111%;
+      max-width: 11.11111%;
+      min-width: 11.11111%; } }
 
 /***
     title: Flex

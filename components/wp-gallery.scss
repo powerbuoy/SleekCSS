@@ -1,0 +1,53 @@
+// WP Gallery
+div.gallery {
+	figure {
+		position: relative;
+		margin: 0 0 $margin-default;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		figcaption {
+			background: $color-overlay;
+
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+
+			padding: $padding-default;
+
+			color: $color-white;
+		}
+	}
+
+	&:not(.is-slideshow) {
+		margin: 0 0 $margin-default;
+
+		display: flex;
+		align-items: stretch;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+
+		figure {
+			margin: 0;
+			flex: 0 0 100%;
+			min-width: 100%;
+			max-width: 100%;
+		}
+
+		@media #{$bp-medium} {
+			@for $i from 1 through 9 {
+				&.gallery-columns-#{$i} {
+					> * {
+						flex: 0 0 #{100% / $i};
+						max-width: #{100% / $i};
+						min-width: #{100% / $i};
+					}
+				}
+			}
+		}
+	}
+}

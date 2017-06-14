@@ -73,6 +73,7 @@
 @import "components/text-colors";
 @import "components/video";
 @import "components/wp-classes";
+@import "components/wp-gallery";
 @import "components/flex"; // Needs to include after other components that set display: so that you can use .section.flex together for example
 @import "components/group"; // Should probably be included last as it's only used to set margin
 

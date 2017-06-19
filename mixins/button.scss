@@ -19,12 +19,12 @@
 
 		// Darken on hover (TODO: Should be configurable)
 		&:hover {
-			background-color: darken($color, 5%);
+			background-color: darken($color, 10%);
 		}
 
 		// Darken even more on active
 		&:active {
-			background-color: darken($color, 10%);
+			background-color: darken($color, 15%);
 		}
 	}
 

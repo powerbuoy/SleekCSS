@@ -23,6 +23,12 @@ div.gallery {
 		}
 	}
 
+	&.is-slideshow {
+		figure {
+			margin: 0;
+		}
+	}
+
 	&:not(.is-slideshow) {
 		margin: 0 0 $margin-default;
 

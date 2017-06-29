@@ -12,6 +12,7 @@
 		bottom: 0;
 		z-index: -1;
 		pointer-events: none;
+		overflow: hidden;
 	}
 
 	&:before {
@@ -29,6 +30,11 @@
 		z-index: -2;
 		transform: scale(1);
 		transition: transform $transition-default $transition-easing;
+
+		a {
+			display: block;
+			height: 100%;
+		}
 
 		img {
 			width: 100%;

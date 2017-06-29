@@ -625,7 +625,8 @@ hr,
     right: 0;
     bottom: 0;
     z-index: -1;
-    pointer-events: none; }
+    pointer-events: none;
+    overflow: hidden; }
   .figure-background:before {
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
@@ -641,6 +642,9 @@ hr,
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    .figure-background figure a {
+      display: block;
+      height: 100%; }
     .figure-background figure img {
       width: 100%;
       height: auto; }
@@ -747,13 +751,23 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   input[type=text]:hover, input[type=text]:focus, input[type=password]:hover, input[type=password]:focus, input[type=search]:hover, input[type=search]:focus, input[type=email]:hover, input[type=email]:focus, input[type=url]:hover, input[type=url]:focus, input[type=tel]:hover, input[type=tel]:focus, input[type=number]:hover, input[type=number]:focus, input[type=date]:hover, input[type=date]:focus, input[type=month]:hover, input[type=month]:focus, input[type=week]:hover, input[type=week]:focus, input[type=time]:hover, input[type=time]:focus, input[type=datetime]:hover, input[type=datetime]:focus, input[type=datetime-local]:hover, input[type=datetime-local]:focus, input[type=color]:hover, input[type=color]:focus, textarea:hover, textarea:focus {
     border-color: #a2a2a2; }
 
+@-webkit-keyframes remove-chrome-autofill-color {
+  to {
+    color: #333;
+    background: transparent; } }
+
+@keyframes remove-chrome-autofill-color {
+  to {
+    color: #333;
+    background: transparent; } }
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-transition: background-color 6000s linear 0s;
-  transition: background-color 6000s linear 0s;
-  -webkit-text-fill-color: #333; }
+select:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-animation-name: remove-chrome-autofill-color;
+          animation-name: remove-chrome-autofill-color;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
 
 input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-results-button, input[type=search]::-webkit-search-results-decoration {
   display: none; }
@@ -1079,7 +1093,8 @@ h6,
     right: 0;
     bottom: 0;
     z-index: -1;
-    pointer-events: none; }
+    pointer-events: none;
+    overflow: hidden; }
   .hero:before {
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
@@ -1095,6 +1110,9 @@ h6,
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    .hero figure a {
+      display: block;
+      height: 100%; }
     .hero figure img {
       width: 100%;
       height: auto; }
@@ -1165,7 +1183,8 @@ h6,
       right: 0;
       bottom: 0;
       z-index: -1;
-      pointer-events: none; }
+      pointer-events: none;
+      overflow: hidden; }
     .hero.text--center:before,
     .text--center .hero:before {
       background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
@@ -1183,6 +1202,10 @@ h6,
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+      .hero.text--center figure a,
+      .text--center .hero figure a {
+        display: block;
+        height: 100%; }
       .hero.text--center figure img,
       .text--center .hero figure img {
         width: 100%;
@@ -2898,7 +2921,8 @@ hr,
     right: 0;
     bottom: 0;
     z-index: -1;
-    pointer-events: none; }
+    pointer-events: none;
+    overflow: hidden; }
   .figure-background:before {
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
@@ -2914,6 +2938,9 @@ hr,
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    .figure-background figure a {
+      display: block;
+      height: 100%; }
     .figure-background figure img {
       width: 100%;
       height: auto; }
@@ -3020,13 +3047,23 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   input[type=text]:hover, input[type=text]:focus, input[type=password]:hover, input[type=password]:focus, input[type=search]:hover, input[type=search]:focus, input[type=email]:hover, input[type=email]:focus, input[type=url]:hover, input[type=url]:focus, input[type=tel]:hover, input[type=tel]:focus, input[type=number]:hover, input[type=number]:focus, input[type=date]:hover, input[type=date]:focus, input[type=month]:hover, input[type=month]:focus, input[type=week]:hover, input[type=week]:focus, input[type=time]:hover, input[type=time]:focus, input[type=datetime]:hover, input[type=datetime]:focus, input[type=datetime-local]:hover, input[type=datetime-local]:focus, input[type=color]:hover, input[type=color]:focus, textarea:hover, textarea:focus {
     border-color: #a2a2a2; }
 
+@-webkit-keyframes remove-chrome-autofill-color {
+  to {
+    color: #333;
+    background: transparent; } }
+
+@keyframes remove-chrome-autofill-color {
+  to {
+    color: #333;
+    background: transparent; } }
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-transition: background-color 6000s linear 0s;
-  transition: background-color 6000s linear 0s;
-  -webkit-text-fill-color: #333; }
+select:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-animation-name: remove-chrome-autofill-color;
+          animation-name: remove-chrome-autofill-color;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
 
 input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-results-button, input[type=search]::-webkit-search-results-decoration {
   display: none; }
@@ -3352,7 +3389,8 @@ h6,
     right: 0;
     bottom: 0;
     z-index: -1;
-    pointer-events: none; }
+    pointer-events: none;
+    overflow: hidden; }
   .hero:before {
     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
@@ -3368,6 +3406,9 @@ h6,
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    .hero figure a {
+      display: block;
+      height: 100%; }
     .hero figure img {
       width: 100%;
       height: auto; }
@@ -3438,7 +3479,8 @@ h6,
       right: 0;
       bottom: 0;
       z-index: -1;
-      pointer-events: none; }
+      pointer-events: none;
+      overflow: hidden; }
     .hero.text--center:before,
     .text--center .hero:before {
       background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
@@ -3456,6 +3498,10 @@ h6,
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+      .hero.text--center figure a,
+      .text--center .hero figure a {
+        display: block;
+        height: 100%; }
       .hero.text--center figure img,
       .text--center .hero figure img {
         width: 100%;

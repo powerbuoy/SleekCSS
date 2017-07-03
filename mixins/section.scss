@@ -1,6 +1,6 @@
-@mixin section ($width: $site-width) {
+@mixin section ($width: $site-width, $unit: '%') {
 	@include clearfix;
-	@include section-centering($width);
+	@include section-centering($width, $unit);
 
 	display: block;
 	position: relative;
@@ -10,14 +10,14 @@
 	padding-bottom: $section-padding;
 }
 
-@mixin section-centering ($width: $site-width) {
+@mixin section-centering ($width: $site-width, $unit: '%') {
 	$width-reached: round(($width * 100) / (strip-unit($site-width-min)));
 
 	padding-left: $site-padding;
 	padding-right: $site-padding;
 
 	@media (min-width: $width-reached) {
-		padding-left: calc(50% - #{$width / 2});
-		padding-right: calc(50% - #{$width / 2});
+		padding-left: calc(50#{$unit} - #{$width / 2});
+		padding-right: calc(50#{$unit} - #{$width / 2});
 	}
 }

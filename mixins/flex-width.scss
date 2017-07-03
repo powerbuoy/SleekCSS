@@ -1,5 +1,5 @@
 @mixin flex-width ($width: 50%, $gutter: $gutter-default) {
-	@if ($gutter == 0) {
+	@if ($gutter == false or $gutter == 0) {
 		flex: 0 0 $width;
 		min-width: $width;
 		max-width: $width;

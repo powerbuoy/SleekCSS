@@ -1,11 +1,8 @@
-$bp-small: '(min-width: 400px)' !default;
-$bp-small-max: '(max-width: 399px)' !default;
+$bp-tablet: '(min-width: 600px)' !default;
+$bp-tablet-max: '(max-width: 599px)' !default;
 
-$bp-medium: '(min-width: 760px)' !default;
-$bp-medium-max: '(max-width: 759px)' !default;
+$bp-laptop: '(min-width: 1000px)' !default;
+$bp-laptop-max: '(max-width: 999px)' !default;
 
-$bp-large: '(min-width: 1020px)' !default;
-$bp-large-max: '(max-width: 1019px)' !default;
-
-$bp-x-large: '(min-width: 1600px)' !default;
-$bp-x-large-max: '(max-width: 1599px)' !default;
+$bp-desktop: '(min-width: 1200px)' !default;
+$bp-desktop-max: '(max-width: 1199px)' !default;

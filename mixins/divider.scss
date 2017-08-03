@@ -9,7 +9,7 @@
 	border: 0;
 	border-top: 1px solid $color-border;
 
-	@media #{$bp-medium} {
+	@media #{$bp-tablet} {
 		margin: $margin-large 0;
 	}
 }

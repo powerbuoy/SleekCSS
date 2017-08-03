@@ -20,13 +20,13 @@ $color-linkedin: #0077b5 !default;
 
 // Define more to use bg--black etc
 $bg-colors: (
-	"white": #fff,
+	"white": $color-white,
 	"lightgray": $color-lightgray
 ) !default;
 
 // Add more to use .color--red etc
 $text-colors: (
-	"white": #fff,
+	"white": $color-white,
 	"gray": $color-gray
 ) !default;
 
@@ -38,5 +38,5 @@ $icon-colors: (
 // Add more to use .button--green etc
 $button-colors: (
 	"white": $color-white,
-	"disabled": #ddd
+	"disabled": $color-gray
 ) !default;

@@ -19,7 +19,7 @@
 		margin-bottom: $margin-large;
 
 		// TODO: Is this wanted? Or should it be x-large in any res?
-		@media #{$bp-medium} {
+		@media #{$bp-tablet} {
 			margin-bottom: $margin-x-large;
 		}
 	}

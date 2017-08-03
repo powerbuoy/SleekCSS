@@ -4,8 +4,8 @@ $col-nums: (
 	"3": 3
 ) !default;
 
-// Add more here to use cols--3--bp-large etc
+// Add more here to use cols--3--bp-desktop etc
 $col-breakpoints: (
-	"bp-medium": $bp-medium,
-	"bp-large": $bp-large
+	"bp-tablet": $bp-tablet,
+	"bp-laptop": $bp-laptop
 ) !default;

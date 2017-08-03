@@ -20,7 +20,7 @@
             </div>
         </div>
 ***/
-@media #{$bp-large} {
+@media #{$bp-laptop} {
 	.primary-content {
 		@include clearfix;
 		width: calc(#{$primary-content-width} - #{$gutter-large / 2});
@@ -69,7 +69,7 @@
 	}
 }
 
-@media #{$bp-large-max} {
+@media #{$bp-laptop-max} {
 	.primary-content,
 	.secondary-content,
 	.primary-secondary > * {

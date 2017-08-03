@@ -19,3 +19,16 @@
 
 	margin-bottom: $gutter; // Same space between and below(????)
 }
+
+@mixin flex-width ($width: 50%, $gutter: $gutter-default) {
+	@if ($gutter == false or $gutter == 0) {
+		flex: 0 0 $width;
+		min-width: $width;
+		max-width: $width;
+	}
+	@else {
+		flex: 0 0 calc(#{$width} - #{$gutter / 2});
+		min-width: calc(#{$width} - #{$gutter / 2});
+		max-width: calc(#{$width} - #{$gutter / 2});
+	}
+}

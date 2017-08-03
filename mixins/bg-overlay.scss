@@ -10,8 +10,10 @@
 	// Overlay
 	&:before {
 		background: $color;
+
 		display: block;
 		content: "";
+
 		position: absolute;
 		left: 0;
 		top: 0;

@@ -29,7 +29,7 @@
 	margin: 0 auto $margin-default;
 }
 
-@media #{$bp-medium} {
+@media #{$bp-tablet} {
 	.alignleft {
 		float: left;
 		width: auto;

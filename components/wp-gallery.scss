@@ -44,7 +44,7 @@ div.gallery {
 			max-width: 100%;
 		}
 
-		@media #{$bp-medium} {
+		@media #{$bp-tablet} {
 			@for $i from 1 through 9 {
 				&.gallery-columns-#{$i} {
 					> * {

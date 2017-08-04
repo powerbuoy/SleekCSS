@@ -3,7 +3,7 @@
     section: Grid
     description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.
     example:
-        <ul class="flex--2--bp-medium flex--3--bp-large">
+        <ul class="flex--2--bp-tablet flex--3--bp-laptop">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>

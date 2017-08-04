@@ -346,7 +346,7 @@
     section: Grid
     description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
     example:
-        <ul class="cols cols--2--bp-medium cols--3--bp-large">
+        <ul class="cols cols--2--bp-tablet cols--3--bp-laptop">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
@@ -1441,7 +1441,7 @@ a:hover .icon--round {
     section: Grid
     description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element's font-size back to $font-size-default.
     example:
-        <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
+        <ul class="inline-grid inline-grid--2--bp-tablet"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
 .inline-grid {
   font-size: 0;
@@ -2063,7 +2063,7 @@ div.gallery:not(.is-slideshow) {
     section: Grid
     description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.
     example:
-        <ul class="flex--2--bp-medium flex--3--bp-large">
+        <ul class="flex--2--bp-tablet flex--3--bp-laptop">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>

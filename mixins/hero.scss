@@ -38,6 +38,11 @@
 
 	// Loads of padding in high res (TODO: Make configurable?)
 	@media #{$bp-tablet} {
+		padding-top: $section-padding * 2;
+		padding-bottom: $section-padding * 2;
+	}
+
+	@media #{$bp-laptop} {
 		padding-top: $section-padding * 3;
 		padding-bottom: $section-padding * 3;
 	}

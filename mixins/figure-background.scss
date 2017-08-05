@@ -18,7 +18,9 @@
 
 	// And add an overlay on top
 	&:before {
-		background: linear-gradient(rgba($color-overlay, .2), rgba($color-overlay, .6)); // TODO: Make configurable
+	//	background: linear-gradient(rgba($color-overlay, .1), rgba($color-overlay, .2)); // TODO: Make configurable
+
+		background: rgba($color-overlay, .1);
 
 		display: none;
 		content: "";

@@ -23,12 +23,14 @@
 @media #{$bp-laptop} {
 	.primary-content {
 		@include clearfix;
+
 		width: calc(#{$primary-content-width} - #{$gutter-large / 2});
 		float: left;
 	}
 
 	.secondary-content {
 		@include clearfix;
+
 		width: calc(#{100% - $primary-content-width} - #{$gutter-large / 2});
 		float: left;
 	}
@@ -56,6 +58,7 @@
 
 	.primary-secondary > * {
 		@include clearfix;
+
 		width: calc(#{$primary-content-width} - #{$gutter-large / 2});
 		float: left;
 		margin-right: $gutter-large;
@@ -63,6 +66,7 @@
 
 	.primary-secondary > :last-child {
 		@include clearfix;
+
 		width: calc(#{100% - $primary-content-width} - #{$gutter-large / 2});
 		float: left;
 		margin-right: 0;

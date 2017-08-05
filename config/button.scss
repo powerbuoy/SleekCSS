@@ -1,5 +1,5 @@
 // Button size
-$button-padding-horizontal: 2.6rem !default;
+$button-padding-horizontal: 3.2rem !default;
 $button-padding-vertical: 1rem !default;
 $button-empty-padding-horizontal: $button-padding-vertical !default;
 $button-small-percentage: .75 !default;
@@ -11,10 +11,10 @@ $button-transition: true !default;
 $button-border-width: 1px !default;
 $button-border-style: solid !default;
 $button-border-color: false !default; // false makes non ghost buttons have 0 border, true makes it 10% darker than bg
-$button-border-radius: 2rem !default;
+$button-border-radius: 0 !default;
 
 // Button background
-$button-color: #1FBB82 !default;
+$button-color: #ffcc34 !default;
 $button-ghost-opacity: .1 !default; // Opacity of a ghost buttons bg on hover
 $button-gradient: false !default; // false = no gradient, % = darken BG this much %
 $button-shadow: false !default; // shadow declaration or true for a default shadow

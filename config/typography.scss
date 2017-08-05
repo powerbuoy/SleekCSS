@@ -32,7 +32,7 @@ $color-heading: #444 !default;
 
 // Links
 $color-link: #06f !default;
-$color-link-hover: #09f !default;
+$color-link-hover: darken($color-link, 10%) !default;
 $color-link-visited: #609 !default;
 
 $text-decoration-link: none !default;

@@ -27,7 +27,7 @@
 	// White text
 	color: $color-white;
 
-	a {
+	a:not(.button) {
 		color: $color-white;
 	}
 

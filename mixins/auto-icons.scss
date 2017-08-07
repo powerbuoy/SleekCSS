@@ -1,4 +1,4 @@
-@mixin auto-icon {
+@mixin auto-icons {
 	a {
 		&:before {
 			@include icon;
@@ -6,7 +6,7 @@
 
 		@each $auto-icon in $auto-icons {
 			&[#{nth($auto-icon, 1)}]:before {
-				content: #{nth($auto-icon, 2)};
+				content: "#{nth($auto-icon, 2)}";
 			}
 		}
 	}

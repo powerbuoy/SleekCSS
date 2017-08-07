@@ -1,23 +1,13 @@
 @mixin auto-icon {
 	a {
 		&:before {
-			@include icon($icon-facebook);
+			@include icon;
 		}
 
-		&[href*="facebook.com"]:before {
-			content: $icon-facebook;
-		}
-
-		&[href*="twitter.com"]:before {
-			content: $icon-twitter;
-		}
-
-		&[href*="linkedin.com"]:before {
-			content: $icon-linkedin;
-		}
-
-		&[href*="instagram.com"]:before {
-			content: $icon-instagram;
+		@each $auto-icon in $auto-icons {
+			&[#{nth($auto-icon, 1)}]:before {
+				content: #{nth($auto-icon, 2)};
+			}
 		}
 	}
 }

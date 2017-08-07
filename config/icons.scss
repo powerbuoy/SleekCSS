@@ -2,3 +2,24 @@ $icon-margin: .4em !default;
 $icon-round-color: #369 !default;
 $icon-large-size: 2em !default;
 $icon-round-size: 2.2em !default;
+
+// List of attribute selectors and associated icons
+$auto-icons: () !default;
+
+// Use these if you have the icons defined
+/* $auto-icons: (
+	'href*="facebook.com"': $icon-facebook,
+	'href*="twitter.com"': $icon-twitter,
+	'href*="linkedin.com"': $icon-linkedin,
+	'href*="instagram.com"': $icon-instagram,
+
+	'href$=".pdf"': $icon-pdf,
+	'href$=".doc"': $icon-document,
+
+	'href$=".jpg"': $icon-image,
+	'href$=".jpeg"': $icon-image,
+	'href$=".png"': $icon-image,
+	'href$=".gif"': $icon-image,
+	'href$=".bmp"': $icon-image,
+	'href$=".svg"': $icon-image
+) !default; */

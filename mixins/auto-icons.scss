@@ -2,6 +2,8 @@
 	a {
 		&:before {
 			@include icon;
+
+			margin: 0 $icon-margin 0 0;
 		}
 
 		@each $auto-icon in $auto-icons {

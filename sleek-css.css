@@ -12,7 +12,11 @@
 	'href$=".png"': $icon-image,
 	'href$=".gif"': $icon-image,
 	'href$=".bmp"': $icon-image,
-	'href$=".svg"': $icon-image
+	'href$=".svg"': $icon-image,
+
+	'href^="mailto:"': $icon-mail,
+	'href^="tel:"': $icon-phone,
+	'href*="/maps"': $icon-globe
 ) !default; */
 /**
  * @arrow

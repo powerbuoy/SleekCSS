@@ -64,6 +64,39 @@
  * @param	color	$color: color of the device
  * @param	bool	$h: whether to set height (if used on an img height should be auto)
  */
+/**
+ * Round icon
+ * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
+ */
+.auto-icons a:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  content: "[NO-ICON]";
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  margin: 0 0.4em 0 0; }
+
 /***
     title: Card
     section: Layout
@@ -1352,10 +1385,6 @@ h6,
   -webkit-animation: spin 1.5s infinite linear;
           animation: spin 1.5s infinite linear; }
 
-/**
- * Round icon
- * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
- */
 [class*="icon-"].icon--round {
   display: inline-block;
   text-decoration: none;

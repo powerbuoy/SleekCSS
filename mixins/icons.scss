@@ -1,0 +1,82 @@
+// Taken directly from fontello.scss
+@mixin icon ($iconCode: '[NO-ICON]') {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	content: $iconCode;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/**
+ * Round icon
+ * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
+ */
+@mixin icon-round ($irc: $icon-round-color, $size: $icon-round-size) {
+	display: inline-block;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:before,
+	&.icon--after:after {
+		background: $irc;
+
+		width: $size;
+		height: $size;
+
+		// line-height: $icon-round-size;
+		text-align: center;
+		color: $color-white;
+		text-shadow: none;
+
+		// Vertical align (instead of line-height)
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 50%;
+		transition: all $transition-default $transition-easing; // TODO: When used with hover effect?
+	}
+
+	&.icon--above,
+	&.icon--below {
+		display: flex; // TODO: WHy?
+	}
+
+	/* &:hover:before,
+	&.icon--after:hover:after {
+		background: rgba($irc, .2);
+		color: $irc;
+	} */
+}

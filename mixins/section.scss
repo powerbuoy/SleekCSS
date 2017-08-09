@@ -1,5 +1,4 @@
 @mixin section ($width: $site-width, $unit: '%') {
-	@include clearfix;
 	@include section-centering($width, $unit);
 
 	display: block;

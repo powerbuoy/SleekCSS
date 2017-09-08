@@ -2334,11 +2334,12 @@ svg {
 
 figure {
   display: block;
-  margin: 0 0 1rem; }
+  margin: 0 0 1rem;
+  /*	figcaption {
+		margin-top: $margin-small;
+		text-align: center;
+		font-style: italic;
+	} */ }
   figure img {
     display: block;
     width: 100%; }
-  figure figcaption {
-    margin-top: 0.5rem;
-    text-align: center;
-    font-style: italic; }

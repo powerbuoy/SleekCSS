@@ -55,3 +55,52 @@
 		transform: translateY(-50%) rotate(-45deg);
 	}
 }
+
+@mixin burger-menu-icon-alt ($color: $color-link, $size: 2rem, $thickness: .25rem) {
+	display: block;
+	width: $size;
+	height: $size;
+
+	position: relative;
+
+	&:before,
+	&:after {
+		background: $color;
+
+		display: block;
+		content: "";
+
+		width: 100%;
+		height: $thickness;
+
+		position: absolute;
+		right: 0;
+		top: 35%;
+		transform: rotate(0);
+	}
+
+	&:before {
+		transition: transform $transition-fast $transition-easing, top $transition-fast $transition-fast $transition-easing;
+	}
+
+	&:after {
+		transition: transform $transition-fast $transition-easing, top $transition-fast $transition-fast $transition-easing, width $transition-fast $transition-fast * 2 $transition-easing;
+		width: 80%;
+		top: 65%;
+	}
+}
+
+@mixin burger-menu-icon-alt-open ($size: 1.25rem) {
+	&:before {
+		transition: top $transition-fast $transition-fast $transition-easing, transform $transition-fast $transition-fast * 2 $transition-easing;
+		top: 50%;
+		transform: rotate(-45deg);
+	}
+
+	&:after {
+		transition: width $transition-fast $transition-easing, top $transition-fast $transition-fast $transition-easing, transform $transition-fast $transition-fast * 2 $transition-easing;
+		top: 50%;
+		width: 100%;
+		transform: rotate(45deg);
+	}
+}

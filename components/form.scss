@@ -68,7 +68,7 @@
 	padding: $form-padding-vertical $form-padding-horizontal;
 
 	font-family: $font-family-default;
-	font-size: $button-font-size; // Same as buttons so they align?
+	font-size: $font-size-default; // NOTE: Was $button-font-size - Same as buttons so they align?
 	color: $color-form-text;
 	line-height: normal; // TODO: Reference?
 

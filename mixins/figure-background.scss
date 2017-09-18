@@ -1,3 +1,65 @@
+@mixin image-background ($withOverlay: true, $hover: false) {
+	position: relative;
+	overflow: hidden;
+
+	// Position the image behind everything else
+	img,
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	// And add an overlay on top
+	@if ($withOverlay) {
+		&:before {
+			display: block;
+			content: "";
+			z-index: -1;
+
+			@if ($withOverlay == true) {
+				background: $color-overlay;
+			}
+			@else {
+				background: rgba($color-overlay, $withOverlay);
+			}
+		}
+	}
+
+	// Image
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		z-index: -2;
+		transform: scale(1);
+		transition: transform $transition-default $transition-easing;
+
+		@supports (object-fit: contain) {
+			object-fit: cover;
+			object-position: center center;
+			height: 100%;
+		}
+	}
+
+	// Zoom image on hover?
+	@if ($hover) {
+		&:hover {
+			img {
+				@if ($hover == true) {
+					transform: scale(1.025);
+				}
+				@else {
+					transform: scale($hover);
+				}
+			}
+		}
+	}
+}
+
 @mixin figure-background ($withOverlay: true, $hover: false) {
 	position: relative;
 	overflow: hidden;

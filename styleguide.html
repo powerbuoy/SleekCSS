@@ -1479,6 +1479,40 @@ a:hover .icon--round {
   display: block;
   width: 100%; }
 
+.img--bg {
+  position: relative;
+  overflow: hidden; }
+  .img--bg img, .img--bg:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; }
+  .img--bg:before {
+    display: block;
+    content: "";
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4); }
+  .img--bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    z-index: -2;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .img--bg img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
+
 /***
     title: Inline Grid
     section: Grid
@@ -3820,6 +3854,40 @@ a:hover .icon--round {
 .img--wide {
   display: block;
   width: 100%; }
+
+.img--bg {
+  position: relative;
+  overflow: hidden; }
+  .img--bg img, .img--bg:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; }
+  .img--bg:before {
+    display: block;
+    content: "";
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4); }
+  .img--bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    z-index: -2;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .img--bg img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
 
 /***
     title: Inline Grid

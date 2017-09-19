@@ -23,12 +23,9 @@
 @import "mixins/break-out";
 @import "mixins/burger-menu-icon";
 @import "mixins/button";
-@import "mixins/card";
 @import "mixins/card-flip";
 @import "mixins/clearfix";
-@import "mixins/cols";
 @import "mixins/container";
-@import "mixins/data-definition";
 @import "mixins/device";
 @import "mixins/divider";
 @import "mixins/figure-background";
@@ -38,24 +35,20 @@
 @import "mixins/hero";
 @import "mixins/icons";
 @import "mixins/auto-icons"; // Needs to include after icons
-@import "mixins/increment-transition-delay";
 @import "mixins/inline-grid";
-@import "mixins/link-border";
 @import "mixins/list";
-@import "mixins/osx-dock";
 @import "mixins/rotate-elements";
 @import "mixins/section";
-@import "mixins/semi-underline";
 @import "mixins/slanted";
+@import "mixins/stagger-transition";
+@import "mixins/strike-through";
 @import "mixins/text";
 
 // Components
 @import "components/auto-icons";
-@import "components/card"; // Needs to include before bg-colors
 @import "components/bg-colors";
 @import "components/bg-overlay";
 @import "components/button";
-@import "components/cols"; // TODO: deprecate in favor of flex
 @import "components/container";
 @import "components/divider";
 @import "components/figure-background";
@@ -72,8 +65,8 @@
 @import "components/section";
 @import "components/strike-through";
 @import "components/svg";
-@import "components/text";
 @import "components/text-colors";
+@import "components/text";
 @import "components/video";
 @import "components/wp-classes";
 @import "components/wp-gallery";

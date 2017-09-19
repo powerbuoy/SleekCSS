@@ -1,20 +1,4 @@
 // TODO: Should be mixin
 .strike-through {
-	display: table;
-	width: 100%;
-	overflow: hidden;
-	border-spacing: 0;
-
-	&:before,
-	&:after {
-		display: table-cell;
-		content: "";
-		width: 50%;
-		border-top: 1px solid $color-border;
-		transform: translateY(50%) translateX(-$padding-default);
-	}
-
-	&:after {
-		transform: translateY(50%) translateX($padding-default);
-	}
+	@include strike-through;
 }

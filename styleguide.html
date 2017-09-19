@@ -39,23 +39,6 @@
  * @param:	string	$rotate: X or Y - in which direction to rotate
  */
 /**
- * @col
- *
- * FLoats elements into columns
- *
- * @param	int		$num: how many columns
- * @param	unit	$gutter: space between columns
- * @param	string	$selector: child-selector
- */
-/**
- * @col
- *
- * A single column
- *
- * @param	int		$num: how many items per row
- * @param	unit	$gutter: space between cols
- */
-/**
  * @device
  *
  * Turns an element into a mobile device (Nexus 5-looking)
@@ -96,24 +79,6 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
   margin: 0 0.4em 0 0; }
-
-/***
-    title: Card
-    section: Layout
-    description: A simple box/card. Should be used with the bg-classes.
-    example:
-        <div class="card bg--lightgray">I'm a shadowed card</div>
-***/
-.card {
-  background-color: #fff;
-  display: block;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .card:after {
-    content: "";
-    display: table;
-    clear: both; }
 
 /***
     title: Background Colors
@@ -393,215 +358,6 @@
 .button--wide {
   display: block;
   width: 100%; }
-
-/**
-    title: Cols
-    section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
-    example:
-        <ul class="cols cols--2--bp-tablet cols--3--bp-laptop">
-            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
-        </ul>
-**/
-.cols {
-  clear: both; }
-  .cols:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols > * {
-    margin-bottom: 1.5rem; }
-
-ul.cols,
-ul[class*="cols--"] {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-
-.cols--2 {
-  clear: both; }
-  .cols--2:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--2 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(50% - 0.75rem);
-    margin-right: 1.5rem;
-    width: calc(49.5% - 0.75rem) \9; }
-    .cols--2 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--2 > * {
-        width: calc(49.5% - 0.75rem); } }
-    .cols--2 > *:not(:nth-child(2n)) {
-      margin-right: 1.5rem; }
-    .cols--2 > *:nth-child(2n) {
-      margin-right: 0; }
-  .cols--2 > *:nth-child(2n) + * {
-    clear: both; }
-  .cols--2 > *:not(:nth-child(2n)) + * {
-    clear: none; }
-
-.cols--3 {
-  clear: both; }
-  .cols--3:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--3 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(33.33333% - 1rem);
-    margin-right: 1.5rem;
-    width: calc(33% - 1rem) \9; }
-    .cols--3 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--3 > * {
-        width: calc(33% - 1rem); } }
-    .cols--3 > *:not(:nth-child(3n)) {
-      margin-right: 1.5rem; }
-    .cols--3 > *:nth-child(3n) {
-      margin-right: 0; }
-  .cols--3 > *:nth-child(3n) + * {
-    clear: both; }
-  .cols--3 > *:not(:nth-child(3n)) + * {
-    clear: none; }
-
-@media (min-width: 600px) {
-  .cols--2--bp-tablet {
-    clear: both; }
-    .cols--2--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--2--bp-tablet > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 600px) {
-      .cols--2--bp-tablet > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-tablet > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-tablet > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-tablet > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 600px) {
-  .cols--3--bp-tablet {
-    clear: both; }
-    .cols--3--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--3--bp-tablet > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 600px) {
-      .cols--3--bp-tablet > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-tablet > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-tablet > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-tablet > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--2--bp-laptop {
-    clear: both; }
-    .cols--2--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--2--bp-laptop > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 1080px) {
-      .cols--2--bp-laptop > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-laptop > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-laptop > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-laptop > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--3--bp-laptop {
-    clear: both; }
-    .cols--3--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--3--bp-laptop > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 1080px) {
-      .cols--3--bp-laptop > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-laptop > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-laptop > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-laptop > *:not(:nth-child(3n)) + * {
-      clear: none; } }
 
 /***
     title: Container
@@ -1742,7 +1498,7 @@ a,
               transform: scale(1.1);
       color: #fff;
       text-decoration: none; }
-  .popup__box, .popup__content {
+  .popup__content {
     background: #fff;
     width: 95%;
     max-width: 45rem;
@@ -1752,9 +1508,9 @@ a,
     padding: 2rem;
     -webkit-overflow-scrolling: touch;
     border-radius: 0; }
-    .popup__box .popup__close, .popup__content .popup__close {
+    .popup__content .popup__close {
       color: inherit; }
-      .popup__box .popup__close:hover, .popup__content .popup__close:hover {
+      .popup__content .popup__close:hover {
         color: inherit; }
 
 /***
@@ -1891,48 +1647,6 @@ a,
   content: ""; }
 
 /***
-    title: Text
-    section: Typography
-    description: Various helper classes for working with text.
-    example:
-        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
-        <p class="text--right text--large">This large text is right aligned.</p>
-        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
-***/
-.text {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: Helvetica, sans-serif;
-  color: #333;
-  word-wrap: break-word;
-  font-weight: normal;
-  letter-spacing: 0; }
-
-.text--upper {
-  text-transform: uppercase; }
-
-.text--center {
-  text-align: center; }
-
-.text--left {
-  text-align: left; }
-
-.text--right {
-  text-align: right; }
-
-.text--small {
-  font-size: 0.8rem; }
-
-.text--large {
-  font-size: 1.2rem; }
-
-.text--ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-/***
     title: Text Colors
     section: Colors
     description: Use to give an element's text a different color. This class affects everything, including headings and links.
@@ -1985,6 +1699,48 @@ a.color--gray,
 .color--gray a:not(.button),
 .color--gray .link {
   color: #bbb; }
+
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+        <p class="text--right text--large">This large text is right aligned.</p>
+        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
+***/
+.text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0; }
+
+.text--upper {
+  text-transform: uppercase; }
+
+.text--center {
+  text-align: center; }
+
+.text--left {
+  text-align: left; }
+
+.text--right {
+  text-align: right; }
+
+.text--small {
+  font-size: 0.8rem; }
+
+.text--large {
+  font-size: 1.2rem; }
+
+.text--ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 /***
     title: Video
@@ -2415,23 +2171,6 @@ figure {
  * @param:	string	$rotate: X or Y - in which direction to rotate
  */
 /**
- * @col
- *
- * FLoats elements into columns
- *
- * @param	int		$num: how many columns
- * @param	unit	$gutter: space between columns
- * @param	string	$selector: child-selector
- */
-/**
- * @col
- *
- * A single column
- *
- * @param	int		$num: how many items per row
- * @param	unit	$gutter: space between cols
- */
-/**
  * @device
  *
  * Turns an element into a mobile device (Nexus 5-looking)
@@ -2472,24 +2211,6 @@ figure {
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
   margin: 0 0.4em 0 0; }
-
-/***
-    title: Card
-    section: Layout
-    description: A simple box/card. Should be used with the bg-classes.
-    example:
-        <div class="card bg--lightgray">I'm a shadowed card</div>
-***/
-.card {
-  background-color: #fff;
-  display: block;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .card:after {
-    content: "";
-    display: table;
-    clear: both; }
 
 /***
     title: Background Colors
@@ -2769,215 +2490,6 @@ figure {
 .button--wide {
   display: block;
   width: 100%; }
-
-/**
-    title: Cols
-    section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
-    example:
-        <ul class="cols cols--2--bp-tablet cols--3--bp-laptop">
-            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
-            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
-        </ul>
-**/
-.cols {
-  clear: both; }
-  .cols:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols > * {
-    margin-bottom: 1.5rem; }
-
-ul.cols,
-ul[class*="cols--"] {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-
-.cols--2 {
-  clear: both; }
-  .cols--2:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--2 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(50% - 0.75rem);
-    margin-right: 1.5rem;
-    width: calc(49.5% - 0.75rem) \9; }
-    .cols--2 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--2 > * {
-        width: calc(49.5% - 0.75rem); } }
-    .cols--2 > *:not(:nth-child(2n)) {
-      margin-right: 1.5rem; }
-    .cols--2 > *:nth-child(2n) {
-      margin-right: 0; }
-  .cols--2 > *:nth-child(2n) + * {
-    clear: both; }
-  .cols--2 > *:not(:nth-child(2n)) + * {
-    clear: none; }
-
-.cols--3 {
-  clear: both; }
-  .cols--3:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--3 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(33.33333% - 1rem);
-    margin-right: 1.5rem;
-    width: calc(33% - 1rem) \9; }
-    .cols--3 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--3 > * {
-        width: calc(33% - 1rem); } }
-    .cols--3 > *:not(:nth-child(3n)) {
-      margin-right: 1.5rem; }
-    .cols--3 > *:nth-child(3n) {
-      margin-right: 0; }
-  .cols--3 > *:nth-child(3n) + * {
-    clear: both; }
-  .cols--3 > *:not(:nth-child(3n)) + * {
-    clear: none; }
-
-@media (min-width: 600px) {
-  .cols--2--bp-tablet {
-    clear: both; }
-    .cols--2--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--2--bp-tablet > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 600px) {
-      .cols--2--bp-tablet > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-tablet > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-tablet > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-tablet > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 600px) {
-  .cols--3--bp-tablet {
-    clear: both; }
-    .cols--3--bp-tablet:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-tablet > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-tablet > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 600px) and (-ms-high-contrast: none), (min-width: 600px) and (-ms-high-contrast: active) {
-      .cols--3--bp-tablet > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 600px) {
-      .cols--3--bp-tablet > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-tablet > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-tablet > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-tablet > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--2--bp-laptop {
-    clear: both; }
-    .cols--2--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.75rem);
-      margin-right: 1.5rem;
-      width: calc(49.5% - 0.75rem) \9; }
-      .cols--2--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--2--bp-laptop > * {
-        width: calc(49.5% - 0.75rem); } }
-
-@media (min-width: 1080px) {
-      .cols--2--bp-laptop > *:not(:nth-child(2n)) {
-        margin-right: 1.5rem; }
-      .cols--2--bp-laptop > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-laptop > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-laptop > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 1080px) {
-  .cols--3--bp-laptop {
-    clear: both; }
-    .cols--3--bp-laptop:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-laptop > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 1rem);
-      margin-right: 1.5rem;
-      width: calc(33% - 1rem) \9; }
-      .cols--3--bp-laptop > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1080px) and (-ms-high-contrast: none), (min-width: 1080px) and (-ms-high-contrast: active) {
-      .cols--3--bp-laptop > * {
-        width: calc(33% - 1rem); } }
-
-@media (min-width: 1080px) {
-      .cols--3--bp-laptop > *:not(:nth-child(3n)) {
-        margin-right: 1.5rem; }
-      .cols--3--bp-laptop > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-laptop > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-laptop > *:not(:nth-child(3n)) + * {
-      clear: none; } }
 
 /***
     title: Container
@@ -4118,7 +3630,7 @@ a,
               transform: scale(1.1);
       color: #fff;
       text-decoration: none; }
-  .popup__box, .popup__content {
+  .popup__content {
     background: #fff;
     width: 95%;
     max-width: 45rem;
@@ -4128,9 +3640,9 @@ a,
     padding: 2rem;
     -webkit-overflow-scrolling: touch;
     border-radius: 0; }
-    .popup__box .popup__close, .popup__content .popup__close {
+    .popup__content .popup__close {
       color: inherit; }
-      .popup__box .popup__close:hover, .popup__content .popup__close:hover {
+      .popup__content .popup__close:hover {
         color: inherit; }
 
 /***
@@ -4267,48 +3779,6 @@ a,
   content: ""; }
 
 /***
-    title: Text
-    section: Typography
-    description: Various helper classes for working with text.
-    example:
-        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
-        <p class="text--right text--large">This large text is right aligned.</p>
-        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
-***/
-.text {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: Helvetica, sans-serif;
-  color: #333;
-  word-wrap: break-word;
-  font-weight: normal;
-  letter-spacing: 0; }
-
-.text--upper {
-  text-transform: uppercase; }
-
-.text--center {
-  text-align: center; }
-
-.text--left {
-  text-align: left; }
-
-.text--right {
-  text-align: right; }
-
-.text--small {
-  font-size: 0.8rem; }
-
-.text--large {
-  font-size: 1.2rem; }
-
-.text--ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-/***
     title: Text Colors
     section: Colors
     description: Use to give an element's text a different color. This class affects everything, including headings and links.
@@ -4361,6 +3831,48 @@ a.color--gray,
 .color--gray a:not(.button),
 .color--gray .link {
   color: #bbb; }
+
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+        <p class="text--right text--large">This large text is right aligned.</p>
+        <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
+***/
+.text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0; }
+
+.text--upper {
+  text-transform: uppercase; }
+
+.text--center {
+  text-align: center; }
+
+.text--left {
+  text-align: left; }
+
+.text--right {
+  text-align: right; }
+
+.text--small {
+  font-size: 0.8rem; }
+
+.text--large {
+  font-size: 1.2rem; }
+
+.text--ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 /***
     title: Video
@@ -5040,8 +4552,7 @@ pre {
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a box<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Card</h3><p><p>A simple box/card. Should be used with the bg-classes.</p>
-</p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--lightgray"</span>&gt;</span>I'm a shadowed card<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container and pass an optional width;</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container and pass an optional width;</p>
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>I'm centered<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>In the middle of the page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>

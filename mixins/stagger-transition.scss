@@ -1,5 +1,5 @@
 // TODO: Documentation
-@mixin increment-transition-delay ($time, $num, $offset: 0, $property: transition, $reversed: false) {
+@mixin stagger-transition ($time, $num, $offset: 0, $property: transition, $reversed: false) {
 	@for $i from 1 through $num {
 		&:nth-of-type(#{$i}) {
 			$delay: ($i * $time) + $offset;

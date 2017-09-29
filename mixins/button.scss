@@ -1,4 +1,4 @@
-@mixin button-background ($color) {
+@mixin button-color ($color) {
 	// If a gradient is specified
 	@if ($button-gradient) {
 		background-image: linear-gradient($color, darken($color, $button-gradient));
@@ -57,7 +57,7 @@
 
 @mixin button ($color: $button-color) {
 	// Gradient or solid background with hover/active states
-	@include button-background($color);
+	@include button-color($color);
 
 	// Hello
 	display: inline-block;

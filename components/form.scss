@@ -70,7 +70,7 @@
 	font-family: $font-family-default;
 	font-size: $font-size-default; // NOTE: Was $button-font-size - Same as buttons so they align?
 	color: $color-form-text;
-	line-height: normal; // TODO: Reference?
+	line-height: $line-height-default;
 
 	appearance: none;
 	outline: 0;

@@ -1,12 +1,12 @@
 // Inline list
-@mixin inline-list ($width: false) {
+@mixin inline-list ($width: false, $margin: $margin-default) {
 	margin-left: 0;
 	padding-left: 0;
 	list-style: none;
 
 	> * {
 		display: inline-block;
-		margin: 0 $margin-default $margin-default 0;
+		margin: 0 $margin $margin 0;
 
 		@if ($width) {
 			width: $width;
@@ -16,7 +16,7 @@
 	.text--center &,
 	&.text--center {
 		> * {
-			margin: 0 ($margin-default / 2) $margin-default;
+			margin: 0 ($margin / 2) $margin;
 		}
 	}
 }

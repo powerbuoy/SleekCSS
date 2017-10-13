@@ -4,9 +4,6 @@
 	// Image (figure element) as background image
 	@include figure-background;
 
-	// Make sure image doesn't stick out
-	overflow: hidden;
-
 	// Or - if the element has a style attribute, a background image is assumed
 	background-size: cover;
 	background-position: 50% top;

@@ -410,3 +410,69 @@ input[type=range] {
 		transform: translateY($form-range-height);
 	}
 }
+
+/***
+    title: Floating Label
+    section: Forms
+    description: Use to create labels that act as placeholders until the field is focused. Note that the field _must_ also have a placeholder
+    example:
+        <p class="floating-label">
+            <input type="email" name="email" id="styleguide-placeholder-label-example" placeholder="This wont be shown but is required" required>
+            <label for="styleguide-placeholder-label-example">E-post</label>
+        </p>
+***/
+.floating-label {
+	$translateY: $font-size-default * $line-height-default + $form-padding-vertical;
+	$paddingTop: $font-size-default * $line-height-default;
+
+	position: relative;
+	text-align: left;
+	padding-top: $paddingTop;
+
+	// A real placeholder is required for :placeholder-shown - hide it
+	::placeholder {
+		color: transparent;
+	}
+
+	// Position the label directly on top of the input
+	label {
+		display: block;
+		pointer-events: none;
+
+		padding-top: $form-padding-vertical;
+		padding-left: $form-padding-horizontal;
+
+		position: absolute;
+		left: 0;
+		top: $paddingTop;
+		right: 0;
+		bottom: 0;
+
+		color: $color-form-placeholder;
+
+		transform: translateY(0) scale(1);
+		transform-origin: left top;
+		transition: all $transition-default $transition-easing;
+	}
+
+	// When no placeholder is visible (ie there's text inside the field) - move up the label
+	input:not(:placeholder-shown) + label,
+	textarea:not(:placeholder-shown) + label {
+		transform: translateY(-$translateY) scale(1);
+		color: $color-text;
+	}
+
+	// Always position label above in IE...
+	@supports (-ms-ime-align: auto) {
+		label {
+			transform: translateY(-$translateY) scale(1) !important;
+		}
+	}
+
+	// And 10/11
+	@media all and (-ms-high-contrast: none) {
+		label {
+			transform: translateY(-$translateY) scale(1) !important;
+		}
+	}
+}

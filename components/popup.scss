@@ -19,12 +19,15 @@
 	left: 0;
 	top: 0;
 	right: 0;
-	bottom: 0;
+	height: 100vh;
 	z-index: 100; // Make sure it's on top of 99s
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: auto;
+
+	padding: $section-padding 0;
 
 	opacity: 0;
 	transform: translateY(-100%);
@@ -40,9 +43,9 @@
 
 	// Close button
 	&__close {
-		position: absolute;
-		right: $padding-default;
-		top: $padding-default;
+		position: fixed;
+		right: $padding-large;
+		top: $padding-large;
 		z-index: 1;
 
 		font-size: 3rem;
@@ -54,7 +57,6 @@
 		transition: all $transition-default $transition-easing;
 
 		&:hover {
-			transform: scale(1.1);
 			color: $color-white;
 			text-decoration: none;
 		}
@@ -65,24 +67,18 @@
 		background: $color-white;
 
 		width: 95%;
-		max-width: $popup-width;
-		max-height: 95%;
+		max-width: 60rem;
+		margin: auto;
 
 		position: relative;
 		overflow: auto;
-		padding: $popup-padding;
+		padding: $padding-large;
 
 		-webkit-overflow-scrolling: touch; // This seems good for iOS http://stackoverflow.com/questions/9280258/prevent-body-scrolling-but-allow-overlay-scrolling#comment-37687418
 
-		@if ($popup-border-radius) {
-			border-radius: $popup-border-radius;
-		}
-		@else {
-			border-radius: 0;
-		}
-
 		// If close button is inside the box
 		.popup__close {
+			position: absolute;
 			color: inherit;
 
 			&:hover {

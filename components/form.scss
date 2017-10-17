@@ -132,8 +132,8 @@ label + label {
 // http://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete#answer-37432260
 @keyframes remove-chrome-autofill-color {
 	to {
+		background: $color-form-field-bg;
 		color: $color-form-text;
-		background: transparent;
 	}
 }
 

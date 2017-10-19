@@ -24,13 +24,29 @@
 	@if ($position == bottom) {
 		&:before,
 		&:after {
+			top: auto;
 			bottom: 0;
 		}
 	}
 	@elseif ($position == top) {
 		&:before,
 		&:after {
+			bottom: auto;
 			top: 0;
+		}
+	}
+	@elseif ($position == right) {
+		&:before,
+		&:after {
+			left: auto;
+			right: 0;
+		}
+	}
+	@elseif ($position == left) {
+		&:before,
+		&:after {
+			right: auto;
+			left: 0;
 		}
 	}
 }

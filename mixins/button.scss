@@ -41,14 +41,23 @@
 	@if ($button-border-width) {
 		$border-color: transparent;
 
+		// Automatic color
 		@if ($button-border-color == true) {
 			$border-color: darken($color, 10%);
 		}
+		// Defined color
 		@elseif ($button-border-color) {
 			$border-color: $button-border-color;
 		}
 
-		border: $button-border-width $button-border-style $border-color;
+		// Only add border if a color is set
+		@if ($button-border-color) {
+			border: $button-border-width $button-border-style $border-color;
+		}
+		// Otherwise no border
+		@else {
+			border: 0;
+		}
 	}
 	@else {
 		border: 0;
@@ -156,9 +165,32 @@
 	border: $button-border-width $button-border-style $color;
 	box-shadow: none;
 
+	// If non-ghost buttons have no border - reduce ghost button's padding by as much
+	@if ($button-border-color == false && $button-border-width) {
+		padding: calc(#{$button-padding-vertical} - #{$button-border-width}) calc(#{$button-padding-horizontal} - #{$button-border-width});
+	}
+
+	// Hover styling
 	&:hover {
 		@if ($opacity == 1) {
-			background-color: $color;
+			// If a gradient is specified
+			@if ($button-gradient) {
+				background-image: linear-gradient($color, darken($color, $button-gradient));
+
+				// Invert gradient on active
+				&:active {
+					background-image: linear-gradient(darken($color, $button-gradient), $color);
+				}
+			}
+			// Solid background
+			@else {
+				background-color: $color;
+
+				// Darken even more on active
+				&:active {
+					background-color: darken($color, 15%);
+				}
+			}
 
 			@if (lightness($color) > 70) {
 				color: invert($button-text-color);

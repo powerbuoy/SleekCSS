@@ -10,7 +10,7 @@ $button-transition: true !default;
 // Button border
 $button-border-width: 1px !default;
 $button-border-style: solid !default;
-$button-border-color: false !default; // false makes non ghost buttons have 0 border, true makes it 10% darker than bg
+$button-border-color: false !default; // false makes non ghost buttons have transparent border, true makes it 10% darker than bg
 $button-border-radius: 0 !default;
 
 // Button background

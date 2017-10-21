@@ -118,7 +118,7 @@ label {
 
 }
 
-// Two labels inside the same container should be separated
+// Two labels inside the same container should be separated (TODO: Wanted?)
 label + label {
 	margin-left: $gutter-default;
 }
@@ -130,7 +130,8 @@ label + label {
 
 // Remove Chrome's autofill styling
 // http://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete#answer-37432260
-@keyframes remove-chrome-autofill-color {
+// NOTE: This prevents transparent backgrounds
+/* @keyframes remove-chrome-autofill-color {
 	to {
 		background: $color-form-field-bg;
 		color: $color-form-text;
@@ -142,7 +143,7 @@ select:-webkit-autofill,
 textarea:-webkit-autofill {
 	animation-name: remove-chrome-autofill-color;
 	animation-fill-mode: both;
-}
+} */
 
 // Hide search UI
 input[type=search] {
@@ -171,11 +172,16 @@ textarea {
 }
 
 // Buttons
-// input[type=submit],
+// input[type=submit], // Naw, too specific
 button {
 	@include button;
 
 	outline: 0;
+}
+
+// Wrap submit text
+input[type=submit] {
+	white-space: normal;
 }
 
 // Select
@@ -185,7 +191,7 @@ button {
 
 		appearance: none;
 
-		background: $color-form-field-bg url($form-select-arrow) no-repeat calc(100% - #{$padding-default}) 50%;
+		background: $color-form-field-bg url($form-select-arrow) no-repeat calc(100% - #{$padding-default}) 50%; // TODO: Use "from right" syntax for bg image
 		background-size: $form-select-arrow-size auto;
 
 		box-sizing: border-box;
@@ -418,7 +424,7 @@ input[type=range] {
     example:
         <p class="floating-label">
             <input type="email" name="email" id="styleguide-placeholder-label-example" placeholder="This wont be shown but is required" required>
-            <label for="styleguide-placeholder-label-example">E-post</label>
+            <label for="styleguide-placeholder-label-example">E-mail</label>
         </p>
 ***/
 .floating-label {
@@ -450,7 +456,7 @@ input[type=range] {
 
 		color: $color-form-placeholder;
 
-		transform: translateY(0) scale(1);
+		transform: translateY(0);
 		transform-origin: left top;
 		transition: all $transition-default $transition-easing;
 	}
@@ -458,21 +464,21 @@ input[type=range] {
 	// When no placeholder is visible (ie there's text inside the field) - move up the label
 	input:not(:placeholder-shown) + label,
 	textarea:not(:placeholder-shown) + label {
-		transform: translateY(-$translateY) scale(1);
+		transform: translateY(-$translateY);
 		color: $color-text;
 	}
 
 	// Always position label above in IE...
 	@supports (-ms-ime-align: auto) {
 		label {
-			transform: translateY(-$translateY) scale(1) !important;
+			transform: translateY(-$translateY) !important;
 		}
 	}
 
 	// And 10/11
 	@media all and (-ms-high-contrast: none) {
 		label {
-			transform: translateY(-$translateY) scale(1) !important;
+			transform: translateY(-$translateY) !important;
 		}
 	}
 }

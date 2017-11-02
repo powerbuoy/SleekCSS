@@ -258,6 +258,7 @@
         <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 .button {
+  background-image: none;
   background-color: #ffcc34;
   border: 0;
   display: inline-block;
@@ -308,6 +309,7 @@
     color: #ffcc34; }
 
 .button--white {
+  background-image: none;
   background-color: #fff;
   color: black;
   border: 0; }
@@ -333,6 +335,7 @@
       color: #fff; }
 
 .button--disabled {
+  background-image: none;
   background-color: #bbb;
   border: 0; }
   .button--disabled:hover {
@@ -598,6 +601,7 @@ textarea {
   color: #bbb; }
 
 button {
+  background-image: none;
   background-color: #ffcc34;
   border: 0;
   display: inline-block;

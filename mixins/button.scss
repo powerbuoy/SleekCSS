@@ -18,6 +18,7 @@
 	}
 	// Solid background
 	@else {
+		background-image: none;
 		background-color: $color;
 
 		// Darken on hover (TODO: Should be configurable)
@@ -69,7 +70,7 @@
 	// Box shadow?
 	&:hover {
 		@if ($button-shadow == true) {
-			box-shadow: 0 50px 80px -40px darken($base-color, 10%), 0 25px 25px -20px darken($base-color, 10%);
+			box-shadow: 0 50px 80px -40px lighten($base-color, 10%), 0 25px 25px -20px lighten($base-color, 10%);
 		}
 		@elseif ($button-shadow) {
 			box-shadow: $button-shadow;
@@ -83,14 +84,6 @@
 @mixin button ($color: $button-color) {
 	// Gradient or solid background with hover/active states
 	@include button-color($color);
-
-	// Store the base color
-	$base-color: $color;
-
-	// If more than one color is specified - use the second one as the "base"
-	@if (length($color) > 1) {
-		$base-color: nth($color, 2);
-	}
 
 	// Hello
 	display: inline-block;
@@ -211,6 +204,7 @@
 			}
 			// Solid background
 			@else {
+				background-image: none;
 				background-color: lighten($color, 5%);
 
 				// Darken even more on active

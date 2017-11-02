@@ -22,21 +22,21 @@
 
 		// Darken on hover (TODO: Should be configurable)
 		&:hover {
-			background-color: lighten($color, 10%);
+			background-color: lighten($color, 5%);
 		}
 
 		// Darken even more on active
 		&:active {
-			background-color: lighten($color, 15%);
+			background-color: lighten($color, 10%);
 		}
 	}
 
 	// Invert text color if button too light
 	@if (lightness($base-color) > 90) {
-		color: invert($button-text-color);
+		color: invert($base-color);
 
 		&:hover {
-			color: invert($button-text-color);
+			color: invert($base-color);
 		}
 	}
 
@@ -64,6 +64,19 @@
 	}
 	@else {
 		border: 0;
+	}
+
+	// Box shadow?
+	&:hover {
+		@if ($button-shadow == true) {
+			box-shadow: 0 50px 80px -40px darken($base-color, 10%), 0 25px 25px -20px darken($base-color, 10%);
+		}
+		@elseif ($button-shadow) {
+			box-shadow: $button-shadow;
+		}
+		@else {
+			box-shadow: none;
+		}
 	}
 }
 
@@ -103,7 +116,7 @@
 	font-style: $button-font-style;
 
 	line-height: $button-line-height;
-	color: $button-text-color;
+	color: $color-white;
 	// cursor: default;
 
 	text-transform: $button-text-transform;
@@ -117,13 +130,13 @@
 	// A link inside a button
 	a,
 	a:hover {
-		color: $button-text-color;
+		color: $color-white;
 		text-decoration: none;
 	}
 
 	// Make sure text color doesn't change on hover
 	&:hover {
-		color: $button-text-color;
+		color: $color-white;
 		text-decoration: none;
 	}
 
@@ -152,17 +165,6 @@
 	}
 	@else {
 		text-shadow: none;
-	}
-
-	// Box shadow?
-	@if ($button-shadow == true) {
-		box-shadow: 0 .2rem .8rem darken($base-color, 10%);
-	}
-	@elseif ($button-shadow) {
-		box-shadow: $button-shadow;
-	}
-	@else {
-		box-shadow: none;
 	}
 }
 
@@ -209,16 +211,16 @@
 			}
 			// Solid background
 			@else {
-				background-color: $color;
+				background-color: lighten($color, 5%);
 
 				// Darken even more on active
 				&:active {
-					background-color: lighten($color, 15%);
+					background-color: lighten($color, 10%);
 				}
 			}
 
 			@if (lightness($base-color) > 70) {
-				color: invert($button-text-color);
+				color: invert($base-color);
 			}
 			@else {
 				color: $button-text-color;
@@ -229,7 +231,7 @@
 
 			@if ($button-ghost-opacity > .25) {
 				@if (lightness($base-color) > 70) {
-					color: invert($button-text-color);
+					color: invert($base-color);
 				}
 				@else {
 					color: $button-text-color;

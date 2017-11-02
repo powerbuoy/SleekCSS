@@ -12,6 +12,12 @@
             </div>
         </div>
 ***/
+html.popup-open,
+html.popup-open body {
+	overflow: hidden;
+	// TODO: touch-action: none; (https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action)
+}
+
 .popup {
 	background: $color-overlay;
 
@@ -22,11 +28,14 @@
 	height: 100vh;
 	z-index: 100; // Make sure it's on top of 99s
 
+	overflow: auto;
+
+	// This seems good for iOS http://stackoverflow.com/questions/9280258/prevent-body-scrolling-but-allow-overlay-scrolling#comment-37687418
+	-webkit-overflow-scrolling: touch;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: auto;
-
 	padding: $section-padding 0;
 
 	opacity: 0;
@@ -53,9 +62,6 @@
 		color: $color-white;
 		text-decoration: none;
 
-		transform: scale(1);
-		transition: all $transition-default $transition-easing;
-
 		&:hover {
 			color: $color-white;
 			text-decoration: none;
@@ -67,14 +73,10 @@
 		background: $color-white;
 
 		width: 95%;
-		max-width: 60rem;
+		max-width: 50rem;
+
 		margin: auto;
-
-		position: relative;
-		overflow: auto;
 		padding: $padding-large;
-
-		-webkit-overflow-scrolling: touch; // This seems good for iOS http://stackoverflow.com/questions/9280258/prevent-body-scrolling-but-allow-overlay-scrolling#comment-37687418
 
 		// If close button is inside the box
 		.popup__close {

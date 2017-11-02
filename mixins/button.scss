@@ -1,16 +1,19 @@
 @mixin button-color ($color) {
-	// If a gradient is specified
-	@if ($button-gradient) {
-		background-image: linear-gradient($color, darken($color, $button-gradient));
+	// Store the base color
+	$base-color: $color;
 
-		// TODO: Some default hover?
-		&:hover {
+	// If more than one color is specified - use the second one as the "base"
+	@if (length($color) > 1) {
+		$base-color: nth($color, 2);
+	}
 
-		}
+	// If two colors are specified
+	@if (length($color) > 1) {
+		background-image: linear-gradient(nth($color, 1), nth($color, 2));
 
 		// Invert gradient on active
 		&:active {
-			background-image: linear-gradient(darken($color, $button-gradient), $color);
+			background-image: linear-gradient(nth($color, 2), nth($color, 1));
 		}
 	}
 	// Solid background
@@ -19,17 +22,17 @@
 
 		// Darken on hover (TODO: Should be configurable)
 		&:hover {
-			background-color: darken($color, 10%);
+			background-color: lighten($color, 10%);
 		}
 
 		// Darken even more on active
 		&:active {
-			background-color: darken($color, 15%);
+			background-color: lighten($color, 15%);
 		}
 	}
 
 	// Invert text color if button too light
-	@if (lightness($color) > 90) {
+	@if (lightness($base-color) > 90) {
 		color: invert($button-text-color);
 
 		&:hover {
@@ -43,7 +46,7 @@
 
 		// Automatic color
 		@if ($button-border-color == true) {
-			$border-color: darken($color, 10%);
+			$border-color: darken($base-color, 10%);
 		}
 		// Defined color
 		@elseif ($button-border-color) {
@@ -67,6 +70,14 @@
 @mixin button ($color: $button-color) {
 	// Gradient or solid background with hover/active states
 	@include button-color($color);
+
+	// Store the base color
+	$base-color: $color;
+
+	// If more than one color is specified - use the second one as the "base"
+	@if (length($color) > 1) {
+		$base-color: nth($color, 2);
+	}
 
 	// Hello
 	display: inline-block;
@@ -145,7 +156,7 @@
 
 	// Box shadow?
 	@if ($button-shadow == true) {
-		box-shadow: 0 .2rem .8rem $color-shadow;
+		box-shadow: 0 .2rem .8rem darken($base-color, 10%);
 	}
 	@elseif ($button-shadow) {
 		box-shadow: $button-shadow;
@@ -155,15 +166,29 @@
 	}
 }
 
-@mixin button-ghost ($color: $button-color, $opacity: $button-ghost-opacity) {
+@mixin button-ghost ($color: $button-color) {
+	// Store the base color
+	$base-color: $color;
+
+	// If more than one color is specified - use the second one as the "base"
+	@if (length($color) > 1) {
+		$base-color: nth($color, 2);
+	}
+
+	// No background on ghosts
 	background-color: transparent;
 	background-image: none;
 
-	color: $color;
+	// Text in bg color
+	color: $base-color;
 	text-shadow: none;
 
-	border: $button-border-width $button-border-style $color;
-	box-shadow: none;
+	// Border
+	border: $button-border-width $button-border-style $base-color;
+
+	&:not(:hover) {
+		box-shadow: none;
+	}
 
 	// If non-ghost buttons have no border - reduce ghost button's padding by as much
 	@if ($button-border-color == false && $button-border-width) {
@@ -172,14 +197,14 @@
 
 	// Hover styling
 	&:hover {
-		@if ($opacity == 1) {
+		@if ($button-ghost-opacity == 1) {
 			// If a gradient is specified
-			@if ($button-gradient) {
-				background-image: linear-gradient($color, darken($color, $button-gradient));
+			@if (length($color) > 1) {
+				background-image: linear-gradient(nth($color, 1), nth($color, 2));
 
 				// Invert gradient on active
 				&:active {
-					background-image: linear-gradient(darken($color, $button-gradient), $color);
+					background-image: linear-gradient(nth($color, 2), nth($color, 1));
 				}
 			}
 			// Solid background
@@ -188,11 +213,11 @@
 
 				// Darken even more on active
 				&:active {
-					background-color: darken($color, 15%);
+					background-color: lighten($color, 15%);
 				}
 			}
 
-			@if (lightness($color) > 70) {
+			@if (lightness($base-color) > 70) {
 				color: invert($button-text-color);
 			}
 			@else {
@@ -200,10 +225,10 @@
 			}
 		}
 		@else {
-			background-color: rgba($color, $opacity);
+			background-color: rgba($color, $button-ghost-opacity);
 
 			@if ($opacity > .25) {
-				@if (lightness($color) > 70) {
+				@if (lightness($base-color) > 70) {
 					color: invert($button-text-color);
 				}
 				@else {

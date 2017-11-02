@@ -26,12 +26,12 @@
 }
 
 // Button colors
-@each $bc in $button-colors {
-	.button--#{nth($bc, 1)} {
-		@include button-color(nth($bc, 2));
+@each $button-name, $button-color in $button-colors {
+	.button--#{$button-name} {
+		@include button-color($button-color);
 
 		&.button--ghost {
-			@include button-ghost(nth($bc, 2));
+			@include button-ghost($button-color);
 		}
 	}
 }

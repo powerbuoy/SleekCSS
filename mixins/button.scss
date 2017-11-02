@@ -223,7 +223,7 @@
 				color: invert($base-color);
 			}
 			@else {
-				color: $button-text-color;
+				color: $color-white;
 			}
 		}
 		@else {
@@ -234,7 +234,7 @@
 					color: invert($base-color);
 				}
 				@else {
-					color: $button-text-color;
+					color: $color-white;
 				}
 			}
 			@else {

@@ -16,12 +16,12 @@
 	}
 }
 
-@each $color in $bg-colors {
-	.bg-overlay--#{nth($color, 1)} {
-		@include bg-overlay(rgba(nth($color, 2), .5), false);
+@each $color-name, $color in $bg-colors {
+	.bg-overlay--#{$color-name} {
+		@include bg-overlay(rgba($color, .5), false);
 
 		&.bg-overlay--hover {
-			@include bg-overlay(rgba(nth($color, 2), .5), true);
+			@include bg-overlay(rgba($color, .5), true);
 		}
 	}
 }

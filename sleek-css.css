@@ -146,7 +146,6 @@
     .bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--hover:hover:before {
       background: rgba(0, 0, 0, 0.7); }
@@ -194,7 +193,6 @@
     .bg-overlay--white.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--white.bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--white.bg-overlay--hover:hover:before {
       background: rgba(255, 255, 255, 0.7); }
@@ -242,7 +240,6 @@
     .bg-overlay--lightgray.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--lightgray.bg-overlay--hover:before {
-      -webkit-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .bg-overlay--lightgray.bg-overlay--hover:hover:before {
       background: rgba(250, 250, 250, 0.7); }
@@ -262,7 +259,7 @@
 ***/
 .button {
   background-color: #ffcc34;
-  border: 1px solid transparent;
+  border: 0;
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -276,14 +273,13 @@
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
   .button:hover {
-    background-color: #ffbf01; }
+    background-color: #ffd967; }
   .button:active {
-    background-color: #e7ad00; }
+    background-color: #ffdf81; }
   .button[class*="icon-"]:empty:not([value]) {
     padding-left: 1rem;
     padding-right: 1rem; }
@@ -303,7 +299,9 @@
   color: #ffcc34;
   text-shadow: none;
   border: 1px solid #ffcc34;
-  box-shadow: none; }
+  padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+  .button--ghost:not(:hover) {
+    box-shadow: none; }
   .button--ghost:hover {
     background-color: rgba(255, 204, 52, 0.1);
     color: #ffcc34; }
@@ -311,11 +309,11 @@
 .button--white {
   background-color: #fff;
   color: black;
-  border: 1px solid transparent; }
+  border: 0; }
   .button--white:hover {
-    background-color: #e6e6e6; }
+    background-color: white; }
   .button--white:active {
-    background-color: #d9d9d9; }
+    background-color: white; }
   .button--white:hover {
     color: black; }
   .button--white.button--ghost {
@@ -324,25 +322,29 @@
     color: #fff;
     text-shadow: none;
     border: 1px solid #fff;
-    box-shadow: none; }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    .button--white.button--ghost:not(:hover) {
+      box-shadow: none; }
     .button--white.button--ghost:hover {
       background-color: rgba(255, 255, 255, 0.1);
       color: #fff; }
 
 .button--disabled {
   background-color: #bbb;
-  border: 1px solid transparent; }
+  border: 0; }
   .button--disabled:hover {
-    background-color: #a2a2a2; }
+    background-color: #d5d5d5; }
   .button--disabled:active {
-    background-color: #959595; }
+    background-color: #e1e1e1; }
   .button--disabled.button--ghost {
     background-color: transparent;
     background-image: none;
     color: #bbb;
     text-shadow: none;
     border: 1px solid #bbb;
-    box-shadow: none; }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    .button--disabled.button--ghost:not(:hover) {
+      box-shadow: none; }
     .button--disabled.button--ghost:hover {
       background-color: rgba(187, 187, 187, 0.1);
       color: #bbb; }
@@ -356,8 +358,7 @@
   padding: 1.25rem 4rem; }
 
 .button--wide {
-  display: block;
-  width: 100%; }
+  display: block; }
 
 /***
     title: Container
@@ -445,7 +446,6 @@ hr,
     z-index: -2;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -531,13 +531,17 @@ form {
     border: 0;
     text-decoration: none; }
 
-label span.value {
-  float: right; }
-
 label + label {
-  margin-left: 1rem; }
+  margin-left: 1.5rem; }
 
 input[type=text], input[type=password], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0;
   background: #fff;
   display: inline-block;
   vertical-align: middle;
@@ -545,10 +549,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   width: 100%;
   margin: 0;
   padding: 1rem 1rem;
-  font-family: Helvetica, sans-serif;
-  font-size: 1rem;
   color: #333;
-  line-height: normal;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -558,24 +559,19 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   input[type=text]:hover, input[type=text]:focus, input[type=password]:hover, input[type=password]:focus, input[type=search]:hover, input[type=search]:focus, input[type=email]:hover, input[type=email]:focus, input[type=url]:hover, input[type=url]:focus, input[type=tel]:hover, input[type=tel]:focus, input[type=number]:hover, input[type=number]:focus, input[type=date]:hover, input[type=date]:focus, input[type=month]:hover, input[type=month]:focus, input[type=week]:hover, input[type=week]:focus, input[type=time]:hover, input[type=time]:focus, input[type=datetime]:hover, input[type=datetime]:focus, input[type=datetime-local]:hover, input[type=datetime-local]:focus, input[type=color]:hover, input[type=color]:focus, textarea:hover, textarea:focus {
     border-color: #c5c5c5; }
 
-@-webkit-keyframes remove-chrome-autofill-color {
-  to {
-    color: #333;
-    background: transparent; } }
-
-@keyframes remove-chrome-autofill-color {
-  to {
-    color: #333;
-    background: transparent; } }
+/* @keyframes remove-chrome-autofill-color {
+	to {
+		background: $color-form-field-bg;
+		color: $color-form-text;
+	}
+}
 
 input:-webkit-autofill,
 select:-webkit-autofill,
 textarea:-webkit-autofill {
-  -webkit-animation-name: remove-chrome-autofill-color;
-          animation-name: remove-chrome-autofill-color;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
+	animation-name: remove-chrome-autofill-color;
+	animation-fill-mode: both;
+} */
 input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-results-button, input[type=search]::-webkit-search-results-decoration {
   display: none; }
 
@@ -590,9 +586,6 @@ textarea {
 ::-webkit-input-placeholder {
   color: #bbb; }
 
-::-moz-placeholder {
-  color: #bbb; }
-
 :-ms-input-placeholder {
   color: #bbb; }
 
@@ -601,7 +594,7 @@ textarea {
 
 button {
   background-color: #ffcc34;
-  border: 1px solid transparent;
+  border: 0;
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -615,15 +608,14 @@ button {
   text-decoration: none;
   text-align: center;
   border-radius: 0;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none;
   outline: 0; }
   button:hover {
-    background-color: #ffbf01; }
+    background-color: #ffd967; }
   button:active {
-    background-color: #e7ad00; }
+    background-color: #ffdf81; }
   button[class*="icon-"]:empty:not([value]) {
     padding-left: 1rem;
     padding-right: 1rem; }
@@ -635,7 +627,17 @@ button {
     color: #fff;
     text-decoration: none; }
 
+input[type=submit] {
+  white-space: normal; }
+
 select {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+  word-wrap: break-word;
+  font-weight: normal;
+  letter-spacing: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -644,7 +646,6 @@ select {
   box-sizing: border-box;
   width: 100%;
   padding: 1rem 2.5rem 1rem 1rem;
-  font-size: 1rem;
   color: #333;
   line-height: normal;
   border: 1px solid #dedede;
@@ -812,6 +813,56 @@ input[type=range] {
       outline: 0; }
 
 /***
+    title: Floating Label
+    section: Forms
+    description: Use to create labels that act as placeholders until the field is focused. Note that the field _must_ also have a placeholder
+    example:
+        <p class="floating-label">
+            <input type="email" name="email" id="styleguide-placeholder-label-example" placeholder="This wont be shown but is required" required>
+            <label for="styleguide-placeholder-label-example">E-mail</label>
+        </p>
+***/
+.floating-label {
+  position: relative;
+  text-align: left;
+  padding-top: 1.6rem; }
+  .floating-label ::-webkit-input-placeholder {
+    color: transparent; }
+  .floating-label :-ms-input-placeholder {
+    color: transparent; }
+  .floating-label ::placeholder {
+    color: transparent; }
+  .floating-label label {
+    display: block;
+    pointer-events: none;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    position: absolute;
+    left: 0;
+    top: 1.6rem;
+    right: 0;
+    bottom: 0;
+    color: #bbb;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+    transition: all 0.2s ease-out; }
+  .floating-label input:not(:placeholder-shown) + label,
+  .floating-label textarea:not(:placeholder-shown) + label {
+    -webkit-transform: translateY(-2.6rem);
+            transform: translateY(-2.6rem);
+    color: #333; }
+  @supports (-ms-ime-align: auto) {
+    .floating-label label {
+      -webkit-transform: translateY(-2.6rem) !important;
+              transform: translateY(-2.6rem) !important; } }
+  @media all and (-ms-high-contrast: none) {
+    .floating-label label {
+      -webkit-transform: translateY(-2.6rem) !important;
+              transform: translateY(-2.6rem) !important; } }
+
+/***
     title: Headings
     section: Typography
     description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include heading;
@@ -879,7 +930,6 @@ h6,
   padding-bottom: 3rem;
   position: relative;
   overflow: hidden;
-  overflow: hidden;
   background-size: cover;
   background-position: 50% top;
   background-repeat: no-repeat;
@@ -907,7 +957,6 @@ h6,
     z-index: -2;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -962,7 +1011,6 @@ h6,
     padding-bottom: 3rem;
     position: relative;
     overflow: hidden;
-    overflow: hidden;
     background-size: cover;
     background-position: 50% top;
     background-repeat: no-repeat;
@@ -996,7 +1044,6 @@ h6,
       z-index: -2;
       -webkit-transform: scale(1);
               transform: scale(1);
-      -webkit-transition: -webkit-transform 0.2s ease-out;
       transition: -webkit-transform 0.2s ease-out;
       transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -1169,7 +1216,6 @@ h6,
         -ms-flex-pack: center;
             justify-content: center;
     border-radius: 50%;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
   [class*="icon-"].icon--round.icon--above, [class*="icon-"].icon--round.icon--below {
     display: -webkit-box;
@@ -1198,12 +1244,12 @@ a:hover .icon--round {
 
 [class*="icon-"].icon--round--lightgray {
   /* &:hover:before {
-				background-color: rgba(nth($color, 2), .2);
+				background-color: rgba($color, .2);
 				color: nth($color, 2);
 			}
 
 			&.icon--round--ghost:hover:before {
-				background-color: rgba(nth($color, 2), .2);
+				background-color: rgba($color, .2);
 			} */ }
   [class*="icon-"].icon--round--lightgray:before {
     background-color: #fafafa; }
@@ -1257,7 +1303,6 @@ a:hover .icon--round {
     z-index: -2;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
@@ -1404,7 +1449,9 @@ a,
     display: inline-block; }
     .list--pipe-separated > *:not(:last-child):after {
       content: " | ";
-      margin: 0 0; }
+      margin: 0 0 0 0; }
+  .text--center .list--pipe-separated > *, .list--pipe-separated.text--center > * {
+    margin: 0 0; }
 
 .list--inline {
   margin-left: 0;
@@ -1448,14 +1495,20 @@ a,
             </div>
         </div>
 ***/
+html.popup-open,
+html.popup-open body {
+  overflow: hidden; }
+
 .popup {
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
-  bottom: 0;
+  height: 100vh;
   z-index: 100;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1465,15 +1518,14 @@ a,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 3rem 0;
   opacity: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
   transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
   transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out;
   transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear; }
   .popup:target, .popup.open {
-    -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     transition: transform 0s 0s linear, opacity 0.2s 0s ease-out;
     transition: transform 0s 0s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
@@ -1481,34 +1533,26 @@ a,
     -webkit-transform: translateY(0);
             transform: translateY(0); }
   .popup__close {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
     z-index: 1;
     font-size: 3rem;
     line-height: 1rem;
     color: #fff;
-    text-decoration: none;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out; }
+    text-decoration: none; }
     .popup__close:hover {
-      -webkit-transform: scale(1.1);
-              transform: scale(1.1);
       color: #fff;
       text-decoration: none; }
   .popup__content {
     background: #fff;
     width: 95%;
-    max-width: 45rem;
-    max-height: 95%;
+    max-width: 50rem;
     position: relative;
-    overflow: auto;
-    padding: 2rem;
-    -webkit-overflow-scrolling: touch;
-    border-radius: 0; }
+    margin: auto;
+    padding: 2rem; }
     .popup__content .popup__close {
+      position: absolute;
       color: inherit; }
       .popup__content .popup__close:hover {
         color: inherit; }
@@ -1710,7 +1754,6 @@ a.color--gray,
         <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
 ***/
 .text {
-  margin: 0;
   font-size: 1rem;
   line-height: 1.6;
   font-family: Helvetica, sans-serif;

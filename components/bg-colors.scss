@@ -5,8 +5,8 @@
     example:
         <div class="bg--white">I have a white background color</div>
 ***/
-@each $color in $bg-colors {
-	.bg--#{nth($color, 1)} {
-		background-color: #{nth($color, 2)};
+@each $color-name, $color in $bg-colors {
+	.bg--#{$color-name} {
+		background-color: $color;
 	}
 }

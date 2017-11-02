@@ -130,39 +130,39 @@ a:hover .icon--round {
 /**
  * Icon colors
  */
-@each $color in $icon-colors {
+@each $color-name, $color in $icon-colors {
 	[class*="icon-"] {
-		&.icon--#{nth($color, 1)} {
+		&.icon--#{$color-name} {
 			&:before {
-				color: nth($color, 2);
+				color: $color;
 			}
 		}
 
-	 	&.icon--after.icon--#{nth($color, 1)} {
+	 	&.icon--after.icon--#{$color-name} {
 			&:after {
-				color: nth($color, 2);
+				color: $color;
 			}
 		}
 
-		// TODO: Support for icon--after
-	 	&.icon--round--#{nth($color, 1)} {
+		// TODO: Support for icon-round.icon--after
+	 	&.icon--round--#{$color-name} {
 			&:before {
-				background-color: nth($color, 2);
+				background-color: $color;
 			}
 
 			&.icon--round--ghost:before {
 				background-color: transparent;
-				color: nth($color, 2);
-				border-color: nth($color, 2);
+				color: $color;
+				border-color: $color;
 			}
 
 			/* &:hover:before {
-				background-color: rgba(nth($color, 2), .2);
+				background-color: rgba($color, .2);
 				color: nth($color, 2);
 			}
 
 			&.icon--round--ghost:hover:before {
-				background-color: rgba(nth($color, 2), .2);
+				background-color: rgba($color, .2);
 			} */
 		}
 	}

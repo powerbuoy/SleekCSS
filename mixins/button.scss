@@ -227,7 +227,7 @@
 		@else {
 			background-color: rgba($color, $button-ghost-opacity);
 
-			@if ($opacity > .25) {
+			@if ($button-ghost-opacity > .25) {
 				@if (lightness($base-color) > 70) {
 					color: invert($button-text-color);
 				}

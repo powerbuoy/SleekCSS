@@ -8,32 +8,32 @@
             <p>Text and <a href="#">links</a></p>
         </div>
 ***/
-@each $color in $text-colors {
+@each $color-name, $color in $text-colors {
 	// Colors added directly to elements
-	.color--#{nth($color, 1)},
-	h1.color--#{nth($color, 1)},
-	h2.color--#{nth($color, 1)},
-	h3.color--#{nth($color, 1)},
-	h4.color--#{nth($color, 1)},
-	h5.color--#{nth($color, 1)},
-	h6.color--#{nth($color, 1)},
-	.heading--1.color--#{nth($color, 1)},
-	.heading--2.color--#{nth($color, 1)},
-	.heading--3.color--#{nth($color, 1)},
-	.heading--4.color--#{nth($color, 1)},
-	.heading--5.color--#{nth($color, 1)},
-	.heading--6.color--#{nth($color, 1)},
-	a.color--#{nth($color, 1)},
-	.link.color--#{nth($color, 1)} {
-		color: #{nth($color, 2)};
+	.color--#{$color-name},
+	h1.color--#{$color-name},
+	h2.color--#{$color-name},
+	h3.color--#{$color-name},
+	h4.color--#{$color-name},
+	h5.color--#{$color-name},
+	h6.color--#{$color-name},
+	.heading--1.color--#{$color-name},
+	.heading--2.color--#{$color-name},
+	.heading--3.color--#{$color-name},
+	.heading--4.color--#{$color-name},
+	.heading--5.color--#{$color-name},
+	.heading--6.color--#{$color-name},
+	a.color--#{$color-name},
+	.link.color--#{$color-name} {
+		color: $color;
 	}
 
 	// Colors added to parent element
-	.color--#{nth($color, 1)} {
+	.color--#{$color-name} {
 		#{$headings},
 		a:not(.button),
 		.link {
-			color: #{nth($color, 2)};
+			color: $color;
 		}
 	}
 }

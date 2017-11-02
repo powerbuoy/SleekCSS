@@ -6,9 +6,9 @@
 			margin: 0 $icon-margin 0 0;
 		}
 
-		@each $auto-icon in $auto-icons {
-			&[#{nth($auto-icon, 1)}]:before {
-				content: "#{nth($auto-icon, 2)}";
+		@each $auto-icon-name, $auto-icon in $auto-icons {
+			&[#{$auto-icon-name}]:before {
+				content: "#{$auto-icon}";
 			}
 		}
 	}

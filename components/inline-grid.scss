@@ -16,17 +16,17 @@ ul[class*="inline-grid--"] {
 	list-style: none;
 }
 
-@each $num in $col-nums {
-	.inline-grid--#{nth($num, 1)} > * {
-		width: calc(#{100% / nth($num, 2)} - #{$gutter-default});
+@each $num-name, $num in $col-nums {
+	.inline-grid--#{$num-name} > * {
+		width: calc(#{100% / $num} - #{$gutter-default});
 	}
 }
 
-@each $bp in $col-breakpoints {
-	@each $num in $col-nums {
-		@media #{nth($bp, 2)} {
-			.inline-grid--#{nth($num, 1)}--#{nth($bp, 1)} > * {
-				width: calc(#{100% / nth($num, 2)} - #{$gutter-default});
+@each $bp-name, $bp in $col-breakpoints {
+	@each $num-name, $num in $col-nums {
+		@media #{$bp} {
+			.inline-grid--#{$num-name}--#{$bp-name} > * {
+				width: calc(#{100% / $num} - #{$gutter-default});
 			}
 		}
 	}

@@ -39,11 +39,6 @@
 		padding-bottom: $section-padding * 2;
 	}
 
-	@media #{$bp-laptop} {
-		padding-top: $section-padding * 3;
-		padding-bottom: $section-padding * 3;
-	}
-
 	// Title/description
 	h1,
 	h2 {

@@ -79,7 +79,7 @@
 
 	// And add an overlay on top
 	&:before {
-		background: rgba($color-overlay, .1);
+		background: $color-overlay;
 
 		display: none;
 		content: "";

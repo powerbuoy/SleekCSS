@@ -7,20 +7,27 @@
 	@if (length($color) > 1) {
 		$base-color: nth($color, 2); // Use the second one as the "base"
 
-		background: linear-gradient(nth($color, 1), nth($color, 2));
+		background: linear-gradient(rgba(nth($color, 1), $opacity), rgba(nth($color, 2), $opacity));
 	}
 	// Solid background
 	@else {
-		background: lighten($base-color, 5%);
+		background: rgba(lighten($base-color, 5%), $opacity);
 	}
 
 	// Invert text color if button too bright
-	@if (lightness($base-color) > 90) {
+	@if (lightness($base-color) > 90 and $opacity > .5) {
 		color: $button-text-color-dark;
 	}
 
-	@if ($button-shadow) {
-		box-shadow: 0 50px 80px -40px lighten($base-color, 10%), 0 25px 25px -20px lighten($base-color, 10%);
+	@if ($button-glow) {
+		box-shadow: 0 2px 64px lighten($base-color, 10%);
+	}
+	// Shadow?
+	@elseif ($button-shadow == both or $button-shadow == true) {
+		box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
+	}
+	@elseif ($button-shadow != false) {
+		box-shadow: $button-shadow;
 	}
 	@else {
 		box-shadow: none;
@@ -36,15 +43,15 @@
 	@if (length($color) > 1) {
 		$base-color: nth($color, 2); // Use the second one as the "base"
 
-		background: linear-gradient(nth($color, 1), nth($color, 2));
+		background: linear-gradient(rgba(nth($color, 1), $opacity), rgba(nth($color, 2), $opacity));
 	}
 	// Solid background
 	@else {
-		background: $base-color;
+		background: rgba($base-color, $opacity);
 	}
 
 	// Invert text color if button too bright
-	@if (lightness($base-color) > 90) {
+	@if (lightness($base-color) > 90 and $opacity > .5) {
 		color: $button-text-color-dark;
 	}
 
@@ -56,9 +63,16 @@
 		text-shadow: none;
 	}
 
-	// Box shadow?
-	@if ($button-shadow == both) {
-		box-shadow: 0 50px 80px -40px lighten($base-color, 10%), 0 25px 25px -20px lighten($base-color, 10%);
+	// Glow?
+	@if ($button-glow == both) {
+		box-shadow: 0 2px 33px lighten($base-color, 10%);
+	}
+	// Shadow?
+	@elseif ($button-shadow == both) {
+		box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
+	}
+	@elseif ($button-shadow != false) {
+		box-shadow: $button-shadow;
 	}
 	@else {
 		box-shadow: none;
@@ -166,10 +180,12 @@
 	}
 
 	&:hover {
-		@include button-color-hover($color);
+		@include button-color-hover($color, $button-ghost-opacity);
 
-		&::before {
-			opacity: 0;
+		@if ($button-ghost-opacity == 1) {
+			&::before {
+				opacity: 0;
+			}
 		}
 	}
 }

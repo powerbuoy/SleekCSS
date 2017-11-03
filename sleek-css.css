@@ -292,17 +292,26 @@
   text-shadow: none;
   box-shadow: 0 0 0 transparent;
   color: #ffcc34;
-  border: 1px solid #ffcc34;
-  padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+  position: relative; }
+  .button--ghost::before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.2s ease-out;
+    border: 1px solid #ffcc34;
+    border-radius: 0; }
   .button--ghost:hover {
     background: #ffd24e;
     box-shadow: none; }
-  .button--ghost:hover {
-    background: #ffd24e;
-    box-shadow: none; }
+    .button--ghost:hover::before {
+      opacity: 0; }
 
 .button--white {
-  background: #fff;
+  background: white;
   color: #ffcc34;
   text-shadow: none;
   box-shadow: none; }
@@ -315,15 +324,27 @@
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: #fff;
-    border: 1px solid #fff;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    position: relative; }
+    .button--white.button--ghost::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition: opacity 0.2s ease-out;
+      border: 1px solid #fff;
+      border-radius: 0; }
     .button--white.button--ghost:hover {
       background: white;
       color: #ffcc34;
       box-shadow: none; }
+      .button--white.button--ghost:hover::before {
+        opacity: 0; }
 
 .button--disabled {
-  background: #bbb;
+  background: #bbbbbb;
   text-shadow: none;
   box-shadow: none; }
   .button--disabled:hover {
@@ -334,11 +355,23 @@
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: #bbb;
-    border: 1px solid #bbb;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    position: relative; }
+    .button--disabled.button--ghost::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition: opacity 0.2s ease-out;
+      border: 1px solid #bbb;
+      border-radius: 0; }
     .button--disabled.button--ghost:hover {
       background: #c8c8c8;
       box-shadow: none; }
+      .button--disabled.button--ghost:hover::before {
+        opacity: 0; }
 
 .button--gradient {
   background: linear-gradient(red, green);
@@ -352,11 +385,23 @@
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: green;
-    border: 1px solid green;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    position: relative; }
+    .button--gradient.button--ghost::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition: opacity 0.2s ease-out;
+      border: 1px solid green;
+      border-radius: 0; }
     .button--gradient.button--ghost:hover {
       background: linear-gradient(red, green);
       box-shadow: none; }
+      .button--gradient.button--ghost:hover::before {
+        opacity: 0; }
 
 /***
     title: Container

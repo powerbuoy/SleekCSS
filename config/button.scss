@@ -12,8 +12,9 @@ $button-border-radius: 0 !default;
 $button-color: #ffcc34 !default; // Can be a list in which case a gradient bg will be used
 $button-text-color: #fff !default; // Default button text color (note that if BG is too bright its inverted color will be used for the text instead)
 $button-text-color-dark: #ffcc34 !default; // Button text color when BG-brightness > 90
-$button-ghost-opacity: .25 !default; // Opacity of a ghost buttons bg on hover
-$button-shadow: false !default; // False for now shadow, true for hover-shadow, both for both hover and non-hover
+$button-ghost-opacity: 1 !default; // Opacity of a ghost buttons bg on hover (works best on non-gradient backgrounds)
+$button-shadow: false !default; // False for no shadow, otherwise specify a shadow like "0 .25rem .5rem rgba(0, 0, 0, .25)"
+$button-glow: false !default; // False for no glow, truee for glow on hover, both for glow all the time (NOTE: incompatible with button-shadow)
 
 // Button text
 $button-line-height: 1.2 !default;

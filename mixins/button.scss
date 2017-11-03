@@ -141,15 +141,35 @@
 	// Text color should be same as background was
 	color: $base-color;
 
-	// Border
-	border: $button-border-width $button-border-style $base-color;
+	// Use ::before to create the border so that it doesn't affect the size of the button
+	position: relative;
 
-	// Reduce ghost button's padding so that they are exactly the same as normal buttons (that lack borders)
-	@if ($button-border-width) {
-		padding: calc(#{$button-padding-vertical} - #{$button-border-width}) calc(#{$button-padding-horizontal} - #{$button-border-width});
+	&::before {
+		display: block;
+		content: "";
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+
+		transition: opacity $transition-default $transition-easing;
+		border: $button-border-width $button-border-style $base-color;
+
+		@if ($button-border-radius) {
+			border-radius: $button-border-radius;
+		}
+		@else {
+			border-radius: 0;
+		}
 	}
 
 	&:hover {
 		@include button-color-hover($color);
+
+		&::before {
+			opacity: 0;
+		}
 	}
 }

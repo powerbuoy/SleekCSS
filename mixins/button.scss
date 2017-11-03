@@ -1,86 +1,70 @@
-@mixin button-color ($color) {
-	// Store the base color
+// Button colors on hover
+@mixin button-color-hover ($color, $opacity: 1) {
+	// Store the base color of this button
 	$base-color: $color;
-
-	// If more than one color is specified - use the second one as the "base"
-	@if (length($color) > 1) {
-		$base-color: nth($color, 2);
-	}
 
 	// If two colors are specified
 	@if (length($color) > 1) {
-		background-image: linear-gradient(nth($color, 1), nth($color, 2));
+		$base-color: nth($color, 2); // Use the second one as the "base"
 
-		// Invert gradient on active
-		&:active {
-			background-image: linear-gradient(nth($color, 2), nth($color, 1));
-		}
+		background: linear-gradient(nth($color, 1), nth($color, 2));
 	}
 	// Solid background
 	@else {
-		background-image: none;
-		background-color: $color;
-
-		// Darken on hover (TODO: Should be configurable)
-		&:hover {
-			background-color: lighten($color, 5%);
-		}
-
-		// Darken even more on active
-		&:active {
-			background-color: lighten($color, 10%);
-		}
+		background: lighten($base-color, 5%);
 	}
 
-	// Invert text color if button too light
-	@if (lightness($base-color) > 90) {
-		color: invert($base-color);
-
-		&:hover {
-			color: invert($base-color);
-		}
-	}
-
-	// Border?
-	@if ($button-border-width) {
-		$border-color: transparent;
-
-		// Automatic color
-		@if ($button-border-color == true) {
-			$border-color: darken($base-color, 10%);
-		}
-		// Defined color
-		@elseif ($button-border-color) {
-			$border-color: $button-border-color;
-		}
-
-		// Only add border if a color is set
-		@if ($button-border-color) {
-			border: $button-border-width $button-border-style $border-color;
-		}
-		// Otherwise no border
-		@else {
-			border: 0;
-		}
+	@if ($button-shadow) {
+		box-shadow: 0 50px 80px -40px lighten($base-color, 10%), 0 25px 25px -20px lighten($base-color, 10%);
 	}
 	@else {
-		border: 0;
-	}
-
-	// Box shadow?
-	&:hover {
-		@if ($button-shadow == true) {
-			box-shadow: 0 50px 80px -40px lighten($base-color, 10%), 0 25px 25px -20px lighten($base-color, 10%);
-		}
-		@elseif ($button-shadow) {
-			box-shadow: $button-shadow;
-		}
-		@else {
-			box-shadow: none;
-		}
+		box-shadow: none;
 	}
 }
 
+// Button colors and shadows etc
+@mixin button-color ($color, $opacity: 1) {
+	// Store the base color of this button
+	$base-color: $color;
+
+	// If two colors are specified
+	@if (length($color) > 1) {
+		$base-color: nth($color, 2); // Use the second one as the "base"
+
+		background: linear-gradient(nth($color, 1), nth($color, 2));
+	}
+	// Solid background
+	@else {
+		background: $base-color;
+	}
+
+	// Invert text color if button too bright
+	@if (lightness($base-color) > 90) {
+		color: $button-text-color-dark;
+
+		&:hover {
+			color: $button-text-color-dark;
+		}
+	}
+
+	// Text shadow?
+	@if ($button-text-shadow) {
+		text-shadow: -1px -1px 0 darken($base-color, 10%);
+	}
+	@else {
+		text-shadow: none;
+	}
+
+	// Box shadow?
+	@if ($button-shadow == both) {
+		box-shadow: 0 50px 80px -40px lighten($base-color, 10%), 0 25px 25px -20px lighten($base-color, 10%);
+	}
+	@else {
+		box-shadow: none;
+	}
+}
+
+// The actual button mixin (padding etc)
 @mixin button ($color: $button-color) {
 	// Gradient or solid background with hover/active states
 	@include button-color($color);
@@ -88,52 +72,34 @@
 	// Hello
 	display: inline-block;
 	vertical-align: middle;
+	transition: all $transition-default $transition-easing;
 
 	// Size
 	box-sizing: border-box;
 	padding: $button-padding-vertical $button-padding-horizontal;
 
-	// A button with only an icon
-	&[class*="icon-"]:empty:not([value]) {
-		padding-left: $button-empty-padding-horizontal;
-		padding-right: $button-empty-padding-horizontal;
-	}
-
 	// Font styling
-	@if ($button-font-family) {
-		font-family: $button-font-family;
-	}
-
 	font-size: $button-font-size;
 	font-weight: $button-font-weight;
 	font-style: $button-font-style;
 
 	line-height: $button-line-height;
 	color: $color-white;
-	// cursor: default;
 
 	text-transform: $button-text-transform;
 	text-decoration: none;
 	text-align: center;
 
+	@if ($button-font-family) {
+		font-family: $button-font-family;
+	}
 	@if ($button-letter-spacing) {
 		letter-spacing: $button-letter-spacing;
 	}
 
-	// A link inside a button
-	a,
-	a:hover {
-		color: $color-white;
-		text-decoration: none;
-	}
+	// Border and radius
+	border: 0; // Buttons should never have borders in 2018 / Bane
 
-	// Make sure text color doesn't change on hover
-	&:hover {
-		color: $color-white;
-		text-decoration: none;
-	}
-
-	// Radius
 	@if ($button-border-radius) {
 		border-radius: $button-border-radius;
 	}
@@ -141,23 +107,19 @@
 		border-radius: 0;
 	}
 
-	// Transition?
-	@if ($button-transition == true) {
-		transition: all $transition-default $transition-easing;
-	}
-	@elseif ($button-transition) {
-		transition: $button-transition;
+	// Make sure text color doesn't change on hover
+	&:hover {
+		@include button-color-hover($color);
+
+		color: $button-text-color;
+		text-decoration: none;
 	}
 
-	// Text shadow?
-	@if ($button-text-shadow == true) {
-		text-shadow: -1px -1px 0 $color-shadow;
-	}
-	@elseif ($button-text-shadow) {
-		text-shadow: $button-text-shadow;
-	}
-	@else {
-		text-shadow: none;
+	// Potential link _inside_ a button (span.button > a)
+	a,
+	a:hover {
+		color: $button-text-color;
+		text-decoration: none;
 	}
 }
 
@@ -170,47 +132,32 @@
 		$base-color: nth($color, 2);
 	}
 
-	// No background on ghosts
-	background-color: transparent;
-	background-image: none;
-
-	// Text in bg color
-	color: $base-color;
+	// No background or shadow on ghosts
+	background: transparent none;
 	text-shadow: none;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+	// Text color should be same as background was
+	color: $base-color;
 
 	// Border
 	border: $button-border-width $button-border-style $base-color;
 
-	&:not(:hover) {
-		box-shadow: none;
-	}
-
-	// If non-ghost buttons have no border - reduce ghost button's padding by as much
-	@if ($button-border-color == false && $button-border-width) {
+	// Reduce ghost button's padding so that they are exactly the same as normal buttons (that lack borders)
+	@if ($button-border-width) {
 		padding: calc(#{$button-padding-vertical} - #{$button-border-width}) calc(#{$button-padding-horizontal} - #{$button-border-width});
 	}
 
 	// Hover styling
-	&:hover {
+/*	&:hover {
 		@if ($button-ghost-opacity == 1) {
 			// If a gradient is specified
 			@if (length($color) > 1) {
-				background-image: linear-gradient(nth($color, 1), nth($color, 2));
-
-				// Invert gradient on active
-				&:active {
-					background-image: linear-gradient(nth($color, 2), nth($color, 1));
-				}
+				background: linear-gradient(nth($color, 1), nth($color, 2));
 			}
 			// Solid background
 			@else {
-				background-image: none;
-				background-color: lighten($color, 5%);
-
-				// Darken even more on active
-				&:active {
-					background-color: lighten($color, 10%);
-				}
+				background: lighten($color, 5%);
 			}
 
 			@if (lightness($base-color) > 70) {
@@ -235,5 +182,5 @@
 				color: $color;
 			}
 		}
-	}
+	} */
 }

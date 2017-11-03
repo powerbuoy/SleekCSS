@@ -37,5 +37,6 @@ $icon-colors: (
 // Add more to use .button--green etc
 $button-colors: (
 	"white": $color-white,
-	"disabled": $color-gray
+	"disabled": $color-gray,
+	"gradient": (red, green)
 ) !default;

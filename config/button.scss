@@ -2,28 +2,25 @@
 $button-padding-horizontal: 3.2rem !default;
 $button-padding-vertical: 1rem !default;
 $button-empty-padding-horizontal: $button-padding-vertical !default;
-$button-small-percentage: .75 !default;
-$button-large-percentage: 1.25 !default;
 
-$button-transition: true !default;
-
-// Button border
+// Button border (for ghost buttons)
 $button-border-width: 1px !default;
 $button-border-style: solid !default;
-$button-border-color: false !default; // false makes non ghost buttons have transparent border, true makes it 10% darker than bg
 $button-border-radius: 0 !default;
 
 // Button background
-$button-color: #ffcc34 !default;
-$button-ghost-opacity: .1 !default; // Opacity of a ghost buttons bg on hover
-$button-shadow: false !default; // shadow declaration or true for a default shadow
+$button-color: #ffcc34 !default; // Can be a list in which case a gradient bg will be used
+$button-text-color: #fff !default; // Default button text color (note that if BG is too bright its inverted color will be used for the text instead)
+$button-text-color-dark: #ffcc34 !default; // Button text color when BG-brightness > 90
+$button-ghost-opacity: .25 !default; // Opacity of a ghost buttons bg on hover
+$button-shadow: false !default; // False for now shadow, true for hover-shadow, both for both hover and non-hover
 
 // Button text
-$button-font-family: false !default; // false = default font, !false = any font-family
-$button-text-shadow: false !default; // false = no shadow, true = default shadow or use a text-shadow declaration
 $button-line-height: 1.2 !default;
 $button-font-size: 1rem !default;
-$button-font-weight: bold !default;
+$button-font-weight: normal !default;
 $button-font-style: normal !default;
 $button-text-transform: none !default;
 $button-letter-spacing: false !default;
+$button-font-family: false !default; // false = default font, !false = any font-family
+$button-text-shadow: false !default; // True or false

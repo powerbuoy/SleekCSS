@@ -252,121 +252,232 @@
         <p><a href="#" class="button">I'm a normal button</a></p>
         <p><button class="button--ghost">Button elements don't need the button class</button></p>
         <p><input type="submit" value="Submit inputs do though" class="button button--disabled" disabled></p>
-        <p><button class="button--wide button--white">Full width!</button></p>
         <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
-        <p><a href="#" class="button button--small">Small button</a></p>
-        <p><a href="#" class="button button--large">Large button</a></p>
+        <p><a href="#" class="button button--gradient">Button colors can be a list</a></p>
+        <p><a href="#" class="button button--white">Bright buttons don't get white text</a></p>
 ***/
 .button {
-  background-image: none;
-  background-color: #ffcc34;
-  border: 0;
+  background: #ffcc34;
+  text-shadow: none;
+  box-shadow: none;
   display: inline-block;
   vertical-align: middle;
+  transition: all 0.2s ease-out;
   box-sizing: border-box;
   padding: 1rem 3.2rem;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
   line-height: 1.2;
   color: #fff;
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 0;
-  transition: all 0.2s ease-out;
-  text-shadow: none; }
+  border: 0;
+  border-radius: 0; }
   .button:hover {
-    background-color: #ffd24e; }
-  .button:active {
-    background-color: #ffd967; }
-  .button:hover {
-    box-shadow: none; }
-  .button[class*="icon-"]:empty:not([value]) {
-    padding-left: 1rem;
-    padding-right: 1rem; }
-  .button a,
-  .button a:hover {
+    background: #ffd24e;
+    box-shadow: none;
     color: #fff;
     text-decoration: none; }
-  .button:hover {
+  .button a,
+  .button a:hover {
     color: #fff;
     text-decoration: none; }
   .button[disabled], .button.button--disabled {
     pointer-events: none; }
 
 .button--ghost {
-  background-color: transparent;
-  background-image: none;
-  color: #ffcc34;
+  background: transparent none;
   text-shadow: none;
+  box-shadow: 0 0 0 transparent;
+  color: #ffcc34;
   border: 1px solid #ffcc34;
-  padding: calc(1rem - 1px) calc(3.2rem - 1px); }
-  .button--ghost:not(:hover) {
-    box-shadow: none; }
-  .button--ghost:hover {
-    background-color: rgba(255, 204, 52, 0.1);
-    color: #ffcc34; }
+  padding: calc(1rem - 1px) calc(3.2rem - 1px);
+  /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
+
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
+
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
 .button--white {
-  background-image: none;
-  background-color: #fff;
-  color: black;
-  border: 0; }
+  background: #fff;
+  color: #ffcc34;
+  text-shadow: none;
+  box-shadow: none; }
   .button--white:hover {
-    background-color: white; }
-  .button--white:active {
-    background-color: white; }
+    color: #ffcc34; }
   .button--white:hover {
-    color: black; }
-  .button--white:hover {
+    background: white;
     box-shadow: none; }
   .button--white.button--ghost {
-    background-color: transparent;
-    background-image: none;
-    color: #fff;
+    background: transparent none;
     text-shadow: none;
+    box-shadow: 0 0 0 transparent;
+    color: #fff;
     border: 1px solid #fff;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
-    .button--white.button--ghost:not(:hover) {
-      box-shadow: none; }
-    .button--white.button--ghost:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #fff; }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px);
+    /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
+
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
+
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
 .button--disabled {
-  background-image: none;
-  background-color: #bbb;
-  border: 0; }
+  background: #bbb;
+  text-shadow: none;
+  box-shadow: none; }
   .button--disabled:hover {
-    background-color: #c8c8c8; }
-  .button--disabled:active {
-    background-color: #d5d5d5; }
-  .button--disabled:hover {
+    background: #c8c8c8;
     box-shadow: none; }
   .button--disabled.button--ghost {
-    background-color: transparent;
-    background-image: none;
-    color: #bbb;
+    background: transparent none;
     text-shadow: none;
+    box-shadow: 0 0 0 transparent;
+    color: #bbb;
     border: 1px solid #bbb;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
-    .button--disabled.button--ghost:not(:hover) {
-      box-shadow: none; }
-    .button--disabled.button--ghost:hover {
-      background-color: rgba(187, 187, 187, 0.1);
-      color: #bbb; }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px);
+    /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
 
-.button--small {
-  font-size: 0.8rem;
-  padding: 0.75rem 2.4rem; }
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
 
-.button--large {
-  font-size: 1.2rem;
-  padding: 1.25rem 4rem; }
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
-.button--wide {
-  display: block; }
+.button--gradient {
+  background: linear-gradient(red, green);
+  text-shadow: none;
+  box-shadow: none; }
+  .button--gradient:hover {
+    background: linear-gradient(red, green);
+    box-shadow: none; }
+  .button--gradient.button--ghost {
+    background: transparent none;
+    text-shadow: none;
+    box-shadow: 0 0 0 transparent;
+    color: green;
+    border: 1px solid green;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px);
+    /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
+
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
+
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
 /***
     title: Container
@@ -445,7 +556,7 @@ hr,
     pointer-events: none;
     overflow: hidden; }
   .figure-background:before {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     display: none;
     content: "";
     display: block; }
@@ -601,39 +712,32 @@ textarea {
   color: #bbb; }
 
 button {
-  background-image: none;
-  background-color: #ffcc34;
-  border: 0;
+  background: #ffcc34;
+  text-shadow: none;
+  box-shadow: none;
   display: inline-block;
   vertical-align: middle;
+  transition: all 0.2s ease-out;
   box-sizing: border-box;
   padding: 1rem 3.2rem;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
   line-height: 1.2;
   color: #fff;
   text-transform: none;
   text-decoration: none;
   text-align: center;
+  border: 0;
   border-radius: 0;
-  transition: all 0.2s ease-out;
-  text-shadow: none;
   outline: 0; }
   button:hover {
-    background-color: #ffd24e; }
-  button:active {
-    background-color: #ffd967; }
-  button:hover {
-    box-shadow: none; }
-  button[class*="icon-"]:empty:not([value]) {
-    padding-left: 1rem;
-    padding-right: 1rem; }
-  button a,
-  button a:hover {
+    background: #ffd24e;
+    box-shadow: none;
     color: #fff;
     text-decoration: none; }
-  button:hover {
+  button a,
+  button a:hover {
     color: #fff;
     text-decoration: none; }
 
@@ -958,7 +1062,7 @@ h6,
     pointer-events: none;
     overflow: hidden; }
   .hero:before {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     display: none;
     content: "";
     display: block; }
@@ -993,10 +1097,6 @@ h6,
     .hero {
       padding-top: 6rem;
       padding-bottom: 6rem; } }
-  @media (min-width: 1080px) {
-    .hero {
-      padding-top: 9rem;
-      padding-bottom: 9rem; } }
   .hero h1,
   .hero h2 {
     margin: 0;
@@ -1044,7 +1144,7 @@ h6,
       overflow: hidden; }
     .hero.text--center:before,
     .text--center .hero:before {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.4);
       display: none;
       content: "";
       display: block; }
@@ -1087,11 +1187,6 @@ h6,
       .text--center .hero {
         padding-top: 6rem;
         padding-bottom: 6rem; } }
-    @media (min-width: 1080px) {
-      .hero.text--center,
-      .text--center .hero {
-        padding-top: 9rem;
-        padding-bottom: 9rem; } }
     .hero.text--center h1,
     .hero.text--center h2,
     .text--center .hero h1,
@@ -2437,121 +2532,232 @@ figure {
         <p><a href="#" class="button">I'm a normal button</a></p>
         <p><button class="button--ghost">Button elements don't need the button class</button></p>
         <p><input type="submit" value="Submit inputs do though" class="button button--disabled" disabled></p>
-        <p><button class="button--wide button--white">Full width!</button></p>
         <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
-        <p><a href="#" class="button button--small">Small button</a></p>
-        <p><a href="#" class="button button--large">Large button</a></p>
+        <p><a href="#" class="button button--gradient">Button colors can be a list</a></p>
+        <p><a href="#" class="button button--white">Bright buttons don't get white text</a></p>
 ***/
 .button {
-  background-image: none;
-  background-color: #ffcc34;
-  border: 0;
+  background: #ffcc34;
+  text-shadow: none;
+  box-shadow: none;
   display: inline-block;
   vertical-align: middle;
+  transition: all 0.2s ease-out;
   box-sizing: border-box;
   padding: 1rem 3.2rem;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
   line-height: 1.2;
   color: #fff;
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 0;
-  transition: all 0.2s ease-out;
-  text-shadow: none; }
+  border: 0;
+  border-radius: 0; }
   .button:hover {
-    background-color: #ffd24e; }
-  .button:active {
-    background-color: #ffd967; }
-  .button:hover {
-    box-shadow: none; }
-  .button[class*="icon-"]:empty:not([value]) {
-    padding-left: 1rem;
-    padding-right: 1rem; }
-  .button a,
-  .button a:hover {
+    background: #ffd24e;
+    box-shadow: none;
     color: #fff;
     text-decoration: none; }
-  .button:hover {
+  .button a,
+  .button a:hover {
     color: #fff;
     text-decoration: none; }
   .button[disabled], .button.button--disabled {
     pointer-events: none; }
 
 .button--ghost {
-  background-color: transparent;
-  background-image: none;
-  color: #ffcc34;
+  background: transparent none;
   text-shadow: none;
+  box-shadow: 0 0 0 transparent;
+  color: #ffcc34;
   border: 1px solid #ffcc34;
-  padding: calc(1rem - 1px) calc(3.2rem - 1px); }
-  .button--ghost:not(:hover) {
-    box-shadow: none; }
-  .button--ghost:hover {
-    background-color: rgba(255, 204, 52, 0.1);
-    color: #ffcc34; }
+  padding: calc(1rem - 1px) calc(3.2rem - 1px);
+  /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
+
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
+
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
 .button--white {
-  background-image: none;
-  background-color: #fff;
-  color: black;
-  border: 0; }
+  background: #fff;
+  color: #ffcc34;
+  text-shadow: none;
+  box-shadow: none; }
   .button--white:hover {
-    background-color: white; }
-  .button--white:active {
-    background-color: white; }
+    color: #ffcc34; }
   .button--white:hover {
-    color: black; }
-  .button--white:hover {
+    background: white;
     box-shadow: none; }
   .button--white.button--ghost {
-    background-color: transparent;
-    background-image: none;
-    color: #fff;
+    background: transparent none;
     text-shadow: none;
+    box-shadow: 0 0 0 transparent;
+    color: #fff;
     border: 1px solid #fff;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
-    .button--white.button--ghost:not(:hover) {
-      box-shadow: none; }
-    .button--white.button--ghost:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #fff; }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px);
+    /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
+
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
+
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
 .button--disabled {
-  background-image: none;
-  background-color: #bbb;
-  border: 0; }
+  background: #bbb;
+  text-shadow: none;
+  box-shadow: none; }
   .button--disabled:hover {
-    background-color: #c8c8c8; }
-  .button--disabled:active {
-    background-color: #d5d5d5; }
-  .button--disabled:hover {
+    background: #c8c8c8;
     box-shadow: none; }
   .button--disabled.button--ghost {
-    background-color: transparent;
-    background-image: none;
-    color: #bbb;
+    background: transparent none;
     text-shadow: none;
+    box-shadow: 0 0 0 transparent;
+    color: #bbb;
     border: 1px solid #bbb;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
-    .button--disabled.button--ghost:not(:hover) {
-      box-shadow: none; }
-    .button--disabled.button--ghost:hover {
-      background-color: rgba(187, 187, 187, 0.1);
-      color: #bbb; }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px);
+    /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
 
-.button--small {
-  font-size: 0.8rem;
-  padding: 0.75rem 2.4rem; }
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
 
-.button--large {
-  font-size: 1.2rem;
-  padding: 1.25rem 4rem; }
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
-.button--wide {
-  display: block; }
+.button--gradient {
+  background: linear-gradient(red, green);
+  text-shadow: none;
+  box-shadow: none; }
+  .button--gradient:hover {
+    background: linear-gradient(red, green);
+    box-shadow: none; }
+  .button--gradient.button--ghost {
+    background: transparent none;
+    text-shadow: none;
+    box-shadow: 0 0 0 transparent;
+    color: green;
+    border: 1px solid green;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px);
+    /*	&:hover {
+		@if ($button-ghost-opacity == 1) {
+			// If a gradient is specified
+			@if (length($color) > 1) {
+				background: linear-gradient(nth($color, 1), nth($color, 2));
+			}
+			// Solid background
+			@else {
+				background: lighten($color, 5%);
+			}
+
+			@if (lightness($base-color) > 70) {
+				color: invert($base-color);
+			}
+			@else {
+				color: $color-white;
+			}
+		}
+		@else {
+			background-color: rgba($color, $button-ghost-opacity);
+
+			@if ($button-ghost-opacity > .25) {
+				@if (lightness($base-color) > 70) {
+					color: invert($base-color);
+				}
+				@else {
+					color: $color-white;
+				}
+			}
+			@else {
+				color: $color;
+			}
+		}
+	} */ }
 
 /***
     title: Container
@@ -2630,7 +2836,7 @@ hr,
     pointer-events: none;
     overflow: hidden; }
   .figure-background:before {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     display: none;
     content: "";
     display: block; }
@@ -2786,39 +2992,32 @@ textarea {
   color: #bbb; }
 
 button {
-  background-image: none;
-  background-color: #ffcc34;
-  border: 0;
+  background: #ffcc34;
+  text-shadow: none;
+  box-shadow: none;
   display: inline-block;
   vertical-align: middle;
+  transition: all 0.2s ease-out;
   box-sizing: border-box;
   padding: 1rem 3.2rem;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
   line-height: 1.2;
   color: #fff;
   text-transform: none;
   text-decoration: none;
   text-align: center;
+  border: 0;
   border-radius: 0;
-  transition: all 0.2s ease-out;
-  text-shadow: none;
   outline: 0; }
   button:hover {
-    background-color: #ffd24e; }
-  button:active {
-    background-color: #ffd967; }
-  button:hover {
-    box-shadow: none; }
-  button[class*="icon-"]:empty:not([value]) {
-    padding-left: 1rem;
-    padding-right: 1rem; }
-  button a,
-  button a:hover {
+    background: #ffd24e;
+    box-shadow: none;
     color: #fff;
     text-decoration: none; }
-  button:hover {
+  button a,
+  button a:hover {
     color: #fff;
     text-decoration: none; }
 
@@ -3143,7 +3342,7 @@ h6,
     pointer-events: none;
     overflow: hidden; }
   .hero:before {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     display: none;
     content: "";
     display: block; }
@@ -3178,10 +3377,6 @@ h6,
     .hero {
       padding-top: 6rem;
       padding-bottom: 6rem; } }
-  @media (min-width: 1080px) {
-    .hero {
-      padding-top: 9rem;
-      padding-bottom: 9rem; } }
   .hero h1,
   .hero h2 {
     margin: 0;
@@ -3229,7 +3424,7 @@ h6,
       overflow: hidden; }
     .hero.text--center:before,
     .text--center .hero:before {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.4);
       display: none;
       content: "";
       display: block; }
@@ -3272,11 +3467,6 @@ h6,
       .text--center .hero {
         padding-top: 6rem;
         padding-bottom: 6rem; } }
-    @media (min-width: 1080px) {
-      .hero.text--center,
-      .text--center .hero {
-        padding-top: 9rem;
-        padding-bottom: 9rem; } }
     .hero.text--center h1,
     .hero.text--center h2,
     .text--center .hero h1,
@@ -4518,17 +4708,14 @@ pre {
         <span class="hljs-attribute">disabled</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button--wide button--white"</span>&gt;</span>Full width!<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Continue<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--gray button--ghost"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--small"</span>&gt;</span>Small button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--gradient"</span>&gt;</span>Button colors can be a list<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--large"</span>&gt;</span>Large button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--white"</span>&gt;</span>Bright buttons don't get white text<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></div></div><div id="styleguide-section-colors" class="styleguide-section"><div class="styleguide-section-header"><h2>Colors</h2></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Background Colors</h3><p><p>Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.</p>
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--white"</span>&gt;</span>I have a white background color<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></div><div class="styleguide-component"><div class="styleguide-component-header"><h3>Text Colors</h3><p><p>Use to give an element&#39;s text a different color. This class affects everything, including headings and links.</p>
 </p></div><div class="styleguide-component-example-container"><h4>Example</h4><div class="styleguide-component-example"></div></div><div class="styleguide-component-code-container"><h4>Example Code</h4><pre class="styleguide-component-code-block"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--lightgray color--white"</span>&gt;</span>

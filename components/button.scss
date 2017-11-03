@@ -21,7 +21,7 @@
 }
 
 .button--ghost {
-	@include button-ghost;
+	@include button-ghost($button-color);
 }
 
 // Button colors

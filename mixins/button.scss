@@ -14,6 +14,11 @@
 		background: lighten($base-color, 5%);
 	}
 
+	// Invert text color if button too bright
+	@if (lightness($base-color) > 90) {
+		color: $button-text-color-dark;
+	}
+
 	@if ($button-shadow) {
 		box-shadow: 0 50px 80px -40px lighten($base-color, 10%), 0 25px 25px -20px lighten($base-color, 10%);
 	}
@@ -41,10 +46,6 @@
 	// Invert text color if button too bright
 	@if (lightness($base-color) > 90) {
 		color: $button-text-color-dark;
-
-		&:hover {
-			color: $button-text-color-dark;
-		}
 	}
 
 	// Text shadow?
@@ -66,7 +67,6 @@
 
 // The actual button mixin (padding etc)
 @mixin button ($color: $button-color) {
-	// Gradient or solid background with hover/active states
 	@include button-color($color);
 
 	// Hello
@@ -123,6 +123,7 @@
 	}
 }
 
+// Turn a @button into a ghost button
 @mixin button-ghost ($color: $button-color) {
 	// Store the base color
 	$base-color: $color;
@@ -148,39 +149,7 @@
 		padding: calc(#{$button-padding-vertical} - #{$button-border-width}) calc(#{$button-padding-horizontal} - #{$button-border-width});
 	}
 
-	// Hover styling
-/*	&:hover {
-		@if ($button-ghost-opacity == 1) {
-			// If a gradient is specified
-			@if (length($color) > 1) {
-				background: linear-gradient(nth($color, 1), nth($color, 2));
-			}
-			// Solid background
-			@else {
-				background: lighten($color, 5%);
-			}
-
-			@if (lightness($base-color) > 70) {
-				color: invert($base-color);
-			}
-			@else {
-				color: $color-white;
-			}
-		}
-		@else {
-			background-color: rgba($color, $button-ghost-opacity);
-
-			@if ($button-ghost-opacity > .25) {
-				@if (lightness($base-color) > 70) {
-					color: invert($base-color);
-				}
-				@else {
-					color: $color-white;
-				}
-			}
-			@else {
-				color: $color;
-			}
-		}
-	} */
+	&:hover {
+		@include button-color-hover($color);
+	}
 }

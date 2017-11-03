@@ -293,41 +293,13 @@
   box-shadow: 0 0 0 transparent;
   color: #ffcc34;
   border: 1px solid #ffcc34;
-  padding: calc(1rem - 1px) calc(3.2rem - 1px);
-  /*	&:hover {
-		@if ($button-ghost-opacity == 1) {
-			// If a gradient is specified
-			@if (length($color) > 1) {
-				background: linear-gradient(nth($color, 1), nth($color, 2));
-			}
-			// Solid background
-			@else {
-				background: lighten($color, 5%);
-			}
-
-			@if (lightness($base-color) > 70) {
-				color: invert($base-color);
-			}
-			@else {
-				color: $color-white;
-			}
-		}
-		@else {
-			background-color: rgba($color, $button-ghost-opacity);
-
-			@if ($button-ghost-opacity > .25) {
-				@if (lightness($base-color) > 70) {
-					color: invert($base-color);
-				}
-				@else {
-					color: $color-white;
-				}
-			}
-			@else {
-				color: $color;
-			}
-		}
-	} */ }
+  padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+  .button--ghost:hover {
+    background: #ffd24e;
+    box-shadow: none; }
+  .button--ghost:hover {
+    background: #ffd24e;
+    box-shadow: none; }
 
 .button--white {
   background: #fff;
@@ -335,9 +307,8 @@
   text-shadow: none;
   box-shadow: none; }
   .button--white:hover {
-    color: #ffcc34; }
-  .button--white:hover {
     background: white;
+    color: #ffcc34;
     box-shadow: none; }
   .button--white.button--ghost {
     background: transparent none;
@@ -345,41 +316,11 @@
     box-shadow: 0 0 0 transparent;
     color: #fff;
     border: 1px solid #fff;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px);
-    /*	&:hover {
-		@if ($button-ghost-opacity == 1) {
-			// If a gradient is specified
-			@if (length($color) > 1) {
-				background: linear-gradient(nth($color, 1), nth($color, 2));
-			}
-			// Solid background
-			@else {
-				background: lighten($color, 5%);
-			}
-
-			@if (lightness($base-color) > 70) {
-				color: invert($base-color);
-			}
-			@else {
-				color: $color-white;
-			}
-		}
-		@else {
-			background-color: rgba($color, $button-ghost-opacity);
-
-			@if ($button-ghost-opacity > .25) {
-				@if (lightness($base-color) > 70) {
-					color: invert($base-color);
-				}
-				@else {
-					color: $color-white;
-				}
-			}
-			@else {
-				color: $color;
-			}
-		}
-	} */ }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    .button--white.button--ghost:hover {
+      background: white;
+      color: #ffcc34;
+      box-shadow: none; }
 
 .button--disabled {
   background: #bbb;
@@ -394,41 +335,10 @@
     box-shadow: 0 0 0 transparent;
     color: #bbb;
     border: 1px solid #bbb;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px);
-    /*	&:hover {
-		@if ($button-ghost-opacity == 1) {
-			// If a gradient is specified
-			@if (length($color) > 1) {
-				background: linear-gradient(nth($color, 1), nth($color, 2));
-			}
-			// Solid background
-			@else {
-				background: lighten($color, 5%);
-			}
-
-			@if (lightness($base-color) > 70) {
-				color: invert($base-color);
-			}
-			@else {
-				color: $color-white;
-			}
-		}
-		@else {
-			background-color: rgba($color, $button-ghost-opacity);
-
-			@if ($button-ghost-opacity > .25) {
-				@if (lightness($base-color) > 70) {
-					color: invert($base-color);
-				}
-				@else {
-					color: $color-white;
-				}
-			}
-			@else {
-				color: $color;
-			}
-		}
-	} */ }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    .button--disabled.button--ghost:hover {
+      background: #c8c8c8;
+      box-shadow: none; }
 
 .button--gradient {
   background: linear-gradient(red, green);
@@ -443,41 +353,10 @@
     box-shadow: 0 0 0 transparent;
     color: green;
     border: 1px solid green;
-    padding: calc(1rem - 1px) calc(3.2rem - 1px);
-    /*	&:hover {
-		@if ($button-ghost-opacity == 1) {
-			// If a gradient is specified
-			@if (length($color) > 1) {
-				background: linear-gradient(nth($color, 1), nth($color, 2));
-			}
-			// Solid background
-			@else {
-				background: lighten($color, 5%);
-			}
-
-			@if (lightness($base-color) > 70) {
-				color: invert($base-color);
-			}
-			@else {
-				color: $color-white;
-			}
-		}
-		@else {
-			background-color: rgba($color, $button-ghost-opacity);
-
-			@if ($button-ghost-opacity > .25) {
-				@if (lightness($base-color) > 70) {
-					color: invert($base-color);
-				}
-				@else {
-					color: $color-white;
-				}
-			}
-			@else {
-				color: $color;
-			}
-		}
-	} */ }
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
+    .button--gradient.button--ghost:hover {
+      background: linear-gradient(red, green);
+      box-shadow: none; }
 
 /***
     title: Container

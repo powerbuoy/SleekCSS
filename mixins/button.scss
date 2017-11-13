@@ -1,5 +1,7 @@
 // Button colors on hover
 @mixin button-color-hover ($color, $opacity: 1) {
+	text-decoration: none;
+
 	// Store the base color of this button
 	$base-color: $color;
 
@@ -17,6 +19,9 @@
 	// Invert text color if button too bright
 	@if (lightness($base-color) > 90 and $opacity > .5) {
 		color: $button-text-color-dark;
+	}
+	@else {
+		color: $button-text-color;
 	}
 
 	@if ($button-glow) {
@@ -53,6 +58,23 @@
 	// Invert text color if button too bright
 	@if (lightness($base-color) > 90 and $opacity > .5) {
 		color: $button-text-color-dark;
+
+		// Potential link _inside_ a button (span.button > a)
+		a,
+		a:hover {
+			color: $button-text-color-dark;
+			text-decoration: none;
+		}
+	}
+	@else {
+		color: $button-text-color;
+
+		// Potential link _inside_ a button (span.button > a)
+		a,
+		a:hover {
+			color: $button-text-color;
+			text-decoration: none;
+		}
 	}
 
 	// Text shadow?
@@ -98,7 +120,6 @@
 	font-style: $button-font-style;
 
 	line-height: $button-line-height;
-	color: $color-white;
 
 	text-transform: $button-text-transform;
 	text-decoration: none;
@@ -124,16 +145,6 @@
 	// Make sure text color doesn't change on hover
 	&:hover {
 		@include button-color-hover($color);
-
-		color: $button-text-color;
-		text-decoration: none;
-	}
-
-	// Potential link _inside_ a button (span.button > a)
-	a,
-	a:hover {
-		color: $button-text-color;
-		text-decoration: none;
 	}
 }
 

@@ -12,3 +12,20 @@
 		}
 	}
 }
+
+@mixin increment-transition ($el, $time, $num, $offset: 0, $property: transition, $reversed: false) {
+	$chain: '';
+
+	@for $i from 1 through $num {
+		$chain: $chain + ' + ' + $el;
+		$delay: ($i * $time) + $offset;
+
+		@if $reversed {
+			$delay: (($num - $i) * $time) + $offset;
+		}
+
+		& #{$chain} {
+			#{$property}-delay: $delay;
+		}
+	}
+}

@@ -35,8 +35,6 @@
 		height: auto;
 		margin: 0;
 		z-index: -2;
-		transform: scale(1);
-		transition: transform $transition-default $transition-easing;
 
 		@supports (object-fit: contain) {
 			object-fit: cover;
@@ -47,6 +45,11 @@
 
 	// Zoom image on hover?
 	@if ($hover) {
+		img {
+			transform: scale(1);
+			transition: transform $transition-default $transition-easing;
+		}
+
 		&:hover {
 			img {
 				@if ($hover == true) {
@@ -93,8 +96,6 @@
 	figure {
 		margin: 0;
 		z-index: -2;
-		transform: scale(1);
-		transition: transform $transition-default $transition-easing;
 
 		a {
 			display: block;
@@ -118,6 +119,8 @@
 	@if ($hover) {
 		figure {
 			pointer-events: all;
+			transform: scale(1);
+			transition: transform $transition-default $transition-easing;
 		}
 
 		&:hover {

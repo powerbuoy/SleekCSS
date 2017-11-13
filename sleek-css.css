@@ -258,6 +258,7 @@
 ***/
 .button {
   background: #ffcc34;
+  color: #fff;
   text-shadow: none;
   box-shadow: none;
   display: inline-block;
@@ -269,21 +270,20 @@
   font-weight: normal;
   font-style: normal;
   line-height: 1.2;
-  color: #fff;
   text-transform: none;
   text-decoration: none;
   text-align: center;
   border: 0;
   border-radius: 0; }
-  .button:hover {
-    background: #ffd24e;
-    box-shadow: none;
-    color: #fff;
-    text-decoration: none; }
   .button a,
   .button a:hover {
     color: #fff;
     text-decoration: none; }
+  .button:hover {
+    text-decoration: none;
+    background: #ffd24e;
+    color: #fff;
+    box-shadow: none; }
   .button[disabled], .button.button--disabled {
     pointer-events: none; }
 
@@ -305,7 +305,9 @@
     border: 1px solid #ffcc34;
     border-radius: 0; }
   .button--ghost:hover {
+    text-decoration: none;
     background: #ffd24e;
+    color: #fff;
     box-shadow: none; }
     .button--ghost:hover::before {
       opacity: 0; }
@@ -315,7 +317,12 @@
   color: #ffcc34;
   text-shadow: none;
   box-shadow: none; }
+  .button--white a,
+  .button--white a:hover {
+    color: #ffcc34;
+    text-decoration: none; }
   .button--white:hover {
+    text-decoration: none;
     background: white;
     color: #ffcc34;
     box-shadow: none; }
@@ -337,6 +344,7 @@
       border: 1px solid #fff;
       border-radius: 0; }
     .button--white.button--ghost:hover {
+      text-decoration: none;
       background: white;
       color: #ffcc34;
       box-shadow: none; }
@@ -345,10 +353,17 @@
 
 .button--disabled {
   background: #bbbbbb;
+  color: #fff;
   text-shadow: none;
   box-shadow: none; }
+  .button--disabled a,
+  .button--disabled a:hover {
+    color: #fff;
+    text-decoration: none; }
   .button--disabled:hover {
+    text-decoration: none;
     background: #c8c8c8;
+    color: #fff;
     box-shadow: none; }
   .button--disabled.button--ghost {
     background: transparent none;
@@ -368,17 +383,26 @@
       border: 1px solid #bbb;
       border-radius: 0; }
     .button--disabled.button--ghost:hover {
+      text-decoration: none;
       background: #c8c8c8;
+      color: #fff;
       box-shadow: none; }
       .button--disabled.button--ghost:hover::before {
         opacity: 0; }
 
 .button--gradient {
   background: linear-gradient(red, green);
+  color: #fff;
   text-shadow: none;
   box-shadow: none; }
+  .button--gradient a,
+  .button--gradient a:hover {
+    color: #fff;
+    text-decoration: none; }
   .button--gradient:hover {
+    text-decoration: none;
     background: linear-gradient(red, green);
+    color: #fff;
     box-shadow: none; }
   .button--gradient.button--ghost {
     background: transparent none;
@@ -398,7 +422,9 @@
       border: 1px solid green;
       border-radius: 0; }
     .button--gradient.button--ghost:hover {
+      text-decoration: none;
       background: linear-gradient(red, green);
+      color: #fff;
       box-shadow: none; }
       .button--gradient.button--ghost:hover::before {
         opacity: 0; }
@@ -486,12 +512,7 @@ hr,
     display: block; }
   .figure-background figure {
     margin: 0;
-    z-index: -2;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    transition: -webkit-transform 0.2s ease-out;
-    transition: transform 0.2s ease-out;
-    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    z-index: -2; }
     .figure-background figure a {
       display: block;
       height: 100%; }
@@ -637,6 +658,7 @@ textarea {
 
 button {
   background: #ffcc34;
+  color: #fff;
   text-shadow: none;
   box-shadow: none;
   display: inline-block;
@@ -648,22 +670,21 @@ button {
   font-weight: normal;
   font-style: normal;
   line-height: 1.2;
-  color: #fff;
   text-transform: none;
   text-decoration: none;
   text-align: center;
   border: 0;
   border-radius: 0;
   outline: 0; }
-  button:hover {
-    background: #ffd24e;
-    box-shadow: none;
-    color: #fff;
-    text-decoration: none; }
   button a,
   button a:hover {
     color: #fff;
     text-decoration: none; }
+  button:hover {
+    text-decoration: none;
+    background: #ffd24e;
+    color: #fff;
+    box-shadow: none; }
 
 input[type=submit] {
   white-space: normal; }
@@ -992,12 +1013,7 @@ h6,
     display: block; }
   .hero figure {
     margin: 0;
-    z-index: -2;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    transition: -webkit-transform 0.2s ease-out;
-    transition: transform 0.2s ease-out;
-    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    z-index: -2; }
     .hero figure a {
       display: block;
       height: 100%; }
@@ -1075,12 +1091,7 @@ h6,
     .hero.text--center figure,
     .text--center .hero figure {
       margin: 0;
-      z-index: -2;
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      transition: -webkit-transform 0.2s ease-out;
-      transition: transform 0.2s ease-out;
-      transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+      z-index: -2; }
       .hero.text--center figure a,
       .text--center .hero figure a {
         display: block;
@@ -1329,12 +1340,7 @@ a:hover .icon--round {
     width: 100%;
     height: auto;
     margin: 0;
-    z-index: -2;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    transition: -webkit-transform 0.2s ease-out;
-    transition: transform 0.2s ease-out;
-    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out; }
+    z-index: -2; }
     @supports ((-o-object-fit: contain) or (object-fit: contain)) {
       .img--bg img {
         -o-object-fit: cover;

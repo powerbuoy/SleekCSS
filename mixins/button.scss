@@ -24,8 +24,9 @@
 		color: $button-text-color;
 	}
 
+	// "Glow"? (shadow based on button color)
 	@if ($button-glow) {
-		box-shadow: 0 2px 64px lighten($base-color, 10%);
+		box-shadow: 0 2px 32px rgba(lighten($base-color, 10%), .75);
 	}
 	// Shadow?
 	@elseif ($button-shadow == both or $button-shadow == true) {
@@ -85,9 +86,9 @@
 		text-shadow: none;
 	}
 
-	// Glow?
+	// "Glow"? (Shadow based on button color)
 	@if ($button-glow == both) {
-		box-shadow: 0 2px 33px lighten($base-color, 10%);
+		box-shadow: 0 2px 16px rgba(lighten($base-color, 10%), .75);
 	}
 	// Shadow?
 	@elseif ($button-shadow == both) {

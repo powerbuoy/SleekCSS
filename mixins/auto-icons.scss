@@ -1,7 +1,7 @@
-@mixin auto-icons {
+@mixin auto-icons ($default-icon: '') {
 	a {
 		&:before {
-			@include icon;
+			@include icon($default-icon);
 
 			margin: 0 $icon-margin 0 0;
 		}

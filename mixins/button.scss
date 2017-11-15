@@ -19,7 +19,7 @@
 	}
 
 	// Invert text color if button too bright
-	@if (lightness($base-color) > 90 and $opacity > .5) {
+	@if ((lightness($base-color) > 75 and $opacity > .5) or (lightness($base-color) <= 75 and $opacity <= .5)) {
 		color: $button-text-color-dark;
 	}
 	@else {
@@ -46,7 +46,7 @@
 }
 
 // Button colors and shadows etc
-@mixin button-color ($color, $opacity: 1) {
+@mixin button-color ($color) {
 	// Store the base color of this button
 	$base-color: $color;
 
@@ -55,19 +55,19 @@
 		$base-color: nth($color, 2); // Use the second one as the "base"
 
 		background-color: transparent;
-		background-image: linear-gradient(rgba(nth($color, 1), $opacity), rgba(nth($color, 2), $opacity));
+		background-image: linear-gradient(nth($color, 1), nth($color, 2));
 		background-size: auto calc(100% + #{$button-border-width * 2});
 		background-position: 50% -#{$button-border-width};
 
 	}
 	// Solid background
 	@else {
-		background-color: rgba($base-color, $opacity);
+		background-color: $base-color;
 		background-image: none;
 	}
 
 	// Invert text color if button too bright
-	@if (lightness($base-color) > 90 and $opacity > .5) {
+	@if (lightness($base-color) > 75) {
 		color: $button-text-color-dark;
 
 		// Potential link _inside_ a button (span.button > a)
@@ -187,6 +187,8 @@
 	&:hover {
 		@include button-color-hover($color, $button-ghost-opacity);
 
-		border-color: transparent;
+		@if ($button-ghost-opacity == 1) {
+			border-color: transparent;
+		}
 	}
 }

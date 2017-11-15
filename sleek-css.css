@@ -307,7 +307,7 @@
     border-color: transparent; }
 
 .button--white {
-  background-color: white;
+  background-color: #fff;
   background-image: none;
   color: #ffcc34;
   text-shadow: none;
@@ -339,7 +339,7 @@
       border-color: transparent; }
 
 .button--disabled {
-  background-color: #bbbbbb;
+  background-color: #bbb;
   background-image: none;
   color: #fff;
   text-shadow: none;

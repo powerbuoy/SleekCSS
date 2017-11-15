@@ -258,7 +258,8 @@
         <p><a href="#" class="button button--white">Bright buttons don't get white text</a></p>
 ***/
 .button {
-  background: #ffcc34;
+  background-color: #ffcc34;
+  background-image: none;
   color: #fff;
   text-shadow: none;
   box-shadow: none;
@@ -282,39 +283,32 @@
     text-decoration: none; }
   .button:hover {
     text-decoration: none;
-    background: #ffd24e;
+    background-color: #ffd24e;
+    background-image: none;
     color: #fff;
     box-shadow: none; }
   .button[disabled], .button.button--disabled {
     pointer-events: none; }
 
 .button--ghost {
-  background: transparent none;
+  background-color: transparent;
+  background-image: none;
   text-shadow: none;
   box-shadow: 0 0 0 transparent;
   color: #ffcc34;
-  position: relative; }
-  .button--ghost::before {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    transition: opacity 0.2s ease-out;
-    border: 1px solid #ffcc34;
-    border-radius: 0; }
+  border: 1px solid #ffcc34;
+  padding: calc(1rem - 1px) calc(3.2rem - 1px); }
   .button--ghost:hover {
     text-decoration: none;
-    background: #ffd24e;
+    background-color: #ffd24e;
+    background-image: none;
     color: #fff;
-    box-shadow: none; }
-    .button--ghost:hover::before {
-      opacity: 0; }
+    box-shadow: none;
+    border-color: transparent; }
 
 .button--white {
-  background: white;
+  background-color: white;
+  background-image: none;
   color: #ffcc34;
   text-shadow: none;
   box-shadow: none; }
@@ -324,36 +318,29 @@
     text-decoration: none; }
   .button--white:hover {
     text-decoration: none;
-    background: white;
+    background-color: white;
+    background-image: none;
     color: #ffcc34;
     box-shadow: none; }
   .button--white.button--ghost {
-    background: transparent none;
+    background-color: transparent;
+    background-image: none;
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: #fff;
-    position: relative; }
-    .button--white.button--ghost::before {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: opacity 0.2s ease-out;
-      border: 1px solid #fff;
-      border-radius: 0; }
+    border: 1px solid #fff;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
     .button--white.button--ghost:hover {
       text-decoration: none;
-      background: white;
+      background-color: white;
+      background-image: none;
       color: #ffcc34;
-      box-shadow: none; }
-      .button--white.button--ghost:hover::before {
-        opacity: 0; }
+      box-shadow: none;
+      border-color: transparent; }
 
 .button--disabled {
-  background: #bbbbbb;
+  background-color: #bbbbbb;
+  background-image: none;
   color: #fff;
   text-shadow: none;
   box-shadow: none; }
@@ -363,36 +350,31 @@
     text-decoration: none; }
   .button--disabled:hover {
     text-decoration: none;
-    background: #c8c8c8;
+    background-color: #c8c8c8;
+    background-image: none;
     color: #fff;
     box-shadow: none; }
   .button--disabled.button--ghost {
-    background: transparent none;
+    background-color: transparent;
+    background-image: none;
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: #bbb;
-    position: relative; }
-    .button--disabled.button--ghost::before {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: opacity 0.2s ease-out;
-      border: 1px solid #bbb;
-      border-radius: 0; }
+    border: 1px solid #bbb;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
     .button--disabled.button--ghost:hover {
       text-decoration: none;
-      background: #c8c8c8;
+      background-color: #c8c8c8;
+      background-image: none;
       color: #fff;
-      box-shadow: none; }
-      .button--disabled.button--ghost:hover::before {
-        opacity: 0; }
+      box-shadow: none;
+      border-color: transparent; }
 
 .button--gradient {
-  background: linear-gradient(red, green);
+  background-color: transparent;
+  background-image: linear-gradient(red, green);
+  background-size: auto calc(100% + 2px);
+  background-position: 50% -1px;
   color: #fff;
   text-shadow: none;
   box-shadow: none; }
@@ -402,33 +384,25 @@
     text-decoration: none; }
   .button--gradient:hover {
     text-decoration: none;
-    background: linear-gradient(red, green);
+    background-color: transparent;
+    background-image: linear-gradient(red, green);
     color: #fff;
     box-shadow: none; }
   .button--gradient.button--ghost {
-    background: transparent none;
+    background-color: transparent;
+    background-image: none;
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: green;
-    position: relative; }
-    .button--gradient.button--ghost::before {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: opacity 0.2s ease-out;
-      border: 1px solid green;
-      border-radius: 0; }
+    border: 1px solid green;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
     .button--gradient.button--ghost:hover {
       text-decoration: none;
-      background: linear-gradient(red, green);
+      background-color: transparent;
+      background-image: linear-gradient(red, green);
       color: #fff;
-      box-shadow: none; }
-      .button--gradient.button--ghost:hover::before {
-        opacity: 0; }
+      box-shadow: none;
+      border-color: transparent; }
 
 /***
     title: Container
@@ -658,7 +632,8 @@ textarea {
   color: #bbb; }
 
 button {
-  background: #ffcc34;
+  background-color: #ffcc34;
+  background-image: none;
   color: #fff;
   text-shadow: none;
   box-shadow: none;
@@ -683,7 +658,8 @@ button {
     text-decoration: none; }
   button:hover {
     text-decoration: none;
-    background: #ffd24e;
+    background-color: #ffd24e;
+    background-image: none;
     color: #fff;
     box-shadow: none; }
 
@@ -2469,7 +2445,8 @@ figure {
         <p><a href="#" class="button button--white">Bright buttons don't get white text</a></p>
 ***/
 .button {
-  background: #ffcc34;
+  background-color: #ffcc34;
+  background-image: none;
   color: #fff;
   text-shadow: none;
   box-shadow: none;
@@ -2493,39 +2470,32 @@ figure {
     text-decoration: none; }
   .button:hover {
     text-decoration: none;
-    background: #ffd24e;
+    background-color: #ffd24e;
+    background-image: none;
     color: #fff;
     box-shadow: none; }
   .button[disabled], .button.button--disabled {
     pointer-events: none; }
 
 .button--ghost {
-  background: transparent none;
+  background-color: transparent;
+  background-image: none;
   text-shadow: none;
   box-shadow: 0 0 0 transparent;
   color: #ffcc34;
-  position: relative; }
-  .button--ghost::before {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    transition: opacity 0.2s ease-out;
-    border: 1px solid #ffcc34;
-    border-radius: 0; }
+  border: 1px solid #ffcc34;
+  padding: calc(1rem - 1px) calc(3.2rem - 1px); }
   .button--ghost:hover {
     text-decoration: none;
-    background: #ffd24e;
+    background-color: #ffd24e;
+    background-image: none;
     color: #fff;
-    box-shadow: none; }
-    .button--ghost:hover::before {
-      opacity: 0; }
+    box-shadow: none;
+    border-color: transparent; }
 
 .button--white {
-  background: white;
+  background-color: white;
+  background-image: none;
   color: #ffcc34;
   text-shadow: none;
   box-shadow: none; }
@@ -2535,36 +2505,29 @@ figure {
     text-decoration: none; }
   .button--white:hover {
     text-decoration: none;
-    background: white;
+    background-color: white;
+    background-image: none;
     color: #ffcc34;
     box-shadow: none; }
   .button--white.button--ghost {
-    background: transparent none;
+    background-color: transparent;
+    background-image: none;
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: #fff;
-    position: relative; }
-    .button--white.button--ghost::before {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: opacity 0.2s ease-out;
-      border: 1px solid #fff;
-      border-radius: 0; }
+    border: 1px solid #fff;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
     .button--white.button--ghost:hover {
       text-decoration: none;
-      background: white;
+      background-color: white;
+      background-image: none;
       color: #ffcc34;
-      box-shadow: none; }
-      .button--white.button--ghost:hover::before {
-        opacity: 0; }
+      box-shadow: none;
+      border-color: transparent; }
 
 .button--disabled {
-  background: #bbbbbb;
+  background-color: #bbbbbb;
+  background-image: none;
   color: #fff;
   text-shadow: none;
   box-shadow: none; }
@@ -2574,36 +2537,31 @@ figure {
     text-decoration: none; }
   .button--disabled:hover {
     text-decoration: none;
-    background: #c8c8c8;
+    background-color: #c8c8c8;
+    background-image: none;
     color: #fff;
     box-shadow: none; }
   .button--disabled.button--ghost {
-    background: transparent none;
+    background-color: transparent;
+    background-image: none;
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: #bbb;
-    position: relative; }
-    .button--disabled.button--ghost::before {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: opacity 0.2s ease-out;
-      border: 1px solid #bbb;
-      border-radius: 0; }
+    border: 1px solid #bbb;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
     .button--disabled.button--ghost:hover {
       text-decoration: none;
-      background: #c8c8c8;
+      background-color: #c8c8c8;
+      background-image: none;
       color: #fff;
-      box-shadow: none; }
-      .button--disabled.button--ghost:hover::before {
-        opacity: 0; }
+      box-shadow: none;
+      border-color: transparent; }
 
 .button--gradient {
-  background: linear-gradient(red, green);
+  background-color: transparent;
+  background-image: linear-gradient(red, green);
+  background-size: auto calc(100% + 2px);
+  background-position: 50% -1px;
   color: #fff;
   text-shadow: none;
   box-shadow: none; }
@@ -2613,33 +2571,25 @@ figure {
     text-decoration: none; }
   .button--gradient:hover {
     text-decoration: none;
-    background: linear-gradient(red, green);
+    background-color: transparent;
+    background-image: linear-gradient(red, green);
     color: #fff;
     box-shadow: none; }
   .button--gradient.button--ghost {
-    background: transparent none;
+    background-color: transparent;
+    background-image: none;
     text-shadow: none;
     box-shadow: 0 0 0 transparent;
     color: green;
-    position: relative; }
-    .button--gradient.button--ghost::before {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: opacity 0.2s ease-out;
-      border: 1px solid green;
-      border-radius: 0; }
+    border: 1px solid green;
+    padding: calc(1rem - 1px) calc(3.2rem - 1px); }
     .button--gradient.button--ghost:hover {
       text-decoration: none;
-      background: linear-gradient(red, green);
+      background-color: transparent;
+      background-image: linear-gradient(red, green);
       color: #fff;
-      box-shadow: none; }
-      .button--gradient.button--ghost:hover::before {
-        opacity: 0; }
+      box-shadow: none;
+      border-color: transparent; }
 
 /***
     title: Container
@@ -2869,7 +2819,8 @@ textarea {
   color: #bbb; }
 
 button {
-  background: #ffcc34;
+  background-color: #ffcc34;
+  background-image: none;
   color: #fff;
   text-shadow: none;
   box-shadow: none;
@@ -2894,7 +2845,8 @@ button {
     text-decoration: none; }
   button:hover {
     text-decoration: none;
-    background: #ffd24e;
+    background-color: #ffd24e;
+    background-image: none;
     color: #fff;
     box-shadow: none; }
 

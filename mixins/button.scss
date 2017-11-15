@@ -9,11 +9,13 @@
 	@if (length($color) > 1) {
 		$base-color: nth($color, 2); // Use the second one as the "base"
 
-		background: linear-gradient(rgba(nth($color, 1), $opacity), rgba(nth($color, 2), $opacity));
+		background-color: transparent;
+		background-image: linear-gradient(rgba(nth($color, 1), $opacity), rgba(nth($color, 2), $opacity));
 	}
 	// Solid background
 	@else {
-		background: rgba(lighten($base-color, 5%), $opacity);
+		background-color: rgba(lighten($base-color, 5%), $opacity);
+		background-image: none;
 	}
 
 	// Invert text color if button too bright
@@ -25,8 +27,11 @@
 	}
 
 	// "Glow"? (shadow based on button color)
-	@if ($button-glow) {
+	@if ($button-glow == both or $button-glow == true) {
 		box-shadow: 0 2px 32px rgba(lighten($base-color, 10%), .75);
+	}
+	@elseif ($button-glow != false) {
+		box-shadow: $button-glow rgba(lighten($base-color, 10%), .75);
 	}
 	// Shadow?
 	@elseif ($button-shadow == both or $button-shadow == true) {
@@ -49,11 +54,16 @@
 	@if (length($color) > 1) {
 		$base-color: nth($color, 2); // Use the second one as the "base"
 
-		background: linear-gradient(rgba(nth($color, 1), $opacity), rgba(nth($color, 2), $opacity));
+		background-color: transparent;
+		background-image: linear-gradient(rgba(nth($color, 1), $opacity), rgba(nth($color, 2), $opacity));
+		background-size: auto calc(100% + #{$button-border-width * 2});
+		background-position: 50% -#{$button-border-width};
+
 	}
 	// Solid background
 	@else {
-		background: rgba($base-color, $opacity);
+		background-color: rgba($base-color, $opacity);
+		background-image: none;
 	}
 
 	// Invert text color if button too bright
@@ -160,44 +170,23 @@
 	}
 
 	// No background or shadow on ghosts
-	background: transparent none;
+	background-color: transparent;
+	background-image: none;
 	text-shadow: none;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
 	// Text color should be same as background was
 	color: $base-color;
 
-	// Use ::before to create the border so that it doesn't affect the size of the button
-	position: relative;
+	// Ghosts should always have a border
+	border: $button-border-width $button-border-style $base-color;
 
-	&::before {
-		display: block;
-		content: "";
-
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-
-		transition: opacity $transition-default $transition-easing;
-		border: $button-border-width $button-border-style $base-color;
-
-		@if ($button-border-radius) {
-			border-radius: $button-border-radius;
-		}
-		@else {
-			border-radius: 0;
-		}
-	}
+	// We need to adjust their padding so they are same size as non-ghost buttons without border
+	padding: calc(#{$button-padding-vertical} - #{$button-border-width}) calc(#{$button-padding-horizontal} - #{$button-border-width});
 
 	&:hover {
 		@include button-color-hover($color, $button-ghost-opacity);
 
-		@if ($button-ghost-opacity == 1) {
-			&::before {
-				opacity: 0;
-			}
-		}
+		border-color: transparent;
 	}
 }

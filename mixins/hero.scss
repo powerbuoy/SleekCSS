@@ -21,9 +21,16 @@
 		}
 	}
 
+	// Loads of padding in high res (TODO: Make configurable?)
+	@media #{$bp-tablet} {
+		padding-top: $section-padding * 2;
+		padding-bottom: $section-padding * 2;
+	}
+
 	// White text
 	color: $color-white;
 
+	#{$headings},
 	a:not(.button) {
 		color: $color-white;
 	}
@@ -33,33 +40,26 @@
 		text-align: center;
 	}
 
-	// Loads of padding in high res (TODO: Make configurable?)
-	@media #{$bp-tablet} {
-		padding-top: $section-padding * 2;
-		padding-bottom: $section-padding * 2;
-	}
-
 	// Title/description
-	h1,
-	h2 {
+	> h1,
+	> h2 {
 		margin: 0;
-		color: $color-white;
 	}
 
-	p {
+	> p {
 		margin: $margin-default 0 0;
 		font-size: $font-size-large;
 	}
 
 	// Buttons
-	nav {
+	> nav {
 		margin-top: $margin-large;
 	}
 
 	// Not too long text
-	h1,
-	h2,
-	p {
+	> h1,
+	> h2,
+	> p {
 		max-width: 42rem;
 
 		@if ($center) {

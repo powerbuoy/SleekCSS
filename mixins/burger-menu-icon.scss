@@ -1,5 +1,5 @@
 // Reversed E
-@mixin burger-menu ($color: $color-link, $size: 1.6rem, $thickness: .25rem) {
+@mixin burger-menu ($color: $color-link, $size: 1.6rem, $thickness: 4px) {
 	background-image: linear-gradient(to right, transparent, transparent 25%, $color 25%);
 	background-size: 100% $thickness;
 	background-position: left 50%;
@@ -54,7 +54,7 @@
 }
 
 // "Normal" (TODO: Deprecate)
-@mixin burger-menu-icon ($color: $color-link, $size: 1.25rem, $thickness: .25rem) {
+@mixin burger-menu-icon ($color: $color-link, $size: 1.25rem, $thickness: 4px) {
 	$height: $size;
 	$width: $size * 1.5;
 
@@ -113,7 +113,7 @@
 }
 
 // Normal with only two lines
-@mixin burger-menu-two-lines ($color: $color-link, $size: 2rem, $thickness: .25rem) {
+@mixin burger-menu-two-lines ($color: $color-link, $size: 2rem, $thickness: 4px) {
 	display: block;
 	width: $size;
 	height: $size;
@@ -163,7 +163,7 @@
 }
 
 // Dotted burger menu (TODO: Better animation)
-@mixin burger-menu-dots ($color: $color-link, $size: 2rem, $thickness: .375rem) {
+@mixin burger-menu-dots ($color: $color-link, $size: 2rem, $thickness: 6px) {
 	background: radial-gradient(circle at center, $color 0, $color ($thickness / 2), transparent ($thickness / 2));
 
 	display: block;
@@ -192,20 +192,20 @@
 		margin-left: -($thickness / 2);
 		margin-top: -($thickness / 2);
 
-		border-radius: ($thickness / 2);
+		border-radius: 50%;
 		transition: all $transition-default $transition-easing;
 	}
 
 	&:before {
-		transform: translateY(-($size / 2 - $thickness / 2));
+		transform: translateY(-calc(#{$size / 2} - #{$thickness / 2}));
 	}
 
 	&:after {
-		transform: translateY(($size / 2 - $thickness / 2));
+		transform: translateY(calc(#{$size / 2} - #{$thickness / 2}));
 	}
 }
 
-@mixin burger-menu-dots-open ($thickness: .375rem) {
+@mixin burger-menu-dots-open ($thickness: 60px) {
 	transform: rotate(45deg);
 
 	&:before {

@@ -468,39 +468,38 @@ hr,
             <figure><img src="http://placehold.it/1920x1080"></figure>
         </header>
 ***/
-.figure-background, .figure-background:before {
-  pointer-events: none;
-  overflow: hidden;
+.figure-background {
   margin: 0;
+  overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   z-index: -1; }
-
-.figure-background:before {
-  background: rgba(0, 0, 0, 0.4);
-  display: none;
-  content: "";
-  display: block; }
-
-.figure-background a {
-  display: block;
-  height: 100%; }
-
-.figure-background img {
-  position: relative;
-  z-index: -2;
-  width: 100%;
-  height: auto; }
-  @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-    .figure-background img {
-      -o-object-fit: cover;
-         object-fit: cover;
-      -o-object-position: center center;
-         object-position: center center;
-      height: 100%; } }
+  .figure-background:before {
+    background: rgba(0, 0, 0, 0.4);
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none; }
+  .figure-background img {
+    position: relative;
+    z-index: -2;
+    width: 100%;
+    height: auto; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .figure-background img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
 
 /***
     title: Forms
@@ -964,6 +963,8 @@ h6,
   margin: 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
   background-size: cover;
   background-position: 50% top;
   background-repeat: no-repeat;
@@ -972,36 +973,6 @@ h6,
     .hero {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  .hero, .hero:before {
-    pointer-events: none;
-    overflow: hidden;
-    margin: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; }
-  .hero:before {
-    background: rgba(0, 0, 0, 0.4);
-    display: none;
-    content: "";
-    display: block; }
-  .hero a {
-    display: block;
-    height: 100%; }
-  .hero img {
-    position: relative;
-    z-index: -2;
-    width: 100%;
-    height: auto; }
-    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-      .hero img {
-        -o-object-fit: cover;
-           object-fit: cover;
-        -o-object-position: center center;
-           object-position: center center;
-        height: 100%; } }
   .hero[style]:before {
     z-index: 0; }
   .hero[style] > * {
@@ -1025,6 +996,38 @@ h6,
   .hero > h2,
   .hero > p {
     max-width: 42rem; }
+  .hero figure {
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; }
+    .hero figure:before {
+      background: rgba(0, 0, 0, 0.4);
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      pointer-events: none; }
+    .hero figure img {
+      position: relative;
+      z-index: -2;
+      width: 100%;
+      height: auto; }
+      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+        .hero figure img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          -o-object-position: center center;
+             object-position: center center;
+          height: 100%; } }
   .hero.text--center,
   .text--center .hero {
     padding-left: 7.5%;
@@ -1034,6 +1037,8 @@ h6,
     margin: 0;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
     background-size: cover;
     background-position: 50% top;
     background-repeat: no-repeat;
@@ -1044,42 +1049,6 @@ h6,
       .text--center .hero {
         padding-left: calc(50% - 480px);
         padding-right: calc(50% - 480px); } }
-    .hero.text--center, .hero.text--center:before,
-    .text--center .hero,
-    .text--center .hero:before {
-      pointer-events: none;
-      overflow: hidden;
-      margin: 0;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1; }
-    .hero.text--center:before,
-    .text--center .hero:before {
-      background: rgba(0, 0, 0, 0.4);
-      display: none;
-      content: "";
-      display: block; }
-    .hero.text--center a,
-    .text--center .hero a {
-      display: block;
-      height: 100%; }
-    .hero.text--center img,
-    .text--center .hero img {
-      position: relative;
-      z-index: -2;
-      width: 100%;
-      height: auto; }
-      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        .hero.text--center img,
-        .text--center .hero img {
-          -o-object-fit: cover;
-             object-fit: cover;
-          -o-object-position: center center;
-             object-position: center center;
-          height: 100%; } }
     .hero.text--center[style]:before,
     .text--center .hero[style]:before {
       z-index: 0; }
@@ -1128,6 +1097,42 @@ h6,
       max-width: 42rem;
       margin-left: auto;
       margin-right: auto; }
+    .hero.text--center figure,
+    .text--center .hero figure {
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1; }
+      .hero.text--center figure:before,
+      .text--center .hero figure:before {
+        background: rgba(0, 0, 0, 0.4);
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        pointer-events: none; }
+      .hero.text--center figure img,
+      .text--center .hero figure img {
+        position: relative;
+        z-index: -2;
+        width: 100%;
+        height: auto; }
+        @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+          .hero.text--center figure img,
+          .text--center .hero figure img {
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: center center;
+               object-position: center center;
+            height: 100%; } }
 
 /***
     title: Icon
@@ -2634,39 +2639,38 @@ hr,
             <figure><img src="http://placehold.it/1920x1080"></figure>
         </header>
 ***/
-.figure-background, .figure-background:before {
-  pointer-events: none;
-  overflow: hidden;
+.figure-background {
   margin: 0;
+  overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   z-index: -1; }
-
-.figure-background:before {
-  background: rgba(0, 0, 0, 0.4);
-  display: none;
-  content: "";
-  display: block; }
-
-.figure-background a {
-  display: block;
-  height: 100%; }
-
-.figure-background img {
-  position: relative;
-  z-index: -2;
-  width: 100%;
-  height: auto; }
-  @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-    .figure-background img {
-      -o-object-fit: cover;
-         object-fit: cover;
-      -o-object-position: center center;
-         object-position: center center;
-      height: 100%; } }
+  .figure-background:before {
+    background: rgba(0, 0, 0, 0.4);
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none; }
+  .figure-background img {
+    position: relative;
+    z-index: -2;
+    width: 100%;
+    height: auto; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .figure-background img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
 
 /***
     title: Forms
@@ -3130,6 +3134,8 @@ h6,
   margin: 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
   background-size: cover;
   background-position: 50% top;
   background-repeat: no-repeat;
@@ -3138,36 +3144,6 @@ h6,
     .hero {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  .hero, .hero:before {
-    pointer-events: none;
-    overflow: hidden;
-    margin: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; }
-  .hero:before {
-    background: rgba(0, 0, 0, 0.4);
-    display: none;
-    content: "";
-    display: block; }
-  .hero a {
-    display: block;
-    height: 100%; }
-  .hero img {
-    position: relative;
-    z-index: -2;
-    width: 100%;
-    height: auto; }
-    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-      .hero img {
-        -o-object-fit: cover;
-           object-fit: cover;
-        -o-object-position: center center;
-           object-position: center center;
-        height: 100%; } }
   .hero[style]:before {
     z-index: 0; }
   .hero[style] > * {
@@ -3191,6 +3167,38 @@ h6,
   .hero > h2,
   .hero > p {
     max-width: 42rem; }
+  .hero figure {
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; }
+    .hero figure:before {
+      background: rgba(0, 0, 0, 0.4);
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      pointer-events: none; }
+    .hero figure img {
+      position: relative;
+      z-index: -2;
+      width: 100%;
+      height: auto; }
+      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+        .hero figure img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          -o-object-position: center center;
+             object-position: center center;
+          height: 100%; } }
   .hero.text--center,
   .text--center .hero {
     padding-left: 7.5%;
@@ -3200,6 +3208,8 @@ h6,
     margin: 0;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
     background-size: cover;
     background-position: 50% top;
     background-repeat: no-repeat;
@@ -3210,42 +3220,6 @@ h6,
       .text--center .hero {
         padding-left: calc(50% - 480px);
         padding-right: calc(50% - 480px); } }
-    .hero.text--center, .hero.text--center:before,
-    .text--center .hero,
-    .text--center .hero:before {
-      pointer-events: none;
-      overflow: hidden;
-      margin: 0;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1; }
-    .hero.text--center:before,
-    .text--center .hero:before {
-      background: rgba(0, 0, 0, 0.4);
-      display: none;
-      content: "";
-      display: block; }
-    .hero.text--center a,
-    .text--center .hero a {
-      display: block;
-      height: 100%; }
-    .hero.text--center img,
-    .text--center .hero img {
-      position: relative;
-      z-index: -2;
-      width: 100%;
-      height: auto; }
-      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        .hero.text--center img,
-        .text--center .hero img {
-          -o-object-fit: cover;
-             object-fit: cover;
-          -o-object-position: center center;
-             object-position: center center;
-          height: 100%; } }
     .hero.text--center[style]:before,
     .text--center .hero[style]:before {
       z-index: 0; }
@@ -3294,6 +3268,42 @@ h6,
       max-width: 42rem;
       margin-left: auto;
       margin-right: auto; }
+    .hero.text--center figure,
+    .text--center .hero figure {
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1; }
+      .hero.text--center figure:before,
+      .text--center .hero figure:before {
+        background: rgba(0, 0, 0, 0.4);
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        pointer-events: none; }
+      .hero.text--center figure img,
+      .text--center .hero figure img {
+        position: relative;
+        z-index: -2;
+        width: 100%;
+        height: auto; }
+        @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+          .hero.text--center figure img,
+          .text--center .hero figure img {
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: center center;
+               object-position: center center;
+            height: 100%; } }
 
 /***
     title: Icon

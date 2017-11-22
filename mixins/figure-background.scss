@@ -1,40 +1,38 @@
 @mixin figure-background ($withOverlay: true, $hover: false) {
-	// Position the figure element and its overlay behind everything else
-	&,
-	&:before {
-		pointer-events: none;
-		overflow: hidden;
-		margin: 0;
+	margin: 0;
+	overflow: hidden;
 
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		z-index: -1;
-	}
+	// Position the figure behind the content
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
 
-	// And add an overlay on top
-	&:before {
-		background: $color-overlay;
+	// Position the overlay
+	@if ($withOverlay) {
+		&:before {
+			background: $color-overlay;
 
-		display: none;
-		content: "";
-
-		@if ($withOverlay) {
 			display: block;
-		}
-	}
+			content: "";
 
-	a {
-		display: block;
-		height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1; // Render behind content
+
+			pointer-events: none;
+		}
 	}
 
 	// Make image cover entire figure
 	img {
 		position: relative;
-		z-index: -2;
+		z-index: -2; // Render behind overlay
 
 		width: 100%;
 		height: auto;

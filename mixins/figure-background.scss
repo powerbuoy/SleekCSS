@@ -1,14 +1,5 @@
 @mixin figure-background ($withOverlay: true, $hover: false) {
 	margin: 0;
-	overflow: hidden;
-
-	// Position the figure behind the content
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	z-index: -1;
 
 	// Position the overlay
 	@if ($withOverlay) {
@@ -24,14 +15,14 @@
 			right: 0;
 			bottom: 0;
 			z-index: -1; // Render behind content
-
-			pointer-events: none;
 		}
 	}
 
 	// Make image cover entire figure
 	img {
-		position: relative;
+		position: absolute;
+		left: 0;
+		top: 0;
 		z-index: -2; // Render behind overlay
 
 		width: 100%;
@@ -46,8 +37,6 @@
 
 	// Zoom image on hover?
 	@if ($hover) {
-		pointer-events: all;
-
 		img {
 			transform: scale(1);
 			transition: transform $transition-default $transition-easing;

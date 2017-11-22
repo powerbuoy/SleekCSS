@@ -468,39 +468,39 @@ hr,
             <figure><img src="http://placehold.it/1920x1080"></figure>
         </header>
 ***/
-.figure-background {
+.figure-background, .figure-background:before {
+  pointer-events: none;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; }
+
+.figure-background:before {
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  content: "";
+  display: block; }
+
+.figure-background a {
+  display: block;
+  height: 100%; }
+
+.figure-background img {
   position: relative;
-  overflow: hidden; }
-  .figure-background figure, .figure-background:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden; }
-  .figure-background:before {
-    background: rgba(0, 0, 0, 0.4);
-    display: none;
-    content: "";
-    display: block; }
-  .figure-background figure {
-    margin: 0;
-    z-index: -2; }
-    .figure-background figure a {
-      display: block;
-      height: 100%; }
-    .figure-background figure img {
-      width: 100%;
-      height: auto; }
-      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        .figure-background figure img {
-          -o-object-fit: cover;
-             object-fit: cover;
-          -o-object-position: center center;
-             object-position: center center;
-          height: 100%; } }
+  z-index: -2;
+  width: 100%;
+  height: auto; }
+  @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+    .figure-background img {
+      -o-object-fit: cover;
+         object-fit: cover;
+      -o-object-position: center center;
+         object-position: center center;
+      height: 100%; } }
 
 /***
     title: Forms
@@ -964,8 +964,6 @@ h6,
   margin: 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  position: relative;
-  overflow: hidden;
   background-size: cover;
   background-position: 50% top;
   background-repeat: no-repeat;
@@ -974,36 +972,36 @@ h6,
     .hero {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  .hero figure, .hero:before {
+  .hero, .hero:before {
+    pointer-events: none;
+    overflow: hidden;
+    margin: 0;
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden; }
+    z-index: -1; }
   .hero:before {
     background: rgba(0, 0, 0, 0.4);
     display: none;
     content: "";
     display: block; }
-  .hero figure {
-    margin: 0;
-    z-index: -2; }
-    .hero figure a {
-      display: block;
-      height: 100%; }
-    .hero figure img {
-      width: 100%;
-      height: auto; }
-      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        .hero figure img {
-          -o-object-fit: cover;
-             object-fit: cover;
-          -o-object-position: center center;
-             object-position: center center;
-          height: 100%; } }
+  .hero a {
+    display: block;
+    height: 100%; }
+  .hero img {
+    position: relative;
+    z-index: -2;
+    width: 100%;
+    height: auto; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .hero img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
   .hero[style]:before {
     z-index: 0; }
   .hero[style] > * {
@@ -1036,8 +1034,6 @@ h6,
     margin: 0;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
     background-size: cover;
     background-position: 50% top;
     background-repeat: no-repeat;
@@ -1048,43 +1044,42 @@ h6,
       .text--center .hero {
         padding-left: calc(50% - 480px);
         padding-right: calc(50% - 480px); } }
-    .hero.text--center figure, .hero.text--center:before,
-    .text--center .hero figure,
+    .hero.text--center, .hero.text--center:before,
+    .text--center .hero,
     .text--center .hero:before {
+      pointer-events: none;
+      overflow: hidden;
+      margin: 0;
       position: absolute;
       left: 0;
       top: 0;
       right: 0;
       bottom: 0;
-      z-index: -1;
-      pointer-events: none;
-      overflow: hidden; }
+      z-index: -1; }
     .hero.text--center:before,
     .text--center .hero:before {
       background: rgba(0, 0, 0, 0.4);
       display: none;
       content: "";
       display: block; }
-    .hero.text--center figure,
-    .text--center .hero figure {
-      margin: 0;
-      z-index: -2; }
-      .hero.text--center figure a,
-      .text--center .hero figure a {
-        display: block;
-        height: 100%; }
-      .hero.text--center figure img,
-      .text--center .hero figure img {
-        width: 100%;
-        height: auto; }
-        @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-          .hero.text--center figure img,
-          .text--center .hero figure img {
-            -o-object-fit: cover;
-               object-fit: cover;
-            -o-object-position: center center;
-               object-position: center center;
-            height: 100%; } }
+    .hero.text--center a,
+    .text--center .hero a {
+      display: block;
+      height: 100%; }
+    .hero.text--center img,
+    .text--center .hero img {
+      position: relative;
+      z-index: -2;
+      width: 100%;
+      height: auto; }
+      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+        .hero.text--center img,
+        .text--center .hero img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          -o-object-position: center center;
+             object-position: center center;
+          height: 100%; } }
     .hero.text--center[style]:before,
     .text--center .hero[style]:before {
       z-index: 0; }
@@ -1309,34 +1304,6 @@ a:hover .icon--round {
 .img--wide {
   display: block;
   width: 100%; }
-
-.img--bg {
-  position: relative;
-  overflow: hidden; }
-  .img--bg img, .img--bg:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0; }
-  .img--bg:before {
-    display: block;
-    content: "";
-    z-index: -1;
-    background: rgba(0, 0, 0, 0.4); }
-  .img--bg img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    z-index: -2; }
-    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-      .img--bg img {
-        -o-object-fit: cover;
-           object-fit: cover;
-        -o-object-position: center center;
-           object-position: center center;
-        height: 100%; } }
 
 /***
     title: Inline Grid
@@ -2667,39 +2634,39 @@ hr,
             <figure><img src="http://placehold.it/1920x1080"></figure>
         </header>
 ***/
-.figure-background {
+.figure-background, .figure-background:before {
+  pointer-events: none;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; }
+
+.figure-background:before {
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  content: "";
+  display: block; }
+
+.figure-background a {
+  display: block;
+  height: 100%; }
+
+.figure-background img {
   position: relative;
-  overflow: hidden; }
-  .figure-background figure, .figure-background:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden; }
-  .figure-background:before {
-    background: rgba(0, 0, 0, 0.4);
-    display: none;
-    content: "";
-    display: block; }
-  .figure-background figure {
-    margin: 0;
-    z-index: -2; }
-    .figure-background figure a {
-      display: block;
-      height: 100%; }
-    .figure-background figure img {
-      width: 100%;
-      height: auto; }
-      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        .figure-background figure img {
-          -o-object-fit: cover;
-             object-fit: cover;
-          -o-object-position: center center;
-             object-position: center center;
-          height: 100%; } }
+  z-index: -2;
+  width: 100%;
+  height: auto; }
+  @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+    .figure-background img {
+      -o-object-fit: cover;
+         object-fit: cover;
+      -o-object-position: center center;
+         object-position: center center;
+      height: 100%; } }
 
 /***
     title: Forms
@@ -3163,8 +3130,6 @@ h6,
   margin: 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  position: relative;
-  overflow: hidden;
   background-size: cover;
   background-position: 50% top;
   background-repeat: no-repeat;
@@ -3173,36 +3138,36 @@ h6,
     .hero {
       padding-left: calc(50% - 480px);
       padding-right: calc(50% - 480px); } }
-  .hero figure, .hero:before {
+  .hero, .hero:before {
+    pointer-events: none;
+    overflow: hidden;
+    margin: 0;
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden; }
+    z-index: -1; }
   .hero:before {
     background: rgba(0, 0, 0, 0.4);
     display: none;
     content: "";
     display: block; }
-  .hero figure {
-    margin: 0;
-    z-index: -2; }
-    .hero figure a {
-      display: block;
-      height: 100%; }
-    .hero figure img {
-      width: 100%;
-      height: auto; }
-      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-        .hero figure img {
-          -o-object-fit: cover;
-             object-fit: cover;
-          -o-object-position: center center;
-             object-position: center center;
-          height: 100%; } }
+  .hero a {
+    display: block;
+    height: 100%; }
+  .hero img {
+    position: relative;
+    z-index: -2;
+    width: 100%;
+    height: auto; }
+    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+      .hero img {
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center center;
+           object-position: center center;
+        height: 100%; } }
   .hero[style]:before {
     z-index: 0; }
   .hero[style] > * {
@@ -3235,8 +3200,6 @@ h6,
     margin: 0;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
     background-size: cover;
     background-position: 50% top;
     background-repeat: no-repeat;
@@ -3247,43 +3210,42 @@ h6,
       .text--center .hero {
         padding-left: calc(50% - 480px);
         padding-right: calc(50% - 480px); } }
-    .hero.text--center figure, .hero.text--center:before,
-    .text--center .hero figure,
+    .hero.text--center, .hero.text--center:before,
+    .text--center .hero,
     .text--center .hero:before {
+      pointer-events: none;
+      overflow: hidden;
+      margin: 0;
       position: absolute;
       left: 0;
       top: 0;
       right: 0;
       bottom: 0;
-      z-index: -1;
-      pointer-events: none;
-      overflow: hidden; }
+      z-index: -1; }
     .hero.text--center:before,
     .text--center .hero:before {
       background: rgba(0, 0, 0, 0.4);
       display: none;
       content: "";
       display: block; }
-    .hero.text--center figure,
-    .text--center .hero figure {
-      margin: 0;
-      z-index: -2; }
-      .hero.text--center figure a,
-      .text--center .hero figure a {
-        display: block;
-        height: 100%; }
-      .hero.text--center figure img,
-      .text--center .hero figure img {
-        width: 100%;
-        height: auto; }
-        @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-          .hero.text--center figure img,
-          .text--center .hero figure img {
-            -o-object-fit: cover;
-               object-fit: cover;
-            -o-object-position: center center;
-               object-position: center center;
-            height: 100%; } }
+    .hero.text--center a,
+    .text--center .hero a {
+      display: block;
+      height: 100%; }
+    .hero.text--center img,
+    .text--center .hero img {
+      position: relative;
+      z-index: -2;
+      width: 100%;
+      height: auto; }
+      @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+        .hero.text--center img,
+        .text--center .hero img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          -o-object-position: center center;
+             object-position: center center;
+          height: 100%; } }
     .hero.text--center[style]:before,
     .text--center .hero[style]:before {
       z-index: 0; }
@@ -3508,34 +3470,6 @@ a:hover .icon--round {
 .img--wide {
   display: block;
   width: 100%; }
-
-.img--bg {
-  position: relative;
-  overflow: hidden; }
-  .img--bg img, .img--bg:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0; }
-  .img--bg:before {
-    display: block;
-    content: "";
-    z-index: -1;
-    background: rgba(0, 0, 0, 0.4); }
-  .img--bg img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    z-index: -2; }
-    @supports ((-o-object-fit: contain) or (object-fit: contain)) {
-      .img--bg img {
-        -o-object-fit: cover;
-           object-fit: cover;
-        -o-object-position: center center;
-           object-position: center center;
-        height: 100%; } }
 
 /***
     title: Inline Grid

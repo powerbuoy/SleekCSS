@@ -1,83 +1,17 @@
-@mixin image-background ($withOverlay: true, $hover: false) {
-	position: relative;
-	overflow: hidden;
-
-	// Position the image behind everything else
-	img,
-	&:before {
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-	}
-
-	// And add an overlay on top
-	@if ($withOverlay) {
-		&:before {
-			display: block;
-			content: "";
-			z-index: -1;
-
-			@if ($withOverlay == true) {
-				background: $color-overlay;
-			}
-			@else {
-				background: rgba($color-overlay, $withOverlay);
-			}
-		}
-	}
-
-	// Image
-	img {
-		display: block;
-		width: 100%;
-		height: auto;
-		margin: 0;
-		z-index: -2;
-
-		@supports (object-fit: contain) {
-			object-fit: cover;
-			object-position: center center;
-			height: 100%;
-		}
-	}
-
-	// Zoom image on hover?
-	@if ($hover) {
-		img {
-			transform: scale(1);
-			transition: transform $transition-default $transition-easing;
-		}
-
-		&:hover {
-			img {
-				@if ($hover == true) {
-					transform: scale(1.025);
-				}
-				@else {
-					transform: scale($hover);
-				}
-			}
-		}
-	}
-}
-
 @mixin figure-background ($withOverlay: true, $hover: false) {
-	position: relative;
-	overflow: hidden;
-
-	// Position the figure element behind everything else
-	figure,
+	// Position the figure element and its overlay behind everything else
+	&,
 	&:before {
+		pointer-events: none;
+		overflow: hidden;
+		margin: 0;
+
 		position: absolute;
 		left: 0;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		z-index: -1;
-		pointer-events: none;
-		overflow: hidden;
 	}
 
 	// And add an overlay on top
@@ -92,41 +26,37 @@
 		}
 	}
 
-	// Figure
-	figure {
-		margin: 0;
+	a {
+		display: block;
+		height: 100%;
+	}
+
+	// Make image cover entire figure
+	img {
+		position: relative;
 		z-index: -2;
 
-		a {
-			display: block;
+		width: 100%;
+		height: auto;
+
+		@supports (object-fit: contain) {
+			object-fit: cover;
+			object-position: center center;
 			height: 100%;
-		}
-
-		// Make image cover entire figure
-		img {
-			width: 100%;
-			height: auto;
-
-			@supports (object-fit: contain) {
-				object-fit: cover;
-				object-position: center center;
-				height: 100%;
-			}
 		}
 	}
 
 	// Zoom image on hover?
 	@if ($hover) {
-		figure {
-			pointer-events: all;
+		pointer-events: all;
+
+		img {
 			transform: scale(1);
 			transition: transform $transition-default $transition-easing;
 		}
 
-		&:hover {
-			figure {
-				transform: scale(1.025);
-			}
+		&:hover img {
+			transform: scale(1.025);
 		}
 	}
 }

@@ -19,7 +19,7 @@ html.popup-open body {
 }
 
 .popup {
-	background: $color-overlay;
+	background: $overlay-color;
 
 	position: fixed;
 	left: 0;
@@ -59,18 +59,18 @@ html.popup-open body {
 
 		font-size: 3rem;
 		line-height: 1rem;
-		color: $color-white;
+		color: map-get($colors, white);
 		text-decoration: none;
 
 		&:hover {
-			color: $color-white;
+			color: map-get($colors, white);
 			text-decoration: none;
 		}
 	}
 
 	// The actual box
 	&__content {
-		background: $color-white;
+		background: map-get($colors, white);
 
 		width: 95%;
 		max-width: 50rem;

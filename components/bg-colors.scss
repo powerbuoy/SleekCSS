@@ -5,8 +5,13 @@
     example:
         <div class="bg--white">I have a white background color</div>
 ***/
-@each $color-name, $color in $bg-colors {
+@each $color-name, $color in $colors {
 	.bg--#{$color-name} {
-		background-color: $color;
+		@if (length($color) > 1) {
+			background-image: linear-gradient(nth($color, 1), nth($color, 2));
+		}
+		@else {
+			background-color: $color;
+		}
 	}
 }

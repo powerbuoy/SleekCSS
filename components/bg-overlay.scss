@@ -3,25 +3,27 @@
     section: Layout
     description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).
     example:
-        <header class="card bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
+        <header class="bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
             <h2>I'm a box</h2>
             <p>With some content</p>
         </header>
 ***/
 .bg-overlay {
-	@include bg-overlay($color-overlay, false);
+	@include bg-overlay($overlay-color, false);
 
 	&--hover {
-		@include bg-overlay($color-overlay, true);
+		@include bg-overlay($overlay-color, true);
 	}
 }
 
-@each $color-name, $color in $bg-colors {
-	.bg-overlay--#{$color-name} {
-		@include bg-overlay(rgba($color, .5), false);
+@each $color-name, $color in $colors {
+	@if (length($color) == 1) {
+		.bg-overlay--#{$color-name} {
+			@include bg-overlay(rgba($color, .5), false);
 
-		&.bg-overlay--hover {
-			@include bg-overlay(rgba($color, .5), true);
+			&.bg-overlay--hover {
+				@include bg-overlay(rgba($color, .5), true);
+			}
 		}
 	}
 }

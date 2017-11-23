@@ -4,7 +4,7 @@
 	// Position the overlay
 	@if ($withOverlay) {
 		&:before {
-			background: $color-overlay;
+			background: $overlay-color;
 
 			display: block;
 			content: "";

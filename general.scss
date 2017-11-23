@@ -11,7 +11,7 @@
  * General styling
  */
 html {
-	background: $color-body-bg;
+	background: $body-bg;
 	font-size: 100%; // 1rem = 16 "px"
 }
 
@@ -23,7 +23,7 @@ body {
 	letter-spacing: $letter-spacing-default;
 	line-height: $line-height-default;
 
-	color: $color-text;
+	color: $text-color;
 
 	// Break up words?
 	@if ($word-wrap-break-word) {
@@ -58,12 +58,12 @@ q {
 
 // NOTE: I only use this element for debug data (var_dump)
 pre {
-	background: $color-lightgray;
+	background: map-get($colors, lightgray);
 
 	margin: 0 0 $margin-default;
 	padding: $padding-default;
 
-	color: $color-text;
+	color: $text-color;
 
 	max-height: 20rem;
 	overflow: auto;

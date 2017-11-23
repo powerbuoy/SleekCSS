@@ -25,16 +25,16 @@
 }
 
 // Button colors
-@each $btn-name, $btn-color in $button-colors {
-	.button--#{$btn-name} {
-		@include button-color($btn-color);
+@each $color-name, $color in $colors {
+	.button--#{$color-name} {
+		@include button-color($color);
 
 		&:hover {
-			@include button-color-hover($btn-color);
+			@include button-color-hover($color);
 		}
 
 		&.button--ghost {
-			@include button-ghost($btn-color);
+			@include button-ghost($color);
 		}
 	}
 }

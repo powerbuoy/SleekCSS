@@ -10,7 +10,7 @@ div.gallery {
 		}
 
 		figcaption {
-			background: $color-overlay;
+			background: $overlay-color;
 
 			position: absolute;
 			left: 0;
@@ -19,7 +19,7 @@ div.gallery {
 
 			padding: $padding-default;
 
-			color: $color-white;
+			color: map-get($colors, white);
 		}
 	}
 

@@ -27,13 +27,13 @@ $letter-spacing-default: 0 !default;
 $letter-spacing-heading: 0 !default;
 
 // Color
-$color-text: #333 !default;
-$color-heading: #444 !default;
+$text-color: #333 !default;
+$heading-color: #444 !default;
 
 // Links
-$color-link: #06f !default;
-$color-link-hover: darken($color-link, 10%) !default;
-$color-link-visited: #609 !default;
+$link-color: #06f !default;
+$link-color-hover: darken($link-color, 10%) !default;
+$link-color-visited: #609 !default;
 
 $text-decoration-link: none !default;
 $text-decoration-link-hover: none !default;

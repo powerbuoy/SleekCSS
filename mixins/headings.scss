@@ -6,16 +6,16 @@
 	font-size: $size;
 	font-family: $font-family-heading;
 
-	color: $color-heading;
+	color: $heading-color;
 
 	line-height: $line-height-heading;
 	letter-spacing: $letter-spacing-heading;
 
 	a {
-		color: $color-heading;
+		color: $heading-color;
 
 		&:hover {
-			color: $color-link-hover;
+			color: $link-color-hover;
 		}
 	}
 }

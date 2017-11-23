@@ -1,4 +1,4 @@
-@mixin bg-overlay ($color: $color-overlay, $hover: false) {
+@mixin bg-overlay ($color: $overlay-color, $hover: false) {
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;

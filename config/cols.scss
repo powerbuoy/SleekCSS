@@ -1,11 +1,11 @@
 // Add more here to use cols--4, cols--5 etc
 $col-nums: (
-	"2": 2,
-	"3": 3
+	2: 2,
+	3: 3
 ) !default;
 
 // Add more here to use cols--3--bp-desktop etc
 $col-breakpoints: (
-	"bp-tablet": $bp-tablet,
-	"bp-laptop": $bp-laptop
+	bp-tablet: $bp-tablet,
+	bp-laptop: $bp-laptop
 ) !default;

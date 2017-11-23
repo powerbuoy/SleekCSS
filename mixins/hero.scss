@@ -29,11 +29,11 @@
 	}
 
 	// White text
-	color: $color-white;
+	color: map-get($colors, white);
 
 	#{$headings},
 	a:not(.button) {
-		color: $color-white;
+		color: map-get($colors, white);
 	}
 
 	// Centered?

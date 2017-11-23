@@ -17,11 +17,11 @@ hr,
 .divider--below {
 	padding-bottom: $padding-default;
 	margin-bottom: $margin-large;
-	border-bottom: 1px solid $color-border;
+	border-bottom: 1px solid $border-color;
 }
 
 .divider--above {
 	padding-top: $padding-default;
 	margin-top: $margin-large;
-	border-top: 1px solid $color-border;
+	border-top: 1px solid $border-color;
 }

@@ -130,40 +130,32 @@ a:hover .icon--round {
 /**
  * Icon colors
  */
-@each $color-name, $color in $icon-colors {
-	[class*="icon-"] {
-		&.icon--#{$color-name} {
-			&:before {
-				color: $color;
-			}
-		}
-
-	 	&.icon--after.icon--#{$color-name} {
-			&:after {
-				color: $color;
-			}
-		}
-
-		// TODO: Support for icon-round.icon--after
-	 	&.icon--round--#{$color-name} {
-			&:before {
-				background-color: $color;
+@each $color-name, $color in $colors {
+	@if (length($color) == 1) {
+		[class*="icon-"] {
+			&.icon--#{$color-name} {
+				&:before {
+					color: $color;
+				}
 			}
 
-			&.icon--round--ghost:before {
-				background-color: transparent;
-				color: $color;
-				border-color: $color;
+		 	&.icon--after.icon--#{$color-name} {
+				&:after {
+					color: $color;
+				}
 			}
 
-			/* &:hover:before {
-				background-color: rgba($color, .2);
-				color: nth($color, 2);
-			}
+		 	&.icon--round--#{$color-name} {
+				&:before {
+					background-color: $color;
+				}
 
-			&.icon--round--ghost:hover:before {
-				background-color: rgba($color, .2);
-			} */
+				&.icon--round--ghost:before {
+					background-color: transparent;
+					color: $color;
+					border-color: $color;
+				}
+			}
 		}
 	}
 }

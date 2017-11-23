@@ -7,7 +7,7 @@
 	height: 0;
 
 	border: 0;
-	border-top: 1px solid $color-border;
+	border-top: 1px solid $border-color;
 
 	@media #{$bp-tablet} {
 		margin: $margin-large 0;

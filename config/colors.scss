@@ -1,42 +1,22 @@
-$color-body-bg: #fff !default;
+// Specific colors
+$body-bg: #fff !default;
+$border-color: #dedede !default;
+$overlay-color: rgba(0, 0, 0, .4) !default;
 
-$color-border: #dedede !default;
-$color-overlay: rgba(0, 0, 0, .4) !default;
+// Define your general colors here, they may be gradients (by passing in 2 colors)
+// Every color defined will be available in bg--, button--, icon-- etc components
+$colors: (
+	lightgray: #fafafa,
+	gray: #bbb,
+	darkgray: #777,
 
-$color-lightgray: #fafafa !default;
-$color-gray: #bbb !default;
-$color-darkgray: #777 !default;
+	white: #fff,
+	black: #000,
 
-$color-white: #fff !default;
-$color-black: #000 !default;
+	facebook: #3b5998,
+	twitter: #4099FF,
+	linkedin: #0077b5,
 
-$color-facebook: #3b5998 !default;
-$color-twitter: #4099FF !default;
-$color-linkedin: #0077b5 !default;
-
-// Add more colors as needed...
-// $color-red: #600 etc...
-
-// Define more to use bg--black etc
-$bg-colors: (
-	"white": $color-white,
-	"lightgray": $color-lightgray
-) !default;
-
-// Add more to use .color--red etc
-$text-colors: (
-	"white": $color-white,
-	"gray": $color-gray
-) !default;
-
-// Add more to use .icon--red etc
-$icon-colors: (
-	"lightgray": $color-lightgray
-) !default;
-
-// Add more to use .button--green etc
-$button-colors: (
-	"white": $color-white,
-	"disabled": $color-gray,
-	"gradient": (red, green)
+	disabled: #bbb,
+	gradient: (red, green)
 ) !default;

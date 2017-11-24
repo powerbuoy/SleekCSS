@@ -1,8 +1,10 @@
-$bp-tablet: "(min-width: 600px)" !default;
-$bp-tablet-max: "(max-width: 599px)" !default;
+$breakpoints: (
+	tablet: "(min-width: 600px)",
+	tablet-max: "(max-width: 599px)",
 
-$bp-laptop: "(min-width: 1080px)" !default;
-$bp-laptop-max: "(max-width: 1079px)" !default;
+	laptop: "(min-width: 1080px)",
+	laptop-max: "(max-width: 1079px)",
 
-$bp-desktop: "(min-width: 1260px)" !default;
-$bp-desktop-max: "(max-width: 1259px)" !default;
+	desktop: "(min-width: 1260px)",
+	desktop-max: "(max-width: 1259px)"
+) !default;

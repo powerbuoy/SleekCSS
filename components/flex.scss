@@ -28,17 +28,17 @@ ul[class*="flex--"] {
 }
 
 // Create flex--X classes for all specified column counts
-@each $num-name, $num in $col-nums {
-	.flex--#{$num-name} {
+@for $num from 2 to $num-cols {
+	.flex--#{$num} {
 		@include flex-grid($num, $gutter-default);
 	}
 }
 
 // Create flex--X--bp-Y classes for all specified column counts and breakpoints
-@each $bp-name, $bp in $col-breakpoints {
-	@each $num-name, $num in $col-nums {
+@each $bp-name, $bp in $breakpoints {
+	@for $num from 2 to $num-cols {
 		@media #{$bp} {
-			.flex--#{$num-name}--#{$bp-name} {
+			.flex--#{$num}--#{$bp-name} {
 				@include flex-grid($num, $gutter-default);
 			}
 		}

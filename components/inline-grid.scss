@@ -16,16 +16,16 @@ ul[class*="inline-grid--"] {
 	list-style: none;
 }
 
-@each $num-name, $num in $col-nums {
-	.inline-grid--#{$num-name} > * {
+@for $num from 2 to $num-cols {
+	.inline-grid--#{$num} > * {
 		width: calc(#{100% / $num} - #{$gutter-default});
 	}
 }
 
-@each $bp-name, $bp in $col-breakpoints {
-	@each $num-name, $num in $col-nums {
+@each $bp-name, $bp in $breakpoints {
+	@for $num from 2 to $num-cols {
 		@media #{$bp} {
-			.inline-grid--#{$num-name}--#{$bp-name} > * {
+			.inline-grid--#{$num}--#{$bp-name} > * {
 				width: calc(#{100% / $num} - #{$gutter-default});
 			}
 		}

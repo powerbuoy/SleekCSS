@@ -20,7 +20,7 @@
             </div>
         </div>
 ***/
-@media #{$bp-laptop} {
+@media #{map-get($breakpoints, laptop)} {
 	.primary-content {
 		@include clearfix;
 
@@ -73,7 +73,7 @@
 	}
 }
 
-@media #{$bp-laptop-max} {
+@media #{map-get($breakpoints, laptop-max)} {
 	.primary-content,
 	.secondary-content,
 	.primary-secondary > * {

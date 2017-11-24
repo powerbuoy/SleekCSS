@@ -29,7 +29,7 @@
 	margin: 0 auto $margin-default;
 }
 
-@media #{$bp-tablet} {
+@media #{map-get($breakpoints, tablet)} {
 	.alignleft {
 		float: left;
 		width: auto;

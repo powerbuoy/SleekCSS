@@ -1978,7 +1978,7 @@ a:hover .icon--round {
     section: Grid
     description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element's font-size back to $font-size-default.
     example:
-        <ul class="inline-grid inline-grid--2--bp-tablet"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
+        <ul class="inline-grid inline-grid--2--tablet"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
 .inline-grid {
   font-size: 0;
@@ -2001,29 +2001,56 @@ ul[class*="inline-grid--"] {
 .inline-grid--2 > * {
   width: calc(50% - 1.5rem); }
 
+.inline-grid--3 > * {
+  width: calc(33.33333% - 1.5rem); }
+
 @media (min-width: 600px) {
   .inline-grid--2--tablet > * {
     width: calc(50% - 1.5rem); } }
+
+@media (min-width: 600px) {
+  .inline-grid--3--tablet > * {
+    width: calc(33.33333% - 1.5rem); } }
 
 @media (max-width: 599px) {
   .inline-grid--2--tablet-max > * {
     width: calc(50% - 1.5rem); } }
 
+@media (max-width: 599px) {
+  .inline-grid--3--tablet-max > * {
+    width: calc(33.33333% - 1.5rem); } }
+
 @media (min-width: 1080px) {
   .inline-grid--2--laptop > * {
     width: calc(50% - 1.5rem); } }
+
+@media (min-width: 1080px) {
+  .inline-grid--3--laptop > * {
+    width: calc(33.33333% - 1.5rem); } }
 
 @media (max-width: 1079px) {
   .inline-grid--2--laptop-max > * {
     width: calc(50% - 1.5rem); } }
 
+@media (max-width: 1079px) {
+  .inline-grid--3--laptop-max > * {
+    width: calc(33.33333% - 1.5rem); } }
+
 @media (min-width: 1260px) {
   .inline-grid--2--desktop > * {
     width: calc(50% - 1.5rem); } }
 
+@media (min-width: 1260px) {
+  .inline-grid--3--desktop > * {
+    width: calc(33.33333% - 1.5rem); } }
+
 @media (max-width: 1259px) {
   .inline-grid--2--desktop-max > * {
     width: calc(50% - 1.5rem); } }
+
+@media (max-width: 1259px) {
+  .inline-grid--3--desktop-max > * {
+    width: calc(33.33333% - 1.5rem); } }
 
 /***
     title: Link
@@ -2755,7 +2782,7 @@ div.gallery:not(.is-slideshow) {
     section: Grid
     description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.
     example:
-        <ul class="flex--2--bp-tablet flex--3--bp-laptop">
+        <ul class="flex--2--tablet flex--3--laptop">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
@@ -2792,6 +2819,26 @@ ul[class*="flex--"] {
             flex: 0 0 calc(50% - 0.75rem);
     margin-bottom: 1.5rem; }
 
+.flex--3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .flex--3 > * {
+    min-width: calc(33.33333% - 1rem);
+    max-width: calc(33.33333% - 1rem);
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.33333% - 1rem);
+            flex: 0 0 calc(33.33333% - 1rem);
+    margin-bottom: 1.5rem; }
+
 @media (min-width: 600px) {
   .flex--2--tablet {
     display: -webkit-box;
@@ -2811,6 +2858,27 @@ ul[class*="flex--"] {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.75rem);
               flex: 0 0 calc(50% - 0.75rem);
+      margin-bottom: 1.5rem; } }
+
+@media (min-width: 600px) {
+  .flex--3--tablet {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--tablet > * {
+      min-width: calc(33.33333% - 1rem);
+      max-width: calc(33.33333% - 1rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 1rem);
+              flex: 0 0 calc(33.33333% - 1rem);
       margin-bottom: 1.5rem; } }
 
 @media (max-width: 599px) {
@@ -2834,6 +2902,27 @@ ul[class*="flex--"] {
               flex: 0 0 calc(50% - 0.75rem);
       margin-bottom: 1.5rem; } }
 
+@media (max-width: 599px) {
+  .flex--3--tablet-max {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--tablet-max > * {
+      min-width: calc(33.33333% - 1rem);
+      max-width: calc(33.33333% - 1rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 1rem);
+              flex: 0 0 calc(33.33333% - 1rem);
+      margin-bottom: 1.5rem; } }
+
 @media (min-width: 1080px) {
   .flex--2--laptop {
     display: -webkit-box;
@@ -2853,6 +2942,27 @@ ul[class*="flex--"] {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.75rem);
               flex: 0 0 calc(50% - 0.75rem);
+      margin-bottom: 1.5rem; } }
+
+@media (min-width: 1080px) {
+  .flex--3--laptop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--laptop > * {
+      min-width: calc(33.33333% - 1rem);
+      max-width: calc(33.33333% - 1rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 1rem);
+              flex: 0 0 calc(33.33333% - 1rem);
       margin-bottom: 1.5rem; } }
 
 @media (max-width: 1079px) {
@@ -2876,6 +2986,27 @@ ul[class*="flex--"] {
               flex: 0 0 calc(50% - 0.75rem);
       margin-bottom: 1.5rem; } }
 
+@media (max-width: 1079px) {
+  .flex--3--laptop-max {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--laptop-max > * {
+      min-width: calc(33.33333% - 1rem);
+      max-width: calc(33.33333% - 1rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 1rem);
+              flex: 0 0 calc(33.33333% - 1rem);
+      margin-bottom: 1.5rem; } }
+
 @media (min-width: 1260px) {
   .flex--2--desktop {
     display: -webkit-box;
@@ -2897,6 +3028,27 @@ ul[class*="flex--"] {
               flex: 0 0 calc(50% - 0.75rem);
       margin-bottom: 1.5rem; } }
 
+@media (min-width: 1260px) {
+  .flex--3--desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--desktop > * {
+      min-width: calc(33.33333% - 1rem);
+      max-width: calc(33.33333% - 1rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 1rem);
+              flex: 0 0 calc(33.33333% - 1rem);
+      margin-bottom: 1.5rem; } }
+
 @media (max-width: 1259px) {
   .flex--2--desktop-max {
     display: -webkit-box;
@@ -2916,6 +3068,27 @@ ul[class*="flex--"] {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.75rem);
               flex: 0 0 calc(50% - 0.75rem);
+      margin-bottom: 1.5rem; } }
+
+@media (max-width: 1259px) {
+  .flex--3--desktop-max {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--desktop-max > * {
+      min-width: calc(33.33333% - 1rem);
+      max-width: calc(33.33333% - 1rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 1rem);
+              flex: 0 0 calc(33.33333% - 1rem);
       margin-bottom: 1.5rem; } }
 
 /***

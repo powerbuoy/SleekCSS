@@ -3,7 +3,7 @@
     section: Grid
     description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element's font-size back to $font-size-default.
     example:
-        <ul class="inline-grid inline-grid--2--bp-tablet"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
+        <ul class="inline-grid inline-grid--2--tablet"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
 .inline-grid {
 	@include inline-grid(1);
@@ -16,14 +16,14 @@ ul[class*="inline-grid--"] {
 	list-style: none;
 }
 
-@for $num from 2 to $num-cols {
+@for $num from 2 through $num-cols {
 	.inline-grid--#{$num} > * {
 		width: calc(#{100% / $num} - #{$gutter-default});
 	}
 }
 
 @each $bp-name, $bp in $breakpoints {
-	@for $num from 2 to $num-cols {
+	@for $num from 2 through $num-cols {
 		@media #{$bp} {
 			.inline-grid--#{$num}--#{$bp-name} > * {
 				width: calc(#{100% / $num} - #{$gutter-default});

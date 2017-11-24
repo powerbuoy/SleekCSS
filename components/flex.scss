@@ -3,7 +3,7 @@
     section: Grid
     description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.
     example:
-        <ul class="flex--2--bp-tablet flex--3--bp-laptop">
+        <ul class="flex--2--tablet flex--3--laptop">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
             <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
@@ -28,15 +28,15 @@ ul[class*="flex--"] {
 }
 
 // Create flex--X classes for all specified column counts
-@for $num from 2 to $num-cols {
+@for $num from 2 through $num-cols {
 	.flex--#{$num} {
 		@include flex-grid($num, $gutter-default);
 	}
 }
 
-// Create flex--X--bp-Y classes for all specified column counts and breakpoints
+// Create flex--X--Y classes for all specified column counts and breakpoints
 @each $bp-name, $bp in $breakpoints {
-	@for $num from 2 to $num-cols {
+	@for $num from 2 through $num-cols {
 		@media #{$bp} {
 			.flex--#{$num}--#{$bp-name} {
 				@include flex-grid($num, $gutter-default);

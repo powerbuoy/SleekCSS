@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var styleguidejs = require('gulp-styleguidejs');
 var clean = require('gulp-clean');
+var cleanCss = require('gulp-clean-css');
 
 // TODO: Generate styleguidejs documentation from all config-files ()
 var generateConfigDocs = function (stream) {
@@ -19,6 +20,7 @@ gulp.task('cleanup', function () {
 gulp.task('sass', ['cleanup'], function () {
 	return gulp.src('sleek-css.scss')
 		.pipe(sass())
+		.pipe(cleanCss())
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('.'));
 });

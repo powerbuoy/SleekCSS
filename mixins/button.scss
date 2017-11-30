@@ -119,7 +119,7 @@
 	// Hello
 	display: inline-block;
 	vertical-align: middle;
-	transition: all $transition-default $transition-easing;
+	transition: all $transition-default $transition-easing, padding 0s 0s linear, border 0s 0s linear;
 
 	// Size
 	box-sizing: border-box;

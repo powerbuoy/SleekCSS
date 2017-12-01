@@ -1,0 +1,12 @@
+/***
+    title: Shadows
+    section: Layout
+    description: Use to apply a shadow to an element. Add your shadows to the $shadows array in config/shadows.scss.
+    example:
+        <div class="bg--white shadow--4">I have a white background color and a level 4 shadow</div>
+***/
+@each $shadow-name, $shadow in $shadows {
+	.shadow--#{$shadow-name} {
+		box-shadow: unquote($shadow);
+	}
+}

@@ -3,27 +3,27 @@ $site-width: 960px !default; // Max width
 $site-width-min: 85% !default; // Width before reaching max
 
 // Margins (margins beneath elements)
-$margin-small: .5rem !default;
-$margin-default: 1rem !default;
-$margin-large: 2rem !default;
+$margin-small: .75rem !default;
+$margin-default: 1.5rem !default;
+$margin-large: 3rem !default;
 $margin-x-large: 4rem !default;
 
 // Paddings (inner padding of boxes)
-$padding-small: .5rem !default;
-$padding-default: 1rem !default;
-$padding-large: 2rem !default;
+$padding-small: .75rem !default;
+$padding-default: 1.5rem !default;
+$padding-large: 3rem !default;
 $padding-x-large: 4rem !default;
 
 // Gutters (margin between columns)
-$gutter-default: 1.5rem !default;
-$gutter-large: 3rem !default;
+$gutter-default: 2rem !default;
+$gutter-large: 4rem !default;
 
 // .primary-content's width
 $primary-content-width: 70% !default;
 
 // Section paddings
-$section-padding: 3rem !default;
-$section-slant: 3rem !default;
+$section-padding: 4rem !default;
+$section-slant: 4rem !default;
 
 // Transition speeds
 $transition-easing: ease-out !default;

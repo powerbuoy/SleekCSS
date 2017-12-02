@@ -455,6 +455,9 @@ input[type=range] {
 		bottom: 0;
 
 		color: $form-placeholder-color;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 
 		transform: translateY(0);
 		transform-origin: left top;

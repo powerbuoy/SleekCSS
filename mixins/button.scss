@@ -30,14 +30,14 @@
 	@if ($button-glow == both or $button-glow == true) {
 		box-shadow: 0 2px 32px rgba(lighten($base-color, 10%), .75);
 	}
-	@elseif ($button-glow != false) {
+	@elseif ($button-glow != false && $button-glow != true) {
 		box-shadow: $button-glow rgba(lighten($base-color, 10%), .75);
 	}
 	// Shadow?
 	@elseif ($button-shadow == both or $button-shadow == true) {
 		box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
 	}
-	@elseif ($button-shadow != false) {
+	@elseif ($button-shadow != false && $button-shadow != true) {
 		box-shadow: $button-shadow;
 	}
 	@else {
@@ -104,7 +104,7 @@
 	@elseif ($button-shadow == both) {
 		box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
 	}
-	@elseif ($button-shadow != false) {
+	@elseif ($button-shadow != false && $button-shadow != true) {
 		box-shadow: $button-shadow;
 	}
 	@else {
@@ -113,7 +113,7 @@
 }
 
 // The actual button mixin (padding etc)
-@mixin button ($color: $button-color) {
+@mixin button ($color: $button-color, $hover: true) {
 	@include button-color($color);
 
 	// Hello
@@ -153,14 +153,16 @@
 		border-radius: 0;
 	}
 
-	// Make sure text color doesn't change on hover
-	&:hover {
-		@include button-color-hover($color);
+	// Hover styling
+	@if ($hover) {
+		&:hover {
+			@include button-color-hover($color);
+		}
 	}
 }
 
 // Turn a @button into a ghost button
-@mixin button-ghost ($color: $button-color) {
+@mixin button-ghost ($color: $button-color, $hover: true) {
 	// Store the base color
 	$base-color: $color;
 
@@ -184,11 +186,13 @@
 	// We need to adjust their padding so they are same size as non-ghost buttons without border
 	padding: calc(#{$button-padding-vertical} - #{$button-border-width}) calc(#{$button-padding-horizontal} - #{$button-border-width});
 
-	&:hover {
-		@include button-color-hover($color, $button-ghost-opacity);
+	@if ($hover) {
+		&:hover {
+			@include button-color-hover($color, $button-ghost-opacity);
 
-		@if ($button-ghost-opacity == 1) {
-			border-color: transparent;
+			@if ($button-ghost-opacity == 1) {
+				border-color: transparent;
+			}
 		}
 	}
 }

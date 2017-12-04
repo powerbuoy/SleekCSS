@@ -626,8 +626,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  -webkit-box-shadow: false;
+          box-shadow: false;
   display: inline-block;
   vertical-align: middle;
   -webkit-transition: all 0.2s ease-out, padding 0s 0s linear, border 0s 0s linear;
@@ -653,8 +653,8 @@
     background-color: #ffd24e;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(255, 217, 103, 0.75);
+            box-shadow: false rgba(255, 217, 103, 0.75); }
   .button[disabled], .button.button--disabled {
     pointer-events: none; }
 
@@ -672,8 +672,8 @@
     background-color: #ffd24e;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    -webkit-box-shadow: false rgba(255, 217, 103, 0.75);
+            box-shadow: false rgba(255, 217, 103, 0.75);
     border-color: transparent; }
 
 .button--lightgray {
@@ -681,8 +681,8 @@
   background-image: none;
   color: #ffcc34;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--lightgray a,
   .button--lightgray a:hover {
     color: #ffcc34;
@@ -692,8 +692,8 @@
     background-color: white;
     background-image: none;
     color: #ffcc34;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(255, 255, 255, 0.75);
+            box-shadow: false rgba(255, 255, 255, 0.75); }
   .button--lightgray.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -708,8 +708,8 @@
       background-color: white;
       background-image: none;
       color: #ffcc34;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(255, 255, 255, 0.75);
+              box-shadow: false rgba(255, 255, 255, 0.75);
       border-color: transparent; }
 
 .button--gray {
@@ -717,8 +717,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--gray a,
   .button--gray a:hover {
     color: #fff;
@@ -728,8 +728,8 @@
     background-color: #c8c8c8;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(213, 213, 213, 0.75);
+            box-shadow: false rgba(213, 213, 213, 0.75); }
   .button--gray.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -744,8 +744,8 @@
       background-color: #c8c8c8;
       background-image: none;
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(213, 213, 213, 0.75);
+              box-shadow: false rgba(213, 213, 213, 0.75);
       border-color: transparent; }
 
 .button--darkgray {
@@ -753,8 +753,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--darkgray a,
   .button--darkgray a:hover {
     color: #fff;
@@ -764,8 +764,8 @@
     background-color: #848484;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(145, 145, 145, 0.75);
+            box-shadow: false rgba(145, 145, 145, 0.75); }
   .button--darkgray.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -780,8 +780,8 @@
       background-color: #848484;
       background-image: none;
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(145, 145, 145, 0.75);
+              box-shadow: false rgba(145, 145, 145, 0.75);
       border-color: transparent; }
 
 .button--white {
@@ -789,8 +789,8 @@
   background-image: none;
   color: #ffcc34;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--white a,
   .button--white a:hover {
     color: #ffcc34;
@@ -800,8 +800,8 @@
     background-color: white;
     background-image: none;
     color: #ffcc34;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(255, 255, 255, 0.75);
+            box-shadow: false rgba(255, 255, 255, 0.75); }
   .button--white.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -816,8 +816,8 @@
       background-color: white;
       background-image: none;
       color: #ffcc34;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(255, 255, 255, 0.75);
+              box-shadow: false rgba(255, 255, 255, 0.75);
       border-color: transparent; }
 
 .button--black {
@@ -825,8 +825,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--black a,
   .button--black a:hover {
     color: #fff;
@@ -836,8 +836,8 @@
     background-color: #0d0d0d;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(26, 26, 26, 0.75);
+            box-shadow: false rgba(26, 26, 26, 0.75); }
   .button--black.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -852,8 +852,8 @@
       background-color: #0d0d0d;
       background-image: none;
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(26, 26, 26, 0.75);
+              box-shadow: false rgba(26, 26, 26, 0.75);
       border-color: transparent; }
 
 .button--facebook {
@@ -861,8 +861,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--facebook a,
   .button--facebook a:hover {
     color: #fff;
@@ -872,8 +872,8 @@
     background-color: #4264aa;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(76, 112, 186, 0.75);
+            box-shadow: false rgba(76, 112, 186, 0.75); }
   .button--facebook.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -888,8 +888,8 @@
       background-color: #4264aa;
       background-image: none;
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(76, 112, 186, 0.75);
+              box-shadow: false rgba(76, 112, 186, 0.75);
       border-color: transparent; }
 
 .button--twitter {
@@ -897,8 +897,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--twitter a,
   .button--twitter a:hover {
     color: #fff;
@@ -908,8 +908,8 @@
     background-color: #5aa7ff;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(115, 180, 255, 0.75);
+            box-shadow: false rgba(115, 180, 255, 0.75); }
   .button--twitter.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -924,8 +924,8 @@
       background-color: #5aa7ff;
       background-image: none;
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(115, 180, 255, 0.75);
+              box-shadow: false rgba(115, 180, 255, 0.75);
       border-color: transparent; }
 
 .button--linkedin {
@@ -933,8 +933,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--linkedin a,
   .button--linkedin a:hover {
     color: #fff;
@@ -944,8 +944,8 @@
     background-color: #0088cf;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(0, 153, 232, 0.75);
+            box-shadow: false rgba(0, 153, 232, 0.75); }
   .button--linkedin.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -960,8 +960,8 @@
       background-color: #0088cf;
       background-image: none;
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(0, 153, 232, 0.75);
+              box-shadow: false rgba(0, 153, 232, 0.75);
       border-color: transparent; }
 
 .button--disabled {
@@ -969,8 +969,8 @@
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--disabled a,
   .button--disabled a:hover {
     color: #fff;
@@ -980,8 +980,8 @@
     background-color: #c8c8c8;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(213, 213, 213, 0.75);
+            box-shadow: false rgba(213, 213, 213, 0.75); }
   .button--disabled.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -996,8 +996,8 @@
       background-color: #c8c8c8;
       background-image: none;
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(213, 213, 213, 0.75);
+              box-shadow: false rgba(213, 213, 213, 0.75);
       border-color: transparent; }
 
 .button--gradient {
@@ -1008,8 +1008,8 @@
   background-position: 50% -1px;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  -webkit-box-shadow: false;
+          box-shadow: false; }
   .button--gradient a,
   .button--gradient a:hover {
     color: #fff;
@@ -1020,8 +1020,8 @@
     background-image: -webkit-gradient(linear, left top, left bottom, from(red), to(green));
     background-image: linear-gradient(red, green);
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(0, 179, 0, 0.75);
+            box-shadow: false rgba(0, 179, 0, 0.75); }
   .button--gradient.button--ghost {
     background-color: transparent;
     background-image: none;
@@ -1037,8 +1037,8 @@
       background-image: -webkit-gradient(linear, left top, left bottom, from(red), to(green));
       background-image: linear-gradient(red, green);
       color: #fff;
-      -webkit-box-shadow: none;
-              box-shadow: none;
+      -webkit-box-shadow: false rgba(0, 179, 0, 0.75);
+              box-shadow: false rgba(0, 179, 0, 0.75);
       border-color: transparent; }
 
 /***
@@ -1270,8 +1270,8 @@ button {
   background-image: none;
   color: #fff;
   text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  -webkit-box-shadow: false;
+          box-shadow: false;
   display: inline-block;
   vertical-align: middle;
   -webkit-transition: all 0.2s ease-out, padding 0s 0s linear, border 0s 0s linear;
@@ -1298,8 +1298,8 @@ button {
     background-color: #ffd24e;
     background-image: none;
     color: #fff;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    -webkit-box-shadow: false rgba(255, 217, 103, 0.75);
+            box-shadow: false rgba(255, 217, 103, 0.75); }
 
 input[type=submit] {
   white-space: normal; }

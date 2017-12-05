@@ -38,19 +38,24 @@
 	}
 }
 
-@mixin burger-menu-open ($color: $link-color, $size: 24px, $thickness: 4px) {
+@mixin burger-menu-open ($color: false, $size: 24px, $thickness: 4px) {
 	background-position: $size 50%;
 	transition: background-position $transition-default $transition-easing;
 
+	@if ($color) {
+		&:before,
+		&:after {
+			background: $color;
+		}
+	}
+
 	&::before {
-		background: $color;
 		top: calc(50% - #{$thickness / 2});
 		transform: rotate(45deg);
 		transition: top $transition-default $transition-easing, background-color $transition-default $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
 	}
 
 	&::after {
-		background: $color;
 		bottom: calc(50% - #{$thickness / 2});
 		transform: rotate(-45deg);
 		transition: bottom $transition-default $transition-easing, background-color $transition-default $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;

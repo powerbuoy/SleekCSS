@@ -1,6 +1,8 @@
 // Reversed E
-@mixin burger-menu ($color: $link-color, $size: 1.6rem, $thickness: 4px) {
-	background-image: linear-gradient(to right, transparent, transparent 25%, $color 25%);
+@mixin burger-menu ($color: $link-color, $middle-width: 75%, $size: 25px, $thickness: 4px) {
+	$middle-position: 100% - $middle-width;
+
+	background-image: linear-gradient(to right, transparent, transparent $middle-position, $color $middle-position);
 	background-size: 100% $thickness;
 	background-position: left 50%;
 	background-repeat: no-repeat;
@@ -26,94 +28,37 @@
 		width: 100%;
 		height: $thickness;
 
-		transition: top $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
+		transition: top $transition-default $transition-default $transition-easing, background-color $transition-default $transition-easing, transform $transition-default $transition-easing;
 	}
 
 	&::after {
 		top: auto;
 		bottom: 0;
-		transition: bottom $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
+		transition: bottom $transition-default $transition-default $transition-easing, background-color $transition-default $transition-easing, transform $transition-default $transition-easing;
 	}
 }
 
-@mixin burger-menu-open ($color: $link-color, $size: 2rem, $thickness: .25rem) {
+@mixin burger-menu-open ($color: $link-color, $size: 25px, $thickness: 4px) {
 	background-position: $size 50%;
 	transition: background-position $transition-default $transition-easing;
 
 	&::before {
+		background: $color;
 		top: calc(50% - #{$thickness / 2});
 		transform: rotate(45deg);
-		transition: top $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
+		transition: top $transition-default $transition-easing, background-color $transition-default $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
 	}
 
 	&::after {
+		background: $color;
 		bottom: calc(50% - #{$thickness / 2});
 		transform: rotate(-45deg);
-		transition: bottom $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
-	}
-}
-
-// "Normal" (TODO: Deprecate)
-@mixin burger-menu-icon ($color: $link-color, $size: 1.25rem, $thickness: 4px) {
-	$height: $size;
-	$width: $size * 1.5;
-
-	// background: linear-gradient(to bottom, $color, $color $thickness, transparent $thickness, transparent calc(100% - #{$thickness}), $color calc(100% - #{$thickness}));
-
-	display: block;
-	width: $width;
-	height: $height;
-	min-height: 0;
-
-	border-top: $thickness solid $color;
-	border-bottom: $thickness solid $color;
-
-	position: relative;
-	z-index: 99;
-
-	transition: height $transition-default $transition-default $transition-easing, border-width $transition-default $transition-default $transition-easing, min-height 0s 0s linear;
-
-	&:before,
-	&:after {
-		background: $color;
-
-		display: block;
-		content: "";
-		height: $thickness;
-
-		position: absolute;
-		left: 0;
-		top: 50%;
-		right: 0;
-
-		transform: translateY(-50%);
-		transition: transform $transition-default 0s $transition-easing;
-	}
-}
-
-@mixin burger-menu-icon-open ($size: 1.25rem) {
-	height: 0;
-	min-height: $size;
-	border-width: 0;
-
-	transition: height $transition-default 0s $transition-easing, border-width $transition-default 0s $transition-easing, min-height 0s $transition-default linear;
-
-	&:before,
-	&:after {
-		transition: transform $transition-default $transition-default $transition-easing;
-	}
-
-	&:before {
-		transform: translateY(-50%) rotate(45deg);
-	}
-
-	&:after {
-		transform: translateY(-50%) rotate(-45deg);
+		transition: bottom $transition-default $transition-easing, background-color $transition-default $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
 	}
 }
 
 // Normal with only two lines
-@mixin burger-menu-two-lines ($color: $link-color, $size: 2rem, $thickness: 4px) {
+@mixin burger-menu-two-lines ($color: $link-color, $size: 32px, $thickness: 4px) {
 	display: block;
 	width: $size;
 	height: $size;
@@ -147,7 +92,8 @@
 	}
 }
 
-@mixin burger-menu-two-lines-open ($size: 1.25rem) {
+// TODO: Add color support
+@mixin burger-menu-two-lines-open () {
 	&:before {
 		transition: top $transition-fast $transition-fast $transition-easing, transform $transition-fast $transition-fast * 2 $transition-easing;
 		top: 50%;
@@ -163,7 +109,7 @@
 }
 
 // Dotted burger menu (TODO: Better animation)
-@mixin burger-menu-dots ($color: $link-color, $size: 2rem, $thickness: 6px) {
+@mixin burger-menu-dots ($color: $link-color, $size: 32px, $thickness: 6px) {
 	background: radial-gradient(circle at center, $color 0, $color ($thickness / 2), transparent ($thickness / 2));
 
 	display: block;
@@ -205,7 +151,7 @@
 	}
 }
 
-@mixin burger-menu-dots-open ($thickness: 60px) {
+@mixin burger-menu-dots-open ($thickness: 6px) {
 	transform: rotate(45deg);
 
 	&:before {

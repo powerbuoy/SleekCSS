@@ -28,13 +28,13 @@
 		width: 100%;
 		height: $thickness;
 
-		transition: top $transition-default $transition-default $transition-easing, background-color $transition-default $transition-easing, transform $transition-default $transition-easing;
+		transition: top $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
 	}
 
 	&::after {
 		top: auto;
 		bottom: 0;
-		transition: bottom $transition-default $transition-default $transition-easing, background-color $transition-default $transition-easing, transform $transition-default $transition-easing;
+		transition: bottom $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
 	}
 }
 
@@ -52,13 +52,13 @@
 	&::before {
 		top: calc(50% - #{$thickness / 2});
 		transform: rotate(45deg);
-		transition: top $transition-default $transition-easing, background-color $transition-default $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
+		transition: top $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
 	}
 
 	&::after {
 		bottom: calc(50% - #{$thickness / 2});
 		transform: rotate(-45deg);
-		transition: bottom $transition-default $transition-easing, background-color $transition-default $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
+		transition: bottom $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
 	}
 }
 

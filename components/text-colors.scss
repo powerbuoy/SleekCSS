@@ -10,26 +10,6 @@
 ***/
 @each $color-name, $color in $colors {
 	@if (length($color) == 1) {
-		// Colors added directly to elements
-		.color--#{$color-name},
-		h1.color--#{$color-name},
-		h2.color--#{$color-name},
-		h3.color--#{$color-name},
-		h4.color--#{$color-name},
-		h5.color--#{$color-name},
-		h6.color--#{$color-name},
-		.heading--1.color--#{$color-name},
-		.heading--2.color--#{$color-name},
-		.heading--3.color--#{$color-name},
-		.heading--4.color--#{$color-name},
-		.heading--5.color--#{$color-name},
-		.heading--6.color--#{$color-name},
-		a.color--#{$color-name},
-		.link.color--#{$color-name} {
-			color: $color;
-		}
-
-		// Colors added to parent element
 		.color--#{$color-name} {
 			#{$headings},
 			a:not(.button),

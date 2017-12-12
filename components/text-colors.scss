@@ -11,6 +11,8 @@
 @each $color-name, $color in $colors {
 	@if (length($color) == 1) {
 		.color--#{$color-name} {
+			color: $color;
+
 			#{$headings},
 			a:not(.button),
 			.link {

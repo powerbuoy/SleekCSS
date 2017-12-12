@@ -20,7 +20,7 @@ gulp.task('cleanup', function () {
 gulp.task('sass', ['cleanup'], function () {
 	return gulp.src('sleek-css.scss')
 		.pipe(sass())
-	//	.pipe(cleanCss())
+		.pipe(cleanCss())
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('.'));
 });

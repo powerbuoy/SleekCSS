@@ -5,27 +5,15 @@
 	position: relative;
 	overflow: hidden;
 
-	// If the element has a style attribute, a background image is assumed
-	background-size: cover;
-	background-position: 50% top;
-	background-repeat: no-repeat;
-
-	&[style] {
-		// In which case the overlay needs to render on top of bg
-		&:before {
-			z-index: 0;
-		}
-
-		// And everything else on top of overlay
-		> * {
-			position: relative;
-		}
-	}
-
-	// Loads of padding in high res (TODO: Make configurable?)
+	// Double padding in high res (TODO: Make configurable?)
 	@media #{map-get($breakpoints, tablet)} {
 		padding-top: $section-padding * 2;
 		padding-bottom: $section-padding * 2;
+	}
+
+	// Centered?
+	@if ($center) {
+		text-align: center;
 	}
 
 	// White text
@@ -36,11 +24,6 @@
 		color: $white;
 	}
 
-	// Centered?
-	@if ($center) {
-		text-align: center;
-	}
-
 	// Title/description
 	> h1,
 	> h2 {
@@ -49,24 +32,11 @@
 
 	> p {
 		margin: $margin-default 0 0;
-		font-size: $font-size-large;
 	}
 
 	// Buttons
 	> nav {
 		margin-top: $margin-large;
-	}
-
-	// Not too long text
-	> h1,
-	> h2,
-	> p {
-		max-width: 42rem;
-
-		@if ($center) {
-			margin-left: auto;
-			margin-right: auto;
-		}
 	}
 
 	// Potential image should be used as background

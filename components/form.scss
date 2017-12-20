@@ -74,22 +74,19 @@
 	appearance: none;
 	outline: 0;
 
-	@if ($form-border == true) {
-		border: 1px solid $border-color;
-	}
-	@elseif ($form-border) {
+	@if ($form-border) {
 		border: $form-border;
 	}
 	@else {
 		border: 0;
 	}
 
+	border-width: $form-border-width;
 	border-radius: $form-border-radius;
 
-	&:hover,
 	&:focus {
-		@if ($form-border == true) {
-			border-color: darken($border-color, 10%);
+		@if ($form-border-focus) {
+			border: $form-border-focus;
 		}
 	}
 }

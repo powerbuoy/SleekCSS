@@ -10,8 +10,10 @@ $form-padding-horizontal: $button-padding-vertical !default;
 $form-padding-vertical: $button-padding-vertical !default;
 
 // Border
-$form-border: true !default;
+$form-border: 1px solid lightgray !default;
 $form-border-radius: .2rem !default;
+$form-border-width: 1px !default;
+$form-border-focus: 1px solid gray !default;
 
 // Select elements
 $form-select-arrow: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTYgOC40Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDIzNjApIj48cGF0aCBkPSJNMC0yMzU5LjZjMC0wLjEsMC0wLjIsMC4xLTAuM2MwLjItMC4yLDAuNC0wLjIsMC42LDBsNy4zLDcuM2w3LjMtNy4zYzAuMi0wLjIsMC40LTAuMiwwLjYsMGMwLjIsMC4yLDAuMiwwLjQsMCwwLjZsLTcuNiw3LjZjLTAuMiwwLjItMC40LDAuMi0wLjYsMGwtNy42LTcuNkMwLTIzNTkuNCwwLTIzNTkuNSwwLTIzNTkuNkwwLTIzNTkuNnoiLz48L2c+PC9zdmc+" !default; // Set to false to have unstyled select elements

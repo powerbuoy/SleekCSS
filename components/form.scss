@@ -87,6 +87,7 @@
 	&:focus {
 		@if ($form-border-focus) {
 			border: $form-border-focus;
+			border-width: $form-border-width;
 		}
 	}
 }

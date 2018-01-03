@@ -73,6 +73,7 @@
 
 	appearance: none;
 	outline: 0;
+	transition: all $transition-default $transition-easing;
 
 	@if ($form-border) {
 		border: $form-border;
@@ -85,6 +86,8 @@
 	border-radius: $form-border-radius;
 
 	&:focus {
+		outline: 0;
+
 		@if ($form-border-focus) {
 			border: $form-border-focus;
 			border-width: $form-border-width;
@@ -199,22 +202,25 @@ input[type=submit] {
 
 		color: $form-text-color;
 		line-height: normal;
+		transition: all $transition-default $transition-easing;
 
-		@if ($form-border == true) {
-			border: 1px solid $border-color;
-		}
-		@elseif ($form-border) {
+		@if ($form-border) {
 			border: $form-border;
 		}
 		@else {
 			border: 0;
 		}
 
-		@if ($form-border-radius) {
-			border-radius: $form-border-radius;
-		}
-		@else {
-			border-radius: 0;
+		border-width: $form-border-width;
+		border-radius: $form-border-radius;
+
+		&:focus {
+			outline: 0;
+
+			@if ($form-border-focus) {
+				border: $form-border-focus;
+				border-width: $form-border-width;
+			}
 		}
 	}
 }

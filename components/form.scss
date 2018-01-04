@@ -435,6 +435,7 @@ input[type=range] {
 	$translateY: $font-size-default * $line-height-default + $form-padding-vertical;
 	$paddingTop: $font-size-default * $line-height-default;
 
+	display: block;
 	position: relative;
 	text-align: left;
 	padding-top: $paddingTop;
@@ -445,7 +446,8 @@ input[type=range] {
 	}
 
 	// Position the label directly on top of the input
-	label {
+	label,
+	.label {
 		display: block;
 		pointer-events: none;
 
@@ -470,21 +472,25 @@ input[type=range] {
 
 	// When no placeholder is visible (ie there's text inside the field) - move up the label
 	input:not(:placeholder-shown) + label,
-	textarea:not(:placeholder-shown) + label {
+	textarea:not(:placeholder-shown) + label,
+	input:not(:placeholder-shown) + .label,
+	textarea:not(:placeholder-shown) + .label {
 		transform: translateY(-$translateY);
 		color: $text-color;
 	}
 
 	// Always position label above in IE...
 	@supports (-ms-ime-align: auto) {
-		label {
+		label,
+		.label {
 			transform: translateY(-$translateY) !important;
 		}
 	}
 
 	// And 10/11
 	@media all and (-ms-high-contrast: none) {
-		label {
+		label,
+		.label {
 			transform: translateY(-$translateY) !important;
 		}
 	}

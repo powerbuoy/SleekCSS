@@ -191,6 +191,7 @@ input[type=submit] {
 		@include text;
 
 		appearance: none;
+		outline: 0;
 
 		background: $form-field-bg url($form-select-arrow) no-repeat calc(100% - #{$padding-default}) 50%; // TODO: Use "from right" syntax for bg image
 		background-size: $form-select-arrow-size auto;
@@ -201,7 +202,7 @@ input[type=submit] {
 		padding: $form-padding-vertical ($form-padding-horizontal + $form-select-arrow-size + $padding-default) $form-padding-vertical $form-padding-horizontal;
 
 		color: $form-text-color;
-		line-height: normal;
+	//	line-height: normal; // NOTE: This was here for a reason I guess, but it makes selects different size from inputs
 		transition: all $transition-default $transition-easing;
 
 		@if ($form-border) {
@@ -215,8 +216,6 @@ input[type=submit] {
 		border-radius: $form-border-radius;
 
 		&:focus {
-			outline: 0;
-
 			@if ($form-border-focus) {
 				border: $form-border-focus;
 				border-width: $form-border-width;

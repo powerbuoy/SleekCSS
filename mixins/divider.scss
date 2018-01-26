@@ -1,15 +1,11 @@
 @mixin divider {
 	clear: both;
 
-	margin: $margin-default 0;
+	margin: $margin-large 0;
 	padding: 0;
 
 	height: 0;
 
 	border: 0;
 	border-top: 1px solid $border-color;
-
-	@media #{map-get($breakpoints, tablet)} {
-		margin: $margin-large 0;
-	}
 }

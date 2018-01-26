@@ -24,12 +24,12 @@ body {
 	line-height: $line-height-default;
 
 	color: $text-color;
+//	-webkit-font-smoothing: antialiased; // TODO: Should this be under the same config var? :P
 
 	// Break up words?
 	@if ($word-wrap-break-word) {
 		word-wrap: break-word;
 		hyphens: auto;
-		-webkit-font-smoothing: antialiased; // TODO: Should this be under the same config var? :P
 	}
 }
 

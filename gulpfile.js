@@ -12,7 +12,7 @@ var generateConfigDocs = function (stream) {
 
 // Cleanup
 gulp.task('cleanup', function () {
-	return gulp.src(['sleek-css.css', 'styleguide.html'])
+	return gulp.src(['sleek-css.css', 'sleek-css-lite.css', 'styleguide.html'])
 		.pipe(clean());
 });
 
@@ -25,13 +25,22 @@ gulp.task('sass', ['cleanup'], function () {
 		.pipe(gulp.dest('.'));
 });
 
+// SASS lite
+gulp.task('sass-lite', ['cleanup'], function () {
+	return gulp.src('sleek-css-lite.scss')
+		.pipe(sass())
+		.pipe(cleanCss())
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('.'));
+});
+
 // TODO: Generate config documentation
 gulp.task('config-docs', function () {
 	return gulp.src('config/*.scss');
 });
 
 // Styleguide
-gulp.task('styleguide', ['sass', 'config-docs'], function () {
+gulp.task('styleguide', ['sass', 'sass-lite', 'config-docs'], function () {
 	return gulp.src('sleek-css.css')
 		.pipe(styleguidejs({
 			templateCss: __dirname + '/styleguide/style.css',

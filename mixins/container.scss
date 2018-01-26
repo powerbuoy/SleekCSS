@@ -3,8 +3,7 @@
 
 	display: block;
 	width: $site-width-min;
-	margin-left: auto;
-	margin-right: auto;
+	margin: $section-padding auto;
 
 	@media (min-width: $width-reached) {
 		max-width: $width;

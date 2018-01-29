@@ -26,10 +26,10 @@ $section-padding: 6rem !default;
 $section-slant: 4rem !default;
 
 // Transition speeds
-$transition-easing: ease-out !default;
-$transition-fast: .1s !default;
-$transition-default: .2s !default;
-$transition-slow: .4s !default;
+$transition-easing: cubic-bezier(0.125, 0.75, 0.415, 1) !default;
+$transition-fast: .15s !default;
+$transition-default: .25s !default;
+$transition-slow: .5s !default;
 
 // Max number of col classes
 $num-cols: 3 !default;

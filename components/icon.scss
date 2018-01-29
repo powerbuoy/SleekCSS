@@ -6,16 +6,11 @@
         <p>
             <a href="#" class="icon-facebook">Facebook</a>
             <a href="#" class="icon-twitter">Twitter</a>
-            <a href="#" class="icon-facebook icon--round" title="Facebook"></a>
-            <a href="#" class="icon-twitter icon--round" title="Twitter"></a>
+            <a href="#" class="icon-facebook" title="Facebook"></a>
+            <a href="#" class="icon-twitter" title="Twitter"></a>
             <button class="icon-search">Find</button>
             <a href="#" class="icon-right icon--after">Icon after text</a>
         </p>
-
-        <ul class="flex--2">
-            <li class="icon-facebook icon--above">Facebook</li>
-            <li class="icon-twitter icon--above">Twitter</li>
-        </ul>
 ***/
 /**
  * Some icon tweaks and margins
@@ -44,47 +39,6 @@
 }
 
 /**
- * Large icon
- */
-.icon--large {
-	&:before,
-	&.icon--after:after {
-		font-size: $icon-large-size;
-	}
-}
-
-
-/**
- * Icon Above
- */
-[class*="icon-"] {
-	&.icon--above {
-		display: inline-block;
-		text-align: center;
-
-		&:before {
-			display: block;
-			margin: 0 auto $margin-small;
-		//	font-size: $icon-large-size;
-		}
-	}
-}
-
-[class*="icon-"] {
-	&.icon--after.icon--below {
-		display: inline-block;
-		text-align: center;
-
-		&:after {
-			display: block;
-			margin: 0 auto;
-		//	font-size: $icon-large-size;
-		}
-	}
-}
-
-
-/**
  * Spinner
  */
 @keyframes spin {
@@ -98,64 +52,5 @@
 
 .icon-spinner:before,
 .icon-spinner.icon--after:after {
-	animation: spin 1.5s infinite linear;
-}
-
-[class*="icon-"] {
-	&.icon--round {
-		@include icon-round;
-
-		&--ghost:before,
-		&--ghost.icon--after:after {
-			background: transparent;
-			color: $icon-round-color;
-			border: 1px solid $icon-round-color;
-		}
-
-		/* &--ghost:hover:before,
-		&--ghost.icon--after:hover:after {
-			background: rgba($icon-round-color, .2);
-		} */
-	}
-}
-
-/* a.icon--round:hover,
-a:hover .icon--round {
-	&:before,
-	&.icon--after:after {
-		border-radius: .2rem;
-	}
-} */
-
-/**
- * Icon colors
- */
-@each $color-name, $color in $colors {
-	@if (length($color) == 1) {
-		[class*="icon-"] {
-			&.icon--#{$color-name} {
-				&:before {
-					color: $color;
-				}
-			}
-
-		 	&.icon--after.icon--#{$color-name} {
-				&:after {
-					color: $color;
-				}
-			}
-
-		 	&.icon--round--#{$color-name} {
-				&:before {
-					background-color: $color;
-				}
-
-				&.icon--round--ghost:before {
-					background-color: transparent;
-					color: $color;
-					border-color: $color;
-				}
-			}
-		}
-	}
+	animation: spin 2s infinite linear;
 }

@@ -47,6 +47,18 @@ ul[class*="flex--"] {
 
 
 // Fill in flex "gaps"
+@for $num from 3 through $num-cols {
+	.flex--#{$num} {
+		&::before,
+		&::after {
+			@include flex-grid-item($num, $gutter-default);
+
+			margin: 0;
+			order: 9999;
+		}
+	}
+}
+
 @each $bp-name, $bp in $breakpoints {
 	@for $num from 3 through $num-cols {
 		@media #{$bp} {

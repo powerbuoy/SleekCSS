@@ -44,3 +44,21 @@ ul[class*="flex--"] {
 		}
 	}
 }
+
+
+// Fill in flex "gaps"
+@each $bp-name, $bp in $breakpoints {
+	@for $num from 3 through $num-cols {
+		@media #{$bp} {
+			.flex--#{$num}--#{$bp-name} {
+				&::before,
+				&::after {
+					@include flex-grid-item($num, $gutter-default);
+
+					margin: 0;
+					order: 9999;
+				}
+			}
+		}
+	}
+}

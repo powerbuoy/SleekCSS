@@ -1,13 +1,4 @@
 // Float classes
-.alignleft,
-.alignright,
-.alignnone,
-.aligncenter {
-//	display: block;
-//	width: 100%;
-//	margin-bottom: $margin-default;
-}
-
 .pull-left {
 	float: left;
 }
@@ -27,18 +18,21 @@
 .aligncenter {
 	display: block;
 	margin: 0 auto $margin-default;
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+	}
 }
 
 @media #{map-get($breakpoints, tablet)} {
 	.alignleft {
 		float: left;
-		width: auto;
 		margin: 0 $margin-default $margin-default 0;
 	}
 
 	.alignright {
 		float: right;
-		width: auto;
 		margin: 0 0 $margin-default $margin-default;
 	}
 }

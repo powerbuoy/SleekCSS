@@ -1,48 +1,25 @@
-/**
- * Border box
- */
 *,
 :before,
 :after {
 	box-sizing: border-box;
 }
 
-/**
- * General styling
- */
 html {
 	background: $body-bg;
-	font-size: 100%; // 1rem = 16 "px"
+	font-size: 100%;
 }
 
 body {
-	font-size: $font-size-default;
-	font-family: $font-family-default;
-	font-weight: $font-weight-default;
-
-	letter-spacing: $letter-spacing-default;
-	line-height: $line-height-default;
-
-	color: $text-color;
-//	-webkit-font-smoothing: antialiased; // TODO: Should this be under the same config var? :P
-
-	// Break up words?
-	@if ($word-wrap-break-word) {
-		word-wrap: break-word;
-		hyphens: auto;
-	}
+	@include text;
 }
 
-/**
- * Paragraphs, lists, quotes etc
- */
 p {
-	margin: 0 0 $margin-default; // Some default margin below
+	margin: 0 0 $margin-default;
 }
 
 ul,
 ol {
-	margin: 0 0 $margin-default $margin-large; // Some left indentation and bottom margin
+	margin: 0 0 $margin-default $margin-large;
 	padding: 0;
 }
 
@@ -56,51 +33,21 @@ q {
 	margin: 0;
 }
 
-// NOTE: I only use this element for debug data (var_dump)
-pre {
-	background: map-get($colors, lightgray);
-
-	margin: 0 0 $margin-default;
-	padding: $padding-default;
-
-	color: $text-color;
-
-	max-height: 20rem;
-	overflow: auto;
-}
-
-/**
- * Inline elements
- */
 small {
 	font-size: $font-size-small;
 }
 
-/**
- * Images, iframes etc
- */
 img,
 svg {
-	max-width: 100%;
+	width: auto;
 	height: auto;
+	max-width: 100%;
 }
 
 figure {
-	display: block;
 	margin: 0 0 $margin-default;
 
 	img {
 		display: block;
-		width: 100%;
 	}
-
-/*	figcaption {
-		margin-top: $margin-small;
-		text-align: center;
-		font-style: italic;
-	} */
-}
-
-iframe {
-	// TODO: I used have an old iOS bug fix in here...
 }

@@ -1,15 +1,21 @@
 @mixin text {
 	font-size: $font-size-default;
-	line-height: $line-height-default;
 	font-family: $font-family-default;
-	color: $text-color;
-	word-wrap: break-word;
 	font-weight: $font-weight-default;
+
 	letter-spacing: $letter-spacing-default;
+	line-height: $line-height-default;
+
+	color: $text-color;
 }
 
 @mixin ellipsis {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+@mixin hyphens {
+	word-wrap: break-word;
+	hyphens: auto;
 }

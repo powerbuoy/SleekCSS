@@ -53,6 +53,8 @@ ul[class*="flex--"] {
 		&::after {
 			@include flex-grid-item($num, $gutter-default);
 
+			display: block;
+			content: "";
 			margin: 0;
 			order: 9999;
 		}
@@ -67,6 +69,8 @@ ul[class*="flex--"] {
 				&::after {
 					@include flex-grid-item($num, $gutter-default);
 
+					display: block;
+					content: "";
 					margin: 0;
 					order: 9999;
 				}

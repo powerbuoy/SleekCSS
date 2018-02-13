@@ -6,3 +6,27 @@
 
 	@return $number;
 }
+
+@function color ($name) {
+	@if map-has-key($colors, $name) {
+		@return map-get($colors, $name);
+	}
+
+	@return false;
+}
+
+@function breakpoint ($name) {
+	@if map-has-key($breakpoints, $name) {
+		@return map-get($breakpoints, $name);
+	}
+
+	@return false;
+}
+
+@function shadow ($name) {
+	@if map-has-key($shadows, $name) {
+		@return unquote(map-get($shadows, $name));
+	}
+
+	@return false;
+}

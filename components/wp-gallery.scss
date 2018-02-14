@@ -47,7 +47,7 @@ div.gallery {
 			max-width: 100%;
 		}
 
-		@media #{map-get($breakpoints, tablet)} {
+		@media #{breakpoint(tablet)} {
 			@for $i from 1 through 9 {
 				&.gallery-columns-#{$i} {
 					> * {

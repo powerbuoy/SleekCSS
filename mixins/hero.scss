@@ -6,7 +6,7 @@
 	overflow: hidden;
 
 	// Double padding in high res (TODO: Make configurable?)
-	@media #{map-get($breakpoints, tablet)} {
+	@media #{breakpoint(tablet)} {
 		padding-top: $section-padding * 2;
 		padding-bottom: $section-padding * 2;
 	}

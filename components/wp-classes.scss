@@ -25,7 +25,7 @@
 	}
 }
 
-@media #{map-get($breakpoints, tablet)} {
+@media #{breakpoint(tablet)} {
 	.alignleft {
 		float: left;
 		margin: 0 $margin-default $margin-default 0;

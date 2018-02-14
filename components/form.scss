@@ -280,7 +280,7 @@ input[type=submit] {
 	}
 
 	@if ($form-range-thumb-shadow == true) {
-		box-shadow: map-get($shadows, 1);
+		box-shadow: shadow(1);
 	}
 	@elseif ($form-range-thumb-shadow) {
 		box-shadow: $form-range-thumb-shadow;

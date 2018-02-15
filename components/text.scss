@@ -7,10 +7,6 @@
         <p class="text--right text--large">This large text is right aligned.</p>
         <p class="text--ellipsis">Regardless of how long this text gets it will never line break regardless of how long this text gets it will never line break etc etc.</p>
 ***/
-.text {
-	@include text;
-}
-
 .text--upper {
 	text-transform: uppercase;
 }

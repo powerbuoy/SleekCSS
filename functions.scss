@@ -15,8 +15,6 @@
 			$c: nth($c, 1);
 		}
 
-		@debug $c;
-
 		@return $c;
 	}
 

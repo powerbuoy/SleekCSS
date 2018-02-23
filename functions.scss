@@ -9,13 +9,7 @@
 
 @function color ($name) {
 	@if map-has-key($colors, $name) {
-		$c: map-get($colors, $name);
-
-		@if (length($c) > 1) {
-			$c: nth($c, 1);
-		}
-
-		@return $c;
+		@return map-get($colors, $name);
 	}
 
 	@return false;

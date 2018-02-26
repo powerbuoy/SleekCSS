@@ -102,13 +102,13 @@ form {
 	strong.error {
 		display: block;
 		margin-top: $margin-small;
-		color: $form-error-color;
+		color: color(error);
 	}
 
 	// "Mandatory"-*
 	abbr,
 	abbr[title] {
-		color: $form-error-color;
+		color: color(error);
 		border: 0;
 		text-decoration: none; // Firefox
 	}

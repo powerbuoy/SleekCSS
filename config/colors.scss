@@ -2,6 +2,7 @@
 $body-bg: #fff !default;
 $border-color: #dedede !default;
 $overlay-color: rgba(0, 0, 0, .4) !default;
+
 $white: #fff !default;
 $black: #000 !default;
 
@@ -21,5 +22,12 @@ $colors: (
 	linkedin: #0077b5,
 
 	disabled: #bbb,
-	gradient: (red, green) // Example - not in use
+	error: #f00,
+	success: #0f0,
+	warning: #f90,
+
+	// Examples - not in use
+	primary: #369,
+	secondary: #06f,
+	gradient: (red, green)
 ) !default;

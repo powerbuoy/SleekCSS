@@ -1,17 +1,17 @@
 // Background and text colors
-$form-field-bg: #fff !default;
-$form-placeholder-color: #bbb !default;
-$form-text-color: #333 !default;
+$form-field-bg: $white !default;
+$form-placeholder-color: map-get($colors, gray) !default;
+$form-text-color: $text-color !default;
 
 // Padding
 $form-padding-horizontal: $button-padding-vertical !default;
 $form-padding-vertical: $button-padding-vertical !default;
 
 // Border
-$form-border: 1px solid lightgray !default;
-$form-border-radius: .2rem !default;
+$form-border: 1px solid $border-color !default;
+$form-border-radius: $button-border-radius !default;
 $form-border-width: 1px !default;
-$form-border-focus: 1px solid gray !default;
+$form-border-focus: 1px solid $link-color !default;
 
 // Select elements
 $form-select-arrow: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40"><polygon points="2.7,14.4 6.8,10.3 20,23.5 33.2,10.3 37.3,14.4 20,31.7 "/></svg>'; // Set to false to have unstyled select elements
@@ -24,8 +24,8 @@ $form-range-height: .25rem !default;
 $form-range-border: false !default;
 $form-range-border-radius: .25rem !default;
 
-$form-range-thumb-bg: #1FBB82 !default;
-$form-range-thumb-radius: 1rem !default;
+$form-range-thumb-bg: #aaa !default;
+$form-range-thumb-radius: .5rem !default;
 $form-range-thumb-border: false !default;
 $form-range-thumb-border-radius: 50% !default;
 $form-range-thumb-shadow: true !default;

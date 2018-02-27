@@ -10,17 +10,21 @@ $black: #000 !default;
 // Every color defined will be available in bg--, button--, icon-- etc components
 // NOTE: Don't remove any of these - they are used by SleekCSS
 $colors: (
+	// Base colors
+	white: #fff,
+	black: #000,
+
+	// Shades of gray
 	lightgray: #fafafa,
 	gray: #bbb,
 	darkgray: #777,
 
-	white: #fff,
-	black: #000,
-
+	// Social media
 	facebook: #3b5998,
 	twitter: #4099FF,
 	linkedin: #0077b5,
 
+	// Form/button related
 	disabled: #bbb,
 	error: #f00,
 	success: #0f0,

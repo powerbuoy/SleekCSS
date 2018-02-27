@@ -1,15 +1,15 @@
 // Functions
 @import "functions";
 
-// Config
+// Config (order is important as some configs use others)
 @import "config/breakpoints";
-@import "config/button";
-@import "config/colors";
-@import "config/form";
-@import "config/icons";
 @import "config/layout";
+@import "config/colors";
 @import "config/shadows";
 @import "config/typography";
+@import "config/button";
+@import "config/form";
+@import "config/icons";
 
 // Constants (calculated configuration)
 @import "constants";
@@ -59,7 +59,6 @@
 @import "components/link";
 @import "components/list";
 @import "components/popup";
-@import "components/primary-secondary";
 @import "components/section";
 @import "components/shadows";
 @import "components/strike-through";

@@ -11,6 +11,15 @@
 	@if map-has-key($colors, $name) {
 		@return map-get($colors, $name);
 	}
+	@elseif (map-has-key($button-colors, $name)) {
+		@return map-get($button-colors, $name);
+	}
+	@elseif (map-has-key($text-colors, $name)) {
+		@return map-get($text-colors, $name);
+	}
+	@elseif (map-has-key($bg-colors, $name)) {
+		@return map-get($bg-colors, $name);
+	}
 
 	@return false;
 }

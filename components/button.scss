@@ -25,7 +25,7 @@
 }
 
 // Button colors
-@each $color-name, $color in $colors {
+@each $color-name, $color in $button-colors {
 	.button--#{$color-name} {
 		@include button-color($color);
 

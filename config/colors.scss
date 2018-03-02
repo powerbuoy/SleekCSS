@@ -1,4 +1,4 @@
-// Specific colors
+// System colors
 $body-bg: #fff !default;
 $border-color: #dedede !default;
 $overlay-color: rgba(0, 0, 0, .4) !default;
@@ -7,13 +7,9 @@ $white: #fff !default;
 $black: #000 !default;
 
 // Define your general colors here, they may be gradients (by passing in 2 colors)
-// Every color defined will be available in bg--, button--, icon-- etc components
+// You can use SASS's map-get() or SleekCSS color() method to retrieve colors
 // NOTE: Don't remove any of these - they are used by SleekCSS
 $colors: (
-	// Base colors
-	white: #fff,
-	black: #000,
-
 	// Shades of gray
 	lightgray: #fafafa,
 	gray: #bbb,
@@ -34,4 +30,20 @@ $colors: (
 	primary: #369,
 	secondary: #06f,
 	gradient: (red, green)
+) !default;
+
+// Button colors (.button--primary)
+$button-colors: (
+	primary: map-get($colors, primary),
+	secondary: map-get($colors, secondary)
+) !default;
+
+// Text colors (.color--white)
+$text-colors: (
+	white: map-get($colors, white)
+) !default;
+
+// Background colors (.bg--lightgray)
+$bg-colors: (
+	lightgray: map-get($colors, lightgray)
 ) !default;

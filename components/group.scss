@@ -16,11 +16,6 @@
 	}
 
 	&--x-large {
-		margin-bottom: $margin-large;
-
-		// TODO: Is this wanted? Or should it be x-large in any res?
-		@media #{breakpoint(tablet)} {
-			margin-bottom: $margin-x-large;
-		}
+		margin-bottom: $margin-x-large;
 	}
 }

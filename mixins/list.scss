@@ -64,7 +64,7 @@
 
 	.text--center &,
 	&.text--center {
-		> * {
+		> :not(:last-child):after {
 			margin: 0 ($margin / 2);
 		}
 	}

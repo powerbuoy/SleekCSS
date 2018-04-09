@@ -30,14 +30,14 @@
 	@if ($button-glow == both or $button-glow == true) {
 		box-shadow: 0 2px 32px rgba(lighten($base-color, 10%), .75);
 	}
-	@elseif ($button-glow != false && $button-glow != true) {
+	@elseif ($button-glow != false and $button-glow != true) {
 		box-shadow: $button-glow rgba(lighten($base-color, 10%), .75);
 	}
 	// Shadow?
 	@elseif ($button-shadow == both or $button-shadow == true) {
 		box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
 	}
-	@elseif ($button-shadow != false && $button-shadow != true) {
+	@elseif ($button-shadow != false and $button-shadow != true) {
 		box-shadow: $button-shadow;
 	}
 	@else {
@@ -104,7 +104,7 @@
 	@elseif ($button-shadow == both) {
 		box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .25), 0 25px 25px -20px rgba(0, 0, 0, .25);
 	}
-	@elseif ($button-shadow != false && $button-shadow != true) {
+	@elseif ($button-shadow != false and $button-shadow != true) {
 		box-shadow: $button-shadow;
 	}
 	@else {

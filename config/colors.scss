@@ -6,6 +6,15 @@ $overlay-color: rgba(0, 0, 0, .4) !default;
 $white: #fff !default;
 $black: #000 !default;
 
+// Text
+$text-color: #111 !default;
+$heading-color: #111 !default;
+
+// Links
+$link-color: #ffbf00 !default;
+$link-color-hover: darken($link-color, 10%) !default;
+$link-color-visited: #609 !default;
+
 // Define your general colors here, they may be gradients (by passing in 2 colors)
 // You can use SASS's map-get() or SleekCSS color() method to retrieve colors
 // NOTE: Don't remove any of these - they are used by SleekCSS

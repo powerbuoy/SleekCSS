@@ -3,7 +3,7 @@ $icon-margin: .5em !default;
 // List of attribute selectors and associated icons
 $auto-icons: () !default;
 
-// Use these if you have the icons defined
+// Use these if you have the icons defined in icons.json
 /* $auto-icons: (
 	'href*="facebook.com"': $icon-facebook,
 	'href*="twitter.com"': $icon-twitter,
@@ -13,6 +13,12 @@ $auto-icons: () !default;
 
 	'href$=".pdf"': $icon-pdf,
 	'href$=".doc"': $icon-document,
+
+	'href$=".zip"': $icon-zip,
+	'href$=".rar"': $icon-zip,
+	'href$=".tar"': $icon-zip,
+	'href$=".gz"': $icon-zip,
+	'href$=".7z"': $icon-zip,
 
 	'href$=".jpg"': $icon-image,
 	'href$=".jpeg"': $icon-image,

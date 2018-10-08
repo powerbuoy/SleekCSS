@@ -14,7 +14,7 @@ $form-border-width: 1px !default;
 $form-border-focus: 1px solid $link-color !default;
 
 // Select elements
-$form-select-arrow: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40"><polygon points="2.7,14.4 6.8,10.3 20,23.5 33.2,10.3 37.3,14.4 20,31.7 "/></svg>'; // Set to false to have unstyled select elements
+$form-select-arrow: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40"><polygon points="2.7,14.4 6.8,10.3 20,23.5 33.2,10.3 37.3,14.4 20,31.7 "/></svg>' !default; // Set to false to have unstyled select elements
 $form-select-arrow-size: .5rem !default;
 
 // Range inputs

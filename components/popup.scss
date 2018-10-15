@@ -90,3 +90,16 @@ html.popup-open body {
 		}
 	}
 }
+
+// Fix IE10/11 buggy flexbox
+@media all and (-ms-high-contrast:none) {
+	// IE10
+	.popup {
+		display: block;
+	}
+
+	*::-ms-backdrop,
+	.popup {
+		display: block;
+	}
+}

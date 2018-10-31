@@ -142,6 +142,9 @@
 	@if ($button-letter-spacing) {
 		letter-spacing: $button-letter-spacing;
 	}
+	@else {
+		letter-spacing: 0;
+	}
 
 	// Border and radius
 	border: 0; // Buttons should never have borders in 2018 / Bane

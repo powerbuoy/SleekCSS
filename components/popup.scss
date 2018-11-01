@@ -85,7 +85,7 @@ html.popup-open body {
 			color: $text-color;
 
 			&:hover {
-				color: inherit;
+				color: $text-color;
 			}
 		}
 	}

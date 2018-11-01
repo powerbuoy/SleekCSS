@@ -5,19 +5,10 @@
 	flex-wrap: wrap;
 
 	> * {
-		@include flex-grid-item($num, $gutter);
+		@include flex-width(100% / $num, $gutter);
+
+		margin-bottom: $gutter; // Same space between and below(????)
 	}
-}
-
-@mixin flex-grid-item ($num: 3, $gutter: $gutter-default) {
-	$total-gutter: $gutter * ($num - 1);
-	$width-subtract: $total-gutter / $num;
-
-	min-width: calc(#{(100% / $num)} - #{$width-subtract}); // IE needs this (and maybe FF?)
-	max-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)?? (and Chrome, try a word that's longer than the width of the element)
-	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
-
-	margin-bottom: $gutter; // Same space between and below(????)
 }
 
 @mixin flex-width ($width: 50%, $gutter: $gutter-default) {
@@ -28,7 +19,7 @@
 	}
 	@else {
 		flex: 0 0 calc(#{$width} - #{$gutter / 2});
-		min-width: calc(#{$width} - #{$gutter / 2});
-		max-width: calc(#{$width} - #{$gutter / 2});
+		min-width: calc(#{$width} - #{$gutter / 2}); // IE needs this (and maybe FF?)
+		max-width: calc(#{$width} - #{$gutter / 2}); // For Firefox(and IE?)?? (and Chrome, try a word that's longer than the width of the element)
 	}
 }

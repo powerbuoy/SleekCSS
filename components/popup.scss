@@ -82,7 +82,7 @@ html.popup-open body {
 		// If close button is inside the box
 		.popup__close {
 			position: absolute;
-			color: inherit;
+			color: $text-color;
 
 			&:hover {
 				color: inherit;

@@ -21,12 +21,11 @@
 }
 
 @mixin flex-width ($width: 50%, $gutter: $gutter-default, $num: false) {
+	$width-subtract: $gutter / 2;
+
 	@if ($num) {
 		$total-gutter: $gutter * ($num - 1);
 		$width-subtract: $total-gutter / $num / 2;
-	}
-	@else {
-		$width-subtract: $gutter / 2;
 	}
 
 	@if ($gutter == false or $gutter == 0) {

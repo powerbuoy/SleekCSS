@@ -51,10 +51,9 @@ ul[class*="flex--"] {
 	.flex--#{$num} {
 		&::before,
 		&::after {
-			@include flex-width(100% / $num, $gutter-default);
+			@include flex-grid-item($num, $gutter-default);
 
 			display: block;
-			margin-bottom: $gutter-default;
 			content: "";
 			margin: 0;
 			order: 9999;
@@ -68,10 +67,9 @@ ul[class*="flex--"] {
 			.flex--#{$num}--#{$bp-name} {
 				&::before,
 				&::after {
-					@include flex-width(100% / $num, $gutter-default);
+					@include flex-grid-item($num, $gutter-default);
 
 					display: block;
-					margin-bottom: $gutter-default;
 					content: "";
 					margin: 0;
 					order: 9999;

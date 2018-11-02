@@ -1,9 +1,6 @@
 @mixin section ($width: $site-width, $unit: '%') {
 	@include section-centering($width, $unit);
 
-	display: block;
-	position: relative;
-
 	margin: 0;
 	padding-top: $section-padding;
 	padding-bottom: $section-padding;

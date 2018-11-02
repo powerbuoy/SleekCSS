@@ -20,15 +20,23 @@
 	margin-bottom: $gutter; // Same space between and below(????)
 }
 
-@mixin flex-width ($width: 50%, $gutter: $gutter-default) {
+@mixin flex-width ($width: 50%, $gutter: $gutter-default, $num: false) {
+	@if ($num) {
+		$total-gutter: $gutter * ($num - 1);
+		$width-subtract: $total-gutter / $num / 2;
+	}
+	@else {
+		$width-subtract: $gutter / 2;
+	}
+
 	@if ($gutter == false or $gutter == 0) {
 		flex: 0 0 $width;
 		min-width: $width;
 		max-width: $width;
 	}
 	@else {
-		flex: 0 0 calc(#{$width} - #{$gutter / 2});
-		min-width: calc(#{$width} - #{$gutter / 2});
-		max-width: calc(#{$width} - #{$gutter / 2});
+		flex: 0 0 calc(#{$width} - #{$width-subtract});
+		min-width: calc(#{$width} - #{$width-subtract});
+		max-width: calc(#{$width} - #{$width-subtract});
 	}
 }

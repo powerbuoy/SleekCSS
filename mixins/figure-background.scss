@@ -2,7 +2,6 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	z-index: -2; // Render behind overlay
 
 	object-fit: cover;
 	object-position: center center;
@@ -37,6 +36,8 @@
 	// Make image cover entire figure
 	img {
 		@include image-background;
+
+		z-index: -2; // Render behind overlay
 	}
 
 	// Zoom image on hover?

@@ -6,7 +6,7 @@
         <a href="#my-popup">Open popup</a>
         <div class="popup" id="my-popup">
             <div class="popup__content">
-                <a href="#" class="popup__close">&times;</a>
+                <a href="#" class="popup__close"></a>
                 <h2>I'm a popup</h2>
                 <p>Built with CSS.</p>
             </div>
@@ -57,14 +57,25 @@ html.popup-open body {
 		top: $padding-large;
 		z-index: 1;
 
-		font-size: 3rem;
-		line-height: 1rem;
 		color: $white;
 		text-decoration: none;
 
 		&:hover {
 			color: $white;
 			text-decoration: none;
+		}
+
+		&:before {
+			@if variable-exists(icon-close) {
+				@include icon($icon-close);
+
+				margin: 0;
+			}
+			@else {
+				content: "×";
+				font-size: 2rem;
+				line-height: 1rem;
+			}
 		}
 	}
 

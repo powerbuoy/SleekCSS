@@ -53,12 +53,14 @@ html.popup-open body {
 	// Close button
 	&__close {
 		position: fixed;
-		right: $padding-large;
-		top: $padding-large;
+		right: $padding-default - $padding-small;
+		top: $padding-default - $padding-small;
 		z-index: 1;
+		padding: $padding-small;
 
 		color: $white;
 		text-decoration: none;
+		line-height: 1;
 
 		&:hover {
 			color: $white;

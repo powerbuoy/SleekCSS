@@ -180,6 +180,10 @@ button {
 	outline: 0;
 }
 
+input[type=submit] {
+	outline: 0;
+}
+
 // Wrap submit text
 input[type=submit] {
 	white-space: normal;

@@ -15,13 +15,13 @@ hr,
 }
 
 .divider--below {
-	padding-bottom: $padding-default;
-	margin-bottom: $margin-large;
+	padding-bottom: $spacing-default;
+	margin-bottom: $spacing-large;
 	border-bottom: 1px solid $border-color;
 }
 
 .divider--above {
-	padding-top: $padding-default;
-	margin-top: $margin-large;
+	padding-top: $spacing-default;
+	margin-top: $spacing-large;
 	border-top: 1px solid $border-color;
 }

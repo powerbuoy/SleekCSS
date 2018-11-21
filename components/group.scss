@@ -9,13 +9,13 @@
         </div>
 ***/
 .group {
-	margin-bottom: $margin-default;
+	margin-bottom: $spacing-default;
 
 	&--large {
-		margin-bottom: $margin-large;
+		margin-bottom: $spacing-large;
 	}
 
 	&--x-large {
-		margin-bottom: $margin-x-large;
+		margin-bottom: $spacing-x-large;
 	}
 }

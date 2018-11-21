@@ -1,18 +1,13 @@
 // Site widths
-$site-width: 960px !default; // Max width
-$site-width-min: 85% !default; // Width before reaching max
+$site-width: 1240px !default; // Max width
+$site-width-min: 90% !default; // Width before reaching max
 
-// Margins (margins beneath elements)
-$margin-small: .75rem !default;
-$margin-default: 1.5rem !default;
-$margin-large: 3rem !default;
-$margin-x-large: 4rem !default;
-
-// Paddings (inner padding of boxes)
-$padding-small: .75rem !default;
-$padding-default: 1.5rem !default;
-$padding-large: 3rem !default;
-$padding-x-large: 4rem !default;
+// Spacing (margins and paddings)
+$spacing-x-small: .5rem !default;
+$spacing-small: .75rem !default;
+$spacing-default: 1.5rem !default;
+$spacing-large: 2.5rem !default;
+$spacing-x-large: 4rem !default;
 
 // Gutters (margin between columns)
 $gutter-default: 2rem !default;

@@ -17,7 +17,7 @@
 
 .aligncenter {
 	display: block;
-	margin: 0 auto $margin-default;
+	margin: 0 auto $spacing-default;
 	text-align: center;
 
 	img {
@@ -28,11 +28,11 @@
 @media #{breakpoint(tablet)} {
 	.alignleft {
 		float: left;
-		margin: 0 $margin-default $margin-default 0;
+		margin: 0 $spacing-default $spacing-default 0;
 	}
 
 	.alignright {
 		float: right;
-		margin: 0 0 $margin-default $margin-default;
+		margin: 0 0 $spacing-default $spacing-default;
 	}
 }

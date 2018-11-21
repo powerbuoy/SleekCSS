@@ -2,7 +2,7 @@
 div.gallery {
 	figure {
 		position: relative;
-		margin: 0 0 $margin-default;
+		margin: 0 0 $spacing-default;
 
 		img {
 			display: block;
@@ -17,7 +17,7 @@ div.gallery {
 			bottom: 0;
 			right: 0;
 
-			padding: $padding-default;
+			padding: $spacing-default;
 
 			color: $white;
 		}
@@ -25,7 +25,7 @@ div.gallery {
 
 	&.is-slideshow {
 		position: relative;
-		margin-bottom: $margin-default;
+		margin-bottom: $spacing-default;
 
 		figure {
 			margin: 0;
@@ -33,7 +33,7 @@ div.gallery {
 	}
 
 	&:not(.is-slideshow) {
-		margin: 0 0 $margin-default;
+		margin: 0 0 $spacing-default;
 
 		display: flex;
 		align-items: stretch;

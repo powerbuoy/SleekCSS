@@ -10,10 +10,10 @@
 		content: "";
 		width: 50%;
 		border-top: 1px solid $border-color;
-		transform: translateY(50%) translateX(-$padding-default);
+		transform: translateY(50%) translateX(-$spacing-default);
 	}
 
 	&:after {
-		transform: translateY(50%) translateX($padding-default);
+		transform: translateY(50%) translateX($spacing-default);
 	}
 }

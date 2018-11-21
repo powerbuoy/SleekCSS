@@ -1,5 +1,5 @@
 // Inline list
-@mixin inline-list ($width: false, $margin: $margin-default) {
+@mixin inline-list ($width: false, $margin: $spacing-default) {
 	margin-left: 0;
 	padding-left: 0;
 	list-style: none;
@@ -28,8 +28,8 @@
 	list-style: none;
 
 	> :not(:last-child) {
-		margin-bottom: $margin-default / 2;
-		padding-bottom: $margin-default / 2;
+		margin-bottom: $spacing-default / 2;
+		padding-bottom: $spacing-default / 2;
 		border-bottom: 1px solid $border-color;
 	}
 }

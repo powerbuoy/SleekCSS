@@ -53,10 +53,10 @@ html.popup-open body {
 	// Close button
 	&__close {
 		position: fixed;
-		right: $padding-default - $padding-small;
-		top: $padding-default - $padding-small;
+		right: $spacing-default - $spacing-small;
+		top: $spacing-default - $spacing-small;
 		z-index: 1;
-		padding: $padding-small;
+		padding: $spacing-small;
 
 		color: $white;
 		text-decoration: none;
@@ -90,7 +90,7 @@ html.popup-open body {
 
 		position: relative;
 		margin: auto;
-		padding: $padding-large;
+		padding: $spacing-large;
 
 		// If close button is inside the box
 		.popup__close {

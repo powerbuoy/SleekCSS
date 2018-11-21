@@ -14,17 +14,17 @@ body {
 }
 
 p {
-	margin: 0 0 $margin-default;
+	margin: 0 0 $spacing-default;
 }
 
 ul,
 ol {
-	margin: 0 0 $margin-default $margin-large;
+	margin: 0 0 $spacing-default $spacing-large;
 	padding: 0;
 }
 
 dl {
-	margin: 0 0 $margin-default;
+	margin: 0 0 $spacing-default;
 }
 
 blockquote,
@@ -44,7 +44,7 @@ svg {
 }
 
 figure {
-	margin: 0 0 $margin-default;
+	margin: 0 0 $spacing-default;
 
 	img {
 		display: block;

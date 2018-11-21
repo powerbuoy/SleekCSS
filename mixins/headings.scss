@@ -1,6 +1,6 @@
 @mixin heading ($size: $font-size-h1) {
 	display: block;
-	margin: 0 0 $margin-default;
+	margin: 0 0 $spacing-default;
 
 	font-weight: $font-weight-heading;
 	font-size: $size;

@@ -36,7 +36,7 @@ html.popup-open body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: $section-padding 0;
+	padding: $section-spacing 0;
 
 	opacity: 0;
 	transform: translateY(-100%);

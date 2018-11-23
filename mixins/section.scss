@@ -2,8 +2,8 @@
 	@include section-centering($width, $unit);
 
 	margin: 0;
-	padding-top: $section-padding;
-	padding-bottom: $section-padding;
+	padding-top: $section-spacing;
+	padding-bottom: $section-spacing;
 }
 
 @mixin section-centering ($width: $site-width, $unit: '%') {

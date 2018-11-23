@@ -14,17 +14,17 @@
 	// Slanted sections
 	&--slanted {
 		clip-path: $top-bottom-slant;
-		padding-top: $section-slant + $section-padding;
-		padding-bottom: $section-slant + $section-padding;
+		padding-top: $section-slant + $section-spacing;
+		padding-bottom: $section-slant + $section-spacing;
 
 		&-top {
 			clip-path: $top-slant;
-			padding-top: $section-slant + $section-padding;
+			padding-top: $section-slant + $section-spacing;
 		}
 
 		&-bottom {
 			clip-path: $bottom-slant;
-			padding-bottom: $section-slant + $section-padding;
+			padding-bottom: $section-slant + $section-spacing;
 		}
 	}
 }

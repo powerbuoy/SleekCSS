@@ -9,3 +9,11 @@
 	left: auto;
 	top: auto;
 }
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}

@@ -15,15 +15,11 @@
 @import "constants";
 
 // Mixins
-@import "mixins/a11y-hide";
-@import "mixins/all-properties";
 @import "mixins/arrow";
-@import "mixins/bg-overlay";
 @import "mixins/break-out";
 @import "mixins/burger-menu-icon";
 @import "mixins/button";
 @import "mixins/card-flip";
-@import "mixins/clearfix";
 @import "mixins/container";
 @import "mixins/device";
 @import "mixins/divider";
@@ -34,7 +30,6 @@
 @import "mixins/hero"; // TODO: Deprecate
 @import "mixins/icons";
 @import "mixins/auto-icons"; // Needs to include after icons
-@import "mixins/inline-grid";
 @import "mixins/list";
 @import "mixins/rotate-elements";
 @import "mixins/section";
@@ -42,6 +37,7 @@
 @import "mixins/stagger-transition";
 @import "mixins/strike-through";
 @import "mixins/text";
+@import "mixins/utils";
 
 // Components
 // @import "components/auto-icons";
@@ -60,7 +56,6 @@
 @import "components/section";
 // @import "components/shadows";
 // @import "components/strike-through";
-@import "components/svg";
 // @import "components/text-colors";
 // @import "components/text";
 @import "components/video";

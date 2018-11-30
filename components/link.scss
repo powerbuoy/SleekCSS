@@ -8,8 +8,7 @@
         <a href="#" class="link--neutral">Link that looks like text</a>
         <a href="#" class="link--underline">Link with underline</a>
 ***/
-a,
-.link {
+a {
 	cursor: pointer;
 	color: $link-color;
 	text-decoration: $text-decoration-link;

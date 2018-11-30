@@ -34,7 +34,7 @@
 // TODO: Move mixins to mixins or move all list mixins here
 // Pipe separated list
 .list--pipe-separated {
-	@include separated-list(' | ');
+	@include separated-list('\00a0|\00a0');
 }
 
 .list--inline {
@@ -49,7 +49,7 @@
 	margin-left: 0;
 	list-style: none;
 
-	&--margin {
+	&--spacing {
 		margin-left: 0;
 		list-style: none;
 

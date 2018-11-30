@@ -22,11 +22,10 @@
 @import "mixins/card-flip";
 @import "mixins/container";
 @import "mixins/device";
-@import "mixins/divider";
 @import "mixins/figure-background";
 @import "mixins/fixed-after-far-scroll";
 @import "mixins/flex";
-@import "mixins/headings";
+@import "mixins/heading";
 @import "mixins/hero"; // TODO: Deprecate
 @import "mixins/icons";
 @import "mixins/auto-icons"; // Needs to include after icons
@@ -44,7 +43,6 @@
 // @import "components/bg-colors";
 // @import "components/button";
 @import "components/container";
-// @import "components/divider";
 // @import "components/figure-background";
 // @import "components/form";
 @import "components/heading";
@@ -62,7 +60,6 @@
 @import "components/wp-classes";
 @import "components/wp-gallery";
 @import "components/flex"; // Needs to include after other components that set display: so that you can use .section.flex together for example
-// @import "components/group"; // Should probably be included last as it's only used to set margin
 
 // General (TODO: Move everything in general to individual components)
 @import "general";

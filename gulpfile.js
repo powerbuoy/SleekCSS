@@ -15,8 +15,4 @@ gulp.task('sass', function () {
 	return sassTask('sleek-css.scss');
 });
 
-gulp.task('sass-lite', function () {
-	return sassTask('sleek-css-lite.scss');
-});
-
-gulp.task('default', gulp.parallel('sass', 'sass-lite'));
+gulp.task('default', gulp.series('sass'));

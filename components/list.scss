@@ -31,7 +31,16 @@
             <li>Bordered list</li>
         </ul>
 ***/
-// TODO: Move mixins to mixins or move all list mixins here
+ul,
+ol {
+	margin: 0 0 $spacing-default $spacing-large;
+	padding: 0;
+}
+
+dl {
+	margin: 0 0 $spacing-default;
+}
+
 // Pipe separated list
 .list--pipe-separated {
 	@include separated-list('\00a0|\00a0');

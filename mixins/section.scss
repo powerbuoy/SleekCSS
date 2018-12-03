@@ -1,16 +1,7 @@
 @mixin section ($width: $site-width, $unit: '%') {
-	@include section-centering($width, $unit);
-
-	margin: 0;
-	padding-top: $section-spacing;
-	padding-bottom: $section-spacing;
-}
-
-@mixin section-centering ($width: $site-width, $unit: '%') {
 	$width-reached: round(($width * 100) / (strip-unit($site-width-min)));
 
-	padding-left: $site-padding;
-	padding-right: $site-padding;
+	padding: $section-spacing $site-padding;
 
 	@media (min-width: $width-reached) {
 		padding-left: calc(50#{$unit} - #{$width / 2});

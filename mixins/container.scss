@@ -1,5 +1,4 @@
 @mixin container ($width: $site-width) {
-	display: block;
 	width: $site-width-min;
 	max-width: $width;
 	margin: $section-spacing auto;

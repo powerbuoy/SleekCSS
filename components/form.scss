@@ -54,48 +54,6 @@
             <p><input type="submit" value="Go" class="button button--wide"></p>
         </form>
 ***/
-// Form field mixin
-@mixin form-field () {
-	@include text; // Exact same typography as rest of site
-
-	background: $form-field-bg;
-
-	display: inline-block;
-	vertical-align: middle;
-
-	box-sizing: border-box;
-	width: 100%;
-	max-width: 100%; // In case user changes width we still want max-width 100%
-
-	margin: 0;
-	padding: $form-padding-vertical $form-padding-horizontal;
-
-	color: $form-text-color;
-
-	appearance: none;
-	outline: 0;
-	transition: all $transition-default $transition-easing;
-
-	@if ($form-border) {
-		border: $form-border;
-	}
-	@else {
-		border: 0;
-	}
-
-	border-width: $form-border-width;
-	border-radius: $form-border-radius;
-
-	&:focus {
-		outline: 0;
-
-		@if ($form-border-focus) {
-			border: $form-border-focus;
-			border-width: $form-border-width;
-		}
-	}
-}
-
 form {
 	margin: 0;
 

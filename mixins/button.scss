@@ -1,5 +1,5 @@
 // Button colors on hover
-@mixin button-color-hover ($color, $opacity: 1) {
+@mixin button-color-hover ($color, $opacity: 1, $lighten: 5%) {
 	text-decoration: none;
 
 	// Store the base color of this button
@@ -14,7 +14,7 @@
 	}
 	// Solid background
 	@else {
-		background-color: rgba(lighten($base-color, 5%), $opacity);
+		background-color: rgba(lighten($base-color, $lighten), $opacity);
 		background-image: none;
 	}
 
@@ -191,7 +191,7 @@
 
 	@if ($hover) {
 		&:hover {
-			@include button-color-hover($color, $button-ghost-opacity);
+			@include button-color-hover($color, $button-ghost-opacity, 0%);
 
 			@if ($button-ghost-opacity == 1) {
 				border-color: transparent;

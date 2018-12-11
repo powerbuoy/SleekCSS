@@ -40,7 +40,7 @@
  * Round icon
  * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
  */
-@mixin icon-round ($irc: $icon-round-color, $size: $icon-round-size) {
+@mixin icon-round ($irc, $size) {
 	display: inline-block;
 	text-decoration: none;
 
@@ -59,11 +59,7 @@
 		text-align: center;
 		color: $white;
 		text-shadow: none;
-
-		// Vertical align (instead of line-height)
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
+		line-height: $size;
 
 		border-radius: 50%;
 		transition: all $transition-default $transition-easing; // TODO: When used with hover effect?

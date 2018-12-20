@@ -3,8 +3,8 @@
 	align-items: stretch;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin-bottom: -$gutter; // Compensate for last row's margin bottom (flex item margins do not collapse)
 
+	// Make all children grid items
 	> * {
 		@include flex-grid-item($num, $gutter);
 	}

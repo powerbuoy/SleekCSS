@@ -14,8 +14,7 @@
 			color: $color;
 
 			#{$headings},
-			a:not(.button),
-			.link {
+			a:not(.button) {
 				color: $color;
 			}
 		}

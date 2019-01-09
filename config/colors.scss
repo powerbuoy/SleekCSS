@@ -35,7 +35,7 @@ $colors: (
 	success: #0f0,
 	warning: #f90,
 
-	// Examples - not in use
+	// Site colors (EXAMPLES)
 	primary: #369,
 	secondary: #06f,
 	gradient: (red, green)
@@ -49,7 +49,7 @@ $button-colors: (
 
 // Text colors (.color--white)
 $text-colors: (
-	white: map-get($colors, white)
+	white: $white
 ) !default;
 
 // Background colors (.bg--lightgray)

@@ -1,4 +1,4 @@
-@mixin text {
+@mixin text ($color: $text-color) {
 	font-size: $font-size-default;
 	font-family: $font-family-default;
 	font-weight: $font-weight-default;
@@ -6,7 +6,9 @@
 	letter-spacing: $letter-spacing-default;
 	line-height: $line-height-default;
 
-	color: $text-color;
+	@if ($color) {
+		color: $text-color;
+	}
 }
 
 @mixin ellipsis {

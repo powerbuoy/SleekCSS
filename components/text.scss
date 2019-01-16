@@ -42,3 +42,7 @@ small {
 .text--ellipsis {
 	@include ellipsis;
 }
+
+.text--strike-through {
+	@include strike-through;
+}

@@ -7,7 +7,7 @@
 	line-height: $line-height-default;
 
 	@if ($color) {
-		color: $text-color;
+		color: $color;
 	}
 }
 

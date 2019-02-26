@@ -15,7 +15,7 @@
 		color: $heading-color;
 
 		&:hover {
-			color: $heading-color;
+			color: lighten($heading-color, 15%);
 		}
 	}
 }

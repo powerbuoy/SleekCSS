@@ -22,7 +22,6 @@
 @import "mixins/card-flip";
 @import "mixins/container";
 @import "mixins/device";
-@import "mixins/figure-background";
 @import "mixins/fixed-after-far-scroll";
 @import "mixins/flex";
 @import "mixins/form";
@@ -30,6 +29,7 @@
 @import "mixins/hero"; // TODO: Deprecate
 @import "mixins/icons";
 @import "mixins/auto-icons"; // Needs to include after icons
+@import "mixins/image";
 @import "mixins/list";
 @import "mixins/rotate-elements";
 @import "mixins/section";

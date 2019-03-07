@@ -5,6 +5,7 @@
 
 	letter-spacing: $letter-spacing-default;
 	line-height: $line-height-default;
+	text-transform: none; // TODO: Probably shouldn't be hard-coded
 
 	@if ($color) {
 		color: $color;

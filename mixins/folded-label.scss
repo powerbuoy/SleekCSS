@@ -1,4 +1,4 @@
-@mixin folded-label ($color: color(primary)) {
+@mixin folded-label ($color: #369) {
 	background: $color;
 
 	position: relative;
@@ -6,7 +6,7 @@
 	padding: ($spacing-small / 2) $spacing-small;
 
 	color: $white;
-	font-size: $font-size-x-small;
+	font-size: $font-size-small;
 	line-height: 1;
 
 	&::before {
@@ -17,10 +17,10 @@
 		left: 0;
 		top: 100%;
 
-		border-top: .25rem solid darken($color, 25%);
-		border-right: .25rem solid darken($color, 25%);
-		border-bottom: .25rem solid transparent;
-		border-left: .25rem solid transparent;
+		border-top: ($spacing-x-small / 2) solid darken($color, 25%);
+		border-right: ($spacing-x-small / 2) solid darken($color, 25%);
+		border-bottom: ($spacing-x-small / 2) solid transparent;
+		border-left: ($spacing-x-small / 2) solid transparent;
 	}
 
 	&::after {
@@ -31,9 +31,9 @@
 		left: 100%;
 		top: 0;
 
-		border-top: ($font-size-x-small + $spacing-small) / 2 solid transparent;
-		border-right: ($font-size-x-small + $spacing-small) / 2 solid transparent;
-		border-bottom: ($font-size-x-small + $spacing-small) / 2 solid transparent;
-		border-left: ($font-size-x-small + $spacing-small) / 2 solid $color;
+		border-top: ($font-size-small + $spacing-small) / 2 solid transparent;
+		border-right: ($font-size-small + $spacing-small) / 2 solid transparent;
+		border-bottom: ($font-size-small + $spacing-small) / 2 solid transparent;
+		border-left: ($font-size-small + $spacing-small) / 2 solid $color;
 	}
 }

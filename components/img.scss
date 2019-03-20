@@ -12,3 +12,18 @@ figure {
 		width: 100%;
 	}
 }
+
+/***
+    title: Figure Background
+    section: Images
+    description: Allows you to use a figure element (and its img) as a background image.
+    example:
+        <header class="color--white" style="position:relative; overflow:hidden">
+            <p>My background image is actually an img</p>
+            <p>Note that the styleguide example containers have a background of their own which shines through here - make sure you _don't_ have a background when you use this component and it will look good</p>
+            <figure class="figure-background"><img src="http://placehold.it/1920x1080"></figure>
+        </header>
+***/
+.figure-background {
+	@include figure-background;
+}

@@ -4,10 +4,10 @@ $site-width-reached: round(($site-width * 100) / (strip-unit($site-width-min)));
 $button-height: ($button-font-size * $button-line-height + $button-padding-vertical * 2);
 
 // Slant polygons (NOTE: you probably don't want to change these)
-$top-slant: polygon(0 #{$section-slant}, 100% 0, 100% 100%, 0 100%);
-$bottom-slant: polygon(0 0, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%);
-$top-bottom-slant: polygon(0 #{$section-slant}, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%);
+$top-slant: polygon(0 #{$section-slant}, 100% 0, 100% 100%, 0 100%) !default;
+$bottom-slant: polygon(0 0, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%) !default;
+$top-bottom-slant: polygon(0 #{$section-slant}, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%) !default;
 
 // Selectors
-$headings: "h1, h2, h3, h4, h5, h6, .heading--1, .heading--2, .heading--3, .heading--4, .heading--5, .heading--6";
-$form-fields: "input[type=text], input[type=password], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea";
+$headings: "h1, h2, h3, h4, h5, h6, .heading--1, .heading--2, .heading--3, .heading--4, .heading--5, .heading--6" !default;
+$form-fields: "input[type=text], input[type=password], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea" !default;

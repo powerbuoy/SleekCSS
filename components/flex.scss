@@ -23,7 +23,11 @@ ul[class*="flex--"] {
 // Make sure flex items have margin bottom(?)
 [class*="flex--"] {
 	> * {
-		margin-bottom: $gutter-default;
+		margin-top: $gutter-default;
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 }
 

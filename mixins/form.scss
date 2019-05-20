@@ -1,4 +1,4 @@
-@mixin form-field () {
+@mixin form-field {
 	@include text; // Exact same typography as rest of site
 
 	background: $form-field-bg;
@@ -32,6 +32,42 @@
 	&:focus {
 		outline: 0;
 
+		@if ($form-border-focus) {
+			border: $form-border-focus;
+			border-width: $form-border-width;
+		}
+	}
+}
+
+@mixin form-select {
+	@include text;
+
+	appearance: none;
+	outline: 0;
+
+	background: $form-field-bg url($form-select-arrow) no-repeat;
+	background-position: right $form-padding-horizontal top 50%;
+	background-size: $form-select-arrow-size auto;
+
+	box-sizing: border-box;
+	width: 100%;
+
+	padding: $form-padding-vertical ($form-padding-horizontal * 2 + $form-select-arrow-size) $form-padding-vertical $form-padding-horizontal;
+
+	color: $form-text-color;
+	transition: all $transition-default $transition-easing;
+
+	@if ($form-border) {
+		border: $form-border;
+	}
+	@else {
+		border: 0;
+	}
+
+	border-width: $form-border-width;
+	border-radius: $form-border-radius;
+
+	&:focus {
 		@if ($form-border-focus) {
 			border: $form-border-focus;
 			border-width: $form-border-width;

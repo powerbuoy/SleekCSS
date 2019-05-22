@@ -8,8 +8,10 @@
 	> * {
 		@include flex-grid-item($num, $gutter);
 
-		&:nth-child(-n + #{$num}) {
-			margin-top: 0;
+		@if ($grid-flex-use-margin-top) {
+			&:nth-child(-n + #{$num}) {
+				margin-top: 0;
+			}
 		}
 	}
 }
@@ -22,7 +24,12 @@
 	max-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)?? (and Chrome, try a word that's longer than the width of the element)
 	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
 
-	margin-top: $gutter; // Same space between and above
+	@if ($grid-flex-use-margin-top) {
+		margin-top: $gutter; // Same space between and above
+	}
+	@else {
+		margin-bottom: $gutter;
+	}
 }
 
 @mixin flex-width ($width: 50%, $gutter: $spacing-default, $num: false) {

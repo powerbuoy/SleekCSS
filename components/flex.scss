@@ -23,10 +23,19 @@ ul[class*="flex--"] {
 // Make sure flex items have margin bottom(?)
 [class*="flex--"] {
 	> * {
-		margin-top: $spacing-default;
+		@if ($grid-flex-use-margin-top) {
+			margin-top: $spacing-default;
 
-		&:first-child {
-			margin-top: 0;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		@else {
+			margin-bottom: $spacing-default;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

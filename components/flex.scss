@@ -24,14 +24,14 @@ ul[class*="flex--"] {
 [class*="flex--"] {
 	> * {
 		@if ($grid-flex-use-margin-top) {
-			margin-top: $spacing-default;
+			margin-top: $grid-gutter;
 
 			&:first-child {
 				margin-top: 0;
 			}
 		}
 		@else {
-			margin-bottom: $spacing-default;
+			margin-bottom: $grid-gutter;
 		}
 	}
 }
@@ -39,7 +39,7 @@ ul[class*="flex--"] {
 // Create flex--X classes for all specified column counts
 @for $num from 2 through $grid-cols {
 	.flex--#{$num} {
-		@include flex-grid($num, $spacing-default);
+		@include flex-grid($num, $grid-gutter);
 	}
 }
 
@@ -48,7 +48,7 @@ ul[class*="flex--"] {
 	@for $num from 2 through $grid-cols {
 		@media #{$bp} {
 			.flex--#{$num}--#{$bp-name} {
-				@include flex-grid($num, $spacing-default);
+				@include flex-grid($num, $grid-gutter);
 			}
 		}
 	}
@@ -60,7 +60,7 @@ ul[class*="flex--"] {
 	.flex--#{$num} {
 		&::before,
 		&::after {
-			@include flex-grid-item($num, $spacing-default);
+			@include flex-grid-item($num, $grid-gutter);
 
 			display: block;
 			content: "";
@@ -76,7 +76,7 @@ ul[class*="flex--"] {
 			.flex--#{$num}--#{$bp-name} {
 				&::before,
 				&::after {
-					@include flex-grid-item($num, $spacing-default);
+					@include flex-grid-item($num, $grid-gutter);
 
 					display: block;
 					content: "";

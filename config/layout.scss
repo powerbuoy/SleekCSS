@@ -19,6 +19,7 @@ $transition-fast: .15s !default;
 $transition-default: .25s !default;
 $transition-slow: .5s !default;
 
-// Max number of col classes (this increases the amount of genereated CSS)
-$grid-cols: 3 !default;
+// Grid stuff
+$grid-cols: 3 !default; // Number of CSS classes (grid--1, grid--2, grid--3)
+$grid-gutter: 2rem !default;
 $grid-flex-use-margin-top: true !default;

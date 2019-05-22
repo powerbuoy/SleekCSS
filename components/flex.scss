@@ -23,7 +23,7 @@ ul[class*="flex--"] {
 // Make sure flex items have margin bottom(?)
 [class*="flex--"] {
 	> * {
-		margin-top: $gutter-default;
+		margin-top: $spacing-default;
 
 		&:first-child {
 			margin-top: 0;
@@ -32,18 +32,18 @@ ul[class*="flex--"] {
 }
 
 // Create flex--X classes for all specified column counts
-@for $num from 2 through $num-cols {
+@for $num from 2 through $grid-cols {
 	.flex--#{$num} {
-		@include flex-grid($num, $gutter-default);
+		@include flex-grid($num, $spacing-default);
 	}
 }
 
 // Create flex--X--Y classes for all specified column counts and breakpoints
 @each $bp-name, $bp in $breakpoints {
-	@for $num from 2 through $num-cols {
+	@for $num from 2 through $grid-cols {
 		@media #{$bp} {
 			.flex--#{$num}--#{$bp-name} {
-				@include flex-grid($num, $gutter-default);
+				@include flex-grid($num, $spacing-default);
 			}
 		}
 	}
@@ -51,11 +51,11 @@ ul[class*="flex--"] {
 
 
 // Fill in flex "gaps"
-@for $num from 3 through $num-cols {
+@for $num from 3 through $grid-cols {
 	.flex--#{$num} {
 		&::before,
 		&::after {
-			@include flex-grid-item($num, $gutter-default);
+			@include flex-grid-item($num, $spacing-default);
 
 			display: block;
 			content: "";
@@ -66,12 +66,12 @@ ul[class*="flex--"] {
 }
 
 @each $bp-name, $bp in $breakpoints {
-	@for $num from 3 through $num-cols {
+	@for $num from 3 through $grid-cols {
 		@media #{$bp} {
 			.flex--#{$num}--#{$bp-name} {
 				&::before,
 				&::after {
-					@include flex-grid-item($num, $gutter-default);
+					@include flex-grid-item($num, $spacing-default);
 
 					display: block;
 					content: "";

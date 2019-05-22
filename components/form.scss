@@ -80,7 +80,7 @@ label {
 
 // Two labels inside the same container should be separated (TODO: Wanted?)
 label + label {
-	margin-left: $gutter-default;
+	margin-left: $spacing-default;
 }
 
 // Fields

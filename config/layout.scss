@@ -9,10 +9,6 @@ $spacing-default: 1.5rem !default;
 $spacing-large: 2.5rem !default;
 $spacing-x-large: 4rem !default;
 
-// Gutters (space between columns)
-$gutter-default: 2rem !default;
-$gutter-large: 4rem !default;
-
 // Section spacing
 $section-spacing: 6rem !default;
 $section-slant: 4rem !default;
@@ -24,4 +20,4 @@ $transition-default: .25s !default;
 $transition-slow: .5s !default;
 
 // Max number of col classes (this increases the amount of genereated CSS)
-$num-cols: 3 !default;
+$grid-cols: 3 !default;

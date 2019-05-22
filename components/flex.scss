@@ -32,10 +32,6 @@ ul[class*="flex--"] {
 		}
 		@else {
 			margin-bottom: $spacing-default;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
 		}
 	}
 }

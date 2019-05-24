@@ -11,7 +11,7 @@
 }
 
 @mixin section-centering-left ($width: $site-width, $unit: '%') {
-	$width-reached: round(($width * 100) / (strip-unit($site-width-min)));
+	$width-reached: round(($width * 100) / (strip-unit($site-width-min))) + $site-width-reached-offset;
 
 	padding-left: $site-padding;
 
@@ -21,7 +21,7 @@
 }
 
 @mixin section-centering-right ($width: $site-width, $unit: '%') {
-	$width-reached: round(($width * 100) / (strip-unit($site-width-min)));
+	$width-reached: round(($width * 100) / (strip-unit($site-width-min))) + $site-width-reached-offset;
 
 	padding-right: $site-padding;
 

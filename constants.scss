@@ -1,6 +1,7 @@
 // NOTE: These are all calculated and should not be changed
 $site-padding: (100% - $site-width-min) / 2;
-$site-width-reached: round(($site-width * 100) / (strip-unit($site-width-min))) !default;
+$site-width-reached-offset: 0 !default;
+$site-width-reached: round(($site-width * 100) / (strip-unit($site-width-min))) + $site-width-reached-offset;
 $button-height: ($button-font-size * $button-line-height + $button-padding-vertical * 2);
 
 // Slant polygons (NOTE: you probably don't want to change these)

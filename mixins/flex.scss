@@ -1,4 +1,4 @@
-@mixin flex-grid ($num: 3, $gutter: $grid-gutter) {
+@mixin flex-grid ($num: 3, $gutter: $grid-gap) {
 	display: flex;
 	align-items: stretch;
 	justify-content: space-between;
@@ -16,7 +16,7 @@
 	}
 }
 
-@mixin flex-grid-item ($num: 3, $gutter: $grid-gutter) {
+@mixin flex-grid-item ($num: 3, $gutter: $grid-gap) {
 	$total-gutter: $gutter * ($num - 1);
 	$width-subtract: $total-gutter / $num;
 
@@ -32,7 +32,7 @@
 	}
 }
 
-@mixin flex-width ($width: 50%, $gutter: $grid-gutter, $num: false) {
+@mixin flex-width ($width: 50%, $gutter: $grid-gap, $num: false) {
 	$width-subtract: $gutter / 2;
 
 	@if ($num) {

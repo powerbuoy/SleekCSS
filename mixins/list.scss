@@ -61,3 +61,23 @@
 		}
 	}
 }
+
+// Key/value list
+@mixin list-key-val {
+	display: grid;
+	grid-template-columns: max-content auto;
+	grid-column-gap: $spacing-x-small;
+
+	> * {
+		grid-column-start: 2;
+		margin: 0;
+	}
+
+	> :nth-child(odd) {
+		grid-column-start: 1;
+
+		&::after {
+			content: ":";
+		}
+	}
+}

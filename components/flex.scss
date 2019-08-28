@@ -54,7 +54,6 @@ ul[class*="flex--"] {
 	}
 }
 
-
 // Fill in flex "gaps"
 @for $num from 3 through $grid-cols {
 	.flex--#{$num} {

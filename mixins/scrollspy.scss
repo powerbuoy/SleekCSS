@@ -1,0 +1,41 @@
+@each $el, $children in $scrollspy {
+	@each $child in $children {
+		$index: index($children, $child);
+
+		@if (str-index($child, ":stagger")) {
+			$new-child: str-slice($child, 1, -9);
+
+			#{$el} #{$new-child} {
+				transform: translateY(1rem);
+				opacity: 0;
+				transition: transform $transition-slow $transition-easing,
+							opacity $transition-slow $transition-easing;
+			}
+
+			@for $i from 1 through 30 {
+				#{$el} #{$new-child}:nth-child(#{$i}) {
+					transition-delay: ($transition-default * ($index - 1)) + ($transition-default * ($i - 1));
+				}
+			}
+
+			#{$el}.was-in-view #{$new-child} {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+		@else {
+			#{$el} #{$child} {
+				transform: translateY(1rem);
+				opacity: 0;
+				transition: transform $transition-slow $transition-easing,
+							opacity $transition-slow $transition-easing;
+				transition-delay: $transition-default * ($index - 1);
+			}
+
+			#{$el}.was-in-view #{$child} {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+}

@@ -1,6 +1,4 @@
 @mixin form-field {
-	@include text; // Exact same typography as rest of site
-
 	background: $form-field-bg;
 
 	display: inline-block;
@@ -13,6 +11,13 @@
 	margin: 0;
 	padding: $form-padding-vertical $form-padding-horizontal;
 
+	font-size: $form-font-size;
+	font-family: $form-font-family;
+	font-weight: $form-font-weight;
+
+	letter-spacing: $form-letter-spacing;
+	line-height: $form-line-height;
+	text-transform: none; // TODO: Probably shouldn't be hard-coded
 	color: $form-text-color;
 
 	appearance: none;
@@ -40,8 +45,6 @@
 }
 
 @mixin form-select {
-	@include text;
-
 	appearance: none;
 	outline: 0;
 
@@ -54,6 +57,12 @@
 
 	padding: $form-padding-vertical ($form-padding-horizontal * 2 + $form-select-arrow-size) $form-padding-vertical $form-padding-horizontal;
 
+	font-size: $form-font-size;
+	font-family: $form-font-family;
+	font-weight: $form-font-weight;
+
+	letter-spacing: $form-letter-spacing;
+	line-height: $form-line-height;
 	color: $form-text-color;
 	transition: all $transition-default $transition-easing;
 

@@ -193,9 +193,10 @@
 		&:hover {
 			@include button-color-hover($color, $button-ghost-opacity, 0%);
 
-			@if ($button-ghost-opacity == 1) {
+			// NOTE: Wtf is this? It doesn't look good.
+		/*	@if ($button-ghost-opacity == 1) {
 				border-color: transparent;
-			}
+			} */
 		}
 	}
 }

@@ -34,7 +34,7 @@
 	}
 
 	// Potential image should be used as background
-	figure {
+	> figure {
 		@include figure-background;
 	}
 

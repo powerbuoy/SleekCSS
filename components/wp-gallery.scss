@@ -49,7 +49,7 @@ div.gallery {
 
 		@media #{breakpoint(tablet)} {
 			@for $i from 1 through 9 {
-				&.gallery-columns-#{$i} {
+				&.gallery--cols-#{$i} {
 					> * {
 						flex: 0 0 #{100% / $i};
 						max-width: #{100% / $i};

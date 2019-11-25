@@ -1,30 +1,3 @@
-/***
-    title: Section
-    section: Layout
-    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don't work properly nested like in the styleguide (that's why it looks broken here).
-    example:
-        <div class="section bg--white">
-            <h2>I'm a section</h2>
-            <p>With some content</p>
-        </div>
-***/
 .section {
 	@include section;
-
-	// Slanted sections
-	&--slanted {
-		clip-path: $top-bottom-slant;
-		padding-top: $section-slant + $section-spacing;
-		padding-bottom: $section-slant + $section-spacing;
-
-		&-top {
-			clip-path: $top-slant;
-			padding-top: $section-slant + $section-spacing;
-		}
-
-		&-bottom {
-			clip-path: $bottom-slant;
-			padding-bottom: $section-slant + $section-spacing;
-		}
-	}
 }

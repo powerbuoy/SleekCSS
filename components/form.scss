@@ -1,109 +1,64 @@
-/***
-    title: Forms
-    section: Forms
-    description: Form styling.
-    example:
-        <form method="post" action="">
-            <p>
-                <label>
-                    Search<br>
-                    <input type="search" name="q" placeholder="Search the site">
-                </label>
-            </p>
-            <p>
-                <label>
-                    Name<br>
-                    <input type="text" name="name" placeholder="eg. John Doe">
-                </label>
-            </p>
-            <p>
-                <label>
-                    Email <abbr title="Required">*</abbr><br>
-                    <input type="email" name="email" placeholder="eg. john.doe@example.com" required>
-                </label>
-            </p>
-            <p>
-                <label>
-                    Sex<br>
-                    <select name="sex">
-                        <option value="f">Female</option>
-                        <option value="m">Male</option>
-                    </select>
-                </label>
-            </p>
-            <p>
-                Smoker?<br>
-                <label><input type="radio" name="smoker" value="1"> Yes</label>
-                <label><input type="radio" name="smoker" value="0"> No</label>
-            </p>
-            <p>
-                <label>
-                    <span class="value">${age}</span>
-                    Age<br>
-                    <input type="range" name="age" min="1" max="150">
-                </label>
-                <strong class="error">You have to be at least 18 to conitnue</strong>
-            </p>
-            <p>
-                <label>
-                    Message<br>
-                    <textarea name="message" rows="3" cols="60" placeholder="Write your message here"></textarea>
-                </label>
-            </p>
-            <p><label><input type="checkbox" name="agree"> I agree</label></p>
-            <p><input type="submit" value="Go" class="button button--wide"></p>
-        </form>
-***/
-form {
+// Form fields
+:--form-field,
+select,
+textarea {
+	background: var(--form-field-color);
+
+	appearance: none;
+	outline: 0;
+
+	display: inline-block;
+	vertical-align: middle;
+
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%; // In case user changes width we still want max-width 100%
+
 	margin: 0;
+	padding: var(--form-field-padding-vertical) var(--form-field-padding-horizontal);
 
-	// Error messages
-	strong.error {
-		display: block;
-		margin-top: $spacing-small;
-		color: color(error);
-	}
+	font-size: var(--font-size-default);
+	font-family: var(--font-family-default);
+	font-weight: var(--font-weight-default);
 
-	// "Mandatory"-*
-	abbr,
-	abbr[title] {
-		color: color(error);
-		border: 0;
-		text-decoration: none; // Firefox
-	}
-}
+	letter-spacing: var(--letter-spacing-default);
+	line-height: var(--line-height-default);
 
-// Labels
-label {
+	text-transform: none;
+	text-decoration: none;
+	text-align: left;
+	color: var(--form-field-text-color);
 
-}
+	transition: all .25s ease;
+	border: 1px solid var(--color-border);
+	border-radius: var(--form-field-border-radius);
 
-// Two labels inside the same container should be separated (TODO: Wanted?)
-label + label {
-	margin-left: $spacing-default;
-}
-
-// Fields
-#{$form-fields} {
-	@include form-field;
-}
-
-// Remove Chrome's autofill styling
-// http://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete#answer-37432260
-// NOTE: This prevents transparent backgrounds
-/* @keyframes remove-chrome-autofill-color {
-	to {
-		background: $form-field-bg;
-		color: $form-text-color;
+	&:focus {
+		outline: 0;
+		border-color: var(--form-field-border-focus-color);
 	}
 }
 
-input:-webkit-autofill,
-select:-webkit-autofill,
-textarea:-webkit-autofill {
-	animation-name: remove-chrome-autofill-color;
-	animation-fill-mode: both;
-} */
+// Select
+select {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40"><polygon points="2.7,14.4 6.8,10.3 20,23.5 33.2,10.3 37.3,14.4 20,31.7 "/></svg>');
+	background-repeat: no-repeat;
+	background-position: right var(--form-field-padding-horizontal) top 50%;
+	background-size: .5rem auto;
+	padding-right: calc(var(--form-field-padding-horizontal) * 2 + .5rem);
+}
+
+// Textarea
+textarea {
+	resize: vertical;
+	max-width: 100%;
+	height: 12rem;
+}
+
+// Placeholders
+::placeholder {
+	color: var(--color-gray);
+}
 
 // Hide search UI
 input[type=search] {
@@ -112,316 +67,5 @@ input[type=search] {
 	&::-webkit-search-results-button,
 	&::-webkit-search-results-decoration {
 		display: none;
-	}
-}
-
-// Radio/checkbox margin
-input[type=radio],
-input[type=checkbox] {
-	margin: 0 $icon-margin 0 0;
-}
-
-textarea {
-	resize: vertical;
-	max-width: 100%;
-}
-
-// Placeholder
-::placeholder {
-	color: $form-placeholder-color;
-}
-
-// Buttons
-// input[type=submit], // Naw, too specific
-button {
-	@include button;
-
-	outline: 0;
-}
-
-input[type=submit] {
-	outline: 0;
-}
-
-// Wrap submit text
-input[type=submit] {
-	white-space: normal;
-}
-
-// Select
-@if ($form-select-arrow) {
-	select:not([multiple]) {
-		@include form-select;
-	}
-}
-
-// TODO: Refactor
-/* input[type=range] {
-	background: blue;
-	height: 10rem;
-	border: 1rem solid green;
-
-	// Remove outline
-	outline: 0;
-
-	&:focus {
-		outline: 0;
-	}
-
-	// Even in ff: http://stackoverflow.com/questions/18794026/remove-dotted-outline-from-range-input-element-in-firefox
-	&::-moz-focus-outer {
-		border: 0;
-	}
-
-	// Style the track
-	&::-moz-range-progress {
-		background: $form-range-color-lower;
-		height: 2rem;
-	}
-
-	&::-moz-range-track {
-		background: $form-range-color-upper;
-		height: 2rem;
-	}
-
-	&::-moz-range-thumb {
-		background: blue;
-		width: 1rem;
-		height: 1rem;
-		border: 1rem solid red;
-		border-radius: 50%;
-	}
-} */
-
-// Range input (http://www.hongkiat.com/blog/html5-range-slider-style/)
-@mixin range-thumb {
-	appearance: none;
-
-	width: $form-range-thumb-radius * 2;
-	height: $form-range-thumb-radius * 2;
-
-	@if ($form-range-thumb-border == true) {
-		border: 1px solid $border-color;
-	}
-	@elseif ($form-range-thumb-border) {
-		border: $form-range-thumb-border;
-	}
-	@else {
-		border: 0;
-	}
-
-	@if ($form-range-thumb-shadow == true) {
-		box-shadow: shadow(1);
-	}
-	@elseif ($form-range-thumb-shadow) {
-		box-shadow: $form-range-thumb-shadow;
-	}
-
-	cursor: pointer;
-	outline: 0;
-	border-radius: $form-range-thumb-border-radius;
-
-	&:focus {
-		outline: 0;
-	}
-}
-
-@mixin range-track {
-	appearance: none;
-
-	width: 100%;
-	height: $form-range-height;
-	padding: 0;
-
-	@if ($form-range-border == true) {
-		border: 1px solid $border-color;
-	}
-	@elseif ($form-range-border) {
-		border: $form-range-border;
-	}
-	@else {
-		border: 0;
-	}
-
-	outline: 0;
-	border-radius: $form-range-border-radius;
-
-	&:focus {
-		outline: 0;
-	}
-}
-
-@mixin range-color ($track-color-lower, $track-color-upper, $thumb-color) {
-	// The track
-	&::-webkit-slider-runnable-track {
-		background: $track-color-lower;
-	}
-
-	&::-ms-track {
-		background: $track-color-lower;
-		color: $track-color-lower;
-	}
-
-	&::-ms-fill-lower {
-		background: $track-color-lower;
-		color: $track-color-lower;
-	}
-
-	&::-ms-fill-upper {
-		background: $track-color-upper;
-		color: $track-color-upper;
-	}
-
-	&::-moz-range-progress {
-		background: $track-color-lower;
-		height: $form-range-height;
-	}
-
-	&::-moz-range-track {
-		background: $track-color-upper;
-	}
-
-	// The thumbs
-	&::-webkit-slider-thumb {
-		background: $thumb-color;
-	}
-
-	&::-moz-range-thumb {
-		background: $thumb-color;
-	}
-
-	&::-ms-thumb {
-		background: $thumb-color;
-	}
-}
-
-input[type=range] {
-	appearance: none;
-
-	@include range-color($form-range-color-lower, $form-range-color-upper, $form-range-thumb-bg);
-
-	background: transparent;
-	width: 100%;
-	height: $form-range-thumb-radius * 2;
-	padding: 0;
-	border: 0;
-
-	&:focus {
-		outline: 0;
-	}
-
-	&::-moz-focus-outer {
-		border: 0;
-	}
-
-	// The track
-	&::-webkit-slider-runnable-track {
-		@include range-track;
-	}
-
-	&::-ms-track {
-		@include range-track;
-	}
-
-	&::-ms-fill-lower {
-		@include range-track;
-	}
-
-	&::-ms-fill-upper {
-		@include range-track;
-	}
-
-	&::-moz-range-track {
-		@include range-track;
-	}
-
-	// The thumbs
-	&::-webkit-slider-thumb {
-		@include range-thumb;
-		margin-top: -($form-range-thumb-radius - $form-range-height / 2);
-	}
-
-	&::-moz-range-thumb {
-		@include range-thumb;
-	}
-
-	&::-ms-thumb {
-		@include range-thumb;
-		transform: translateY($form-range-height);
-	}
-}
-
-/***
-    title: Floating Label
-    section: Forms
-    description: Use to create labels that act as placeholders until the field is focused. Note that the field _must_ also have a placeholder
-    example:
-        <p class="floating-label">
-            <input type="email" name="email" id="styleguide-placeholder-label-example" placeholder="This wont be shown but is required" required>
-            <label for="styleguide-placeholder-label-example">E-mail</label>
-        </p>
-***/
-.floating-label {
-	$translateY: $font-size-default * $line-height-default + $form-padding-vertical;
-	$paddingTop: $font-size-default * $line-height-default;
-
-	display: block;
-	position: relative;
-	text-align: left;
-	padding-top: $paddingTop;
-
-	// A real placeholder is required for :placeholder-shown - hide it
-	::placeholder {
-		color: transparent;
-	}
-
-	// Position the label directly on top of the input
-	label,
-	.label {
-		display: block;
-		pointer-events: none;
-
-		padding-top: $form-padding-vertical;
-		padding-left: $form-padding-horizontal;
-
-		position: absolute;
-		left: 0;
-		top: $paddingTop;
-		right: 0;
-		bottom: 0;
-
-		color: $form-placeholder-color;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-
-		transform: translateY(0);
-		transform-origin: left top;
-		transition: all $transition-default $transition-easing;
-	}
-
-	// When no placeholder is visible (ie there's text inside the field) - move up the label
-	input:not(:placeholder-shown) + label,
-	textarea:not(:placeholder-shown) + label,
-	input:not(:placeholder-shown) + .label,
-	textarea:not(:placeholder-shown) + .label {
-		transform: translateY(-$translateY);
-		color: $text-color;
-	}
-
-	// Always position label above in IE...
-	@supports (-ms-ime-align: auto) {
-		label,
-		.label {
-			transform: translateY(-$translateY) !important;
-		}
-	}
-
-	// And 10/11
-	@media all and (-ms-high-contrast: none) {
-		label,
-		.label {
-			transform: translateY(-$translateY) !important;
-		}
 	}
 }

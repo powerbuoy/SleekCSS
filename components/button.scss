@@ -1,40 +1,39 @@
-/***
-    title: Button
-    section: Buttons
-    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;
-    example:
-        <p><a href="#" class="button">I'm a normal button</a></p>
-        <p><button class="button--ghost">Button elements don't need the button class</button></p>
-        <p><input type="submit" value="Submit inputs do though" class="button button--disabled" disabled></p>
-        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
-        <p><a href="#" class="button button--gradient">Button colors can be a list</a></p>
-        <p><a href="#" class="button button--white">Bright buttons don't get white text</a></p>
-***/
-// Button classes
 .button {
-	@include button;
+	background: var(--button-color);
 
-	&[disabled],
-	&.button--disabled {
-		pointer-events: none;
+	box-sizing: border-box;
+	display: inline-block;
+	padding: var(--button-padding-vertical) var(--button-padding-horizontal);
+	vertical-align: middle;
+
+	font-size: var(--font-size-default);
+	font-family: var(--font-family-default);
+	font-weight: var(--font-weight-default);
+
+	letter-spacing: var(--letter-spacing-default);
+	line-height: var(--line-height-default);
+
+	text-transform: none;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+
+	outline: 0;
+	border: 1px solid var(--button-color);
+
+	transition: all .25s ease;
+
+	&:hover {
+		color: white;
+		text-decoration: none;
 	}
-}
 
-.button--ghost {
-	@include button-ghost;
-}
-
-// Button colors
-@each $color-name, $color in $button-colors {
-	.button--#{$color-name} {
-		@include button-color($color);
+	&--ghost {
+		background: transparent;
+		color: var(--button-color);
 
 		&:hover {
-			@include button-color-hover($color);
-		}
-
-		&.button--ghost {
-			@include button-ghost($color);
+			background: var(--button-color);
 		}
 	}
 }

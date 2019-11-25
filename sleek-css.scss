@@ -1,23 +1,62 @@
-@import "sleek-sass";
+// Config (TODO: Remove)
+@import "config";
 
+/////////////
+// Strip unit
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit ($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+///////////////
+// Site padding
+@mixin site-padding ($width: $site-width, $var-name: --site-padding) {
+	$reached: #{strip-unit($width) / strip-unit($site-width-min) * 100px};
+
+	#{$var-name}: #{(100vw - $site-width-min) / 2};
+
+	@media (min-width: #{$reached}) {
+		#{$var-name}: calc((100vw - #{$width}) / 2);
+	}
+}
+
+//////////////////
+// Calculated vars
+:root {
+	// Site padding
+	@include site-padding;
+
+	// Slanting (TODO: top-right, bottom-right, top-left, bottom-left etc)
+	--slant-top: polygon(0 calc(var(--spacing-section) / 3), 100% 0, 100% 100%, 0 100%);
+	--slant-bottom: polygon(0 0, 100% 0, 100% calc(100% - var(--spacing-section) / 3), 0 100%);
+	--slant-top-bottom: polygon(0 calc(var(--spacing-section) / 3), 100% 0, 100% calc(100% - var(--spacing-section) / 3), 0 100%);
+}
+
+///////////////////
+// Custom selectors
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+@custom-selector :--form-field input[type=text], input[type=password], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color];
+
+/////////
+// Mixins
+@import "mixins/container";
+@import "mixins/grid";
+@import "mixins/img";
+@import "mixins/list";
+@import "mixins/section";
+@import "mixins/typography";
+@import "mixins/utils";
+
+/////////////
+// Components
 @import "components/base";
-@import "components/auto-icons";
-@import "components/bg-colors";
-@import "components/blockquote";
 @import "components/button";
 @import "components/container";
+@import "components/dialog";
+@import "components/grid";
 @import "components/form";
-@import "components/heading";
-@import "components/icon";
-@import "components/img";
-@import "components/link";
-@import "components/list";
-@import "components/popup";
 @import "components/section";
-@import "components/shadows";
-@import "components/text-colors";
-@import "components/text";
-@import "components/video";
-@import "components/wp-classes";
-@import "components/wp-gallery";
-@import "components/flex"; // Needs to include after other components that set display: so that you can use .section.flex together for example

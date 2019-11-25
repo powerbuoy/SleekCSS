@@ -1,13 +1,3 @@
-/***
-    title: Container
-    section: Layout
-    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don't work properly when nested like this. You can also use @include container and pass an optional width;
-    example:
-        <div class="container bg--white">
-            <h1>I'm centered</h1>
-            <p>In the middle of the page</p>
-        </div>
-***/
 .container {
 	@include container;
 }

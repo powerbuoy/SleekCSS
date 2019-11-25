@@ -1,1 +1,0 @@
-A lightweight SASS library.

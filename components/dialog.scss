@@ -1,0 +1,74 @@
+// Duplicate Chrome's styling for this element
+dialog {
+	display: block;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	width: fit-content;
+	height: fit-content;
+	color: black;
+	margin: auto;
+	border-width: initial;
+	border-style: solid;
+	border-color: initial;
+	border-image: initial;
+	padding: 1em;
+	background: white;
+}
+
+// Polyfill
+dialog:not([open]) {
+	display: none;
+}
+
+dialog + .backdrop {
+	background: rgba(0, 0, 0, 0.1);
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+._dialog_overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+// Our styling now
+dialog {
+	background: white;
+
+	width: 90%;
+	max-width: 40rem;
+	max-height: 90%;
+
+	position: fixed;
+	overflow: auto;
+
+	margin: var(--spacing-section) auto;
+	padding: var(--spacing-large);
+
+	border: 0;
+	box-shadow: var(--shadow-3);
+
+	.close {
+		position: absolute;
+		right: var(--spacing-default);
+		top: var(--spacing-default);
+		font-size: 2rem;
+		line-height: 1;
+		color: var(--color-text);
+	}
+}
+
+dialog::backdrop {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+dialog + .backdrop {
+	background: rgba(0, 0, 0, 0.8);
+}

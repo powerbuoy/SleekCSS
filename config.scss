@@ -1,0 +1,125 @@
+////////////////
+// Media Queries
+@custom-media --tablet (min-width: 600px);
+@custom-media --tablet-max (max-width: 599px);
+
+@custom-media --laptop (min-width: 1080px);
+@custom-media --laptop-max (max-width: 1079px);
+
+@custom-media --desktop (min-width: 1260px);
+@custom-media --desktop-max (max-width: 1259px);
+
+////////////
+// SASS Vars
+// NOTE: These need to be SASS because we can't use
+// calc(--variables) in media queries or CSS variables in @for loops
+$site-width: 1320px !default;
+$site-width-min: 90vw !default;
+$num-cols: 4 !default;
+
+/////////
+// Config
+:root {
+	/////////
+	// Colors
+	--color-body-bg: #f9f6f3;
+	--color-border: #f2f2f2;
+	--color-overlay: rgba(0, 0, 0, .6);
+
+	// Typography colors
+	--color-text: #3B3A40;
+	--color-heading: #3B3A40;
+
+	// Link colors
+	--color-link: #D29982;
+	--color-link-hover: #{darken(#D29982, 10%)};
+	--color-link-visited: #609;
+
+	// Shades of gray
+	--color-lightgray: #D8D8D8;
+	--color-mediumgray: #C5C2C2;
+	--color-gray: #968884;
+	--color-darkgray: #787473;
+
+	// Social media
+	--color-facebook: #3b5998;
+	--color-twitter: #4099FF;
+	--color-linkedin: #0077b5;
+
+	// Form/button related
+	--color-disabled: #bbb;
+	--color-error: #f00;
+	--color-success: #0f0;
+	--color-warning: #f90;
+
+	// Site colors
+	--color-primary: #D29982;
+	--color-primary-light: #DFD2C3;
+	--color-secondary: #3B3A40;
+
+	/////////////
+	// Typography
+	// Font family
+	--font-family-default: "Muli", Helvetica, sans-serif;
+	--font-family-heading: "Butler", Helvetica, sans-serif;
+
+	// Weight
+	--font-weight-default: 400;
+	--font-weight-heading: 300;
+
+	// Size
+	--font-size-default: 1rem;
+	--font-size-x-small: .75rem;
+	--font-size-small: .875rem;
+	--font-size-large: 1.125rem;
+	--font-size-x-large: 1.8rem;
+
+	--font-size-h1: 5rem;
+	--font-size-h2: 2.8rem;
+	--font-size-h3: 1.6rem;
+	--font-size-h4: 1.3rem;
+	--font-size-h5: 1.2rem;
+	--font-size-h6: 1rem;
+
+	// Height & spacing
+	--line-height-default: 1.7;
+	--line-height-heading: 1.2;
+
+	--letter-spacing-default: .015em;
+	--letter-spacing-heading: .015em;
+
+	//////////
+	// Spacing
+	--spacing-section: 5.2rem;
+	--spacing-default: 1.2rem;
+	--spacing-x-small: .4rem;
+	--spacing-small: .8rem;
+	--spacing-large: 1.8rem;
+	--spacing-x-large: 3.6rem;
+
+	///////
+	// Grid
+	--grid-cols: 1;
+	--grid-gap: 3.2rem;
+
+	/////////
+	// Button
+	--button-color: var(--color-link);
+	--button-padding-vertical: 1.2rem;
+	--button-padding-horizontal: 2.6rem;
+
+	///////
+	// Form
+	--form-field-color: white;
+	--form-field-text-color: var(--color-text);
+	--form-field-padding-vertical: var(--button-padding-vertical);
+	--form-field-padding-horizontal: var(--button-padding-vertical);
+	--form-field-border-radius: 0;
+	--form-field-border-focus-color: var(--color-link);
+
+	//////////
+	// Shadows
+	--shadow-1: 0 6px 8px 0 rgba(46, 77, 100, 0.39);
+	--shadow-2: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+	--shadow-3: 0 60px 140px -40px rgba(0, 0, 0, .25), 0 60px 120px -20px rgba(0, 0, 0, .25);
+}

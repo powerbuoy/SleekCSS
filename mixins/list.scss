@@ -1,54 +1,5 @@
-// Inline list
-@mixin inline-list ($width: false, $margin: $spacing-default) {
-	margin-left: 0;
-	padding-left: 0;
-	list-style: none;
-
-	> * {
-		display: inline-block;
-		margin: 0 $margin $margin 0;
-
-		@if ($width) {
-			width: $width;
-		}
-	}
-
-	.text--center &,
-	&.text--center {
-		> * {
-			margin: 0 ($margin / 2) $margin;
-		}
-	}
-}
-
-// Border separated list
-@mixin bordered-list {
-	margin-left: 0;
-	padding-left: 0;
-	list-style: none;
-
-	> :not(:last-child) {
-		margin-bottom: $spacing-default / 2;
-		padding-bottom: $spacing-default / 2;
-		border-bottom: 1px solid $border-color;
-	}
-}
-
-// CSS counter
-@mixin list-counter {
-	counter-reset: list-counter;
-
-	> * {
-		counter-increment: list-counter;
-
-		&:before {
-			content: counter(list-counter) '. ';
-		}
-	}
-}
-
 // Separated
-@mixin separated-list ($separator: '\00a0|\00a0') {
+@mixin list-separated ($separator: ' | ') {
 	margin-left: 0;
 	padding-left: 0;
 	list-style: none;
@@ -63,10 +14,10 @@
 }
 
 // Key/value list
-@mixin list-key-val {
+@mixin list-key-val ($after: ":") {
 	display: grid;
 	grid-template-columns: max-content auto;
-	grid-column-gap: $spacing-x-small;
+	grid-column-gap: var(--spacing-small);
 
 	> * {
 		grid-column-start: 2;
@@ -77,7 +28,7 @@
 		grid-column-start: 1;
 
 		&::after {
-			content: ":";
+			content: $after;
 		}
 	}
 }

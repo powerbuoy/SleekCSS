@@ -1,6 +1,6 @@
 {
   "name": "sleek-css",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "A lighweight SASS library",
   "main": "sleek-css.scss",
   "scripts": {
@@ -15,11 +15,5 @@
   "bugs": {
     "url": "https://github.com/powerbuoy/sleek-css/issues"
   },
-  "homepage": "https://github.com/powerbuoy/sleek-css#readme",
-  "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-sass": "^4.0.2"
-  }
+  "homepage": "https://github.com/powerbuoy/sleek-css#readme"
 }

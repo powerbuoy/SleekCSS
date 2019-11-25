@@ -1,31 +1,5 @@
-@mixin section ($width: $site-width, $unit: '%') {
-	@include section-centering($width, $unit);
+@mixin section ($width: $site-width) {
+	@include site-padding($width);
 
-	padding-top: $section-spacing;
-	padding-bottom: $section-spacing;
-}
-
-@mixin section-centering ($width: $site-width, $unit: '%') {
-	@include section-centering-left($width, $unit);
-	@include section-centering-right($width, $unit);
-}
-
-@mixin section-centering-left ($width: $site-width, $unit: '%') {
-	$width-reached: round(($width * 100) / (strip-unit($site-width-min))) + $site-width-reached-offset;
-
-	padding-left: $site-padding;
-
-	@media (min-width: $width-reached) {
-		padding-left: calc(50#{$unit} - #{$width / 2});
-	}
-}
-
-@mixin section-centering-right ($width: $site-width, $unit: '%') {
-	$width-reached: round(($width * 100) / (strip-unit($site-width-min))) + $site-width-reached-offset;
-
-	padding-right: $site-padding;
-
-	@media (min-width: $width-reached) {
-		padding-right: calc(50#{$unit} - #{$width / 2});
-	}
+	padding: var(--spacing-section) var(--site-padding);
 }

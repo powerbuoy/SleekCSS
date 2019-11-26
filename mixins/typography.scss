@@ -21,15 +21,6 @@
 	}
 }
 
-@mixin heading-scale ($scale: 1) {
-	--font-size-h1: calc(var(--font-size-h1) * #{$scale});
-	--font-size-h2: calc(var(--font-size-h2) * #{$scale});
-	--font-size-h3: calc(var(--font-size-h3) * #{$scale});
-	--font-size-h4: calc(var(--font-size-h4) * #{$scale});
-	--font-size-h5: calc(var(--font-size-h5) * #{$scale});
-	--font-size-h6: calc(var(--font-size-h6) * #{$scale});
-}
-
 @mixin text ($size: var(--font-size-default), $color: var(--color-text)) {
 	font-family: var(--font-family-default);
 	font-weight: var(--font-weight-default);

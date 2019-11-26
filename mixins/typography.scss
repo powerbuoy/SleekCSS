@@ -3,11 +3,14 @@
 	margin: 0 0 var(--spacing-default);
 
 	font-weight: var(--font-weight-heading);
-	font-size: $size;
 	font-family: var(--font-family-heading);
 
 	line-height: var(--line-height-heading);
 	letter-spacing: var(--letter-spacing-heading);
+
+	@if ($size) {
+		font-size: $size;
+	}
 
 	@if ($color) {
 		color: $color;
@@ -18,14 +21,17 @@
 	}
 }
 
-@mixin text ($color: var(--color-text)) {
-	font-size: var(--font-size-default);
+@mixin text ($size: var(--font-size-default), $color: var(--color-text)) {
 	font-family: var(--font-family-default);
 	font-weight: var(--font-weight-default);
 
 	letter-spacing: var(--letter-spacing-default);
 	line-height: var(--line-height-default);
 	text-transform: none; // TODO: Probably shouldn't be hard-coded
+
+	@if ($size) {
+		font-size: $size;
+	}
 
 	@if ($color) {
 		color: $color;

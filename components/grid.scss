@@ -1,7 +1,6 @@
-.grid {
+.grid,
+[class*="grid--"] {
 	@include grid;
-
-	--grid-cols: 1;
 }
 
 @for $i from 2 through $num-cols {

@@ -46,6 +46,7 @@ $num-cols: 4 !default;
 
 /////////
 // Mixins
+@import "mixins/button";
 @import "mixins/container";
 @import "mixins/grid";
 @import "mixins/img";

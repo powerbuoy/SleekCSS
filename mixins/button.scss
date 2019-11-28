@@ -1,0 +1,46 @@
+@mixin button-base (
+	$color: var(--button-color),
+	$text-color: white,
+
+	$padding-vertical: var(--button-padding-vertical),
+	$padding-horizontal: var(--button-padding-horizontal),
+
+	$font-size: var(--font-size-default),
+	$font-family: var(--font-family-default),
+	$font-weight: var(--font-weight-default),
+
+	$letter-spacing: var(--letter-spacing-default),
+	$line-height: var(--line-height-default),
+
+	$border-radius: var(--button-border-radius)
+) {
+	background: #{$color};
+
+	box-sizing: border-box;
+	display: inline-block;
+	padding: #{$padding-vertical} #{$padding-horizontal};
+	vertical-align: middle;
+
+	font-size: #{$font-size};
+	font-family: #{$font-family};
+	font-weight: #{$font-weight};
+
+	letter-spacing: #{$letter-spacing};
+	line-height: #{$line-height};
+
+	text-transform: none;
+	text-decoration: none;
+	text-align: center;
+	color: #{$text-color};
+
+	outline: 0;
+	border: 1px solid #{$color};
+	border-radius: #{$border-radius};
+
+	transition: all .25s ease;
+
+	&:hover {
+		color: #{$text-color};
+		text-decoration: none;
+	}
+}

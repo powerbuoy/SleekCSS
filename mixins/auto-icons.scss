@@ -1,0 +1,19 @@
+$auto-icons: () !default;
+
+@mixin auto-icons ($default-icon: '') {
+	a {
+		&:before {
+			@include icon($default-icon);
+
+			display: none; // Hide icons by default
+			margin: 0 $icon-margin 0 0;
+		}
+
+		@each $auto-icon-name, $auto-icon in $auto-icons {
+			&[#{$auto-icon-name}]:before {
+				display: inline-block; // Show icons that exist
+				content: "#{$auto-icon}";
+			}
+		}
+	}
+}

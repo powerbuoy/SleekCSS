@@ -2,41 +2,30 @@
 // Config
 $site-width: 1080px !default;
 $site-width-min: 90vw !default;
-$num-cols: 4 !default;
-
-/////////////
-// Strip unit
-// https://css-tricks.com/snippets/sass/strip-unit-function/
-@function strip-unit ($number) {
-	@if type-of($number) == 'number' and not unitless($number) {
-		@return $number / ($number * 0 + 1);
-	}
-
-	@return $number;
-}
 
 ///////////////
 // Site padding
 @mixin site-padding ($width: $site-width, $var-name: --site-padding) {
-	$reached: #{strip-unit($width) / strip-unit($site-width-min) * 100px};
+	// Remove units from width (px) and width-min (% / vw)
+	// https://css-tricks.com/snippets/sass/strip-unit-function/
+	$width-no-unit: $width / ($width * 0 + 1);
+	$width-min-no-unit: $site-width-min / ($site-width-min * 0 + 1);
 
+	// Window width in px when $site-width is fully reached
+	$reached: #{($width-no-unit / $width-min-no-unit) * 100px};
+
+	// Set site padding to (100% - 90%) / 2 (5% on each side)
 	#{$var-name}: #{(100vw - $site-width-min) / 2};
 
+	// When resolution is wide enough to fit entire site width
+	// set it to (100% - 980px) / 2 (110px on each side in a 1200x800 window)
 	@media (min-width: #{$reached}) {
 		#{$var-name}: calc((100vw - #{$width}) / 2);
 	}
 }
 
-//////////////////
-// Calculated vars
 :root {
-	// Site padding
 	@include site-padding;
-
-	// Slanting (TODO: top-right, bottom-right, top-left, bottom-left etc)
-	--slant-top: polygon(0 calc(var(--spacing-section) / 3), 100% 0, 100% 100%, 0 100%);
-	--slant-bottom: polygon(0 0, 100% 0, 100% calc(100% - var(--spacing-section) / 3), 0 100%);
-	--slant-top-bottom: polygon(0 calc(var(--spacing-section) / 3), 100% 0, 100% calc(100% - var(--spacing-section) / 3), 0 100%);
 }
 
 ///////////////////

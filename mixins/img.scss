@@ -14,20 +14,20 @@
 @mixin img-ratio ($width: 16, $height: 9) {
 	@include ratio($width, $height);
 
+	position: relative;
+	overflow: hidden;
+
 	img {
 		@include img-background;
 	}
 }
 
 @mixin ratio ($width: 16, $height: 9) {
-	$padding-bottom: ($height / $width * 100);
-
-	position: relative;
-	overflow: hidden;
+	$padding-bottom: percentage($height / $width);
 
 	&::before {
 		display: block;
 		content: "";
-		padding-bottom: $padding-bottom + 0%;
+		padding-bottom: $padding-bottom;
 	}
 }

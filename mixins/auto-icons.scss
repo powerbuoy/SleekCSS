@@ -48,7 +48,7 @@ $auto-icons: () !default;
 			@include icon($default-icon);
 
 			display: none; // Hide icons by default
-			margin: 0 $icon-margin 0 0;
+			margin: 0 var(--spacing-x-small, 0.25rem) 0 0;
 		}
 
 		@each $auto-icon-name, $auto-icon in $auto-icons {

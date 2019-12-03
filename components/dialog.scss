@@ -49,7 +49,11 @@ dialog {
 	position: fixed;
 	overflow: auto;
 
-	margin: var(--spacing-section) auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	margin: 0;
 	padding: var(--spacing-large);
 
 	border: 0;

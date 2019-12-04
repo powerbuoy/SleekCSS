@@ -13,7 +13,7 @@ $num-cols: 4 !default;
 
 @media (--tablet) {
 	@for $i from 2 through $num-cols {
-		.grid--#{$i}--tablet {
+		.tablet\:grid--#{$i} {
 			--grid-cols: #{$i};
 		}
 	}
@@ -21,7 +21,7 @@ $num-cols: 4 !default;
 
 @media (--laptop) {
 	@for $i from 2 through $num-cols {
-		.grid--#{$i}--laptop {
+		.laptop\:grid--#{$i} {
 			--grid-cols: #{$i};
 		}
 	}

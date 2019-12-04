@@ -17,7 +17,7 @@
 	position: relative;
 	overflow: hidden;
 
-	img {
+	> img {
 		@include img-background;
 
 		z-index: auto;

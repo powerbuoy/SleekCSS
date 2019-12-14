@@ -6,7 +6,7 @@
 	background-size: 100% $thickness;
 	background-position: left 50%;
 	background-repeat: no-repeat;
-	transition: background-position $transition-default $transition-default $transition-easing;
+	transition: background-position 0.25s 0.25s ease;
 
 	display: block;
 	position: relative;
@@ -28,19 +28,19 @@
 		width: 100%;
 		height: $thickness;
 
-		transition: top $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
+		transition: top 0.25s 0.25s ease, transform 0.25s ease;
 	}
 
 	&::after {
 		top: auto;
 		bottom: 0;
-		transition: bottom $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
+		transition: bottom 0.25s 0.25s ease, transform 0.25s ease;
 	}
 }
 
 @mixin burger-menu-open ($color: false, $size: 24px, $thickness: 4px) {
 	background-position: $size 50%;
-	transition: background-position $transition-default $transition-easing;
+	transition: background-position 0.25s ease;
 
 	@if ($color) {
 		&:before,
@@ -52,12 +52,12 @@
 	&::before {
 		top: calc(50% - #{$thickness / 2});
 		transform: rotate(45deg);
-		transition: top $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
+		transition: top 0.25s ease, transform 0.25s 0.25s ease;
 	}
 
 	&::after {
 		bottom: calc(50% - #{$thickness / 2});
 		transform: rotate(-45deg);
-		transition: bottom $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
+		transition: bottom 0.25s ease, transform 0.25s 0.25s ease;
 	}
 }

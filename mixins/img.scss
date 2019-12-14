@@ -17,7 +17,8 @@
 	position: relative;
 	overflow: hidden;
 
-	> img {
+	> img,
+	> :not(figcaption) img {
 		@include img-background;
 
 		z-index: auto;

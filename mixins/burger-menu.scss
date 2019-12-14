@@ -1,0 +1,63 @@
+// Reversed E
+@mixin burger-menu ($color: $link-color, $size: 24px, $thickness: 4px, $middle-width: 100%) {
+	$middle-position: 100% - $middle-width;
+
+	background-image: linear-gradient(to right, transparent, transparent $middle-position, $color $middle-position);
+	background-size: 100% $thickness;
+	background-position: left 50%;
+	background-repeat: no-repeat;
+	transition: background-position $transition-default $transition-default $transition-easing;
+
+	display: block;
+	position: relative;
+	overflow: hidden;
+
+	width: $size;
+	height: $size;
+
+	&::before,
+	&::after {
+		background: $color;
+
+		display: block;
+		content: "";
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: $thickness;
+
+		transition: top $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
+	}
+
+	&::after {
+		top: auto;
+		bottom: 0;
+		transition: bottom $transition-default $transition-default $transition-easing, transform $transition-default $transition-easing;
+	}
+}
+
+@mixin burger-menu-open ($color: false, $size: 24px, $thickness: 4px) {
+	background-position: $size 50%;
+	transition: background-position $transition-default $transition-easing;
+
+	@if ($color) {
+		&:before,
+		&:after {
+			background: $color;
+		}
+	}
+
+	&::before {
+		top: calc(50% - #{$thickness / 2});
+		transform: rotate(45deg);
+		transition: top $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
+	}
+
+	&::after {
+		bottom: calc(50% - #{$thickness / 2});
+		transform: rotate(-45deg);
+		transition: bottom $transition-default $transition-easing, transform $transition-default $transition-default $transition-easing;
+	}
+}

@@ -1,5 +1,5 @@
 // Reversed E
-@mixin burger-menu ($color: $link-color, $size: 24px, $thickness: 4px, $middle-width: 100%) {
+@mixin burger-menu ($color: var(--color-link), $size: 24px, $thickness: 4px, $middle-width: 100%) {
 	$middle-position: 100% - $middle-width;
 
 	background-image: linear-gradient(to right, transparent, transparent $middle-position, $color $middle-position);

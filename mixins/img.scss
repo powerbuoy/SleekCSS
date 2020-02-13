@@ -33,6 +33,7 @@
 	right: 0;
 	bottom: 0;
 	margin: 0;
+	z-index: -1;
 
 	&::before {
 		@include img-overlay;
@@ -40,8 +41,6 @@
 
 	img {
 		@include img-background;
-
-		z-index: -2;
 	}
 }
 

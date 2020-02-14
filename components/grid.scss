@@ -1,8 +1,8 @@
-$num-cols: 4 !default;
+$num-cols: 6 !default;
 
 .grid,
 [class*="grid--"] {
-	@include grid;
+	@include grid(0);
 }
 
 @for $i from 2 through $num-cols {

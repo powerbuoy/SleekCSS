@@ -2,7 +2,7 @@ $num-cols: 6 !default;
 
 .grid,
 [class*="grid--"] {
-	@include grid(0);
+	@include grid(1);
 }
 
 @for $i from 2 through $num-cols {

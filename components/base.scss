@@ -109,10 +109,6 @@ blockquote {
 	> :first-child::before {
 		content: open-quote;
 	}
-
-	> :first-child::after {
-		content: close-quote;
-	}
 }
 
 // Responsive video

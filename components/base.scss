@@ -68,9 +68,13 @@ p {
 
 pre {
 	background: #111;
+
 	margin: 0 0 var(--spacing-default);
 	padding: var(--spacing-default);
+
+	max-height: 30rem;
 	overflow: auto;
+
 	font-size: var(--font-size-small);
 	color: white;
 }

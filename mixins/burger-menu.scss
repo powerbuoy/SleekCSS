@@ -61,3 +61,49 @@
 		transition: bottom 0.25s ease, transform 0.25s 0.25s ease;
 	}
 }
+
+// Two lines
+@mixin burger-menu-two-lines ($color: var(--color-link), $size: 24px, $thickness: 2px) {
+	position: relative;
+	display: inline-block;
+	width: $size;
+	height: $size;
+
+	&::before,
+	&::after {
+		background: $color;
+
+		display: block;
+		content: "";
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -#{$size / 6}) rotate(0deg);
+		transition: transform 0.5s ease, background-color 0.5s ease;
+
+		width: 100%;
+		height: $thickness;
+	}
+
+	&::after {
+		transform: translate(-50%, #{$size / 6}) rotate(0deg);
+	}
+}
+
+@mixin burger-menu-two-lines-open ($color: false) {
+	@if ($color) {
+		&::before,
+		&::after {
+			background: $color;
+		}
+	}
+
+	&::before {
+		transform: translate(-50%, 0) rotate(225deg);
+	}
+
+	&::after {
+		transform: translate(-50%, 0) rotate(-225deg);
+	}
+}
